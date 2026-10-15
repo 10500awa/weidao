@@ -173,11 +173,9 @@ It will prove very useful to identify the adjacencies of a stone or group. To th
 
 \begin{definition}[Adjacency Set]
 	Given a board $T$, if \(i\) is a stone and \(I\) a group of stones of color \(e\). We define the adjacency set of the stone as the stones satisfying the definition of adjacency, namely:
-	$$K(i) = \{
-	i_r : P(i) \sim P(i_r), i_r\in T
-	\}.$$
+	$$K(i) = \{i_r \in T \setminus \{i\} : P(i) \sim P(i_r)\}.$$
 	For a group $I$, we define:
-	$$K(I) = \{i_r : I \sim i_r, i_r \in T \}.$$
+	$$K(I) = \{i \in T \setminus I : I \sim i\}.$$
 \end{definition}
 
 
