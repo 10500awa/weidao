@@ -1,27 +1,29 @@
 {\centering
-	\chapter{Go infinito}\label{infgo}}
+	\chapter{Infinite Go}\label{infgo}}
 \thispagestyle{empty}
 \noindent
-{\large\textbf{Este capítulo es un borrador. Incluiré mis pensamientos y procesos de todo en cuanto entiendo y soy capaz de formalizar.}}
+{\large\textbf{This chapter it's a draft, at least for now. I'll include my thought process and most of what I'm able to understand/formalize about it.}}
 \vspace{20pt}
 
-Para comenzar, veamos \textit{donde} jugamos ahora. Nuestro tablero infinito debe ser capaz tambien de tener infinitas dimensiones donde cada una de ellas pueda ser o no infinita.
+To begin with, let's see \textit{where} we are playing now. Our infinite board should be able to have also infinite dimensions and every one of those could or not be infinite as well.
 
-Veamos el caso más sencillo (creo), jugemos en un tablero de dos dimensiones, donde una de ellas es infinita.
+We'll begin with the simplest case, let's play on a two dimensional board that has one infinite dimension.
 
-Sea $G$ un tablero de go tal que,
-$$G=\mathbb{N}\times N.$$
-Donde $N$ es un subconjunto de $\mathbb{N}$.
-Como el número de jugadores no importa del todo, usemos tan solo dos jugadores. Además, usemos la adjacencia canónica. Así, nuestro juega será el: $$\Gamma=(G,E,A_{ort},\Delta_{Go_{\infty}}).$$
-Al menos por ahora, no estamos seguros de cómo funciona $\Delta_{Go_{\infty}}$ pero, llegamos a ello.
+Let $\Gamma$ be a Go game such that,
+$$G=\{1,2,\dots,n\}\times \mathbb{Z}.$$
+for $n\in \mathbb{N}$. We'll use $\mathbb{Z}$ for simplicity as it's a better (easier) representation of the infinite board.
+As the number of players does not matter at all, let's use only two players and, the canonical adjacency.
+Our game will be $\Gamma=(G,E,A_{ort},\Delta_{Go_{\infty}})$.
+At least for now, we are not sure how $\Delta_{Go_{\infty}}$ works but, we will get there.
 
-Nuestro tablero podría (y para nosotros, tendrá) la siguiente forma, Figura~\ref{first_inf_board}:
+Our board could (and for us, will) look like this, Figure~\ref{first_inf_board}. Now, there is a substantial change in this new game.
+
 \begin{figure}[H]
 	%\begin{figure}[H]
 	\centering
-	\begin{tikzpicture}[scale=0.485] \tikzstyle{every node}=[font=\small]
+	\begin{tikzpicture}[scale=0.5]
 		% Draw the background
-		\fill[goban] (-7,-0.5) rectangle (7,6.5);
+		\fill[goban] (-7,-1.5) rectangle (7,6.5);
 		% Draw the grid lines
 		\foreach \x in {6,5,...,0}{
 			\draw[black] (-5,\x) -- (5,\x); 
@@ -32,27 +34,62 @@ Nuestro tablero podría (y para nosotros, tendrá) la siguiente forma, Figura~\r
 			% draw vertical lines
 		}
 		\foreach \x in {6,0}{
-		\draw[very thick] (-5,\x) rectangle (5,\x);
+			\draw[very thick] (-5,\x) rectangle (5,\x);
 		}% draw upper and lower lines.
 		%draw the triple dot line for each infinite side.
 		\foreach \x in {6,5,...,0} {
 			\node at (-6, \x) {\dots};
 			\node at (6, \x) {\dots};
 		}
-		
-	
+		\foreach \x in {5,...,-5} {
+			\node at (\x,-1) {\x};
+		}
+		\begin{scope}[xshift=15cm,yshift=-0.5cm]
+			% Draw the background
+			\fill[goban] (-7,-0.5) rectangle (7,6.5);
+			% Draw the grid lines
+			\foreach \x in {6,5,...,0}{
+				\draw[black] (-5,\x) -- (5,\x); 
+				% draw horizontal lines
+			}
+			\foreach \x in {4,...,-4} {
+				\draw[black] (\x,0) -- (\x,6); 
+				% draw vertical lines
+			}
+			\foreach \x in {6,0}{
+				\draw[very thick] (-5,\x) rectangle (5,\x);
+			}% draw upper and lower lines.
+			%draw the triple dot line for each infinite side.
+			\foreach \x in {6,5,...,0} {
+				\node at (-6, \x) {\dots};
+				\node at (6, \x) {\dots};
+			}
+			
+			
+			\foreach \x in {6,...,0} {
+				\filldraw[draw=black,fill=white] (0,\x) circle (12pt);
+			}
+			
+			%draw black stones.
+			\foreach \x in {5,...,-5} {
+				\filldraw[black] (\x,3) circle (12pt);
+			}
+			
+		\end{scope}
 	\end{tikzpicture}
-	\caption{Un tablero de $7\times \infty$.}
+	\caption{A $7\times \infty$ board and two intersecting plays that resolves by definition.}
 	\label{first_inf_board}
 \end{figure}
+Notice that, if the white line were infinite, such play generated two infinite lines in one turn, which is crazy. 
 
-El primer problema en el tablero infinito es cómo determinar una captura. Toda otra definición anterior debería funcionar bien. 
 
-Supongamos que estamos en la siguiente posición, Figura~\ref{first_inf_cap}
+The very first problem on the infinite board it's how to determine a capture. Any other prior definition should work just fine.
+
+Lets say we are in the next position, Figure~\ref{first_inf_cap}
 \begin{figure}[H]
 	%\begin{figure}[H]
 	\centering
-	\begin{tikzpicture}[scale=0.485] \tikzstyle{every node}=[font=\small]
+	\begin{tikzpicture}[scale=0.5]
 		% Draw the background
 		\fill[goban] (-7,-0.5) rectangle (7,6.5);
 		% Draw the grid lines
@@ -114,19 +151,17 @@ Supongamos que estamos en la siguiente posición, Figura~\ref{first_inf_cap}
 		\end{scope}
 		
 	\end{tikzpicture}
-	\caption{
-		Un tablero inifinito con un grupo negro infinito siendo capturado.}
+	\caption{An infinite board with an infinite black group being capture.}
 	\label{first_inf_cap}
 \end{figure}
-Como este grupo es infinito (numerable), va a tocar el final del tablero, por lo tanto, para rodearlo basta hacerlo por arriba y por abajo.
+As this group is infinite, it will touch the very end of the board so we can capture it by surronding it at the top and bottom.
 
-Podemos asegurar que se trata de una captura pues si el grupo negro es $I$ luego $K(I)\subset S$ donde $\cup S$ es el conjuto de los grupos blancos. Luego $L(I)$ debe ser cero, concretando una captura.
-
-Veamos otro ejemplo, de un grupo infinito pero solo por un lado.
+We can be sure that this is capture because if the black group it's $I$, then $K(I)\subset S$ where $S$ is the set of the two white groups. That is, $L(I)$ should be $0$.
+Now let's take a look at another example, an infinite group but only on one side.
 \begin{figure}[H]
 	%\begin{figure}[H]
 	\centering
-	\begin{tikzpicture}[scale=0.485] \tikzstyle{every node}=[font=\small]
+	\begin{tikzpicture}[scale=0.5]
 		% Draw the background
 		\fill[goban] (-7,-0.5) rectangle (7,6.5);
 		% Draw the grid lines
@@ -189,18 +224,17 @@ Veamos otro ejemplo, de un grupo infinito pero solo por un lado.
 		\end{scope}
 		
 	\end{tikzpicture}
-	\caption{
-		Un grupo infinito, solo por un lado, siendo capturado.}
+	\caption{An infinite, on one side, black group being capture.}
 	\label{first_1sideinf_cap}
 \end{figure}
-En este caso, no usar todo el tablero resulta beneficioso pues tenemos una libertad más (o no la perdemos)
+In this case, not using the whole board, even though it's infinite, its better. As it provides one more liberty (or does not loses it).
 
+The following example reflects and interesting nature of inifinite Go. (More on this later)
 
-Veamos otro ejemplo para poder adentranos en la naturaleza del Go infinito.
 \begin{figure}[H]
 	%\begin{figure}[H]
 	\centering
-	\begin{tikzpicture}[scale=0.485] \tikzstyle{every node}=[font=\small]
+	\begin{tikzpicture}[scale=0.5]
 		% Draw the background
 		\fill[goban] (-7,-0.5) rectangle (7,6.5);
 		% Draw the grid lines
@@ -236,7 +270,7 @@ Veamos otro ejemplo para poder adentranos en la naturaleza del Go infinito.
 		\filldraw[draw=black,fill=white] (1,2) circle (12pt);
 		\filldraw[draw=black,fill=white] (2,3) circle (12pt);
 		\filldraw[draw=black,fill=white] (-2,3) circle (12pt);
-
+		
 		
 		\begin{scope}[xshift=15cm]
 			% Draw the background
@@ -289,33 +323,403 @@ Veamos otro ejemplo para poder adentranos en la naturaleza del Go infinito.
 		\end{scope}
 		
 	\end{tikzpicture}
-	\caption{Dos capturas, una finita y otra infinita.}
+	\caption{Two captures.}
 	\label{finite_infinite_capture}
 \end{figure}
-Parece ser que los grupos finitos son más fuertes que los infinitos, nuevamente, los primeros no pierden libertades en los extremos, por ser finitos.
+It seems that finite groups are stronger than infinite ones as, again, they don't lose liberties due to not being infinite.
 
-\section{SuperKo en el infinito}
-No podemos hacer uso del método de Zobrist para el Go infinito, pues requeriríamos de una cantidad infinita de bits. Necesitamos de algo mejor, intentemos crearlo.
+Lets characterize \textit{what} can be done in the game.
 
-Si recordamos la naturaleza de la regla SuperKo, esta nos dice que no podemos replicar una posición que ya haya aparecido si es atraves de una jugada de pierdra. Nuevamente en funcion de nuestro SuperKo. 
-
-Debido a esto, todo juego debe ser una linea, es decir, como no se puede volver hacia atras en el historial, partiendo el estado inicial, el juego avanza de manera vertical, sin ciclos. Más aún, el mismo juego del Go se convierte en un arbol pues, partiendo del tablero vacío hay exactamente 362 jugadas posibles (361 de piedras y pasar).
-
-Definamos una manera de medir que tan cerca dos tableros están (finito).
-
-\begin{definition}[Función de diferencia de color]
-	Dados dos taleros $T_1$ y $T_2$ de un mismo juego de Go, su diferencia en un punto $t=(t_1,...t_m)$, se define como,
-	\[ 
-	\delta(T_1,T_2)_t=
-	\begin{cases}
-		1 \text{si }C(t)_{T_1}=C(t)_{T_2}, \\
-		0 \text{si } no. \\
-	\end{cases}
-	\]
+\begin{definition}[A move]
+	In an infinite game of Go of dimension $n$, a player in their turn
+	$t$ can perform one of the following actions:
+	\begin{enumerate}
+		1. Pass.
+		
+		2. Propose a connected hyperplane $H$ of dimension at most
+		$n-1$. The hyperplane $H$ is a subset of the board such that,
+		for at least one dimension, all its points have a fixed
+		coordinate. All the stones in $H$ have the color of the player
+		making the move. In particular, if $\dim H=0$, then $H$ is asingle stone.
+		
+		The stones already present on the board may intersect $H$. Let
+		\[
+		P=\{P(x)\in T_t:C(x)\neq 0\}
+		\]
+		be the set of occupied points at turn $t$. The stones that are
+		actually played are then
+		\[
+		H - P=\{h\in H: P(h)\notin P\}.
+		\]
+		The set $H\setminus P$ may consist of several groups, as the
+		stones already present on the board may disconnect the proposed
+		hyperplane.
+		
+		If any group contained in $H-P$ is in suicide
+		condition, the proposed move is rejected. Otherwise, the
+		stones in $H-P$ are placed on the board, and captures
+		are resolved according to the usual rules.
+	\end{enumerate}
 \end{definition}
-Now, let's apply this to every point,
-\begin{definition}[Distancia entre Tableros]
-	Dados dos tableros $T_1$ and $T_2$ de un mismo juego de Go, su diferencia se define como:
-	$$\sum_{t\in G} \delta(T_1,T_2)_{t}$$
+Let me explain why $n-1$ dimensions.
+
+If we look back at the game of Go, stones are placed on a two dimensional board. In our formulation, this means that we place a connected $0$ dimensional subset of the board, that is, a single stone. In other words, the dimension of the object being played is $n-2$ relative to the dimension of the board.
+
+If we kept this relation, we would obtain a natural generalization for higher dimensional boards, but we wouldn't be unable to define a move in one dimensional Go, since this would require
+$$ n-2=-1. $$
+Thus, in an $n$ dimensional game, a player may propose a connected hyperplane $H$ satisfying
+$$ 0\leq\dim H\leq n-1. $$
+
+\section{Infinite SuperKo}
+
+We cannot use Zobrist method for the infinite Go as we will need infinite many bits. We need a better method, let's try to make one.
+
+If we remember the nature of the SuperKo rule, it's says that we cannot replicate a prior board via a stone play. Again, we are using this version of SuperKo (Positional).
+
+Because of the rule, every game has to be a line, that is, as we cannot go back into the history of plays (at least it's a pass but will not take in consideration those). From the empty board to the very end, we have a straight forward path. Not even that but, because of the rule, the whole game of Go its a \textit{tree}. That is, starting from the empty board, there are 362 possbile plays (361 stone placements and a pass) and we cannot go back. From those, every posible outcome, that is, any end of a match can be found by following a line of unrepeated boards.
+
+Let's define a way to measure how close are two given boards are.
+
+First, lets notice that, in the very beggining, there are exactly one region and not much else in the board. That is, before the first turn, $|J|=1$ (the big empty region).
+
+Now, the  very first turn will make so $|J|=1$ if the black player plays a stone or a finite line. If the player chooses to play an infinite one, then $|J|=2$. Lets pretend it just played an infinite group, with that, Zobrist method or any method that uses the stone itself go nuts and can't be use here but, $|J|$ it just a little bigger, finitely bigger. Now, this is not perfect as there are infinite many ways to play an infinite group so we end up with $|J|=2$. Before going forward, lets see an example.
+
+\begin{figure}[H]
+	%\begin{figure}[H]
+	\centering
+	\begin{tikzpicture}[scale=0.5]
+		% Draw the background
+		\fill[goban] (-7,-0.5) rectangle (7,6.5);
+		\filldraw[fill=orange, fill opacity=0.35, draw=black] (-5.35,0) rectangle (5.35,6);
+		% Draw the grid lines
+		\foreach \x in {6,5,...,0}{
+			\draw[black] (-5,\x) -- (5,\x); 
+			% draw horizontal lines
+		}
+		\foreach \x in {4,...,-4} {
+			\draw[black] (\x,0) -- (\x,6); 
+			% draw vertical lines
+		}
+		\foreach \x in {6,0}{
+			\draw[very thick] (-5,\x) rectangle (5,\x);
+		}% draw upper and lower lines.
+		%draw the triple dot line for each infinite side.
+		\foreach \x in {6,5,...,0} {
+			\node at (-6, \x) {\dots};
+			\node at (6, \x) {\dots};
+		}
+		
+		%draw black stones.
+		%		\foreach \x in {5,...,-5} {
+			%			\filldraw[black] (\x,3) circle (12pt);
+			%		}
+		\begin{scope}[xshift=15cm]
+			% Draw the background
+			\fill[goban] (-7,-0.5) rectangle (7,6.5);
+			% Draw the grid lines
+			\filldraw[fill=violet, fill opacity=0.35, draw=black] (-5.35,3.65) rectangle (5.35,6);
+			\filldraw[fill=violet, fill opacity=0.35, draw=black] (-5.35,0) rectangle (5.35,2.35);
+			
+			
+			\foreach \x in {6,5,...,0}{
+				\draw[black] (-5,\x) -- (5,\x); 
+				% draw horizontal lines
+			}
+			\foreach \x in {4,...,-4} {
+				\draw[black] (\x,0) -- (\x,6); 
+				% draw vertical lines
+			}
+			\foreach \x in {6,0}{
+				\draw[very thick] (-5,\x) rectangle (5,\x);
+			}% draw upper and lower lines.
+			%draw the triple dot line for each infinite side.
+			\foreach \x in {6,5,...,0} {
+				\node at (-6, \x) {\dots};
+				\node at (6, \x) {\dots};
+			}
+			
+			
+			%draw black stones.
+			\foreach \x in {5,...,-5} {
+				\filldraw[black] (\x,3) circle (12pt);
+			}
+			
+		\end{scope}
+		
+	\end{tikzpicture}
+	\caption{A board where the number of regions merely grows by one when an infinite group is played.}
+	\label{inf_superko_intuition}
+\end{figure}
+As I said early, playing such group vertically (in  this case will be finite but you get the idea) or shifting it up or down, will end up with the same number of regions.
+
+The first problem is to determine if the number of regions are always finite or not.
+
+The second problem is how to determine those boards that has the same number of regions are infact different, we cannot look at them as that's too costly. My idea is, if we can solve the first problem, then we can measure every region and, by that, we can tell even if two boards have the same number of regions, those regions might not be equall (by biggest and smallest radius or something like that). 
+
+The third problem its color shifting, two boards might not be equal but the regions could be exactly the same (number and size), but the colors of the regions surronding them might not. (I'm thiking about discrinating between finite and infinite regions. Then, in the set of finites, we can calculate the influence of each color, this should work but its just another filter and its far from perfect)
+
+
+Lets attack the first problem but we need to be a little more precise of what we want.
+
+Given an infinite game of Go, the number of regions are always finite? If there are infinite moves then the answer is no. Lets consider the infinite one dimensional Go.
+
+\begin{figure}[H]
+	%\begin{figure}[H]
+	\centering
+	\begin{tikzpicture}[scale=0.7]
+		% Draw the background
+		\fill[goban] (-10,-1.5) rectangle (10,0.5);
+		\foreach \x in {0} {
+			\node at (-9, \x) {\dots};
+			\node at (9, \x) {\dots};
+		}
+		
+		\foreach \x in {0,1,...,6}{
+			\draw[black] (\x,-0.2) -- (\x,0.2); 
+			% draw horizontal lines
+		}
+		
+		\draw[very thick] (-8.5,0) rectangle (8.5,0);
+		
+		% draw vertical lines
+		\foreach \x in {-8,...,8} {
+			\draw[black] (\x,-0.25) -- (\x,0.25); 
+			
+		}
+		\foreach \x in {8,...,-8} {
+			\node at (\x,-1) {\x};
+		}
+		%draw a region
+		%\filldraw[fill=violet, fill opacity=0.35, draw=black] (-5.35,-0.3) rectangle (5.35,0.3);
+		
+		
+		%draw black stones.
+		%		\foreach \x in {5,...,-5} {
+			%			\filldraw[black] (\x,3) circle (12pt);
+			%		}
+		\begin{scope}[yshift=-2.5cm]
+			% Draw the background
+			\fill[goban] (-10,-0.5) rectangle (10,0.5);
+			\foreach \x in {0} {
+				\node at (-9, \x) {\dots};
+				\node at (9, \x) {\dots};
+			}
+			
+			\foreach \x in {0,1,...,6}{
+				\draw[black] (\x,-0.2) -- (\x,0.2); 
+				% draw horizontal lines
+			}
+			
+			\draw[very thick] (-8.5,0) rectangle (8.5,0);
+			
+			% draw vertical lines
+			\foreach \x in {-8,...,8} {
+				\draw[black] (\x,-0.25) -- (\x,0.25); 
+				
+			}
+			\foreach \x in {-8,-6,-4,-2,0,2,4,6,8} {
+				\filldraw[fill=violet, fill opacity=0.35, draw=black] (\x-0.3,-0.3) rectangle (\x+0.3,0.3);
+			}
+			\foreach \x in {-7,-5,-3,-1,1,3,5,7} {
+				\filldraw[black] (\x,0) circle (12pt);
+			}
+		\end{scope}
+	\end{tikzpicture}
+	\caption{A one dimensional infinite Go board and a example of infinite many \textcolor{violet}{regions} by infinite many plays.}
+	\label{inf_onedim}
+\end{figure}
+Is it possibe to do many examples like this that end up with infinite many regions. The trick here and, perhaps, my salvation, its that there are infinite plays, which is, given the nature of the game, something that shouldn't happen. If we restrict ourselves into only finite many plays, then our question becomes:
+
+Given an infinite game of Go, the number of regions generated by a finite number of plays are always finite too?
+More preciselly, we want to prove that,
+$$t < \infty \Rightarrow |J(T_t)|<\infty.$$
+
+In order to do it, we need to show something about the nature of the game, we'll characterize how to split a region. For that, we need some tools first.
+
+\begin{definition}[Dense hyperplane]
+	Given a proposed hyperplane $H$, we say that $H$ is dense
+	if every stone $t\in H$ is occupied, that is,
+	$$C(t)\neq 0 \quad \forall t\in H.$$
 \end{definition}
-No tengo idea de cómo usar esto, aún.
+
+\begin{lemma}[Adjacency bound]\label{lem_2n}
+	Given a $n\leq \infty$ dimensional board of Go, with the canonical adjacency, a point $t$ in the board, has at most $2n$ adjacencies and at least $n$.
+	$$n \leq |t|\leq 2n.$$
+\end{lemma}
+\begin{proof}
+	This is left as an exercise for the reader.
+\end{proof}
+
+
+%not yet
+% \begin{definition}[Interior of a region]
+	%	Given a region $R$, its interior $R^\circ$ are the points in $R$ such that its adjacency set its in $R$, that is:
+	%	$$R^\circ = \{r \in R: K(r)\subset R \}$$
+	% \end{definition}
+
+
+
+
+
+
+%this is the proper theorem, just think in a 1 dim region on a two dim board (a line) then a single stone (0 dim) can split it (if in the interior)
+\begin{theorem}\label{lem_bigplays}
+	In an $n$-dimensional game of Go, a move that splits a
+	region $R$ of dimension $d$ must be a dense hyperplane
+	of dimension at least $d-1$.
+\end{theorem}
+This will tell \textit{how} split a region but not exactly \textit{when}. We'll get there.
+
+%we need this to proove that the number of regions are always finite. (I hope)
+
+
+
+
+
+
+\begin{theorem}[Finite regions induced by finite plays]
+	Given an infinite game of Go, the number of regions generated by a finite number of plays are always finite.
+\end{theorem}
+\begin{proof}
+	
+\end{proof}
+
+We are going to do an induction in the number of dimensions and the number of turns.
+if $t$ its for turns and $n$ its for dimensions, we'll have the following the game.
+
+for $n=1,t=1$, we have at most two regions as we describe, we can only play single stones here. Then the placed stone splits the region into two.
+\begin{figure}[H]
+	%\begin{figure}[H]
+	\centering
+	\begin{tikzpicture}[scale=0.7]
+		\node at (-11,0) {$t=0$};
+		\fill[goban] (-10,-0.5) rectangle (10,0.5);
+		\foreach \x in {0} {
+			\node at (-9, \x) {\dots};
+			\node at (9, \x) {\dots};
+		}
+		
+		\foreach \x in {0,1,...,6}{
+			\draw[black] (\x,-0.2) -- (\x,0.2); 
+			% draw horizontal lines
+		}
+		
+		\draw[very thick] (-8.5,0) rectangle (8.5,0);
+		
+		% draw vertical lines
+		\foreach \x in {-8,...,8} {
+			\draw[black] (\x,-0.25) -- (\x,0.25); 
+			
+		}
+		%		\foreach \x in {8,...,-8} {
+			%			\node at (\x,-1) {\x};
+			%		}
+		%draw a region
+		\filldraw[fill=orange, fill opacity=0.35, draw=black] (-8.65,-0.3) rectangle (8.65,0.3);
+		
+		%		\begin{scope}[yshift=-1.5cm]
+			%		\node at (-11,0) {$t=1$};
+			%			% Draw the background
+			%			\fill[goban] (-10,-0.5) rectangle (10,0.5);
+			%			\foreach \x in {0} {
+				%				\node at (-9, \x) {\dots};
+				%				\node at (9, \x) {\dots};
+				%			}
+			%			
+			%			\foreach \x in {0,1,...,6}{
+				%				\draw[black] (\x,-0.2) -- (\x,0.2); 
+				%				% draw horizontal lines
+				%			}
+			%			
+			%			\draw[very thick] (-8.5,0) rectangle (8.5,0);
+			%			
+			%			% draw vertical lines
+			%			\foreach \x in {-8,...,8} {
+				%				\draw[black] (\x,-0.25) -- (\x,0.25); 
+				%				
+				%			}
+			%			%		\foreach \x in {8,...,-8} {
+				%				%			\node at (\x,-1) {\x};
+				%				%		}
+			%			%draw a region
+			%			\filldraw[fill=violet, fill opacity=0.35, draw=black] (0.65,-0.3) rectangle (8.35,0.3);
+			%			
+			%			
+			%			%draw black stones.
+			%			\foreach \x in {0,...,-8} {
+				%				\filldraw[black] (\x,0) circle (12pt);
+				%			}
+			%		\end{scope}
+		\begin{scope}[yshift=-1.5cm]
+			\node at (-11,0) {$t=1$};
+			% Draw the background
+			\fill[goban] (-10,-0.5) rectangle (10,0.5);
+			\foreach \x in {0} {
+				\node at (-9, \x) {\dots};
+				\node at (9, \x) {\dots};
+			}
+			
+			\foreach \x in {0,1,...,6}{
+				\draw[black] (\x,-0.2) -- (\x,0.2); 
+				% draw horizontal lines
+			}
+			
+			\draw[very thick] (-8.5,0) rectangle (8.5,0);
+			
+			% draw vertical lines
+			\foreach \x in {-8,...,8} {
+				\draw[black] (\x,-0.25) -- (\x,0.25); 
+				
+			}
+			%		\foreach \x in {8,...,-8} {
+				%			\node at (\x,-1) {\x};
+				%		}
+			%draw a region
+			\filldraw[fill=violet, fill opacity=0.35, draw=black] (-8.65,-0.3) rectangle (1.35,0.3);
+			\filldraw[fill=violet, fill opacity=0.35, draw=black] (2.65,-0.3) rectangle (8.65,0.3);
+			
+			
+			%draw black stones.
+			\foreach \x in {2} {
+				\filldraw[black] (\x,0) circle (12pt);
+			}
+		\end{scope}
+	\end{tikzpicture}
+	\caption{An infinite one dimension and the first turn that shows how a region it's split.}
+	\label{inf_ind_n=1_t=1}
+\end{figure}
+
+Lets assume that for the turn $t-1$, the number of regions its finite.
+
+for the $t$ turn, the proposed play, given its legal, occupies at most every region. if $p$ its the number of regions at turn $t$, then we at most can splip every region, capture a finite number of groups (give we have play a finite number of turns). Therefore, te amount of regions stills finite.
+
+
+now lets assume that for a $n-1$ go board, the number of regions stills finite.
+
+$n=n, t=1$.
+
+Again, the board begins empty and there is exactly one region, by playing whatever hyperplane, the number of regions stills finite.
+
+Lets assume that, for $n$ dimensions and $t-1$ turns, the number of regions stills finite.
+
+For the $t$ turn, we can only play in such way we touch at most a finite number of regions, the ones on turn $t-1$. Lets suppose we can interact with every region. The result of such play will end up creating new regions, by capturing. Filling regions (assuming legality) or splitting them if we join an existent group. Finally the number of them stills finite.
+
+%this might not be usefull at all.
+%\begin{definition}[Color difference function]
+%	Given two boards $T_1$ and $T_2$ of the same Go game, the difference at a point $t=(t_1,...t_m)$ it's define as,
+%	\[ 
+%	\delta(T_1,T_2)_t=
+%	\begin{cases}
+	%		1 \quad \text{ if }C(t)_{T_1} \neq C(t)_{T_2}, \\
+	%		0 \quad else. \\
+	%	\end{cases}
+%	\]
+%\end{definition}
+%Now, let's apply this to every point.
+%\begin{definition}[Distance between Tables]
+%	Given two boards $T_1$ and $T_2$ of the same Go game, the difference between them will be:
+%	$$\sum_{t\in G} \delta(T_1,T_2)_{t}.$$
+%\end{definition}
+%
+%The method should be simple, if the distance is $0$ that mean they are exactly the same board. Now, let's say we try to compute this, we might found that for the very first millionth positions they are equal but, we have infinite of those.
+%I have no idea how to use this, yet.

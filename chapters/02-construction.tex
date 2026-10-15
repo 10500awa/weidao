@@ -93,7 +93,7 @@ We shall refer to the elements of \(E \times G\) as \textit{stones}, denoted by 
 
 \begin{definition}[Board]
 	A subset \(T \subseteq E \times G\) is said to be a \textit{board} if, given \((e,t) \in T\),
-	$$(e',t) \notin T, \quad \forall e' \neq e.$$
+	$$\forall t \in G, \exists! e \in E \text{ such that } (e, t) \in T$$
 
 \end{definition}
 
@@ -116,10 +116,12 @@ Equipped with these, the notion of a group arises naturally:
 
 
 \begin{definition}[Group of Stones]
-	Given a board $T$, two stones $i_a$ and $i_b$ belong to the same group (denoted by $i_a \equiv i_b$) if there exists a finite sequence of stones $\{i_1, i_2, \dots, i_k\}$ such that $i_1 = i_a$, $i_k = i_b$, and each stone is connected to the next ($i_m \leftrightarrow i_{m+1}$). The relation $\equiv$ is an equivalence relation.
+	Let $T_c = \{i \in T \mid \exists i' \in T \text{ such that } i \leftrightarrow i'\}$ be the set of connected stones on a board $T$. Two stones $i_a, i_b \in T_c$ belong to the same group (denoted by $i_a \equiv i_b$) if there exists a finite sequence of stones $\{i_1, i_2, \dots, i_k\}$ ($k \ge 2$) such that $i_1 = i_a$, $i_k = i_b$, and $i_m \leftrightarrow i_{m+1}$ for all $1 \le m < k$.   The relation $\equiv$ is an equivalence relation on $T_c$. Its equivalence classes $I \in T_c / {\equiv}$ (each necessarily satisfying $\vert{}I\vert{} \ge 2$) are called groups, and the remaining elements $i \in T \setminus T_c$ are called isolated stones. 
 	
-	We shall denote groups by \(I^e\), where \(e\) designates the state or color of the group; alternatively, we may write ``\textit{Let \(I\) be a group of color \(e\)},'' or simply \(I\) whenever the color is not relevant.\footnote{From \textit{ishi} (石, stone/stones). Denoted similarly to individual stones, but capitalized to signify a set thereof.}
+	
 \end{definition}
+	\textbf{Notation}. Since isolated stones and groups share the same dynamic behavior regarding adjacencies, liberties, and captures, we shall denote isolated stones (treated as singletons $\{i\}$) or groups by $I^e$, where \(e\) designates the state or color of the group; alternatively, we may write ``\textit{Let \(I\) be a group of color \(e\)},'' or simply \(I\) whenever the color is not relevant.\footnote{From \textit{ishi} (石, stone/stones). Denoted similarly to individual stones, but capitalized to signify a set thereof.}
+	
 	
 
 \begin{definition}[Adjacencies of a Group]
@@ -181,13 +183,14 @@ It will prove very useful to identify the adjacencies of a stone or group. To th
 
 Note that any adjacent stone of the same color already belongs to the group. Thus, if the group is of color $e$, the states of its adjacencies will belong, at most, to $E \setminus \{e\}$.
 
+\textbf{Abuse of Notation:} Whenever a definition or theorem applies identically to both a group $I$ and an isolated stone $i$, we shall let $I$ denote either a group or an isolated stone, unless explicitly distinguished.
+
+
 To characterize the states of these adjacencies, we will make use (and abuse) of the functions previously defined.
 
 \begin{definition}[State of the Adjacencies of a Group or Stone]\label{def_estados}
 	Given a board $T$, if $I$ is a group of color $e$. Applying the function $C$ elementwise to its adjacency set $K(I)$, we obtain the intended set, defined as:
 	$$C(K(I)) = \{C(i) \mid i \in K(I)\} \subseteq \{0, e'\}.$$
-	Analogously, for an individual stone $i = (e,t)$, we define:
-	$$C(K(i)) = \{C(i_k) \mid i_k \in K(i)\} \subseteq \{0, e'\}.$$
 	\end{definition}
 
 This definition is essential for describing much of the internal dynamics of Go. From now on, whenever we refer to groups $I$, it is to be understood that their color is distinct from $0$. Whenever we deal with $I^{0}$, we shall employ the notation $R$, unless explicitly stated otherwise.
@@ -890,7 +893,7 @@ With these functions, we can formally characterize when a move is legal.
 	\((\Leftarrow)\) Let us examine the truth table of our proposition. We denote \text{Suicide} by \(S\) and \text{Capture} by \(\text{Cap}\) for readability. We omit the cases where \textit{Superko} is violated (\(\text{SKo}=1\)) or where the intersection is occupied (\(C(i) \neq 0\)), as they are trivially false.
 	\[
 	\begin{array}{c|c|c|c|c|c}
-		\text{Libre} & \neg \text{SKo} & \neg S & \text{Cap} & \neg S \vee \text{Cap} & \text{Libre} \wedge \neg \text{SKo} \wedge (\neg S \vee \text{Cap}) \\ 
+		\text{Vacant} & \neg \text{SKo} & \neg S & \text{Cap} & \neg S \vee \text{Cap} & \text{Vacant} \wedge \neg \text{SKo} \wedge (\neg S \vee \text{Cap}) \\ 
 		\hline 
 		1 & 1 & 1 & 1 & 1 & 1 \\
 		1 & 1 & 1 & 0 & 1 & 1 \\
@@ -1241,13 +1244,13 @@ $$p(\text{no error}) = \left( 1 - \frac{1}{2^{n+m}} \right)^{2^n} \approx \left(
 Therefore, it would suffice to utilize 21-bit or even 32-bit numbers to achieve a probability of avoiding a Type 1 error of 0.9999995 or 0.9999999997, respectively. We could generate two, three, or however many verification sequences we deem necessary in order to minimize the error.
 
 To verify the \textit{Superko} rule, it suffices to perform \(S \cdot (t-1)\) operations, where \(S\) is the total number of independent hash sequences implemented. If \(H_{s}(t)\) represents the hash value at turn \(t\) for sequence \(s\), then:
-$$ \text{SuperKo at turn } t \iff H_{s}(t) \oplus H_{s}(t-k) = \vec{0}\ \ \text{y}\ \  f(t),f(t-k)\neq \varnothing.$$
+$$ \text{SuperKo at turn } t \iff H_{s}(t) \oplus H_{s}(t-k) = \vec{0}\ \ \text{and}\ \  f(t),f(t-k)\neq \varnothing.$$
 for some $k \in \{1, 2, \dots, t-1\}$ and for every sequence $s \in \{1, \dots, S\}$. We shall denote the numbers assigned to the stones by $h_s(i)$. Furthermore, to process captures, we shall make use of the XOR operator properties assumed previously. When a stone is captured, it is removed from the board. Therefore, if stone $p_{j}$ is removed, it suffices to apply the operation $H_s(t) \oplus h_s(i_{j})$ to the current state.
 
 By virtue of Properties P1 and P2, we can rearrange the hash calculation:
 \begin{align*}
 	H_s(t) \oplus h_s(i_{j}) &= \big( h_s(i_{1}) \oplus \dots \oplus h_s(i_{j}) \oplus \dots \oplus h_s(i_{m}) \big) \ \textcolor{Red}{\oplus \ h_s(i_{j})} \\
-	H_s(t) \oplus h_s(i_{j}) &= h_s(i_{1}) \oplus \dots \oplus \big( h_s(i_{j}) \ \textcolor{Red}{\oplus \ h_s(i_{j})} \big) \oplus \dots \oplus h_s(i_{m}) & \text{(P1 y P2)} \\
+	H_s(t) \oplus h_s(i_{j}) &= h_s(i_{1}) \oplus \dots \oplus \big( h_s(i_{j}) \ \textcolor{Red}{\oplus \ h_s(i_{j})} \big) \oplus \dots \oplus h_s(i_{m}) & \text{(P1 and P2)} \\
 	H_s(t) \oplus h_s(i_{j}) &= h_s(i_{1}) \oplus \dots \oplus \textcolor{Red}{\vec{0}} \oplus \dots \oplus h_s(i_{m}). & \text{(P3)}
 \end{align*}
 
@@ -1262,7 +1265,7 @@ Since the board possesses 9 intersections, we have \(|(E\setminus\{0\}) \times G
 		(1,(1,1)) & 01111111 & (1,(2,1)) & 00010110 & (1,(3,1)) & 01001101 \\
 		(1,(1,2)) & 10001101 & (1,(2,2)) & 11110001 & (1,(3,2)) & 11101111 \\
 		(1,(1,3)) & 10111110 & (1,(2,3)) & 10110001 & (1,(3,3)) & 00011110 \\
-		(2,(1,1)) & 00001110 & (2,(2,1)) & 00000010 & (2,(3,1)) & 01001101 \\
+		(2,(1,1)) & 00001110 & (2,(2,1)) & 00000010 & (2,(3,1)) & 01001110 \\
 		(2,(1,2)) & 10010011 & (2,(2,2)) & 10111010 & (2,(3,2)) & 01000111 \\
 		(2,(1,3)) & 10110111 & (2,(2,3)) & 10010001 & (2,(3,3)) & 11001100 \\
 	\end{tabular}
@@ -1372,13 +1375,11 @@ Thus, by employing additional bits and implementing multiple simultaneous sequen
 \section{The Structure of Time}
 
 We are now in a position to inject time into the structure. We define \(\mathcal{T}\) as the space of all boards,
-
-Ya estamos en condiciones de inyectar el tiempo en la estructura. Definimos a $\mathcal{T}$ como el espacio de todos los tableros,
 $$ \mathcal{T} = \{ T \subset E \times G \mid T \text{ is a board}\}.$$
 
 \subsection{The Game as a Trajectory}
 A game constitutes a sequence of moves $f:\mathbb{N} \rightarrow \mathcal{J}$, where $f(t)$ represents the action chosen by the active player at turn $t$. This function $f$ naturally induces a sequence of boards in $\mathcal{T}$, which we shall term a trajectory:
-$$\{T_0, T_1, \dots, T_{fin}\}$$
+$$\{T_0, T_1, \dots, T_{end}\}$$
 The sequence is constructed recursively by means of $\Delta$:
 
 \begin{enumerate}
@@ -1417,7 +1418,8 @@ If $f(t) = i^{*} = (e, p)$, we must validate said move. The computation of the n
 	\item \textbf{Placement:} If there exists $(e',p)\in T_{t-1}$ such that $e' \neq 0$, the move is illegal. If $e'=0$, we generate a temporary board $T'$ where intersection $p$, previously empty, acquires state $e$. We then proceed to the next step.
 	$$T' = \left(T_{t-1} \setminus \{(0, p)\}\right) \cup \{(e, p)\}.$$
 	
-	\item \textbf{Capture Detection:} Evaluating the adjacencies in $T'$, we identify the set $Cap$ by taking the union of all opposing groups that possess no liberties.$$Cap = \bigcup \{ i\in I^{e'} \subset T' \mid L(I^{e'}) = \varnothing, e' \notin \{0, e\}\}.$$If $Cap \neq \varnothing$, the move is legal and we skip to step 4; otherwise, we proceed to the next step.
+	\item \textbf{Capture Detection:} Evaluating the adjacencies in $T'$, we identify the set $Cap$ by taking the union of all opposing groups that possess no liberties.
+	$$Cap = \bigcup \{ i\in I^{e'} \subset T' \mid L(I^{e'}) = \varnothing, e' \notin \{0, e\}\}.$$If $Cap \neq \varnothing$, the move is legal and we skip to step 4; otherwise, we proceed to the next step.
 	
 	\item \textbf{Suicide Detection:} Considering $Cap = \varnothing$, we evaluate the state of the played stone $i^* = (e, p)$ in $T'$. The analysis is divided into two cases:
 	\begin{itemize}
@@ -1582,7 +1584,7 @@ We know that the set \(K(R)\) contains the stones adjacent to the region. As see
 
 \begin{definition}[Boundary of a region]
 	Let \(R\) be a region. We define the boundary\footnote{Benson call this the Neighborhood} of \(R\), denoted by \(\partial R\), as the set of all groups or stones that have a non-empty intersection with the adjacencies of the region:
-	$$\partial R = \{ I \mid I \cap K(R) \neq \varnothing \}\cup \{ i \mid i \cap K(R) \neq \varnothing \}.$$
+	$$\partial R = \{I \mid I \cap K(R) \neq \varnothing\}$$
 	\end{definition}
 It is crucial to note the difference: $\partial R$ collects the adjacent groups, whereas $K(R)$ collects the adjacent stones; Figure~\ref{fig:dif_k_partial} illustrates this distinction.
 \begin{figure}[H]
@@ -2213,7 +2215,7 @@ Let \(S\) be the set formed by all the black groups in the construction. Every i
 
 Consequently, they constitute at least two distinct vital regions for each group in \(S\). By Benson's Theorem (Bai's Theorem 1), the set \(S\) possesses unconditional life. As a result, Benson's Theorem guarantees the existence of safe groups contained within two-dimensional sub-boards, thereby contradicting Bai's Theorem 2. The construction generalizes immediately to boards of any height. If the number of layers is odd, it suffices to proceed as shown. If it is even, it is sufficient to replace the first black layer with a double layer, consisting of two consecutive layers of black stones, always spacing them with empty layers.
 
-Uunder the definitions of a vital region and unconditional life adopted by Benson and utilized by Bai, there exist safe two-dimensional groups on a three-dimensional board. This contradicts the statement of Theorem 2.
+Under the definitions of a vital region and unconditional life adopted by Benson and utilized by Bai, there exist safe two-dimensional groups on a three-dimensional board. This contradicts the statement of Theorem 2.
 
 Furthermore, if we omit the arbitrary board-size restriction imposed by Bai, the phenomenon can be illustrated in its minimal expression with the aid of the \href{https://github.com/10500awa/3dGo}{3dGo} tool.
 
