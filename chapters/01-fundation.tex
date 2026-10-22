@@ -140,7 +140,7 @@ The first reliable mention of the game dates to the 3rd century BCE, when Mèngz
 
 Engineer Hilario Fernández Long was the pioneer of Go in Argentina. After learning the fundamentals from a Japanese friend, his enthusiasm led him to teach the first courses on the discipline at the Centro Argentino de Ingenieros (Argentine Center of Engineers). Thanks to his efforts, the Asociación Argentina de Go (Argentine Go Association) was founded on September 11, 1971. Later, in 1974, Fernández Long published the \textit{Manual de Go} alongside Adalberto Moderc, which was followed in 1983 by the work \textit{Introducción al Go} \cite{Long83}.  
 
-It is imperative to highlight the figure of Fernando Aguilar \cite{Long_Hubert, Aguilar2, Aguilar1}, Fernández Long's first cousin once removed and arguably the foremost exponent of Go in Argentina. Although he took his first steps in the world of strategy games through chess, under the tutelage of his father, Pedro Antonio Aguilar, Fernando discovered Go through the print media\footnote{The original quotes are in the Spanish version on in the refered bibliography.}:
+It is imperative to highlight the figure of Fernando Aguilar \cite{Long_Hubert, Aguilar2, Aguilar1}, Fernández Long's first cousin once removed and arguably the foremost exponent of Go in Argentina. Although he took his first steps in the world of strategy games through chess, under the tutelage of his father, Pedro Antonio Aguilar, Fernando discovered Go through the print media\footnote{The original quotes are in the Spanish version or in the refered bibliography.}:
 
 \begin{quote}
 	``At home, we used to buy the newspaper \textit{La Nación}. Chess columns were published there regularly [\dots] At a certain point, articles about Go began to appear. The author was the same person who wrote the chess ones.''
@@ -1240,11 +1240,11 @@ Finally, mention must be made of the work of \textit{Jin Bai Kim}, conceived in 
 
 \subsection{Rules and formats}
 
-\begin{wrapfigure}[11]{r}{0.47\textwidth}
-	\vspace{-10pt}
+\begin{wrapfigure}[23]{r}{0.3\textwidth}
+	\vspace{-30pt}
 	%\begin{figure}[H]
 	\centering
-	\begin{tikzpicture}[scale=0.5] \tikzstyle{every node}=[font=\small]
+	\begin{tikzpicture}[scale=0.65] \tikzstyle{every node}=[font=\small]
 		% Draw the background
 		\fill[goban] (-0.5,-0.5) rectangle (6.5,6.5);
 		
@@ -1256,7 +1256,7 @@ Finally, mention must be made of the work of \textit{Jin Bai Kim}, conceived in 
 		
 		
 		
-		\begin{scope}[xshift=8cm]
+		\begin{scope}[yshift=-8cm]
 			\fill[goban] (-0.5,-0.5) rectangle (6.5,6.5);
 			
 			% Draw the grid lines
@@ -1305,10 +1305,10 @@ On their turn, a player may perform one of two actions: place a piece (termed a 
 
 Intersections on a board have associated \textit{adjacencies}. These correspond to other intersections located at a distance of one unit in either the horizontal or vertical direction. Upon placing a stone on the board, it acquires \textit{liberties}, defined as the unoccupied intersections that are \textit{adjacent} to the stone or to a \textit{group}. Two or more adjacent stones of the same color constitute a \textit{group}; groups share the \textit{liberties} of each individual stone comprising them (see Figure~\ref{fig:Fig 3}).
 
-\begin{wrapfigure}[19]{r}{0.47\textwidth}
-	%\begin{figure}[H]
+It can be observed that, on the second board, the black stone has four liberties, the white group possesses six liberties, and the black group has five. Throughout the game, a stone or group may be captured; this is accomplished by \textit{completely surrounding} it, thereby removing all the \textit{liberties} it possesses. Figure~\ref{fig:Fig 4} illustrates the capture of both a single stone and a group. When a capture occurs, the captured stones are removed from the board.
+	\begin{figure}[H]
 	\centering
-	\begin{tikzpicture}[scale=0.5] \tikzstyle{every node}=[font=\small]
+	\begin{tikzpicture}[scale=0.65] \tikzstyle{every node}=[font=\small]
 		% Draw the background
 		\fill[goban] (-0.5,-0.5) rectangle (6.5,6.5);
 		% Draw the grid lines
@@ -1378,13 +1378,13 @@ Intersections on a board have associated \textit{adjacencies}. These correspond 
 	\end{tikzpicture}
 	\caption{Capture of a white stone and a black group.}
 	\label{fig:Fig 4}
-\end{wrapfigure}It can be observed that, on the second board, the black stone has four liberties, the white group possesses six liberties, and the black group has five. Throughout the game, a stone or group may be captured; this is accomplished by \textit{completely surrounding} it, thereby removing all the \textit{liberties} it possesses. Figure~\ref{fig:Fig 4} illustrates the capture of both a single stone and a group. When a capture occurs, the captured stones are removed from the board.
+\end{figure}
 
 For a stone to be placed on the board, it must have liberties at the intersection where it is played. The \textit{suicide rule} prohibits placing stones on intersections that offer no liberties. Playing on such intersections would entail the immediate capture of the newly placed stone, tantamount to playing against oneself. Likewise, if a friendly group has only a single remaining liberty, filling that last vital space also constitutes suicide and is therefore an illegal move (see Figure~\ref{fig:suicidio}).
 
 \begin{figure}[H]
 	\centering
-	\begin{tikzpicture}[scale=0.5] \tikzstyle{every node}=[font=\small]
+	\begin{tikzpicture}[scale=0.65] \tikzstyle{every node}=[font=\small]
 		% Draw the background
 		\fill[goban] (-0.5,-0.5) rectangle (6.5,6.5);
 		
@@ -1435,7 +1435,7 @@ There is, however, an exception to this rule: playing on an intersection with no
 %\begin{wrapfigure}[11]{l}{0.5\textwidth}
 %	\begin{figure}[H]
 %			\centering
-%			\begin{tikzpicture}[scale=0.5] \tikzstyle{every node}=[font=\small]
+%			\begin{tikzpicture}[scale=0.65] \tikzstyle{every node}=[font=\small]
 %					% Draw the background
 %					\fill[goban] (-0.5,-0.5) rectangle (6.5,6.5);
 %					
@@ -1571,7 +1571,7 @@ Furthermore, as seen in the figure, if both players were allowed to play on that
 To recapture, Black must first play elsewhere on the board (a ko threat). This generates a different board configuration; if the opponent responds, Black may then play at \((4, 4)\) to recapture, as the board state will no longer be identical to the earlier one (see the final board in Figure~\ref{fig:Fig 6}).
 %		\begin{figure}[H]
 	%			\centering
-	%			\begin{tikzpicture}[scale=0.5] \tikzstyle{every node}=[font=\small]
+	%			\begin{tikzpicture}[scale=0.65] \tikzstyle{every node}=[font=\small]
 		%				% Draw the background
 		%				\fill[goban] (-0.5,-0.5) rectangle (6.5,6.5);
 		%				
@@ -1619,10 +1619,11 @@ To recapture, Black must first play elsewhere on the board (a ko threat). This g
 	%		\end{figure}
 %		\newpage
 
-\begin{wrapfigure}[11]{l}{0.3\textwidth}
+\begin{wrapfigure}[12]{l}{0.3\textwidth}
+	\vspace{-6pt}
 	%\begin{figure}[H]
 	\centering
-	\begin{tikzpicture}[scale=0.5] \tikzstyle{every node}=[font=\small]
+	\begin{tikzpicture}[scale=0.65] \tikzstyle{every node}=[font=\small]
 		% Draw the background
 		\fill[goban] (-0.5,-0.5) rectangle (6.5,6.5);
 		
@@ -1728,9 +1729,11 @@ This is the traditional placement of handicap stones (on both \(13 \times 13\) a
 The objective of Go is to secure more \textit{territory} than the opponent. On their turn, a player may choose to pass, conceding the initiative to the rival. The game ends when both players pass consecutively. At that point, a phase of mutual agreement begins, during which all ``dead'' stones (that is, those whose eventual capture cannot be prevented) are identified and removed from the board. After clearing these stones, the winner is determined by summing the secured \textit{territories} and the living stones remaining on the board at the end of the game. Figure~\ref{fig: Fig 10} illustrates a completed game. The score would be computed as follows: 11 stones for Black plus 16 intersections in Black's territory; White, for their part, has 11 stones and 11 intersections in territory. Consequently, Black scores 27 points and White 22, so Black wins by 5 points.\footnote{This method corresponds to Chinese scoring rules. There are several other counting systems, such as the Japanese or Korean rulesets.}
 
 One might oppose Black's victory, given the inherent advantage of making the first move. To offset this disparity, White is awarded a compensation for playing second, known as \textit{komi}. This value varies according to board size and the skill difference between the players; generally, 5.5 points are used on standard boards.\footnote{The exact value of \textit{komi} depends on the chosen ruleset. Furthermore, in handicap games, a minimal \textit{komi} of 0.5 points is typically applied.} Were this compensation applied to the preceding example, White would win by 0.5 points, the narrowest possible margin. The inclusion of this half-point in the \textit{komi} precludes the possibility of a draw.
-\begin{figure}[H]
+
+\begin{wrapfigure}[15]{r}{0.45\textwidth}
+	\vspace{-15pt}
 	\centering
-	\begin{tikzpicture}[scale=0.5] \tikzstyle{every node}=[font=\small]
+	\begin{tikzpicture}[scale=0.65] \tikzstyle{every node}=[font=\small]
 		% Draw the background
 		\fill[goban] (-0.5,-0.5) rectangle (6.5,6.5);
 		
@@ -1799,14 +1802,14 @@ One might oppose Black's victory, given the inherent advantage of making the fir
 	\caption{
 		Final board position of a completed game, with its intersections scored; the black stone marked with the \textcolor{Orange}{orange} dot must be removed as they are dead.}
 	\label{fig: Fig 10}
-\end{figure}
+\end{wrapfigure}
 A group possesses an \textit{eye} if it completely surrounds an empty intersection. With at least two \textit{eyes}, it achieves the state of being \textit{alive} and can never be captured. In Figure~\ref{fig:Fig 12} (left), even if White attempts to attack the black group, they can only place one stone per turn. Because occupying either space would violate the suicide rule, White would need to play into both eyes simultaneously to capture, which is impossible. Consequently, the black group is \textit{alive}.
 
 There exist, however, so-called false eyes: intersections that resemble \textit{eyes}, but where one of the surrounding groups is at risk of being reduced to a single liberty (the eye). As a result, if the opponent succeeds in capturing this vulnerable group, the structure collapses and the eye is lost (see Figure~\ref{fig:Fig 12}, right).
 %\begin{wrapfigure}[13]{r}{0.5\textwidth}
 \begin{figure}[H]
 	\centering
-	\begin{tikzpicture}[scale=0.5] \tikzstyle{every node}=[font=\small]
+	\begin{tikzpicture}[scale=0.65] \tikzstyle{every node}=[font=\small]
 		
 		\fill[goban] (-0.5,-0.5) rectangle (6.5,6.5);
 		
@@ -1863,4 +1866,4 @@ There exist, however, so-called false eyes: intersections that resemble \textit{
 	\label{fig:Fig 12}
 \end{figure}
 
-To construct Go, we require four elements: \textit{where}, \textit{who}, \textit{what}, and \textit{how}.
+To build Go, we require four elements: \textit{where}, \textit{who}, \textit{what}, and \textit{how}.

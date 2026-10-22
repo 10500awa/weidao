@@ -47,17 +47,18 @@
 
 \section{Go in two dimensions and two players.}
 
-Let us interpret the board in a convenient manner by considering solely its points of intersection. Let \(n, m \in \mathbb{N}\). We define \(N = \{1, \dots, n\}\) and \(M = \{1, \dots, m\}\). With these sets, we formalize the game space:\footnote{We use the letter \(G\) because we will adopt Japanese Go terminology for our notation whenever it does not lead to confusion. In Japanese, the board is called \textit{Goban} (碁盤).}
+Let us interpret the board in a convenient manner by considering just its points of intersection. Let \(n, m \in \mathbb{N}\). We define \(N = \{1, \dots, n\}\) and \(M = \{1, \dots, m\}\). With these sets, we formalize the game space:\footnote{We use the letter \(G\) because we will adopt Japanese Go terminology for our notation whenever it does not lead to confusion. In Japanese, the board is called \textit{Goban} (碁盤).}
 $$  G \coloneqq N \times M = \{(x,y) : x \in N,\, y \in M\}.  $$
 
 Let $t_1, t_2 \in G$ be two \textit{points}\footnote{The letter $t$ originates from the term \textit{ten} (点), meaning point in Japanese (and Chinese).}. If $t_1=(a,b)$, we say that $t_2$ is adjacent to $t_1$, denoted by $t_1 \sim t_2$, if it satisfies exactly one of the following conditions:
 $$t_2 = (a+1,b), \quad t_2 = (a,b+1), \quad t_2 = (a-1,b), \quad t_2 = (a,b-1).$$
 
-If none of these conditions hold, $t_1$ is not adjacent to $t_2$, which we denote by $t_1 \nsim t_2$. Figure~\ref{fig:Fig 13} illustrates the adjacencies of a point.
 
-\begin{figure}[H]
+
+\begin{wrapfigure}[12]{r}{0.35\textwidth}
 	\centering
-	\begin{tikzpicture}[scale=0.5] \tikzstyle{every node}=[font=\small]
+	\vspace{-14pt}
+	\begin{tikzpicture}[scale=0.65] \tikzstyle{every node}=[font=\small]
 		% Draw the background
 		\fill[goban] (-0.5,-0.5) rectangle (6.5,6.5);
 		
@@ -78,10 +79,14 @@ If none of these conditions hold, $t_1$ is not adjacent to $t_2$, which we denot
 	\end{tikzpicture}
 	\caption{Point \((5,5)\) in \textcolor{Blue}{blue}, adjacencies in \textcolor{OliveGreen}{green}.}
 	\label{fig:Fig 13}
-\end{figure}
+\end{wrapfigure}
+If none of these conditions hold, $t_1$ is not adjacent to $t_2$, which we denote by $t_1 \nsim t_2$. Figure~\ref{fig:Fig 13} illustrates the adjacencies of a point.
+Having established the \textit{where}, let us examine \textit{who} participates in it. When reviewing the rules, we observed that each point on the board can be in one of three possible states: unoccupied, occupied by a white stone, or occupied by a black stone. We define \(E\) as the set of states that a point may assume, $E=\{0,1,2\}$.
 
-Having established the \textit{where}, let us examine \textit{who} participates in it. When reviewing the rules, we observed that each point on the board can be in one of three possible states: unoccupied, occupied by a white stone, or occupied by a black stone. We define \(E\) as the set of states that a point may assume:
-$$E=\{0,1,2\}.$$
+
+
+
+
 These values represent, respectively: vacant, black, and white. With this, we can account for all possible states on the board:
 \begin{align*}
 	E \times G &= \{(e,t) : e \in E, t \in G \}.
@@ -92,7 +97,7 @@ For example, the point \((4,4) \in G\) may be found in one of three states: \((0
 We shall refer to the elements of \(E \times G\) as \textit{stones}, denoted by the letter \(i\), such that \(i=(e,t)\),\footnote{From the term \textit{ishi} (石), meaning ``stone'' in Japanese.} with \(e \in E\) and \(t \in G\). In Go, however, a single point cannot exhibit all states simultaneously; it assumes at most one.
 
 \begin{definition}[Board]
-	A subset \(T \subseteq E \times G\) is said to be a \textit{board} if, given \((e,t) \in T\),
+	A subset \(T \subseteq E \times G\) is said to be a \textit{board} if,
 	$$\forall t \in G, \exists! e \in E \text{ such that } (e, t) \in T$$
 
 \end{definition}
@@ -116,11 +121,18 @@ Equipped with these, the notion of a group arises naturally:
 
 
 \begin{definition}[Group of Stones]
-	Let $T_c = \{i \in T \mid \exists i' \in T \text{ such that } i \leftrightarrow i'\}$ be the set of connected stones on a board $T$. Two stones $i_a, i_b \in T_c$ belong to the same group (denoted by $i_a \equiv i_b$) if there exists a finite sequence of stones $\{i_1, i_2, \dots, i_k\}$ ($k \ge 2$) such that $i_1 = i_a$, $i_k = i_b$, and $i_m \leftrightarrow i_{m+1}$ for all $1 \le m < k$.   The relation $\equiv$ is an equivalence relation on $T_c$. Its equivalence classes $I \in T_c / {\equiv}$ (each necessarily satisfying $\vert{}I\vert{} \ge 2$) are called groups, and the remaining elements $i \in T \setminus T_c$ are called isolated stones. 
+	
+	Let $T_c = \{i \in T \mid \exists i' \in T \text{ such that } i \leftrightarrow i'\}$ be the set of connected stones on a board $T$. 
+	
+	Two stones $i_a, i_b \in T_c$ belong to the same group (denoted by $i_a \equiv i_b$) if there exists a finite sequence of stones $\{i_1, i_2, \dots, i_k\}$ ($k \ge 2$) such that
+	
+$$i_1 = i_a, i_k = i_b \text{\,\, and \,\,} i_m \leftrightarrow i_{m+1} \text{\, for all \,} 1 \le m < k.$$
+	
+	The relation $\equiv$ is an equivalence relation on $T_c$. Its equivalence classes $I \in T_c / {\equiv}$ (each necessarily satisfying $\vert{}I\vert{} \ge 2$) are called groups, and the remaining elements $i \in T \setminus T_c$ are called stones. 
 	
 	
 \end{definition}
-	\textbf{Notation}. Since isolated stones and groups share the same dynamic behavior regarding adjacencies, liberties, and captures, we shall denote isolated stones (treated as singletons $\{i\}$) or groups by $I^e$, where \(e\) designates the state or color of the group; alternatively, we may write ``\textit{Let \(I\) be a group of color \(e\)},'' or simply \(I\) whenever the color is not relevant.\footnote{From \textit{ishi} (石, stone/stones). Denoted similarly to individual stones, but capitalized to signify a set thereof.}
+	\textbf{Note on notation}. Since isolated stones and groups share the same dynamic behavior regarding adjacencies, liberties, and captures, we shall denote stones (treated as singletons $\{i\}$) or groups by $I^e$, where \(e\) designates the state or color of the group; alternatively, we may write ``\textit{Let \(I\) be a group of color \(e\)},'' or simply \(I\) whenever the color is not relevant.\footnote{From \textit{ishi} (石, stone/stones). Denoted similarly to individual stones, but capitalized to signify a set thereof.}
 	
 	
 
@@ -136,7 +148,8 @@ To refer to the color of a group as a whole, we define \(C(I^{e}) = e\), as ever
 \begin{wrapfigure}[13]{r}{0.35\textwidth}
 	%\begin{figure}[H]
 	\centering
-	\begin{tikzpicture}[scale=0.5] \tikzstyle{every node}=[font=\small]
+	\vspace{-12pt}
+	\begin{tikzpicture}[scale=0.7] \tikzstyle{every node}=[font=\small]
 		% Draw the background
 		\fill[goban] (-0.5,-0.5) rectangle (6.5,6.5);
 		
@@ -173,7 +186,7 @@ It will prove very useful to identify the adjacencies of a stone or group. To th
 
 \begin{definition}[Adjacency Set]
 	Given a board $T$, if \(i\) is a stone and \(I\) a group of stones of color \(e\). We define the adjacency set of the stone as the stones satisfying the definition of adjacency, namely:
-	$$K(i) = \{i_r \in T \setminus \{i\} : P(i) \sim P(i_r)\}.$$
+	$$K(i) = \{i_r \in T: P(i) \sim P(i_r)\}.$$
 	For a group $I$, we define:
 	$$K(I) = \{i \in T \setminus I : I \sim i\}.$$
 \end{definition}
@@ -192,9 +205,11 @@ To characterize the states of these adjacencies, we will make use (and abuse) of
 	\end{definition}
 
 This definition is essential for describing much of the internal dynamics of Go. From now on, whenever we refer to groups $I$, it is to be understood that their color is distinct from $0$. Whenever we deal with $I^{0}$, we shall employ the notation $R$, unless explicitly stated otherwise.
-\begin{wrapfigure}[10]{r}{0.3\textwidth}
+
+\begin{wrapfigure}[10]{r}{0.37\textwidth}
 	\centering
-	\begin{tikzpicture}[scale=0.5] \tikzstyle{every node}=[font=\small]
+	\vspace{-4pt}
+	\begin{tikzpicture}[scale=0.65] \tikzstyle{every node}=[font=\small]
 		% Draw the background
 		\fill[goban] (-0.5,-0.5) rectangle (6.5,6.5);
 		
@@ -268,13 +283,10 @@ This definition is essential for describing much of the internal dynamics of Go.
 \end{wrapfigure}\begin{definition}[Territory]
 	A region \(R\) is territory belonging to the player of color \(e\) if there exists a set \(S\) of groups of color \(e\) such that,
 	\[K(R) \subseteq \bigcup_{I\in S} I.\]
-\end{definition}
-
-That is to say, all stones adjacent to the region belong to groups of the same color. We shall denote the \textit{territories}\footnote{From the term \textit{ji} (地), meaning ``land'' in Japanese.} of each color as:
+\end{definition} That is to say, all stones adjacent to the region belong to groups of the same color. We shall denote the \textit{territories}\footnote{From the term \textit{ji} (地), meaning ``land'' in Japanese.} of each color as:
 $$J^{e} = \{R : C(K(R)) = \{e\}\}, \quad e \neq 0.$$
 Regions that do not constitute territory for either player will be denoted and defined as
 $$J^{0}\coloneqq \{R : |C(K(R))| \geq 2\}.$$
-
 Figure~\ref{fig:territorios} illustrates the different types of \textit{territories}.
 
 
@@ -310,8 +322,8 @@ Thus far, we have described the static structure of the board. To model a game, 
 $$\mathcal{J} \coloneqq \left((E \setminus \{0\}) \times G\right) \cup \{\varnothing\}.$$
 
 \subsection{Move Function}\label{criterio_jugada}
-When playing Go on our turn, we rather take a stone and place it on the board, or else we pass. We define the move function as $f: \mathbb{N} \to \mathcal{J}$. Let us examine an example.
-\begin{wrapfigure}[4]{r}{0.4\textwidth}
+When playing Go on our turn, we either take a stone and place it on the board, or else we pass. We define the move function as $f: \mathbb{N} \to \mathcal{J}$. Let us examine an example.
+\begin{wrapfigure}[4]{r}{0.3\textwidth}
 	%\begin{figure}[H]
 	\centering
 	\begin{tikzpicture}[scale=0.5] \tikzstyle{every node}=[font=\small]
@@ -362,10 +374,9 @@ When playing Go on our turn, we rather take a stone and place it on the board, o
 	f(7) &= (1,(4,5)), & f(8) &= (1,(3,4)), & f(9) &= (1,(3,5)),\\
 	f(10) &= (2,(2,1)), & f(11) &= \varnothing, & f(12) &= \varnothing.
 \end{align*}
-%\vspace{2.5cm} 
-\break
 
 \subsection{Rules of a Legal Move}
+
 \begin{wrapfigure}[12]{r}{0.5\textwidth}
 	\vspace{-15pt}
 	%\begin{figure}[H]
@@ -418,11 +429,10 @@ When playing Go on our turn, we rather take a stone and place it on the board, o
 	\caption{In \textcolor{BlueViolet}{purple}, illegal moves, as they lead to suicide.}
 	\label{sui_ej}
 \end{wrapfigure}
-The function records the moves, but not their legality. Lets analyze the rules. The \textit{suicide rule} prohibits placing a stone if doing so results in the immediate capture of one's own group (Figure~\ref{sui_ej}). There exists a single exception: a move played with no liberties is legal if it simultaneously captures a group of the opposite color (see Figure~\ref{fig: fig1.19}). Note that, due to this mechanic, when it is Black's turn, only white groups may be captured, and vice versa.\break 
-
+The function records the moves, but not their legality. Lets analyze the rules. The \textit{suicide rule} prohibits placing a stone if doing so results in the immediate capture of one's own group (Figure~\ref{sui_ej}). There exists a single exception: a move played with no liberties is legal if it simultaneously captures a group of the opposite color (see Figure~\ref{fig: fig1.19}). Note that, due to this mechanic, when it is Black's turn, only white groups may be captured, and vice versa.
 
 \begin{wrapfigure}[11]{r}{0.5\textwidth}
-	\vspace{-12pt}
+	\vspace{-15pt}
 	%\begin{figure}[H]
 	\centering
 	\begin{tikzpicture}[scale=0.5] \tikzstyle{every node}=[font=\small]
@@ -467,11 +477,10 @@ The function records the moves, but not their legality. Lets analyze the rules. 
 	\end{tikzpicture}
 	\caption{Position of a stone under apparent suicide that is legal because it captures.}
 	\label{fig: fig1.19}
-\end{wrapfigure}To evaluate a move, we first verify whether it results in a capture. If so, the move is legal. If it does not capture, we inspect its liberties: if it has none, it constitutes suicide and is therefore illegal; otherwise, it is legal. As noted in Section~\ref{primerreglako}, we must keep the \textit{ko rule} in mind. This rule forbids the immediate recapture of a single stone if doing so reverts the board state precisely to the position of the preceding turn (see Figure~\ref{regla_ko_ej}). \break
+\end{wrapfigure}To evaluate a move, we first verify whether it results in a capture. If so, the move is legal. If it does not capture, we inspect its liberties: if it has none, it constitutes suicide and is therefore illegal; otherwise, it is legal. As noted in Section~\ref{primerreglako}, we must keep the \textit{ko rule} in mind. This rule forbids the immediate recapture of a single stone if doing so reverts the board state precisely to the position of the preceding turn (see Figure~\ref{regla_ko_ej}). 
 
-\vspace{15pt}
-\begin{wrapfigure}[6]{r}{0.5\textwidth}
-	\vspace{-12pt}
+\begin{wrapfigure}[7]{r}{0.5\textwidth}
+	\vspace{-5pt}
 	%\begin{figure}[H]
 	\centering
 	\begin{tikzpicture}[scale=0.5] \tikzstyle{every node}=[font=\small]
@@ -519,7 +528,7 @@ The function records the moves, but not their legality. Lets analyze the rules. 
 	\label{regla_ko_ej}
 \end{wrapfigure}The basic \textit{ko rule} is insufficient, as cycles exist where the board position is repeated without immediately recapturing the same stone. See Figure~\ref{ciclo_ko}, in which an earlier position is reached once again via a sequence of captures that do not violate the basic \textit{ko rule}.
 
-\vfill
+\vspace{2cm}
 \begin{figure}[H]
 	\centering
 	\begin{tikzpicture}[scale=0.5] \tikzstyle{every node}=[font=\small]
@@ -654,11 +663,10 @@ The function records the moves, but not their legality. Lets analyze the rules. 
 	\caption{Board configuration featuring a three-move cycle.}
 	\label{ciclo_ko}
 \end{figure}
-\newpage
 Because repeating positions is prohibited, we require a more general rule. To illustrate an extreme case, see Figure~\ref{ciclo_inf}.\footnote{There exist examples involving far longer cycles; to explore them in greater depth, see \cite{cicloinfinito}.}
 \begin{figure}[H]
 	\centering
-	\begin{tikzpicture}[scale=0.75]
+	\begin{tikzpicture}[scale=0.9]
 		% Draw the background
 		\fill[goban] (-0.5,-0.5) rectangle (2.5,2.5);
 		% Draw the grid lines
@@ -985,7 +993,7 @@ Before proceeding, let us highlight a geometric property of vital importance for
 	For each coordinate of \(t\), there exists at least one valid direction, since if one is blocked by the edge, the opposite direction remains available. Consequently, each dimension contributes at least one adjacency. At an interior point, each coordinate contributes exactly two. Therefore, there are at least \(n\) adjacencies and at most $2n$.
 \end{proof}
 
-To simplify notation, we shall adopt the convention of denoting Go in \(n\) dimensions and with \(m\) players as \(\mathrm{Go}^n_m\). Should we wish to explicitly specify the size of each dimension, we may do so in the following manner: \(\mathrm{Go}^2_2(19,19)\) for the case of the standard board. If the number of players is omitted, it is to be understood that we are referring to a generic \(n\)-dimensional board, denoted by \(\mathrm{Go}^n\). Likewise, \(\mathrm{Go}_m\) will represent a board of arbitrary\footnote{The inifite theory of Go is yet to be develop, im reffering to numerable dimension.} dimension played by \(m\) players.
+To simplify notation, we shall adopt the convention of denoting Go in \(n\) dimensions and with \(m\) players as \(\mathrm{Go}^n_m\). Should we wish to explicitly specify the size of each dimension, we may do so in the following manner: \(\mathrm{Go}^2_2(19,19)\) for the case of the standard board. If the number of players is omitted, it is to be understood that we are referring to a generic \(n\)-dimensional board, denoted by \(\mathrm{Go}^n\). Likewise, \(\mathrm{Go}_m\) will represent a board of arbitrary\footnote{The infinite theory of Go is yet to be developed; I am referring to numerable dimension.} dimension played by \(m\) players.
 
 \subsection{Captures and Points for \texorpdfstring{\(m\)}{m} Players}\label{capturas_n_jug}
 
@@ -1003,7 +1011,7 @@ Indeed, the sum of the parts equals the total number of points:
 \[ \left(\frac{3}{9} + \frac{2}{9} + \frac{4}{9}\right) \cdot 4 = 4. \]
 \begin{figure}
 	\centering
-	\begin{tikzpicture}[scale=0.5] \tikzstyle{every node}=[font=\small]
+	\begin{tikzpicture}[scale=0.65] \tikzstyle{every node}=[font=\small]
 		% Draw the background
 		\fill[goban] (-0.5,-0.5) rectangle (6.5,6.5);
 		
@@ -1271,7 +1279,7 @@ Since the board possesses 9 intersections, we have \(|(E\setminus\{0\}) \times G
 	\label{tablahash}
 \end{table}
 
-We initialize the game hash to the null vector \(\vec{0} = 00000000\), representing the empty board. From this point onward, for every executed move, we update the state by applying the XOR operation (\(\oplus\)) between the hash of the current turn and the value of the newly placed stone (or removed stone, in the event of a capture). Let us suppose that the following sequence of moves is executed, yielding the board shown in Figure~\ref{fig:tablero_ejsko}:
+We initialize the game hash to the null vector \(\vec{0} = 00000000 \), representing the empty board. From this point onward, for every executed move, we update the state by applying the XOR operation (\(\oplus\)) between the hash of the current turn and the value of the newly placed stone (or removed stone, in the event of a capture). Let us suppose that the following sequence of moves is executed, yielding the board shown in Figure~\ref{fig:tablero_ejsko}:
  \begin{align*}
 	f(1)&=(1,(2,2)), &f(2)&=(2,(1,3)),	&f(3)&=(1,(2,3)), &f(4)&=(2,(2,1)),\\
 	f(5)&=(1,(3,1)), &f(6)&=(2,(3,2)), &f(7)&=(1,(1,2)), &f(8)&=\varnothing,\\
@@ -1280,7 +1288,7 @@ We initialize the game hash to the null vector \(\vec{0} = 00000000\), represent
 %\begin{wrapfigure}[4]{r}{0.5\textwidth}
 \begin{figure}[H]
 	\centering
-	\begin{tikzpicture}[scale=0.75]
+	\begin{tikzpicture}[scale=1]
 		% Draw the background
 		\fill[goban] (-0.5,-0.5) rectangle (2.5,2.5);
 		% Draw the grid lines
@@ -1401,7 +1409,7 @@ Under this construction, we formalize the properties of the game's flow. We shal
 	$$f(T_{end}) = f(T_{end-1}) = \dots = f(T_{end-m+1}) = \varnothing$$
 	Consequently, the state of the board freezes, resulting in:
 	$$T_{{end}} = T_{{end-1}} = \dots = T_{{end-m}}$$
-	This state \(T_{{fin}}\) constitutes the Final Board.
+	This state \(T_{{end}}\) constitutes the Final Board.
 \end{itemize}
 
 
@@ -1545,7 +1553,8 @@ If we recall the rules, towards the very end we briefly encountered the concept 
 \begin{wrapfigure}[12]{r}{0.3\textwidth}
 	%\begin{figure}[H]
 	\centering
-	\begin{tikzpicture}[scale=0.5] \tikzstyle{every node}=[font=\small]
+	\vspace{-25pt}
+	\begin{tikzpicture}[scale=0.65] \tikzstyle{every node}=[font=\small]
 		% Draw the background
 		\fill[goban] (-0.5,-0.5) rectangle (6.5,6.5);
 		
@@ -1570,7 +1579,7 @@ If we recall the rules, towards the very end we briefly encountered the concept 
 		\filldraw[black] (3,0) circle (12pt);
 		% Draw the central black dot
 	\end{tikzpicture}
-	\caption{Board with a black group possessing unconditional life.}
+	\caption{Board with a black group that has unconditional life.}
 	\label{fig:vida_incond_ejemplo}
 \end{wrapfigure}In Figure~\ref{fig:vida_incond_ejemplo}, White cannot capture because the suicide rule prohibits them from playing on Black's remaining liberties. The algorithm for determining unconditional life is straightforward: we simulate Black passing while White attempts to occupy their liberties. If White fails to capture it, the group possesses unconditional life.
 
@@ -1581,13 +1590,13 @@ To achieve this, we first need to count how many groups surround a region. Let \
 We know that the set \(K(R)\) contains the stones adjacent to the region. As seen in Part~\ref{parte1}, \(0 \notin C(K(R))\).
 
 \begin{definition}[Boundary of a region]
-	Let \(R\) be a region. We define the boundary\footnote{Benson call this the Neighborhood} of \(R\), denoted by \(\partial R\), as the set of all groups or stones that have a non-empty intersection with the adjacencies of the region:
+	Let \(R\) be a region. We define the boundary\footnote{Benson calls this the Neighborhood} of \(R\), denoted by \(\partial R\), as the set of all groups or stones that have a non-empty intersection with the adjacencies of the region:
 	$$\partial R = \{I \mid I \cap K(R) \neq \varnothing\}$$
 	\end{definition}
 It is crucial to note the difference: $\partial R$ collects the adjacent groups, whereas $K(R)$ collects the adjacent stones; Figure~\ref{fig:dif_k_partial} illustrates this distinction.
 \begin{figure}[H]
 	\centering
-	\begin{tikzpicture}[scale=0.5] \tikzstyle{every node}=[font=\small]
+	\begin{tikzpicture}[scale=0.65] \tikzstyle{every node}=[font=\small]
 		% Draw the background
 		\fill[goban] (-0.5,-0.5) rectangle (6.5,6.5);
 		
@@ -1666,7 +1675,7 @@ The cardinality of this set indicates exactly how many independent groups and st
 However, quantity alone does not suffice; we must also evaluate the quality of these regions. In Benson's terminology, they must be \textit{healthy} for the groups that contain them. 
 %	\begin{figure}[H]
 %			\centering
-%			\begin{tikzpicture}[scale=0.5] \tikzstyle{every node}=[font=\small]
+%			\begin{tikzpicture}[scale=0.65] \tikzstyle{every node}=[font=\small]
 %					% Draw the background
 %					\fill[goban] (-0.5,-0.5) rectangle (6.5,6.5);
 %					
@@ -1704,10 +1713,10 @@ However, quantity alone does not suffice; we must also evaluate the quality of t
 %			\caption{Tablero con un grupos frontera; \textcolor{Orange}{Naranja}, \textcolor{Salmon}{Salmón}; \textcolor{magenta}{Magenta}, \textcolor{Violet}{Violeta}, \textcolor{OliveGreen}{Verde}, \textcolor{RawSienna}{Marrón}. Que rodean respectivamente a una región \textcolor{Red}{Roja} y otra \textcolor{Blue}{Azul}.}
 %			\label{fig:ej_frontera}
 %		\end{figure}
-\begin{wrapfigure}[13]{r}{0.3\textwidth}
+\begin{wrapfigure}[14]{r}{0.3\textwidth}
   	\vspace{15pt}
 	\centering
-	\begin{tikzpicture}[scale=0.5] \tikzstyle{every node}=[font=\small]
+	\begin{tikzpicture}[scale=0.65] \tikzstyle{every node}=[font=\small]
 		% Draw the background
 		\fill[goban] (-0.5,-0.5) rectangle (6.5,6.5);
 		
@@ -1767,7 +1776,7 @@ When the region is surrounded by multiple distinct groups of the same color, it 
 
 \begin{figure}[H]
 	\centering
-	\begin{tikzpicture}[scale=0.5] \tikzstyle{every node}=[font=\small]
+	\begin{tikzpicture}[scale=0.65] \tikzstyle{every node}=[font=\small]
 		% --------------------------------------------------------
 		% TABLERO 1: Saludable vs No Saludable
 		% --------------------------------------------------------
@@ -1890,7 +1899,7 @@ Let us apply the theory and examine Benson's Theorem. Before proceeding to the m
 \end{proof}
 %	\begin{figure}[H]
 	%		\centering
-	%		\begin{tikzpicture}[scale=0.5] \tikzstyle{every node}=[font=\small]
+	%		\begin{tikzpicture}[scale=0.65] \tikzstyle{every node}=[font=\small]
 		%			% Draw the background
 		%			\fill[goban] (-0.5,-0.5) rectangle (6.5,6.5);
 		%			
@@ -1948,7 +1957,7 @@ In summary, to capture a group that possesses an eye and is connected to a union
 \end{proof}
 \begin{figure}[H]
 	\centering
-	\begin{tikzpicture}[scale=0.5] \tikzstyle{every node}=[font=\small]
+	\begin{tikzpicture}[scale=0.65] \tikzstyle{every node}=[font=\small]
 		% Draw the background
 		\fill[goban] (-0.5,-0.5) rectangle (6.5,6.5);
 		
@@ -2051,10 +2060,10 @@ We shall begin by proving the backward implication. Then, via the contrapositive
 	In both cases, there exists a valid sequence to reduce the liberties of \(I\) and capture it. Therefore, \(S\) does not possess unconditional life, concluding the proof.
 \end{proof}
 
-\begin{wrapfigure}[8]{r}{0.3\textwidth}
+\begin{wrapfigure}[9]{r}{0.3\textwidth}
 	\vspace{-10pt}
 	\centering
-	\begin{tikzpicture}[scale=0.5] \tikzstyle{every node}=[font=\small]
+	\begin{tikzpicture}[scale=0.65] \tikzstyle{every node}=[font=\small]
 		% Draw the background
 		\fill[goban] (-0.5,-0.5) rectangle (6.5,6.5);
 		
@@ -2090,10 +2099,10 @@ We shall begin by proving the backward implication. Then, via the contrapositive
 It is crucial to distinguish between being Alive and being Unconditionally Alive. In Figure~\ref{fig:ej_vidas}, if Black were to play at the \textcolor{OliveGreen}{green intersection}, they would achieve unconditional life; in its current state, the group lacks it. In a game, a group lacking unconditional life may be practically alive, requiring merely one or two moves to secure it. The distinction lies precisely therein: unconditional life implies that, statically, a group cannot die; life in Go, however, is a question of how quickly one can achieve it and whether the other players can prevent it.
 \subsection{Seki}
 
-\begin{wrapfigure}[10]{r}{0.3\textwidth}
+\begin{wrapfigure}[11]{r}{0.3\textwidth}
 	\vspace{-10pt}
 	\centering
-	\begin{tikzpicture}[scale=0.5] \tikzstyle{every node}=[font=\small]
+	\begin{tikzpicture}[scale=0.65] \tikzstyle{every node}=[font=\small]
 		% Draw the background
 		\fill[goban] (-0.5,-0.5) rectangle (6.5,6.5);
 		
@@ -2137,7 +2146,7 @@ This definition perfectly encapsulates \textit{seki} without eyes, for if any pl
 \begin{wrapfigure}[10]{r}{0.3\textwidth}
 	\vspace{-5pt}
 	\centering
-	\begin{tikzpicture}[scale=0.5] \tikzstyle{every node}=[font=\small]
+	\begin{tikzpicture}[scale=0.65] \tikzstyle{every node}=[font=\small]
 		% Draw the background
 		\fill[goban] (-0.5,-0.5) rectangle (6.5,6.5);
 		
