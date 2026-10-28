@@ -1,3 +1,7 @@
+## Disclaimer
+
+I've realized there are many more papers that I didn't knew, I'm going to read them and make this project a Compendium of them all, the Book of the Game of Go (hopefully), that's my spirit. It will take me some time, but I'll get there.
+
 # 圍道 — Wéi Dào: The Art of Surrounding
 
 [![License: CC BY-NC-SA 4.0](https://img.shields.io/badge/License-CC%20BY--NC--SA%204.0-lightgrey.svg)](https://creativecommons.org/licenses/by-nc-sa/4.0/)
@@ -11,6 +15,9 @@ This repository contains the complete LaTeX source code for **圍道 — Wéi D�
 - **Part I: Foundations** — Historical background spanning from ancient China to its evolution in Argentina, alongside the rules of the game.
 - **Part II: Construction** — Formal two-dimensional, two-player mathematical model. Precise formulations of legal moves, captures, Superko resolution (via Zobrist hashing), $n$-dimensional generalization ($m$ players), and group life theory (revisiting David Benson's work).
 - **Part III: Abstractions** — Geometric and graph-theoretic behavior of adjacencies in higher dimensions, an analysis of three-dimensional Go, one-dimensional variants, and common underlying structures across abstract board games.
+
+
+
 
 ## Prerequisites & LaTeX Dependencies
 
