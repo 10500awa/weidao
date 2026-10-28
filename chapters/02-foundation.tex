@@ -2196,18 +2196,18 @@ By Lemma~\ref{lem_1_benson}, every eye can be reduced to a single liberty. Conse
 \textbf{This section will be continued some time in the future.}
 
 \vspace{1cm}
-\subsection{Remark on Bai's Theorem 2}
-We shall present a counterexample to Bai's Theorem 2 \cite{KJB1, KJB2}. It is worth noting that Bai first raises the question of embedding an unconditionally alive group from a two-dimensional board into a three-dimensional board. However, Theorem 2 asserts a stronger result,
+\subsection{Remark on Kim's Theorem 2}
+We shall present a counterexample to Kim's Theorem 2 \cite{KJB1, KJB2}. It is worth noting that Kim first raises the question of embedding an unconditionally alive group from a two-dimensional board into a three-dimensional board. However, Theorem 2 asserts a stronger result,
 
 \begin{quote}
 	``In a 2-person go-game on a 3-dimensional board, every two dimensional x-graph is not safe.''
 \end{quote}
 
-Given that Bai grounds his analysis in Benson's work, within our theoretical framework, this result translates as follows:
+Given that Kim grounds his analysis in Benson's work, within our theoretical framework, this result translates as follows:
 
 ``In a \(Go_{2}^{3}\) game, no two-dimensional group of color \(x\) possesses unconditional life.''
 
-For Bai, a ``two dimensional x-graph'' is a group of color \(x\) that holds one of the spatial dimensions fixed at a constant value. It is worth noting that, in his formulation, he imposes a minimum board size of \(9 \times 9 \times 9\). We shall exhibit a configuration that contradicts the statement of Bai's Theorem 2.
+For Kim, a ``two dimensional x-graph'' is a group of color \(x\) that holds one of the spatial dimensions fixed at a constant value. It is worth noting that, in his formulation, he imposes a minimum board size of \(9 \times 9 \times 9\). We shall exhibit a configuration that contradicts the statement of Kim's Theorem 2.
 
 \begin{wrapfigure}[7]{r}{0.25\textwidth}
 	\vspace{-15pt}
@@ -2215,22 +2215,22 @@ For Bai, a ``two dimensional x-graph'' is a group of color \(x\) that holds one 
 		V,N,V,N,V,N,V,N,V
 	\end{align*}
 	\caption{Layers of the counterexample.}
-	\label{contraej_bai}
-\end{wrapfigure}Due to the three-dimensional nature of the board, we can partition it along its third coordinate into distinct ``floors,'' treating them as \(9\times 9 \times 1\) boards. Let us consider a layer entirely occupied by a black group, which we shall call \(N\), and an entirely empty layer, which we shall call \(V\). Constructing the board from bottom to top along the third coordinate, we can alternate these layers in the following manner, as depicted in Figure~\ref{contraej_bai}. 
+	\label{contraej_Kim}
+\end{wrapfigure}Due to the three-dimensional nature of the board, we can partition it along its third coordinate into distinct ``floors,'' treating them as \(9\times 9 \times 1\) boards. Let us consider a layer entirely occupied by a black group, which we shall call \(N\), and an entirely empty layer, which we shall call \(V\). Constructing the board from bottom to top along the third coordinate, we can alternate these layers in the following manner, as depicted in Figure~\ref{contraej_Kim}. 
 
 Let \(S\) be the set formed by all the black groups in the construction. Every intersection of an empty layer is adjacent to a stone from one of the neighboring black layers; therefore, the region is healthy. Furthermore, every boundary of an empty layer is comprised exclusively of stones belonging to \(S\).
 
-Consequently, they constitute at least two distinct vital regions for each group in \(S\). By Benson's Theorem (Bai's Theorem 1), the set \(S\) possesses unconditional life. As a result, Benson's Theorem guarantees the existence of safe groups contained within two-dimensional sub-boards, thereby contradicting Bai's Theorem 2. The construction generalizes immediately to boards of any height. If the number of layers is odd, it suffices to proceed as shown. If it is even, it is sufficient to replace the first black layer with a double layer, consisting of two consecutive layers of black stones, always spacing them with empty layers.
+Consequently, they constitute at least two distinct vital regions for each group in \(S\). By Benson's Theorem (Kim's Theorem 1), the set \(S\) possesses unconditional life. As a result, Benson's Theorem guarantees the existence of safe groups contained within two-dimensional sub-boards, thereby contradicting Kim's Theorem 2. The construction generalizes immediately to boards of any height. If the number of layers is odd, it suffices to proceed as shown. If it is even, it is sufficient to replace the first black layer with a double layer, consisting of two consecutive layers of black stones, always spacing them with empty layers.
 
-Under the definitions of a vital region and unconditional life adopted by Benson and utilized by Bai, there exist safe two-dimensional groups on a three-dimensional board. This contradicts the statement of Theorem 2.
+Under the definitions of a vital region and unconditional life adopted by Benson and utilized by Kim, there exist safe two-dimensional groups on a three-dimensional board. This contradicts the statement of Theorem 2.
 
-Furthermore, if we omit the arbitrary board-size restriction imposed by Bai, the phenomenon can be illustrated in its minimal expression with the aid of the \href{https://github.com/10500awa/3dGo}{3dGo} tool.
+Furthermore, if we omit the arbitrary board-size restriction imposed by Kim, the phenomenon can be illustrated in its minimal expression with the aid of the \href{https://github.com/10500awa/3dGo}{3dGo} tool.
 
 \begin{figure}[H]
 	\centering
-	\includegraphics[width=\linewidth]{figures/baicontraej}
-	\caption{Minimal counterexample to Bai's result. A two-dimensional black group possessing unconditional life on a \(2 \times 2 \times 3\) board.}
-	\label{fig:baicontraejemplo}
+	\includegraphics[width=\linewidth]{figures/Kimcontraej}
+	\caption{Minimal counterexample to Kim's result. A two-dimensional black group possessing unconditional life on a \(2 \times 2 \times 3\) board.}
+	\label{fig:Kimcontraejemplo}
 \end{figure}	
 	
 

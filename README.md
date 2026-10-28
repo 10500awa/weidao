@@ -10,11 +10,13 @@ I've realized there are many more papers that I didn't knew, I'm going to read t
 
 ## Overview
 
-This repository contains the complete LaTeX source code for **圍道 — Wéi Dào: The Art of Surrounding**. The work is structured into three main parts:
+This repository contains the complete LaTeX source code for **圍道 — Wéi Dào: The Art of Surrounding**. The work is structured into three main parts and one draft:
 
 - **Part I: Foundations** — Historical background spanning from ancient China to its evolution in Argentina, alongside the rules of the game.
 - **Part II: Construction** — Formal two-dimensional, two-player mathematical model. Precise formulations of legal moves, captures, Superko resolution (via Zobrist hashing), $n$-dimensional generalization ($m$ players), and group life theory (revisiting David Benson's work).
 - **Part III: Abstractions** — Geometric and graph-theoretic behavior of adjacencies in higher dimensions, an analysis of three-dimensional Go, one-dimensional variants, and common underlying structures across abstract board games.
+
+- **Part IV: Abstractions** - WIP, infinite Go discussion.
 
 
 
