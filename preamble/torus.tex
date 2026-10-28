@@ -1,0 +1,100 @@
+%	\begin{tikzpicture}[scale=3]
+	%		\pgfplotsset{
+		%			colormap={teak}{
+			%				rgb=(0.5,0.3,0.15)
+			%				rgb=(0.6,0.35,0.18)
+			%				rgb=(0.7,0.45,0.2)
+			%				rgb=(0.8,0.55,0.25)
+			%			},
+		%			% New colormap specifically for the shadow
+		%			colormap={shadow}{
+			%				gray=(0.1)
+			%				gray=(0.1)
+			%			}
+		%		}
+	%		\begin{axis}[
+		%			hide axis,
+		%			view={4}{45},
+		%			axis equal image,
+		%			samples=20,
+		%			domain=0:360,
+		%			y domain=0:360,
+		%			z buffer=sort,
+		%			]
+		%			
+		%			% 1. Sombra
+		%			\addplot3[
+		%			surf,
+		%			shader=interp,
+		%			draw=none,     
+		%			colormap name=shadow,
+		%			opacity=0.1
+		%			]
+		%			(
+		%			{(2 + cos(y)) * cos(x)},
+		%			{(2 + cos(y)) * sin(x)},
+		%			{-1} 
+		%			);
+		%			
+		%			% 2. toro
+		%			\addplot3[
+		%			surf,
+		%			shader=flat,
+		%			draw=black,
+		%			colormap name=teak,
+		%			line width=0.2pt,
+		%			opacity=1
+		%			]
+		%			(
+		%			{(2 + cos(y)) * cos(x)},
+		%			{(2 + cos(y)) * sin(x)},
+		%			{sin(y)}
+		%			);
+		%			
+		%			%%%%%%%%%%%%%%%%%%%%  puntos negros
+		%			\addplot3[
+		%			only marks,
+		%			xslant=-0.15,
+		%			yslant=-0.5,
+		%			mark options={shading=ball, ball color=white},
+		%			mark size=0.25pt,
+		%			shading=ball,
+		%			color=black
+		%			] coordinates {(1.190, 3.94, 0)};
+		%			
+		%			\addplot3[
+		%			only marks,
+		%			mark options={shading=ball, ball color=white},
+		%			mark size=0.5pt,
+		%			shading=ball,
+		%			color=black
+		%			] coordinates {(-1.96, 0.675, 0)};
+		%			
+		%			\addplot3[ %centro
+		%			only marks,
+		%			mark options={shading=ball, ball color=white},
+		%			mark size=0.5pt,
+		%			shading=ball,
+		%			color=black
+		%			] coordinates {(0.975, -0.61, 0)};
+		%			
+		%			\addplot3[ %arriba derecha
+		%			only marks,
+		%			yslant=0.25,
+		%			mark options={shading=ball, ball color=white},
+		%			mark size=0.5pt,
+		%			shading=ball,
+		%			color=black
+		%			] coordinates {(1.09, 1, 0)};
+		%			
+		%			\addplot3[ %abajo derecha
+		%			only marks,
+		%			yslant=0.5,
+		%			mark options={shading=ball, ball color=black},
+		%			mark size=0.5pt,
+		%			shading=ball,
+		%			color=black
+		%			] coordinates {(1.870,-6.179, 0)};
+		%		\end{axis}
+	%	\end{tikzpicture}
+%	\vspace{1cm}
