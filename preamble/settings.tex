@@ -1,32 +1,91 @@
-\renewcommand*{\bibfont}{\small}
-% Definición del encabezado personalizado con la línea
+% --- 1. GEOMETRÍA E IDIOMA ---
+\usepackage[a4paper,left=2.75cm,right=2.6cm,top=2.5cm,bottom=2.5cm,heightrounded]{geometry}
+\usepackage{emptypage}
+\usepackage[english]{babel}
+\usepackage{csquotes}
+\usepackage{xspace}
 
-\addbibresource{bibliography/biblio.bib}
-\defbibheading{lineabib}[\bibname]{%
-	\chapter*{#1}%
-	\markboth{#1}{#1}% Mantiene el texto en los encabezados de página
-	\nopagebreak\vspace{-4ex}\noindent\rule{\linewidth}{1.2pt}\par% Tu línea
-}
-%%%%%%%%%%% BBILATEX
+% --- 2. COLORES Y GRÁFICOS (Antes de TikZ para evitar Option Clash) ---
+\PassOptionsToPackage{dvipsnames}{xcolor}
+\usepackage[dvipsnames]{xcolor}
+\definecolor{goban}{HTML}{efce8f}
+\definecolor{othello}{HTML}{485d3f}
+\definecolor{linkdark}{HTML}{000055}
 
-\usepackage{xurl}
-% --- 7. DISEÑO EDITORIAL (Títulos, Índices, Fancyhdr) ---
+\usepackage{graphicx}
+\usepackage{wrapfig}
+\usepackage{float}
+\usepackage{pdfpages}
+
+% --- 3. MATEMÁTICAS Y TIPOGRAFÍA ---
+\usepackage{mathtools}
+\usepackage{amsmath,amsthm,amsfonts}
+\usepackage{newpxtext,newpxmath}
+\usepackage[no-math]{fontspec}
+\usepackage{xeCJK}
+\usepackage{microtype}
+
+\linespread{1.03}
+\setlength{\parskip}{0.5ex plus 0.2ex minus 0.2ex}
+\setlength{\parindent}{1.2em}
+
+\setCJKmainfont{Noto Serif CJK SC}
+\setCJKmonofont{Noto Sans CJK SC}
+\newfontfamily\cjkfont{Noto Serif CJK TC}[UprightFont=* Light, BoldFont=* Bold]
+
+% --- 4. TIKZ Y PGFPLOTS ---
+\usepackage{tikz}
+\usepackage{tikz-cd}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.18}
+\usetikzlibrary{babel, arrows.meta, bending, positioning, shadows, calc, shapes.geometric, decorations.text}
+
+% --- 5. TABLAS Y DISEÑO EDITORIAL ---
+\usepackage{booktabs}
+\usepackage{multicol}
+\usepackage{multirow}
 \usepackage{epigraph}
 \usepackage[margin=1cm, font=small, labelfont=bf, labelsep=endash]{caption}
-\usepackage{booktabs}
-% Configuración del Índice General (ToC)
+
+% --- 6. BIBLIOGRAFÍA (BibLaTeX + Biber) ---
+\usepackage[
+backend=biber,
+style=numeric-comp,
+natbib=true,
+url=false,
+doi=true,
+eprint=true,
+isbn=false,
+maxcitenames=2,
+maxbibnames=99,
+giveninits=true,
+sorting=nty
+]{biblatex}
+\usepackage{xurl}
+
+\renewcommand*{\bibfont}{\small}
+\addbibresource{bibliography/biblio.bib}
+
+\defbibheading{lineabib}[\bibname]{%
+	\chapter*{#1}%
+	\markboth{#1}{#1}%
+	\nopagebreak\vspace{-4ex}\noindent\rule{\linewidth}{1.2pt}\par
+}
+
+% --- 7. ÍNDICE GENERAL (ToC) ---
 \usepackage{tocloft}
-\setcounter{tocdepth}{3} 
+\setcounter{tocdepth}{3}
 \renewcommand{\cftchapfont}{\Large\bfseries}
 \renewcommand{\cftaftertoctitle}{\par\noindent\rule{\linewidth}{1.2pt}}
 \renewcommand{\cftchappagefont}{\Large\bfseries}
-\renewcommand{\cftchapleader}{\hfill} 
+\renewcommand{\cftchapleader}{\hfill}
 \renewcommand{\cftchappresnum}{Part }
 \setlength{\cftchapnumwidth}{6.25em}
 \setlength{\cftsecnumwidth}{2.3em}
 \setlength{\cftsubsecnumwidth}{3.5em}
 \setlength{\cftbeforetoctitleskip}{-0.5cm}
-% Formato de Capítulos
+
+% --- 8. FORMATO DE CAPÍTULOS ---
 \renewcommand{\thechapter}{\Roman{chapter}}
 \renewcommand{\thesection}{\arabic{chapter}.\arabic{section}}
 \renewcommand{\thefigure}{\arabic{chapter}.\arabic{figure}}
@@ -34,61 +93,49 @@
 
 \makeatletter
 \renewcommand{\@makechapterhead}[1]{%
-	{\parindent \z@ 
+	{\parindent \z@
 		\normalfont
-		\Huge\bfseries  \Roman{chapter}: \nobreak
+		\Huge\bfseries \Roman{chapter}: \nobreak
 		\Huge #1\par\nobreak
 		\vskip 20pt
-}}
+	}%
+}
 \makeatother
-% Encabezados y Pies de página (Configurado para libro twoside)
+
+% --- 9. ENCABEZADOS Y PIES DE PÁGINA ---
 \usepackage{fancyhdr}
 \setlength{\headheight}{25pt}
 \pagestyle{fancy}
 \fancyhf{}
-\fancyhead[R]{\bfseries\thepage} % Número siempre a la derecha
-\fancyhead[L]{\small\scshape\nouppercase{\leftmark}} % Título siempre a la izquierda
+\fancyhead[R]{\bfseries\thepage}
+\fancyhead[L]{\small\scshape\nouppercase{\leftmark}}
 \renewcommand{\headrulewidth}{0.5pt}
 \renewcommand{\footrulewidth}{0pt}
 \renewcommand{\chaptermark}[1]{%
-	\markboth{Part \thechapter: #1}{}
+	\markboth{Part \thechapter: #1}{}%
 }
-% --- 8. ENTORNOS PERSONALIZADOS ---
+
+% --- 10. ENTORNOS MATEMÁTICOS ---
 \newtheorem{theorem}{Theorem}[section]
 \newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+
 \theoremstyle{definition}
 \newtheorem{definition}{Definition}[section]
-% El nuevo Q.E.D. (Una piedra de Go redonda)
-\renewcommand{\qedsymbol}{\raisebox{-1.8pt}{\huge\(\bullet\)}}
-\newtheorem{corollary}{Corollary}[theorem]
-% --- 9. HIPERVÍNCULOS (Siempre al final) ---
-\definecolor{linkdark}{HTML}{000055}
-\usepackage{hyperref}
-\usepackage{fontspec}
 
-\setCJKmonofont{Noto Sans CJK SC}
-\setCJKmainfont{Noto Serif CJK SC}
+% Símbolo Q.E.D. 
+\renewcommand{\qedsymbol}{\raisebox{-1.8pt}{\huge\(\bullet\)}}
+
+% --- 11. HIPERVÍNCULOS Y METADATOS (Siempre al final) ---
+\usepackage{hyperref}
 \hypersetup{
 	colorlinks=true,
-	linkcolor=linkdark,  
-	citecolor=linkdark,  
-	urlcolor=linkdark,   
-	bookmarksnumbered=true,  
-	pdfpagemode=UseOutlines, 
-	pdfstartview=FitH, 
+	linkcolor=linkdark,
+	citecolor=linkdark,
+	urlcolor=linkdark,
+	bookmarksnumbered=true,
+	pdfpagemode=UseOutlines,
+	pdfstartview=FitH,
 	pdftitle={Wéi Dào - The Art of Surrounding},
 	pdfauthor={W. Adrián Arias}
-}
-\setlength{\parskip}{0.5ex plus 0.2ex minus 0.2ex}  % Espacio entre párrafos
-\setlength{\parindent}{1.2em}                       % Sangría estándar
-\title{
-	\centering 
-	\vspace{30pt}
-	{\fontsize{100}{40}圍道}\\
-	\vspace{12pt}
-	\Large{\textsc{The art of surrounding}}\\
-	\vspace{150pt}
-	\author{Arias, W. Adrián \\ \texttt{10500awa@gmail.com} \\ \href{https://github.com/10500awa/EADR}{https://github.com/10500awa/weidao}}
-	\date{2026}
-	
 }

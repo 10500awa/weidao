@@ -1,150 +1,17 @@
-	\pagecolor{goban}
-\thispagestyle{empty}
-
-
-%%%PORTADA
-\begin{tikzpicture}[remember picture, overlay, >=stealth]
-	
-	% =========================================================
-	% PALETTE (Light Technical Vellum)
-	% =========================================================
-	\definecolor{bpbg}{HTML}{F4F6F8}
-	\definecolor{bpgrid}{HTML}{D8E2DC}
-	\definecolor{bpline}{HTML}{457B9D}
-	\definecolor{bpdim}{HTML}{1D3557}
-	\definecolor{bpink}{HTML}{0B132B}
-	\definecolor{bpseal}{HTML}{B8332A} % Subtle vermilion accent
-	
-	% Center anchor shifted slightly up to leave room for the minimalist title below
-	\coordinate (C) at ([yshift=1.25cm]current page.center);
-	
-	% =========================================================
-	% 1. GRID
-	% =========================================================
-	\fill[bpbg] (current page.south west) rectangle (current page.north east);
-	
-	% Shifted to (C) so the 1cm & 0.25cm grid lines align symmetrically with the boxes
-	\begin{scope}[shift={(C)}]
-		\draw[bpgrid!55!bpbg, line width=0.15pt, step=0.25cm] (-12,-16) grid (12,16);
-		\draw[bpgrid, line width=0.35pt, step=1.0cm] (-12,-16) grid (12,16);
-	\end{scope}
-	
-	% =========================================================
-	% 2. BOXES (MIZIGE) & CONSTRUCTION GEOMETRY
-	% =========================================================
-	\coordinate (CharTop) at ([yshift=3.75cm]C);
-	\coordinate (CharBot) at ([yshift=-3.75cm]C);
-	
-	% Shared construction lines spanning both characters
-	\draw[bpline!70, densely dashed, line width=0.4pt] 
-	([yshift=4.5cm]CharTop) -- ([yshift=-4.5cm]CharBot);
-	\draw[bpline!50, dotted, line width=0.4pt] 
-	([xshift=-3.25cm, yshift=4.0cm]CharTop) -- ([xshift=-3.25cm, yshift=-4.0cm]CharBot)
-	([xshift=3.25cm, yshift=4.0cm]CharTop)  -- ([xshift=3.25cm, yshift=-4.0cm]CharBot);
-	
-	\foreach \pos/\labelid/\chardesc in {CharTop/FIG. 01/ENCLOSURE, CharBot/FIG. 02/THE WAY} {
-		\begin{scope}[shift={(\pos)}]
-			% Main 6.5 x 6.5 cm bounding box (snaps exactly to 0.25cm grid)
-			\draw[bpline, line width=0.6pt] (-3.25,-3.25) rectangle (3.25,3.25);
-			% Outer tolerance frame (snaps to 3.50cm grid line)
-			\draw[bpline!60, line width=0.25pt] (-3.50,-3.50) rectangle (3.50,3.50);
-			% Diagonals and horizontal axis
-			\draw[bpline!60, densely dashed, line width=0.35pt] 
-			(-3.25,-3.25) -- (3.25,3.25)
-			(-3.25,3.25)  -- (3.25,-3.25)
-			(-3.75,0)     -- (3.75,0);
-			% Inscribed construction circles
-			\draw[bpline!75, line width=0.35pt] (0,0) circle (3.25cm);
-			\draw[bpline!40, densely dashed, line width=0.3pt] (0,0) circle (2.30cm);
-			% Corner tick marks
-			\foreach \sx in {-1,1} {
-				\foreach \sy in {-1,1} {
-					\draw[bpdim, line width=0.6pt] 
-					(\sx*3.25, \sy*2.85) -- (\sx*3.25, \sy*3.25) -- (\sx*2.85, \sy*3.25);
-				}
-			}
-			
-		\end{scope}
+\begin{titlepage}
+	\centering
+	\vspace*{30pt}
+	{\fontsize{100}{110}\selectfont 圍道}\par
+	\vspace{12pt}
+	{\Large\textsc{The art of surrounding}}\par
+	\vspace{60pt}
+	{\large
+		Arias, W. Adrián \\[6pt]
+		\texttt{10500awa@gmail.com} \\[6pt]
+		\href{https://github.com/10500awa/EADR}{https://github.com/10500awa/weidao}\par
 	}
-	
-	% =========================================================
-	% 3. TECHNICAL CALLOUTS & CHARACTERS
-	% =========================================================
-
-	
-	% Offset cyan echo for blueprint stencil depth
-	\node[font=\fontsize{180}{156}\bfseries\selectfont, text=bpline, opacity=0.30] 
-	at ([shift={(0.08cm,-0.08cm)}]CharTop) {圍};
-	\node[font=\fontsize{180}{156}\bfseries\selectfont, text=bpline, opacity=0.30] 
-	at ([shift={(0.08cm,-0.08cm)}]CharBot) {道};
-	
-	% Primary characters
-	\node[font=\fontsize{180}{156}\bfseries\selectfont, text=bpink] at (CharTop) {圍};
-	\node[font=\fontsize{180}{156}\bfseries\selectfont, text=bpink] at (CharBot) {道};
-	
-	% =========================================================
-	% 4. MINIMALIST SUBTITLE & AUTHOR FOOTER
-	% =========================================================
-	\coordinate (Footer) at ([yshift=-9.0cm]C);
-	
-	% horizontal rule
-	\draw[bpline, line width=0.5pt] ([xshift=-3.25cm, yshift=0.65cm]Footer) -- ([xshift=3.25cm, yshift=0.65cm]Footer);
-	
-	% English Subtitle
-	\node[
-	font=\fontspec{EBGaramond-Bold.ttf}\fontsize{22}{26}\bfseries\selectfont, 
-	text=bpink
-	] at (Footer) {The art of surrounding};
-	
-\end{tikzpicture}%
-\null\vfill\newpage
-%%%%%%%%% PORTADA
-
-\pagecolor{white}
-\thispagestyle{empty}
-\clearpage
-
-\thispagestyle{empty}
-\maketitle
-% --- FORZAR ESTILO EN PÁGINAS DE CAPÍTULO ---
-% Redefinimos el estilo 'plain' que LaTeX usa automáticamente al iniciar capítulos
-\clearpage
-%\thispagestyle{empty}
-%
-%\vspace*{0.2925\textheight} % Ajuste para el »Centro Óptico» (más arriba que el centro)
-
-%\begin{center}
-%	% Usamos un ancho similar al del bloque del poema (ej. 7.5cm o 8cm)
-%	% para que el »peso» visual del cuadrado de la foto sea igual al del texto.
-%	%		\includegraphics[width=7.5cm]{ipe_mitad.jpg}
-%	\includegraphics[width=7.5cm]{figures/ipe_cuarto.jpg}
-%\end{center}
-%
-%\vspace*{\fill} % Empuja desde abajo
-%\clearpage
-%\thispagestyle{empty} % Esto quita encabezados, pies y números de esta página
-%\vspace*{0.3\textheight} % Ajuste para el »Centro Óptico» (más arriba que el centro)
-%
-%\begin{center}
-%	\begin{minipage}{7.05cm}
-%		\linespread{1.3}\selectfont
-%		\itshape
-%		Contemplo o rio que corre parado \\
-%		E a dançarina de pedra que evolui \\
-%		Completamente, sem metas, sentado \\
-%		Não tenho sido, não sou, não serei, nem fui \\
-%		A mente quer ser, mas querendo erra \\
-%		Pois só sem desejos é que se vive o agora\\
-%		Vêde o pé do ypê, apenasmente flora\\
-%		Revolucionariamente\\
-%		Apenso ao pé da serra
-%		
-%		\vspace{1.5em}
-%		\hfill \upshape  --- \textbf{Belchior} «Ypê»
-%	\end{minipage}
-%\end{center}
-%\vfill % Empuja todo hacia arriba
-
+	{\large 2026\par}
+\end{titlepage}
 \section*{Preface}
 \thispagestyle{empty}
 What's Go? A game, of course. But one might ask: How is it done precisely? What can be done and what not? Is it possible to extend its concepts to other games?

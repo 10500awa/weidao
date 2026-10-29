@@ -1,0 +1,99 @@
+\thispagestyle{empty}
+\begin{tikzpicture}[remember picture, overlay, >=stealth]
+	
+	% 
+	% PALETTE 
+	% 
+	\definecolor{bpbg}{HTML}{F4F6F8}
+	\definecolor{bpgrid}{HTML}{D8E2DC}
+	\definecolor{bpline}{HTML}{457B9D}
+	\definecolor{bpdim}{HTML}{1D3557}
+	\definecolor{bpink}{HTML}{0B132B}
+	\definecolor{bpseal}{HTML}{B8332A}
+	
+	
+	
+	% Center anchor shifted slightly up to leave room for the minimalist title below
+	\coordinate (C) at ([yshift=1.25cm]current page.center);
+	
+	% 
+	% 1. GRID
+	% 
+	\fill[bpbg] (current page.south west) rectangle (current page.north east);
+	
+	% Shifted to (C) so the 1cm & 0.25cm grid lines align symmetrically with the boxes
+	\begin{scope}[shift={(C)}]
+		\draw[bpgrid!55!bpbg, line width=0.15pt, step=0.25cm] (-12,-16) grid (12,16);
+		\draw[bpgrid, line width=0.35pt, step=1.0cm] (-12,-16) grid (12,16);
+	\end{scope}
+	1
+	%
+	% 2. CALLIGRAPHY PLATES 
+	% 
+	\coordinate (CharTop) at ([yshift=3.75cm]C);
+	\coordinate (CharBot) at ([yshift=-3.75cm]C);
+	
+	% Shared construction lines spanning both characters
+	\draw[bpline!70, densely dashed, line width=0.4pt] 
+	([yshift=4.25cm]CharTop) -- ([yshift=-4.25cm]CharBot);
+	\draw[bpline!50, dotted, line width=0.4pt] 
+	([xshift=-3.25cm, yshift=4.0cm]CharTop) -- ([xshift=-3.25cm, yshift=-4.0cm]CharBot)
+	([xshift=3.25cm, yshift=4.0cm]CharTop)  -- ([xshift=3.25cm, yshift=-4.0cm]CharBot);
+	
+	\foreach \pos in {CharTop, CharBot} {
+		\begin{scope}[shift={(\pos)}]
+			
+			
+			% Re-draw faint internal 1cm grid over the whitewash
+			\draw[bpgrid!60, line width=0.2pt, step=1.0cm] (-3.0,-3.0) grid (3.0,3.0);
+			
+			% Outer tolerance frame (3.50cm) & Main bounding box (3.25cm)
+			\draw[bpline!60, line width=0.25pt] (-3.50,-3.50) rectangle (3.50,3.50);
+			\draw[bpline, line width=0.65pt] (-3.25,-3.25) rectangle (3.25,3.25);
+			
+			% Diagonals and axes
+			\draw[bpline!60, densely dashed, line width=0.35pt] 
+			(-3.25,-3.25) -- (3.25,3.25)
+			(-3.25,3.25)  -- (3.25,-3.25)
+			(-3.75,0)     -- (3.75,0);
+			
+			% Inscribed construction circles
+			\draw[bpline!80, line width=0.4pt] (0,0) circle (3.25cm);
+			\draw[bpline!45, densely dashed, line width=0.3pt] (0,0) circle (2.30cm);
+			
+			
+		\end{scope}
+	}
+	
+	% 
+	% 3. CHARACTERS 
+	% 
+	% Offset cyan
+	\node[font=\fontsize{180}{156}\bfseries\selectfont, text=bpline, opacity=0.28] 
+	at ([shift={(0.08cm,-0.08cm)}]CharTop) {圍};
+	\node[font=\fontsize{180}{156}\bfseries\selectfont, text=bpline, opacity=0.28] 
+	at ([shift={(0.08cm,-0.08cm)}]CharBot) {道};
+	
+	% characters
+	\node[font=\fontsize{180}{156}\bfseries\selectfont, text=bpink] at (CharTop) {圍};
+	\node[font=\fontsize{180}{156}\bfseries\selectfont, text=bpink] at (CharBot) {道};
+	
+	
+	% 
+	% 4. FOOTER
+	% 
+	% center
+	\coordinate (RuleCenter) at ([yshift=-8.5cm]C);
+	
+	% Split horizontal rule leaving a 1.3cm gap in the center for the Go stones
+	\draw[bpline, line width=0.6pt] ([xshift=-3.25cm]RuleCenter) -- ([xshift=-0.65cm]RuleCenter);
+	\draw[bpline, line width=0.6pt] ([xshift=0.65cm]RuleCenter)  -- ([xshift=3.25cm]RuleCenter);
+	
+	% Minimalist capture
+	\fill[bpink] (RuleCenter) circle (2.4pt); % Surrounded black stone
+	\foreach \dx/\dy in {-0.25/0, 0.25/0, 0/0.25, 0/-0.25} {
+		\filldraw[fill=bpbg, draw=bpink, line width=0.55pt] 
+		([shift={(\dx cm,\dy cm)}]RuleCenter) circle (2.2pt); % 4 surrounding white stones
+	}
+	
+\end{tikzpicture}
