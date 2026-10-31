@@ -4,17 +4,52 @@
 	% 
 	% PALETTE 
 	% 
-	\definecolor{bpbg}{HTML}{F4F6F8}
-	\definecolor{bpgrid}{HTML}{D8E2DC}
-	\definecolor{bpline}{HTML}{457B9D}
-	\definecolor{bpdim}{HTML}{1D3557}
-	\definecolor{bpink}{HTML}{0B132B}
-	\definecolor{bpseal}{HTML}{B8332A}
+	
+	%goban
+	\definecolor{bpbg}{HTML}{EFCE8F}
+	\definecolor{bpgrid}{HTML}{D9B571}
+	\definecolor{bpline}{HTML}{8C4A27}
+	\definecolor{bpdim}{HTML}{4A2511}
+	\definecolor{bpink}{HTML}{16120E}
+	\definecolor{bpseal}{HTML}{A8201A}
+	
+	%warm 
+%	\definecolor{bpbg}{HTML}{F2E8D5}
+%	\definecolor{bpgrid}{HTML}{DFD1B8}
+%	\definecolor{bpline}{HTML}{9E5A3C}
+%	\definecolor{bpdim}{HTML}{5C3A21}
+%	\definecolor{bpink}{HTML}{1A1614}
+%	\definecolor{bpseal}{HTML}{B8332A}
+
+	%b&n
+%	\definecolor{bpbg}{HTML}{FAF7F0}
+%	\definecolor{bpgrid}{HTML}{E2DDD2}
+%	\definecolor{bpline}{HTML}{355C7D}
+%	\definecolor{bpdim}{HTML}{1E3A52}
+%	\definecolor{bpink}{HTML}{141413}
+%	\definecolor{bpseal}{HTML}{B8332A}
+	
+%	%bluerpint one
+%	\definecolor{bpbg}{HTML}{133B5C}
+%	\definecolor{bpgrid}{HTML}{1E5F74}
+%	\definecolor{bpline}{HTML}{98C1D9}
+%	\definecolor{bpdim}{HTML}{6BA3BE}
+%	\definecolor{bpink}{HTML}{F4F6F8}
+%	\definecolor{bpseal}{HTML}{D97706}
+%	
+	%white one
+%	\definecolor{bpbg}{HTML}{F4F6F8}
+%	\definecolor{bpgrid}{HTML}{D8E2DC}
+%	\definecolor{bpline}{HTML}{457B9D}
+%	\definecolor{bpdim}{HTML}{1D3557}
+%	\definecolor{bpink}{HTML}{0B132B}
+%	\definecolor{bpseal}{HTML}{B8332A}
+	
 	
 	
 	
 	% Center anchor shifted slightly up to leave room for the minimalist title below
-	\coordinate (C) at ([yshift=1.25cm]current page.center);
+	\coordinate (C) at ([yshift=0cm]current page.center);
 	
 	% 
 	% 1. GRID
@@ -90,10 +125,13 @@
 	\draw[bpline, line width=0.6pt] ([xshift=0.65cm]RuleCenter)  -- ([xshift=3.25cm]RuleCenter);
 	
 	% Minimalist capture
-	\fill[bpink] (RuleCenter) circle (2.4pt); % Surrounded black stone
+	\fill[bpink] (RuleCenter) circle (3.5pt); % Surrounded black stone
 	\foreach \dx/\dy in {-0.25/0, 0.25/0, 0/0.25, 0/-0.25} {
-		\filldraw[fill=bpbg, draw=bpink, line width=0.55pt] 
-		([shift={(\dx cm,\dy cm)}]RuleCenter) circle (2.2pt); % 4 surrounding white stones
+		\filldraw[fill=white, draw=bpink, line width=0.5pt] 
+		([shift={(\dx cm,\dy cm)}]RuleCenter) circle (3.25pt); % 4 surrounding white stones
 	}
+	
+
+	
 	
 \end{tikzpicture}
