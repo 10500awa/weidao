@@ -1224,7 +1224,6 @@ The first reliable mention of the game dates to the 3rd century BCE, when Mèngz
 %		Lee Chang-ho (B) vs. Fernando Aguilar (W) -- Toyota-Denso 2002, final board position. Aguilar resigned following \textcolor{Red}{move} $125$.}
 %	\label{fig:aguilar_chang}
 %\end{figure}
-\newpage
 \subsection{History of Go Models}\label{HistGo}
 The vast literature on Go typically focuses on its complexity or on the search for optimal strategies, generally approaching them through \textit{combinatorial game theory}. The present work belongs to the few studies devoted to \textit{modeling} Go. This section is dedicated to tracing the historical development of such models.
 
@@ -1237,13 +1236,10 @@ In 1972, Thorp and Walden published a combinatorial study exploring the nature a
 In 1976, David B. Benson \cite{Benson} built upon Thorp and Walden's work to formally determine when a group is ``alive''. Although at first glance this contribution might seem separate from general game models, it stands as a pioneering attempt to model the internal dynamics of Go. His approach will be revisited under our own theory in Section~\ref{sec-vida}.
 
 Finally, mention must be made of the work of \textit{Jin Bai Kim}, conceived in 1976 and published in two parts in 1978 \cite{KJB1, KJB2}. This study continues the tradition of using graphs to model Go, although Kim omits one of the possible board states and proposes an alternative definition of \textit{adjacencies}. In the second of these articles, we encounter the first formulation of three-dimensional Go (which we shall examine in Part~\ref{parte3}).
-\newpage
 
 \subsection{Rules and formats}
 
-\begin{wrapfigure}[23]{r}{0.3\textwidth}
-	\vspace{-30pt}
-	%\begin{figure}[H]
+\begin{figure}[H]
 	\centering
 	\begin{tikzpicture}[scale=0.65] \tikzstyle{every node}=[font=\small]
 		% Draw the background
@@ -1257,7 +1253,7 @@ Finally, mention must be made of the work of \textit{Jin Bai Kim}, conceived in 
 		
 		
 		
-		\begin{scope}[yshift=-8cm]
+		\begin{scope}[xshift=8cm]
 			\fill[goban] (-0.5,-0.5) rectangle (6.5,6.5);
 			
 			% Draw the grid lines
@@ -1295,10 +1291,9 @@ Finally, mention must be made of the work of \textit{Jin Bai Kim}, conceived in 
 			\filldraw[draw=black,fill=white] (2,2) circle (12pt);
 		\end{scope}
 	\end{tikzpicture}
-	\caption{
-		An empty board, alongside a board illustrating the liberties of a single stone and of groups.}
+	\caption{An empty board, alongside a board illustrating the liberties of a single stone and of groups.}
 	\label{fig:Fig 3}
-\end{wrapfigure}Go is played on a square board consisting of a grid of intersecting lines. It is contested by two players: one controls the black pieces and the other, the white ones. The most standard board sizes are \(9 \times 9\), \(13 \times 13\), and \(19 \times 19\) (read as ``nine-by-nine,'' ``thirteen-by-thirteen,'' etc.). To introduce the rules, we shall employ a \(7 \times 7\) board, a size more than adequate for this purpose.
+\end{figure}Go is played on a square board consisting of a grid of intersecting lines. It is contested by two players: one controls the black pieces and the other, the white ones. The most standard board sizes are \(9 \times 9\), \(13 \times 13\), and \(19 \times 19\) (read as ``nine-by-nine,'' ``thirteen-by-thirteen,'' etc.). To introduce the rules, we shall employ a \(7 \times 7\) board, a size more than adequate for this purpose.
 
 As illustrated in Figure~\ref{fig:Fig 1}, coordinates are read starting from the lower-left corner, point \((1, 1)\), with coordinates increasing to the right and upward. The game begins with an empty board (Figure~\ref{fig:Fig 3}), unless played with a handicap. The small black dots visible at certain intersections serve merely as visual reference points and provide standard placements for handicap stones.
 
@@ -1432,56 +1427,8 @@ For a stone to be placed on the board, it must have liberties at the intersectio
 	\caption{In blue the illegal moves for Black as they are suicide.}
 	\label{fig:suicidio}
 \end{figure} 
-There is, however, an exception to this rule: playing on an intersection with no liberties is legal if the move results in a capture. Upon removing the captured stones, the newly placed stone immediately gains liberties (see Figure~\ref{fig:Fig 6}).\label{primerreglako}.
-%\begin{wrapfigure}[11]{l}{0.5\textwidth}
-%	\begin{figure}[H]
-%			\centering
-%			\begin{tikzpicture}[scale=0.65] \tikzstyle{every node}=[font=\small]
-%					% Draw the background
-%					\fill[goban] (-0.5,-0.5) rectangle (6.5,6.5);
-%					
-%					% Draw the grid lines
-%					\draw[step=1cm, black] (0,0) grid (6,6);
-%					
-%					% Draw the thick border
-%					\draw[very thick] (0,0) rectangle (6,6);
-%					
-%					% Draw the central black dot
-%					\filldraw[black] (3,3) circle (4pt);
-%					\filldraw[draw=black,fill=white] (3,4) circle (12pt);
-%					\filldraw[draw=black,fill=white] (2,3) circle (12pt);
-%					\filldraw[draw=black,fill=white] (4,3) circle (12pt);
-%					
-%					\filldraw[black] (3,3) circle (12pt);
-%					\filldraw[black] (3,1) circle (12pt);
-%					\filldraw[black] (2,2) circle (12pt);
-%					\filldraw[black] (4,2) circle (12pt);
-%					\filldraw[OliveGreen] (3,2) circle (6pt);
-%					\begin{scope}[xshift=8cm]
-%							% Draw the background
-%							\fill[goban] (-0.5,-0.5) rectangle (6.5,6.5);
-%							
-%							% Draw the grid lines
-%							\draw[step=1cm, black] (0,0) grid (6,6);
-%							
-%							% Draw the thick border
-%							\draw[very thick] (0,0) rectangle (6,6);
-%							
-%							% Draw the central black dot
-%							\filldraw[draw=black,fill=white] (3,4) circle (12pt);
-%							\filldraw[draw=black,fill=white] (2,3) circle (12pt);
-%							\filldraw[draw=black,fill=white] (4,3) circle (12pt);
-%							\filldraw[draw=black,fill=white] (3,2) circle (12pt) node [color=black]{1};
-%							\filldraw[black] (3,1) circle (12pt);
-%							\filldraw[black] (2,2) circle (12pt);
-%							\filldraw[black] (4,2) circle (12pt);
-%							\filldraw[Blue] (3,3) circle (6pt);
-%						\end{scope}
-%				\end{tikzpicture}
-%			\caption{Una jugada aparentemente suicida que resulta legal al capturar.}
-%			\label{fig:Fig 6}
-%		\end{figure}
-Furthermore, as seen in the figure, if both players were allowed to play on that intersection, the cycle of reciprocal captures could continue indefinitely. To prevent this loop, the \textit{ko rule} is introduced. If Black were to play at coordinates \((4, 4)\) (marked with a blue dot in the figure), the board would revert to the exact position of the preceding turn. The \textit{ko rule} forbids this.\footnote{We will see that the standard \textit{ko rule} proves insufficient in certain scenarios, as longer cycles can occur that repeat a previous board position without violating this basic rule (see Section~\ref{sec-superko}).}
+There is, however, an exception to this rule: playing on an intersection with no liberties is legal if the move results in a capture. Upon removing the captured stones, the newly placed stone immediately gains liberties (see Figure~\ref{fig:Fig 6})\label{primerreglako}. Furthermore, as seen in the figure, if both players were allowed to play on that intersection, the cycle of reciprocal captures could continue indefinitely. To prevent this loop, the \textit{ko rule} is introduced. If Black were to play at coordinates \((4, 4)\) (\textcolor{Blue}{blue} dot in the figure), the board would revert to the exact position of the preceding turn.\footnote{We will see that the standard \textit{ko rule} proves insufficient in certain scenarios, as longer cycles can occur that repeat a previous board position without violating this basic rule (see Section~\ref{sec-superko}).}
+
 \begin{figure}[H]
 	\centering
 	\begin{tikzpicture}[scale=0.5] \tikzstyle{every node}=[font=\small]
@@ -1569,7 +1516,7 @@ Furthermore, as seen in the figure, if both players were allowed to play on that
 		An illegal position, as it reverts to a previous state. Following Black's move at \((4, 6)\), Black could recapture at \((4, 4)\) on a subsequent turn. White prevents this possibility by playing at \((4, 4)\).}
 	\label{fig:Fig 6}
 \end{figure} 
-To recapture, Black must first play elsewhere on the board (a ko threat). This generates a different board configuration; if the opponent responds, Black may then play at \((4, 4)\) to recapture, as the board state will no longer be identical to the earlier one (see the final board in Figure~\ref{fig:Fig 6}).
+
 %		\begin{figure}[H]
 	%			\centering
 	%			\begin{tikzpicture}[scale=0.65] \tikzstyle{every node}=[font=\small]
@@ -1620,11 +1567,11 @@ To recapture, Black must first play elsewhere on the board (a ko threat). This g
 	%		\end{figure}
 %		\newpage
 
-\begin{wrapfigure}[12]{l}{0.3\textwidth}
-	\vspace{-6pt}
+\begin{wrapfigure}[14]{l}{0.35\textwidth}
+
 	%\begin{figure}[H]
 	\centering
-	\begin{tikzpicture}[scale=0.65] \tikzstyle{every node}=[font=\small]
+	\begin{tikzpicture}[scale=0.7] \tikzstyle{every node}=[font=\small]
 		% Draw the background
 		\fill[goban] (-0.5,-0.5) rectangle (6.5,6.5);
 		
@@ -1690,13 +1637,12 @@ To recapture, Black must first play elsewhere on the board (a ko threat). This g
 	\end{tikzpicture}
 	\caption{Black \textcolor{OliveGreen}{territory}, white \textcolor{Blue}{territory} and \textcolor{Orange}{neutral}.}
 	\label{fig:Fig 9}
-\end{wrapfigure}An empty intersection (or a group thereof) is considered the \textit{territory} of a given color if it is completely surrounded by stones of that color. Conversely, if an empty space is bounded by stones of both players, it is regarded as neutral, belonging to neither player (see Figure~\ref{fig:Fig 9}).
+\end{wrapfigure}To recapture, Black must first play elsewhere on the board (a ko threat). This generates a different board configuration; if the opponent responds, Black may then play at \((4, 4)\) to recapture, as the board state will no longer be identical to the earlier one (see the final board in Figure~\ref{fig:Fig 6}). An empty intersection (or a group thereof) is considered the \textit{territory} of a given color if it is completely surrounded by stones of that color. Conversely, if an empty space is bounded by stones of both players, it is regarded as neutral, belonging to neither player (see Figure~\ref{fig:Fig 9}).
 
 When two players of different skill levels face each other, a handicap is usually granted to the less experienced player. This advantage consists of playing with the black stones (moving first) and placing a predetermined number of \textit{handicap stones} on the board before the game begins; the greater the skill disparity, the more stones are placed (see Figure~\ref{fig:14}).
 
-\begin{wrapfigure}[14]{r}{0.33\textwidth}
-	\vspace{-5pt}
-	%\begin{figure}[H]
+This is the traditional placement of handicap stones (on both \(13 \times 13\) and \(19 \times 19\) boards). There also exists \textit{free handicap placement}, in which the weaker player freely chooses where to position these initial stones.
+\begin{figure}[H]
 	\centering
 	\begin{tikzpicture}[scale=0.4]
 		
@@ -1723,16 +1669,24 @@ When two players of different skill levels face each other, a handicap is usuall
 	\end{tikzpicture}
 	\caption{Handicap of the $13\times13$ board.}
 	\label{fig:14}
-\end{wrapfigure} 
-This is the traditional placement of handicap stones (on both \(13 \times 13\) and \(19 \times 19\) boards). There also exists \textit{free handicap placement}, in which the weaker player freely chooses where to position these initial stones.
+\end{figure}
 
+The objective of Go is to secure more \textit{territory} than the opponent. On their turn, a player may choose to pass, conceding the initiative to the rival. The game ends when both players pass consecutively. At that point, a phase of mutual agreement begins, during which all ``dead'' stones (that is, those whose eventual capture cannot be prevented) are identified and removed from the board.
 
-The objective of Go is to secure more \textit{territory} than the opponent. On their turn, a player may choose to pass, conceding the initiative to the rival. The game ends when both players pass consecutively. At that point, a phase of mutual agreement begins, during which all ``dead'' stones (that is, those whose eventual capture cannot be prevented) are identified and removed from the board. After clearing these stones, the winner is determined by summing the secured \textit{territories} and the living stones remaining on the board at the end of the game. Figure~\ref{fig: Fig 10} illustrates a completed game. The score would be computed as follows: 11 stones for Black plus 16 intersections in Black's territory; White, for their part, has 11 stones and 11 intersections in territory. Consequently, Black scores 27 points and White 22, so Black wins by 5 points.\footnote{This method corresponds to Chinese scoring rules. There are several other counting systems, such as the Japanese or Korean rulesets.}
+After clearing these stones, the winner is determined by summing the secured \textit{territories} and the living stones remaining on the board at the end of the game. Figure~\ref{fig: Fig 10} illustrates a completed game.
 
-One might oppose Black's victory, given the inherent advantage of making the first move. To offset this disparity, White is awarded a compensation for playing second, known as \textit{komi}. This value varies according to board size and the skill difference between the players; generally, 5.5 points are used on standard boards.\footnote{The exact value of \textit{komi} depends on the chosen ruleset. Furthermore, in handicap games, a minimal \textit{komi} of 0.5 points is typically applied.} Were this compensation applied to the preceding example, White would win by 0.5 points, the narrowest possible margin. The inclusion of this half-point in the \textit{komi} precludes the possibility of a draw.
+The score would be computed as follows: 11 stones for Black plus 16 intersections in Black's territory; White, for their part, has 11 stones and 11 intersections in territory. Consequently, Black scores 27 points and White 22, so Black wins by 5 points.\footnote{This method corresponds to Chinese scoring rules. There are several other counting systems, such as the Japanese or Korean rulesets.}
 
-\begin{wrapfigure}[15]{r}{0.45\textwidth}
-	\vspace{-15pt}
+One might oppose Black's victory, given the inherent advantage of making the first move. To offset this disparity, White is awarded a compensation for playing second, known as \textit{komi}.
+
+This value varies according to board size and the skill difference between the players; generally, 5.5 points are used on standard boards.\footnote{The exact value of \textit{komi} depends on the chosen ruleset. Furthermore, in handicap games, a minimal \textit{komi} of 0.5 points is typically applied.}
+
+Were this compensation applied to the preceding example, White would win by 0.5 points, the narrowest possible margin. The inclusion of this half-point in the \textit{komi} precludes the possibility of a draw.
+
+A group possesses an \textit{eye} if it completely surrounds an empty intersection. With at least two \textit{eyes}, it achieves the state of being \textit{alive} and can never be captured.
+
+In Figure~\ref{fig:Fig 12} (left), even if White attempts to attack the black group, they can only place one stone per turn. Because occupying either space would violate the suicide rule, White would need to play into both eyes simultaneously to capture, which is impossible. Consequently, the black group is \textit{alive}.
+\begin{figure}[h]
 	\centering
 	\begin{tikzpicture}[scale=0.65] \tikzstyle{every node}=[font=\small]
 		% Draw the background
@@ -1803,11 +1757,8 @@ One might oppose Black's victory, given the inherent advantage of making the fir
 	\caption{
 		Final board position of a completed game, with its intersections scored; the black stone marked with the \textcolor{Orange}{orange} dot must be removed as they are dead.}
 	\label{fig: Fig 10}
-\end{wrapfigure}
-A group possesses an \textit{eye} if it completely surrounds an empty intersection. With at least two \textit{eyes}, it achieves the state of being \textit{alive} and can never be captured. In Figure~\ref{fig:Fig 12} (left), even if White attempts to attack the black group, they can only place one stone per turn. Because occupying either space would violate the suicide rule, White would need to play into both eyes simultaneously to capture, which is impossible. Consequently, the black group is \textit{alive}.
-
+\end{figure}
 There exist, however, so-called false eyes: intersections that resemble \textit{eyes}, but where one of the surrounding groups is at risk of being reduced to a single liberty (the eye). As a result, if the opponent succeeds in capturing this vulnerable group, the structure collapses and the eye is lost (see Figure~\ref{fig:Fig 12}, right).
-%\begin{wrapfigure}[13]{r}{0.5\textwidth}
 \begin{figure}[H]
 	\centering
 	\begin{tikzpicture}[scale=0.65] \tikzstyle{every node}=[font=\small]
@@ -1866,5 +1817,4 @@ There exist, however, so-called false eyes: intersections that resemble \textit{
 		Eyes of a living group (\textcolor{Blue}{blue}). False eye (\textcolor{OliveGreen}{green}). If White plays at the \textcolor{Red}{red} point, Black will be forced to fill their own eye with a stone, or risk losing it.}
 	\label{fig:Fig 12}
 \end{figure}
-
 To build Go, we require four elements: \textit{where}, \textit{who}, \textit{what}, and \textit{how}.

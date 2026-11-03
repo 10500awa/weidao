@@ -1,5 +1,7 @@
 {\centering
 	\chapter{Infinite Go}\label{infgo}}
+	
+\section{Getting used to the board}
 \thispagestyle{empty}
 \noindent
 {\large\textbf{This chapter it's a draft, at least for now. I'll include my thought process and most of what I'm able to understand/formalize about it.}}
@@ -333,7 +335,7 @@ Lets characterize \textit{what} can be done in the game.
 \begin{definition}[A move]
 	In an infinite game of Go of dimension $n$, a player in their turn
 	$t$ can perform one of the following actions:
-	\begin{enumerate}
+
 		1. Pass.
 		
 		2. Propose a connected hyperplane $H$ of dimension at most
@@ -359,7 +361,7 @@ Lets characterize \textit{what} can be done in the game.
 		condition, the proposed move is rejected. Otherwise, the
 		stones in $H-P$ are placed on the board, and captures
 		are resolved according to the usual rules.
-	\end{enumerate}
+
 \end{definition}
 Let me explain why $n-1$ dimensions.
 
