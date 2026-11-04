@@ -1,0 +1,162 @@
+\providecommand{\weidaolabelfont}{\sffamily}
+\pgfgodefineprofile[from = default]{weidao}{
+	goban = {
+		size = 7x7,
+		scale = 1.5,
+		scale line width = true,
+		captures = fade,
+		background = {
+			sep = 8pt,
+			fill = {color = goban},
+			line = {color = black!85, width = 0.8pt},
+			shadow = {true, offset = 1.5pt, opacity = 0.35, angle = -45},
+			rounded corners = {inner = 2pt, outer = 10pt}
+		},
+		grid = {
+			line = {color = black!85, width = 0.5pt},
+			edge = {color = black!90, width = 1.05pt}
+		},
+		hoshi = {radius = 1.7pt, color = black!90},
+		label = false,   % sin coordenadas; ver weidao-coords y weidao-hanzi
+		arrow = {
+			color = red!75!black,
+			width = 1.1pt,
+			shorten = 3.5pt,
+			halo = {true, width = 1.2pt}
+		},
+		line = {
+			color = red!75!black,
+			width = 1.1pt,
+			shorten = 2pt,
+			halo = {true, width = 1.2pt}
+		}
+	},
+	all = {
+		stone = {
+			radius = 5.6pt,
+			line = {true, color = black!90, width = 0.35pt},
+			shadow = {true, opacity = 0.45, offset = 0.9pt, angle = -45},
+			shine = {true, angle = 45, opacity = 0.3},
+			prisoner = {
+				fill = {opacity = 0.28},
+				line = {opacity = 0.35},
+				shadow = false,
+				shine = false
+			}
+		},
+		move = {
+			label = {
+				font = \sffamily\bfseries,
+				format = arabic
+			}
+		},
+		mark = {
+			scale = 0.95,
+			line = {width = 0.9pt},
+			label = {
+				font = \sffamily\bfseries,
+				format = arabic
+			}
+		}
+	},
+	neutral = {
+		stone = {fill = {color = gray!75}},
+		move = {label = {color = black}},
+		mark = {line = {color = black}, fill = {true, color = gray!75}, label = {color = black}}
+	},
+	white = {
+		stone = {
+			fill = {color = white!97!goban},
+			shine = {color = white}
+		},
+		move = {label = {color = black!90}},
+		mark = {line = {color = black!90}, label = {color = black!90}},
+		territory = {
+			fill = {color = white, opacity = 0.65},
+			line = {color = white!40!black, width = 1pt, above = false}
+		}
+	},
+	black = {
+		stone = {
+			fill = {color = black!86!white},
+			shine = {color = white!70!black}
+		},
+		move = {label = {color = white!96!goban}},
+		mark = {line = {color = white!96!goban}, label = {color = white!96!goban}},
+		territory = {
+			fill = {color = black, opacity = 0.35},
+			line = {color = black, width = 1pt, above = false}
+		}
+	}
+}
+\pgfgodefineprofile[from = weidao]{weidao-coords}{
+	goban = {
+		label = {
+			at = {south, west},
+			font = \weidaolabelfont,
+			font size = 9pt,
+			color = black!80,
+			sep = 0.4cm
+		}
+	}
+}
+\pgfgodefineprofile[from = weidao]{weidao-bw}{
+	goban = {
+		captures = remove,
+		background = {
+			fill = false,
+			shadow = false,
+			line = {color = black, width = 0.6pt},
+			rounded corners = {inner = 0pt, outer = 0pt}
+		},
+		grid = {
+			line = {color = black, width = 0.4pt},
+			edge = {color = black, width = 0.8pt}
+		},
+		hoshi = {color = black},
+		arrow = {color = black, width = 0.8pt, halo = {true, color = white, width = 1.2pt}},
+		line = {color = black, width = 0.7pt, halo = {true, color = white, width = 1.2pt}}
+	},
+	all = {
+		stone = {
+			line = {color = black, width = 0.5pt},
+			shadow = false,
+			shine = false
+		},
+		mark = {
+			line = {width = 0.8pt},
+			fill = {
+				color = white,
+				pattern = {name = {Lines[angle = 45, distance = 1.2pt, line width = 0.3pt]}}
+			}
+		}
+	},
+	neutral = {
+		stone = {fill = {color = white}}
+	},
+	white = {
+		stone = {fill = {color = white}, shine = false},
+		move = {label = {color = black}},
+		mark = {line = {color = black}, label = {color = black}},
+		territory = {
+			fill = {
+				color = none,
+				pattern = {name = {Lines[angle = -45, distance = 2pt, line width = 0.4pt]}, color = black!60}
+			},
+			line = {color = black, width = 0.8pt, above = false}
+		}
+	},
+	black = {
+		stone = {fill = {color = black}, shine = false},
+		move = {label = {color = white}},
+		mark = {line = {color = white}, label = {color = white}},
+		territory = {
+			fill = {
+				color = none,
+				pattern = {name = {Lines[angle = 45, distance = 2pt, line width = 0.4pt]}, color = black!60}
+			},
+			line = {color = black, width = 0.8pt, above = false}
+		}
+	}
+}
+

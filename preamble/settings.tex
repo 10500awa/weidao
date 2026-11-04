@@ -22,16 +22,16 @@
 \usepackage{amsmath,amsthm,amsfonts}
 \usepackage{newpxtext,newpxmath}
 \usepackage[no-math]{fontspec}
-\usepackage{xeCJK}
+
 \usepackage{microtype}
 
 \linespread{1.03}
 \setlength{\parskip}{0.5ex plus 0.2ex minus 0.2ex}
 \setlength{\parindent}{1.2em}
 
-\setCJKmainfont{Noto Serif CJK SC}
-\setCJKmonofont{Noto Sans CJK SC}
-\newfontfamily\cjkfont{Noto Serif CJK TC}[UprightFont=* Light, BoldFont=* Bold]
+\usepackage{luatexja-fontspec}
+\setmainjfont{FandolSong} 
+
 
 % --- 4. TIKZ Y PGFPLOTS ---
 \usepackage{tikz}
@@ -125,6 +125,57 @@ sorting=nty
 
 % Símbolo Q.E.D. 
 \renewcommand{\qedsymbol}{\raisebox{-1.8pt}{\huge\(\bullet\)}}
+
+% --- 10.5 PGF-Go macro---
+\usepackage{pgf-go}			
+\usepackage{pgf-go-marks}	
+\usepackage{pgf-go-stones}	
+\usepackage{pgf-go-goban} 	
+\usepackage{pgf-go-sgf}
+\usepackage{pgf-go-pages}
+\usepackage{pgf-go-sgf}
+\usepackage{pgf-go-territory}
+\usepackage{pgf-go-layout}
+\usepackage{pgf-go-profiles}
+\usepackage{pgf-go-players}
+\input{preamble/pgfgoprofiles.tex}
+\pgfgoset{
+	profile=weidao,
+	view = {background = false, label = false}} 
+\pgfgodefinesgf{suncevslufan}{figures/suncevslufan.sgf}
+\pgfgodefinesgf{FernandoAguilar-HasegawaSunao}
+{figures/FernandoAguilar-HasegawaSunao.sgf}
+\pgfgodefinesgf{YoKagen-FernandoAguilar}
+{figures/YoKagen-FernandoAguilar.sgf}
+\pgfgodefinesgf{FernandAguilar-LeeChangho}
+{figures/FernandAguilar-LeeChangho.sgf}
+%%%%%%%%% For one dimension boards
+\ExplSyntaxOn
+\fp_new:N\l_pgfgo_goban_grid_tick_fp
+\fp_set:Nn\l_pgfgo_goban_grid_tick_fp{0.25}
+\def\pgfgoticks{
+	\pgfscope %<--- aca arriba
+	\pgftransformshift{\pgfpointxy{1}{1}}
+	\pgfonlayer{pgfgo_layer_goban_grid}
+	\pgfsetlinewidth{\l_pgfgo_goban_grid_line_width_dim}
+	\pgfsetstrokecolor{\tl_use:N\l_pgfgo_goban_grid_color_tl}
+	
+	\int_step_inline:nn {\l_pgfgo_goban_size_x_int} {
+		\pgfpathmoveto{\pgfpointxy{0}{\fp_use:N\l_pgfgo_goban_grid_tick_fp}}
+		\pgfpathlineto{\pgfpointxy{0}{-\fp_use:N\l_pgfgo_goban_grid_tick_fp}}
+		
+		\pgftransformshift{\pgfpointxy{1}{0}}
+		
+		\pgfusepath{stroke}
+	}
+	\endpgfonlayer
+	
+	\pgftransformreset
+	\endpgfscope %<--- y aca esto
+}
+\ExplSyntaxOff
+
+
 
 % --- 11. HIPERVÍNCULOS Y METADATOS (Siempre al final) ---
 \usepackage{hyperref}

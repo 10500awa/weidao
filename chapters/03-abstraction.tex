@@ -472,11 +472,9 @@ $$A(x,y)_{T}=4xy.$$
 And its average will be $4$, since:
 $$\tilde{A}(x,y)_{T}=4xy/xy=4.$$
 In this way, we have found a board such that for every node, the number of adjacencies is uniform. Let us do the same in $\mathrm{Go}^{3}$; we can formulate the following scheme from Figure~\ref{carasgo3}.
-\newpage
 
-\begin{wrapfigure}[10]{r}{0.5\textwidth}
-%	\vspace{-20pt}
-	%\begin{figure}[H]
+Here, if we apply the new relation, we obtain that all points will have $6$ adjacencies. Indeed, the vertices will acquire $3$ new adjacencies, bringing them to $6$; the edges will acquire $2$ new adjacencies, bringing them to $6$; and finally, the faces will acquire a single new adjacency—the opposite one. Thus, equality is achieved in the limit.
+\begin{figure}[H]
 	\centering
 	\begin{tikzpicture}[scale=1]
 		\pgfmathsetmacro{\x}{-5}
@@ -520,7 +518,7 @@ In this way, we have found a board such that for every node, the number of adjac
 	\end{tikzpicture}
 	\caption{Faces of the $Go^{3}$.}
 	\label{carasgo3}
-\end{wrapfigure}Here, if we apply the new relation, we obtain that all points will have $6$ adjacencies. Indeed, the vertices will acquire $3$ new adjacencies, bringing them to $6$; the edges will acquire $2$ new adjacencies, bringing them to $6$; and finally, the faces will acquire a single new adjacency—the opposite one. Thus, equality is achieved in the limit.
+\end{figure}
 
 Now then, what would happen if we consider only the points lying on the boundary?
 
@@ -533,71 +531,23 @@ If we recall Lemma~\ref{lem:2n}, upon applying these procedures to any given boa
 
 For this problem, for \(n=2\), \(A_{ort}\) provides a solution for the case with a degree as close to $4$ as possible, whereas the relation \(\mathcal{A} = A_{ort} \cup A_{{op}}\) satisfies the degree condition of exactly $4$. Furthermore, for the case \(n = 3\), we were able to find a partial solution on the boundary: if \(G' = \{ x \in G \mid \exists i \text{ such that } (x_i = 1 \lor x_i = n_i) \}\) denotes the boundary, then the graph \((G', \mathcal{A} )\) is a solution for the case with a degree as close to $4$ as possible on the surface.
 
-%	Veamos una solución general. Para forzar 4 adyacencias en $n \ge 2$ manteniendo la estructura original de $G$, aprovechamos que el grado de un vértice en un producto cartesiano de grafos es la suma de los grados de sus factores. Dado que un ciclo $C_k$ es exactamente 2-regular, el producto cartesiano de exactamente dos ciclos ($C_a \times C_b$) siempre resultará en un grafo 4-regular. La estrategia consiste en colapsar las $n$ dimensiones en exactamente dos «meta-dimensiones''.
-%		
-%			Sea $G = N_1 \times \cdots \times N_n$, con $n \ge 3$. Particionamos el conjunto de índices $\{1, 2, \dots, n\}$ en dos subconjuntos disjuntos y no vacíos, $I$ y $J$. 
-%			
-%			Definimos dos nuevos conjuntos basados en el producto cartesiano de los $N_i$ correspondientes:
-%			\begin{equation*}
-	%				U = \prod_{i \in I} N_i \quad \text{y} \quad V = \prod_{j \in J} N_j
-	%			\end{equation*}
-%			Existe una biyección natural entre $G$ y $U \times V$. Sean $m_U = |U|$ y $m_V = |V|$. 
-%			Para dotar a $U$ y $V$ de una estructura de ciclo, establecemos biyecciones hacia grupos cíclicos mediante el orden lexicográfico: $\phi_U: U \to \mathbb{Z}_{m_U}$ y $\phi_V: V \to \mathbb{Z}_{m_V}$.
-%			
-%			Construimos la familia $\mathcal{A}' = \{R_U, R_V\}$ sobre $G \cong U \times V$:
-%			\begin{itemize}
-	%				\item \textbf{Relación $R_U$ (Ciclo en la primera meta-dimensión):}
-	%				\begin{equation*}
-		%					R_U = \{ ((u,v), (u',v)) \in G \times G \mid \phi_U(u) \equiv \phi_U(u') \pm 1 \pmod{m_U} \}
-		%				\end{equation*}
-	%				\item \textbf{Relación $R_V$ (Ciclo en la segunda meta-dimensión):}
-	%				\begin{equation*}
-		%					R_V = \{ ((u,v), (u,v')) \in G \times G \mid \phi_V(v) \equiv \phi_V(v') \pm 1 \pmod{m_V} \}
-		%				\end{equation*}
-	%			\end{itemize}
-%	Obtenemos $H = (G, R_U \cup R_V)$ es conexo, simple (siempre que $m_U \ge 3$ y $m_V \ge 3$), y estrictamente 4-regular para cualquier $n$.
-%		
 \newpage
 \section{Go in One Dimension}\label{Go_1dim}
 %\begin{figure}[H]
 \begin{wrapfigure}[5]{r}{0.4\textwidth}
+	\vspace{-20pt}
 	\centering
-	\begin{tikzpicture}[scale=0.7]
-		% Draw the background
-		\fill[goban] (-0.5,-0.5) rectangle (6.5,0.5);
-		
-		% Draw the grid lines
-		\draw (0,0) -- (6,0);
-		\draw (0,-0.25) -- (0,0.25);
-		\draw (1,-0.2) -- (1,0.2);
-		\draw (2,-0.2) -- (2,0.2);
-		\draw (3,-0.2) -- (3,0.2);
-		\draw (4,-0.2) -- (4,0.2);
-		\draw (5,-0.2) -- (5,0.2);
-		\draw (6,-0.25) -- (6,0.25);
-		% Draw the central black dot
-		
-		\begin{scope}[yshift=-1.5cm]
-			\fill[goban] (-0.5,-0.5) rectangle (6.5,0.5);
-			
-			% Draw the grid lines
-			\draw (0,0) -- (6,0);
-			\draw (0,-0.25) -- (0,0.25);
-			\draw (1,-0.2) -- (1,0.2);
-			\draw (2,-0.2) -- (2,0.2);
-			\draw (3,-0.2) -- (3,0.2);
-			\draw (4,-0.2) -- (4,0.2);
-			\draw (5,-0.2) -- (5,0.2);
-			\draw (6,-0.25) -- (6,0.25);
-			
-			\filldraw[black] (4,0) circle (10pt);
-			\path (4,0) node [white]{1};
-			
-			\filldraw[draw=black,fill=white] (2,0) circle (10pt);
-			\path (2,0) node [black]{2};
-		\end{scope}
-		
-	\end{tikzpicture}
+	% Bloque 20 (vacío arriba, jugadas 1 y 2 abajo)
+	\begin{goban}[7x1]
+			\pgfgoticks
+	\end{goban}
+
+	\medskip
+	
+	\begin{goban}[7x1]
+		\pgfgoticks
+		\moves{E1, C1}
+	\end{goban}
 	\caption{Empty board and board with a black and a white stone.}
 	\label{fig:1dim_go}
 \end{wrapfigure}
@@ -614,38 +564,22 @@ Then, it is clear that the limit of its average is $2$.
 \end{lemma}
 \begin{proof}
 	By definition, an eye for a group is a vital region completely surrounded by a single group \(I\). Let \(R\) be a region; for \(I\) to surround \(R\) and for \(R\) to be vital, its boundary \(\partial R\) must belong to \(I\).
-	\begin{figure}[H]
-		\centering
-		\begin{tikzpicture}[scale=0.7]
-			% Draw the background
-			\fill[goban] (-0.5,-0.5) rectangle (6.5,0.5);
-			
-			% Draw the grid lines
-			\draw (0,0) -- (6,0);
-			\draw (0,-0.25) -- (0,0.25);
-			\draw (1,-0.2) -- (1,0.2);
-			\draw (2,-0.2) -- (2,0.2);
-			\draw (3,-0.2) -- (3,0.2);
-			\draw (4,-0.2) -- (4,0.2);
-			\draw (5,-0.2) -- (5,0.2);
-			\draw (6,-0.25) -- (6,0.25);
-			\filldraw[black] (3,0) circle (10pt);
-			\filldraw[black] (5,0) circle (10pt);
-			
-			
-			\filldraw[draw=black,fill=white] (1,0) circle (10pt);
-			
-			\fill[draw=black,fill=purple, very thin] (-0.25,-0.25) rectangle (0.25,0.25);
-			\fill[draw=black,fill=cyan, very thin] (3.75,-0.25) rectangle (4.25,0.25);
-			
-		\end{tikzpicture}
+\begin{figure}[H]
+	\centering
+	\begin{goban}[7x1]
+		\pgfgoticks
+		\stones[b]{D1, F1}
+		\stone[w]{B1}
+		\mark[filled square, fill = {true, color = purple}, line = {color = black}]{A1}
+		\mark[filled square, fill = {true, color = cyan}, line = {color = black}]{E1}
+	\end{goban}
 		\caption{\textcolor{purple}{Eye} at the boundary, \textcolor{cyan}{union} in the interior.}
 		\label{fig:ej_go1dim}
 	\end{figure}
 	\paragraph{\(R\) in the interior:}
 	By Lemma~\ref{lem:2n}, if \(x\in R\), it possesses two adjacencies: \(x-1\) and \(x+1\).
 	
-	For \(x\) to be an eye of \(I\), it must hold that \(\{(x-1, e), (x+1, e)\} \subset I\). Since \(I\) is connected, there would exist a path in \(I\) between \(x-1\) and \(x+1\). However, the geometry of the board forces the path to pass through \(x\), which is empty; thus, such a path does not exist.
+	For \(R\) to be an eye of \(I\), it must hold that \(\{(x-1, e), (x+1, e)\} \subset I\). Since \(I\) is connected, there would exist a path in \(I\) between \(x-1\) and \(x+1\). However, the geometry of the board forces the path to pass through \(x\), which is empty; thus, such a path does not exist.
 	
 	Consequently, \(x-1\) and \(x+1\) are disconnected and cannot belong to the same group \(I\). An interior region is always surrounded by two distinct groups. At most, it may happen that \(\partial R\) is given by two groups of the same color, in which case it is a union.
 	
@@ -1520,50 +1454,6 @@ Combining both constructions allows us to build the diagram of Figure~\ref{fig: 
 	
 	Let $G=(V,E)$ be a finite graph, and let $A,B\in V$ be two distinguished vertices. We shall consider each edge of the graph as a playable position. Consequently, the set of positions will be given by $T=E$. The possible states of a position will be $E_s=\{0,1,2\}$, where $0$ represents a free edge, $1$ an edge controlled by Short, and $2$ an edge controlled by Cut. We define an adjacency relation $\sim_s$ on $T$: two positions $e_1, e_2 \in T$ are adjacent when the corresponding edges share a vertex—that is,$$e_1\sim e_2 \iff e_1\cap e_2\neq\varnothing.$$With this definition, the groups introduced earlier coincide with connected components of edges of the same color. We denote the game dynamics by $\Delta_s$; any Shannon game associated with the graph $G$ can be represented by the structure:$$(T, E_s, \sim_s, \Delta_s).$$This example is especially revealing, as it shows that the developed structure does not depend on geometric notions such as regions or territories. Even though it is a game defined on an arbitrary graph, the notions of position, state, adjacency, and group remain sufficient to completely describe its dynamics. It appears that the developed theory describes not only Go, but a broader family of games: \emph{Surrounding Games} ($\mathsf{SG}$).\footnote{This name is not entirely accurate, but it is the one that emerged during development. It is adopted here for convenience and does not pretend to identify an established branch of mathematics. Determining an appropriate designation would require a broader study.}
 	%	por lo tanto, $Othello \in \textsf{JR}$.
-	%	\begin{figure}[H]
-		%		\centering
-		%		\begin{tikzpicture}[
-			%			node distance=2.5cm and 3cm,
-			%			game/.style={circle, draw=black, thick, fill=white, minimum size=1.2cm, font=\large},
-			%			cat/.style={circle, fill=gray!20, draw=black, very thick, minimum size=1.5cm, font=\large\bfseries},
-			%			morphism/.style={->, thick},
-			%			label/.style={font=\footnotesize, align=center}
-			%			]
-			%			
-			%			% Nodo Principal (La Categoría)
-			%			\node[cat] (C) {\textsf{JR}};
-			%			
-			%			% Nivel 1: Juegos Base
-			%			\node[game, below left=2cm and 2cm of C] (J1) {$J_1$};
-			%			\node[game, below right=2cm and 2cm of C] (J2) {$J_2$};
-			%			
-			%			% Flechas de pertenencia/inclusión a la categoría (Opcional, punteadas)
-			%			\draw[->, dashed, gray, thick] (C) -- node[above left, font=\scriptsize, text=gray] {obj} (J1);
-			%			\draw[->, dashed, gray, thick] (C) -- node[above right, font=\scriptsize, text=gray] {obj} (J2);
-			%			
-			%			% Morfismos entre J1 y J2 (Cambio de Reglas - Delta)
-			%			\draw[<->, Blue, thick] (J1) to[bend left=15] node[above, label, text=Blue] {Cambia $\Delta$\\$f: \Delta_1 \to \Delta_2$} (J2);
-			%			
-			%			% Ramificaciones desde J1 (Derivaciones)
-			%			\node[game, draw=Red, text=Red, below left=2.5cm and 1cm of J1] (J1A) {$J'_1$};
-			%			\node[game, draw=OliveGreen!50!black, text=OliveGreen!50!black, below right=2.5cm and 1cm of J1] (J1GE) {$J''_1$};
-			%			
-			%			% Morfismos desde J1
-			%			\draw[morphism, Red] (J1) -- node[above left, label, text=Red] {Cambia $A$\\$A_1 \to A_2$} (J1A);
-			%			\draw[morphism, OliveGreen!50!black] (J1) -- node[above right, label, text=OliveGreen!50!black] {Cambia $G,E$\\$(G_1,E_1) \to (G_2,E_2)$} (J1GE);
-			%			
-			%			% Ramificaciones desde J2 (Derivaciones)
-			%			\node[game, draw=Red, text=Red, below left=2.5cm and 1cm of J2] (J2A) {$J'_2$};
-			%			\node[game, draw=OliveGreen!50!black, text=OliveGreen!50!black, below right=2.5cm and 1cm of J2] (J2GE) {$J''_2$};
-			%			
-			%			% Morfismos desde J2
-			%			\draw[morphism, Red] (J2) -- node[above left, label, text=Red] {} (J2A);
-			%			\draw[morphism, OliveGreen!50!black] (J2) -- node[above right, label, text=OliveGreen!50!black] {} (J2GE);
-			%			
-			%		\end{tikzpicture}
-		%		\caption{Estructura de la categoría $\textsf{JR}$. El nodo raíz representa la categoría que contiene a los juegos como objetos. Entre $J_1$ y $J_2$ existe un morfismo que altera sus reglas de captura ($\Delta$). De estos juegos se derivan otros mediante morfismos que alteran sus relaciones ($A$) produciendo $J'$, o bien su espacio y jugadores ($G, E$) produciendo $J''$.}
-		%		\label{fig:esquema_arbol}
-		%	\end{figure}
 	\newpage
 	%\section*{Glosario (Parte III)}
 	%\begin{center}

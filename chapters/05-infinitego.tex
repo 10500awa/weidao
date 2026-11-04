@@ -491,14 +491,7 @@ Given an infinite game of Go, the number of regions are always finite? If there 
 		\foreach \x in {8,...,-8} {
 			\node at (\x,-1) {\x};
 		}
-		%draw a region
-		%\filldraw[fill=violet, fill opacity=0.35, draw=black] (-5.35,-0.3) rectangle (5.35,0.3);
-		
-		
-		%draw black stones.
-		%		\foreach \x in {5,...,-5} {
-			%			\filldraw[black] (\x,3) circle (12pt);
-			%		}
+
 		\begin{scope}[yshift=-2.5cm]
 		% Draw the background
 		\fill[goban] (-10,-0.5) rectangle (10,0.5);
@@ -529,6 +522,11 @@ Given an infinite game of Go, the number of regions are always finite? If there 
 	\end{tikzpicture}
 	\caption{A one dimensional infinite Go board and a example of infinite many \textcolor{violet}{regions} by infinite many plays.}
 	\label{inf_onedim}
+	
+	\begin{goban}[19x1, partial=A1:W1, label=false,scale=1.6]
+	
+		\pgfgoticks
+	\end{goban}
 \end{figure}
 Is it possibe to do many examples like this that end up with infinite many regions. The trick here and, perhaps, my salvation, its that there are infinite plays, which is, given the nature of the game, something that shouldn't happen. If we restrict ourselves into only finite many plays, then our question becomes:
 

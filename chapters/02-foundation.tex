@@ -58,25 +58,10 @@ $$t_2 = (a+1,b), \quad t_2 = (a,b+1), \quad t_2 = (a-1,b), \quad t_2 = (a,b-1).$
 \begin{wrapfigure}[12]{r}{0.35\textwidth}
 	\centering
 	\vspace{-14pt}
-	\begin{tikzpicture}[scale=0.65] \tikzstyle{every node}=[font=\small]
-		% Draw the background
-		\fill[goban] (-0.5,-0.5) rectangle (6.5,6.5);
-		
-		% Draw the grid lines
-		\draw[step=1cm, black] (0,0) grid (6,6);
-		
-		% Draw the thick border
-		\draw[very thick] (0,0) rectangle (6,6);
-		
-		% Draw the central black dot
-		\filldraw[black] (3,3) circle (4pt);
-		
-		\fill[Blue] (3.75,3.75) rectangle (4.25,4.25);
-		\fill[OliveGreen] (3,4) circle (5pt);
-		\fill[OliveGreen] (5,4) circle (5pt);
-		\fill[OliveGreen] (4,3) circle (5pt);
-		\fill[OliveGreen] (4,5) circle (5pt);
-	\end{tikzpicture}
+	\begin{goban}[7]
+		\mark[filled square, fill = {true, color = Blue}]{E5}
+		\marks[filled circle, fill = {true, color = OliveGreen}]{D5, F5, E4, E6}
+	\end{goban}
 	\caption{Point $(5,5)$ in \textcolor{Blue}{blue}, adjacencies in \textcolor{OliveGreen}{green}.}
 	\label{fig:Fig 13}
 \end{wrapfigure}
@@ -149,35 +134,11 @@ To refer to the color of a group as a whole, we define $C(I^{e}) = e$, as every 
 	%\begin{figure}[H]
 	\centering
 	\vspace{-12pt}
-	\begin{tikzpicture}[scale=0.7] \tikzstyle{every node}=[font=\small]
-		% Draw the background
-		\fill[goban] (-0.5,-0.5) rectangle (6.5,6.5);
-		
-		% Draw the grid lines
-		\draw[step=1cm, black] (0,0) grid (6,6);
-		
-		% Draw the thick border
-		\draw[very thick] (0,0) rectangle (6,6);
-		
-		% Draw the central black dot
-		
-		\filldraw[black] (2,4) circle (12pt);
-		\filldraw[black] (3,4) circle (12pt);
-		\filldraw[black] (4,3) circle (12pt);
-		\filldraw[black] (4,4) circle (12pt);
-		\filldraw[draw=black,fill=white] (3,3) circle (12pt);
-		\filldraw[draw=black,fill=white] (3,2) circle (12pt);
-		\fill[OliveGreen] (3,3) circle (5pt);
-		\fill[OliveGreen] (1,4) circle (5pt);
-		\fill[OliveGreen] (5,4) circle (5pt);
-		\fill[OliveGreen] (3,5) circle (5pt);
-		\fill[OliveGreen] (2,5) circle (5pt);
-		\fill[OliveGreen] (4,5) circle (5pt);
-		\fill[OliveGreen] (4,2) circle (5pt);
-		\fill[OliveGreen] (2,3) circle (5pt);
-		\fill[OliveGreen] (5,3) circle (5pt);
-		
-	\end{tikzpicture}
+	\begin{goban}[7, hoshi = false]
+		\stones[b]{C5, D5, E4, E5}
+		\stones[w]{D3, D4}
+		\marks[filled circle, fill = {true, color = OliveGreen}]{B5, C4, C6, D4, D6, E3, E6, F4, F5}
+	\end{goban}
 	\caption{A black group with its \textcolor{OliveGreen}{adjacencies} marked.}
 	\label{ejemplo_adyacencias}
 \end{wrapfigure}
@@ -209,75 +170,14 @@ This definition is essential for describing much of the internal dynamics of Go.
 \begin{wrapfigure}[18]{r}{0.35\textwidth}
 	\centering
 	\vspace{48pt}
-	\begin{tikzpicture}[scale=0.7] \tikzstyle{every node}=[font=\small]
-		% Draw the background
-		\fill[goban] (-0.5,-0.5) rectangle (6.5,6.5);
-		
-		% Draw the grid lines
-		\draw[step=1cm, black] (0,0) grid (6,6);
-		
-		% Draw the thick border
-		\draw[very thick] (0,0) rectangle (6,6);
-		
-		% Draw the central black dot
-		\filldraw[draw=black,fill=white] (2,3) circle (12pt);
-		\filldraw[draw=black,fill=white] (1,3) circle (12pt);
-		\filldraw[draw=black,fill=white] (3,3) circle (12pt);
-		\filldraw[draw=black,fill=white] (1,5) circle (12pt);
-		\filldraw[draw=black,fill=white] (1,4) circle (12pt);
-		\filldraw[draw=black,fill=white] (4,2) circle (12pt);
-		\filldraw[draw=black,fill=white] (4,1) circle (12pt);
-		\filldraw[draw=black,fill=white] (4,0) circle (12pt);
-		\filldraw[draw=black,fill=white] (0,5) circle (12pt);
-		\filldraw[black] (5,3) circle (12pt);
-		\filldraw[black] (5,4) circle (12pt);
-		\filldraw[black] (4,4) circle (12pt);
-		\filldraw[black] (3,4) circle (12pt);
-		\filldraw[black] (2,5) circle (12pt);
-		\filldraw[black] (2,6) circle (12pt);
-		\filldraw[black] (5,2) circle (12pt);
-		\filldraw[black] (5,1) circle (12pt);
-		\filldraw[black] (5,0) circle (12pt);
-		
-		\filldraw[Blue] (0,0) circle (6pt);
-		\filldraw[Blue] (0,1) circle (6pt);
-		\filldraw[Blue] (0,2) circle (6pt);
-		\filldraw[Blue] (0,3) circle (6pt);
-		\filldraw[Blue] (0,4) circle (6pt);
-		\filldraw[Blue] (1,0) circle (6pt);
-		\filldraw[Blue] (1,1) circle (6pt);
-		\filldraw[Blue] (1,2) circle (6pt);
-		\filldraw[Blue] (2,0) circle (6pt);
-		\filldraw[Blue] (2,1) circle (6pt);
-		\filldraw[Blue] (2,2) circle (6pt);
-		\filldraw[Blue] (3,0) circle (6pt);
-		\filldraw[Blue] (3,1) circle (6pt);
-		\filldraw[Blue] (3,2) circle (6pt);
-		
-		\filldraw[OliveGreen] (6,6) circle (6pt);
-		\filldraw[OliveGreen] (6,5) circle (6pt);
-		\filldraw[OliveGreen] (6,4) circle (6pt);
-		\filldraw[OliveGreen] (6,3) circle (6pt);
-		\filldraw[OliveGreen] (6,2) circle (6pt);
-		\filldraw[OliveGreen] (6,1) circle (6pt);
-		\filldraw[OliveGreen] (6,0) circle (6pt);
-		\filldraw[OliveGreen] (5,6) circle (6pt);
-		\filldraw[OliveGreen] (4,6) circle (6pt);
-		\filldraw[OliveGreen] (3,6) circle (6pt);
-		\filldraw[OliveGreen] (5,6) circle (6pt);
-		\filldraw[OliveGreen] (4,6) circle (6pt);
-		\filldraw[OliveGreen] (3,6) circle (6pt);
-		\filldraw[OliveGreen] (5,5) circle (6pt);
-		\filldraw[OliveGreen] (4,5) circle (6pt);
-		\filldraw[OliveGreen] (3,5) circle (6pt);
-		\filldraw[OliveGreen] (5,6) circle (6pt);
-		\filldraw[OliveGreen] (4,6) circle (6pt);
-		\filldraw[Orange] (0,6) circle (6pt);
-		\filldraw[Orange] (1,6) circle (6pt);
-		\filldraw[Orange] (2,4) circle (6pt);
-		\filldraw[Orange] (4,3) circle (6pt);
-		\filldraw[Blue] (0,0) circle (6pt);
-	\end{tikzpicture}
+\begin{goban}[7, hoshi = false]
+	\stones[w]{A6, B4:6, C4, D4, E1:3}
+	\stones[b]{C6:7, D5, E5, F1:5}
+	\marks[filled circle, fill = {true, color = Blue}]{A1:5, B1:3, C1:3, D1:3}
+	\marks[filled circle, fill = {true, color = OliveGreen}]{D6:7, E6:7, F6:7, G1:7}
+	\marks[filled circle, fill = {true, color = Orange}]{A7, B7, C5, E4}
+\end{goban}
+	
 	\caption{\textcolor{Blue}{White}, \textcolor{OliveGreen}{black}, and \textcolor{Orange}{neutral} territory.}
 	\label{fig:territorios}
 \end{wrapfigure}\begin{definition}[Territory]
@@ -286,7 +186,7 @@ This definition is essential for describing much of the internal dynamics of Go.
 \end{definition} That is to say, all stones adjacent to the region belong to groups of the same color. We shall denote the \textit{territories}\footnote{From the term \textit{ji} (地), meaning ``land'' in Japanese.} of each color as:
 $$J^{e} = \{R : C(K(R)) = \{e\}\}, \quad e \neq 0.$$
 Regions that do not constitute territory for either player will be denoted and defined as
-$$J^{0}\coloneqq \{R : |C(K(R))| \geq 2\}.$$
+$$J^{0}\coloneqq \{R : |C(K(R))| \neq 2\}.$$
 Figure~\ref{fig:territorios} illustrates the different types of \textit{territories}. With this, we have established a partition of the set of \textit{regions} ($I^{0}$), since every region belongs to White's territory, belongs to Black's territory, or forms part of neither player's territory: \begin{align*} I^{0} = J^{0} \cup J^{1} \cup J^{2}. \end{align*}
 \label{posicion_espacial}
 
@@ -321,48 +221,10 @@ When playing Go on our turn, we either take a stone and place it on the board, o
 \begin{wrapfigure}[4]{r}{0.3\textwidth}
 	%\begin{figure}[H]
 	\centering
-	\begin{tikzpicture}[scale=0.5] \tikzstyle{every node}=[font=\small]
-		
-		% Draw the background
-		\fill[goban] (-0.5,-0.5) rectangle (6.5,6.5);
-		
-		% Draw the grid lines
-		\draw[step=1cm, black] (0,0) grid (6,6);
-		
-		% Draw the thick border
-		\draw[very thick] (0,0) rectangle (6,6);
-		
-		% Draw the central black dot
-		\filldraw[black] (2,2) circle  (4pt) ;
-		\path (2,2) node [white]{1} ;
-		
-		\filldraw[black] (2,2) circle (12pt);
-		\path (2,2) node [white]{1} ;
-		
-		\filldraw[black] (2,3) circle (12pt);
-		\path (2,3) node [white]{3} ;
-		
-		\filldraw[black] (3,3) circle (12pt);
-		\path (3,3) node [white]{5} ;
-		
-		\filldraw[black] (4,5) circle (12pt);
-		\path (4,5) node [white]{7} ;
-		
-		\filldraw[black] (3,5) circle (12pt);
-		\path (3,5) node [white]{9} ;
-		
-		\filldraw[draw=black,fill=white] (4,4) circle (12pt);
-		\path (4,4) node [black]{2} ;
-		\filldraw[draw=black,fill=white] (4,2) circle (12pt);
-		\path (4,2) node [black]{4} ;
-		\filldraw[draw=black,fill=white] (3,2) circle (12pt);
-		\path (3,2) node [black]{6} ;
-		\filldraw[draw=black,fill=white] (4,3) circle (12pt);
-		\path (4,3) node [black]{8} ;
-		\filldraw[draw=black,fill=white] (2,1) circle (12pt);
-		\path (2,1) node [black]{10} ;
-		\filldraw[draw=black,fill=white] (1,2) circle; 
-	\end{tikzpicture}
+\begin{goban}[7, hoshi = false]
+	\stone[w]{B3}
+	\moves{C3, E5, C4, E3, D4, D3, E6, E4, D6, C2}
+\end{goban}
 \end{wrapfigure} \begin{align*}
 	f(1) &= (1,(2,2)), & f(2) &= (1,(4,4)), & f(3) &= (1,(2,3)),\\
 	f(4) &= (2,(4,2)), & f(5) &= (2,(3,3)), & f(6) &= (2,(3,2)),\\
@@ -376,51 +238,19 @@ The function records the moves, but not their legality. Lets analyze the rules. 
 \begin{figure}[H]
 	%\begin{figure}[H]
 	\centering
-	\begin{tikzpicture}[scale=0.5] \tikzstyle{every node}=[font=\small]
-		% Draw the background
-		\fill[goban] (-0.5,-0.5) rectangle (6.5,6.5);
-		% Draw the grid lines
-		\draw[step=1cm, black] (0,0) grid (6,6);
-		% Draw the thick border
-		\draw[very thick] (0,0) rectangle (6,6);
-		% Draw the central black dot
-		\filldraw[black] (3,3) circle (4pt);
-		
-		\filldraw[draw=black,fill=black] (4,4) circle (12pt);
-		\filldraw[draw=black,fill=black] (4,2) circle (12pt);
-		\filldraw[draw=black,fill=black] (3,2) circle (12pt);
-		\filldraw[draw=black,fill=black] (3,3) circle (12pt);
-		\filldraw[draw=black,fill=black] (5,2) circle (12pt);
-		\filldraw[draw=black,fill=black] (6,3) circle (12pt);
-		\filldraw[draw=black,fill=white] (5,3) circle (12pt);
-		\filldraw[draw=black,fill=black] (5,4) circle (12pt);
-		\fill[draw=black,fill=BlueViolet, very thin] (3.75,2.75) rectangle (4.25,3.25);
-		\path (3,7.25) node [black,very thick]{\large{White plays}} ;
-		
-		
-		\begin{scope}[xshift=8cm]
-			% Draw the background
-			\fill[goban] (-0.5,-0.5) rectangle (6.5,6.5);
-			% Draw the grid lines
-			\draw[step=1cm, black] (0,0) grid (6,6);
-			% Draw the thick border
-			\draw[very thick] (0,0) rectangle (6,6);
-			% Draw the central black dot
-			\filldraw[black] (3,3) circle (4pt);
-			
-			\filldraw[draw=black,fill=white] (4,4) circle (12pt);
-			\filldraw[draw=black,fill=white] (4,2) circle (12pt);
-			\filldraw[draw=black,fill=white] (3,2) circle (12pt);
-			\filldraw[draw=black,fill=white] (3,3) circle (12pt);
-			\filldraw[draw=black,fill=white] (5,2) circle (12pt);
-			\filldraw[draw=black,fill=white] (6,3) circle (12pt);
-			\filldraw[black] (5,3) circle (12pt);
-			\fill[draw=black,fill=BlueViolet, very thin] (3.75,2.75) rectangle (4.25,3.25);
-			\filldraw[draw=black,fill=white] (5,4) circle (12pt);
-			\path (3,7.25) node [black,very thick]{\large{Black plays}} ;
-		\end{scope}
-		
-	\end{tikzpicture}
+\begin{goban}[7]
+	\stones[b]{D3:4, E3, E5, F3, F5, G4}
+	\stone[w]{F4}
+	\mark[filled square, fill = {true, color = BlueViolet}, line = {color = black}]{E4}
+	\node[font=\large, black] at (go cs:D8) {White plays};
+\end{goban}
+\quad
+\begin{goban}[7]
+	\stones[w]{D3:4, E3, E5, F3, F5, G4}
+	\stone[b]{F4}
+	\mark[filled square, fill = {true, color = BlueViolet}, line = {color = black}]{E4}
+	\node[font=\large, black] at (go cs:D8) {Black plays};
+\end{goban}
 	\caption{In \textcolor{BlueViolet}{purple}, illegal moves, as they lead to suicide.}
 	\label{sui_ej}
 \end{figure}
@@ -428,46 +258,15 @@ The function records the moves, but not their legality. Lets analyze the rules. 
 To evaluate a move, we first verify whether it results in a capture. If so, the move is legal. If it does not capture, we inspect its liberties: if it has none, it constitutes suicide and is therefore illegal; otherwise, it is legal. As noted in Section~\ref{primerreglako}, we must keep the \textit{ko rule} in mind. This rule forbids the immediate recapture of a single stone if doing so reverts the board state precisely to the position of the preceding turn (see Figure~\ref{regla_ko_ej}). 
 \begin{figure}[H]
 	\centering
-	\begin{tikzpicture}[scale=0.5] \tikzstyle{every node}=[font=\small]
-		% Draw the background
-		\fill[goban] (-0.5,-0.5) rectangle (6.5,6.5);
-		
-		% Draw the grid lines
-		\draw[step=1cm, black] (0,0) grid (6,6);
-		
-		% Draw the thick border
-		\draw[very thick] (0,0) rectangle (6,6);
-		
-		% Draw the central black dot
-		\filldraw[draw=black,fill=white] (3,4) circle (12pt);
-		\filldraw[draw=black,fill=white] (2,3) circle (12pt);
-		\filldraw[draw=black,fill=white] (4,3) circle (12pt);
-		\filldraw[draw=black,fill=white] (3,2) circle (12pt);
-		\filldraw[black] (3,1) circle (12pt);
-		\filldraw[black] (2,2) circle (12pt);
-		\filldraw[black] (4,2) circle (12pt);
-		\path (3,2) node [black]{1};
-		\begin{scope}[xshift=8cm]
-			% Draw the background
-			\fill[goban] (-0.5,-0.5) rectangle (6.5,6.5);
-			
-			% Draw the grid lines
-			\draw[step=1cm, black] (0,0) grid (6,6);
-			
-			% Draw the thick border
-			\draw[very thick] (0,0) rectangle (6,6);
-			
-			% Draw the central black dot
-			\filldraw[draw=black,fill=white] (3,4) circle (12pt);
-			\filldraw[draw=black,fill=white] (2,3) circle (12pt);
-			\filldraw[draw=black,fill=white] (4,3) circle (12pt);
-			\filldraw[black] (3,3) circle (12pt);
-			\filldraw[black] (3,1) circle (12pt);
-			\filldraw[black] (2,2) circle (12pt);
-			\filldraw[black] (4,2) circle (12pt);
-			\path (3,3) node [white]{2};
-		\end{scope}
-	\end{tikzpicture}
+\begin{goban}[7, hoshi = false, name = ko1]
+	\stones[w]{C4, D5, E4}
+	\stones[b]{C3, D2, E3}
+	\moves[w]{D3}
+\end{goban}
+\quad
+\begin{goban}[7, hoshi = false, resume = ko1, captures]
+	\moves{D4}
+\end{goban}
 	\caption{Position of a stone under apparent suicide that is legal because it captures.}
 	\label{fig: fig1.19}
 \end{figure}
@@ -475,47 +274,13 @@ To evaluate a move, we first verify whether it results in a capture. If so, the 
 
 \begin{figure}[H]
 	\centering
-	\begin{tikzpicture}[scale=0.5] \tikzstyle{every node}=[font=\small]
-		% Draw the background
-		\fill[goban] (-0.5,-0.5) rectangle (6.5,6.5);
-		
-		% Draw the grid lines
-		\draw[step=1cm, black] (0,0) grid (6,6);
-		
-		% Draw the thick border
-		\draw[very thick] (0,0) rectangle (6,6);
-		
-		% Draw the central black dot
-		\filldraw[draw=black,fill=white] (3,4) circle (12pt);
-		\filldraw[draw=black,fill=white] (2,3) circle (12pt);
-		\filldraw[draw=black,fill=white] (4,3) circle (12pt);
-		\filldraw[draw=black,fill=white] (3,2) circle (12pt);
-		\filldraw[black] (3,1) circle (12pt);
-		\filldraw[black] (2,2) circle (12pt);
-		\filldraw[black] (4,2) circle (12pt);
-		\path (3,2) node [black]{1};
-		\begin{scope}[xshift=8cm]
-			% Draw the background
-			\fill[goban] (-0.5,-0.5) rectangle (6.5,6.5);
-			
-			% Draw the grid lines
-			\draw[step=1cm, black] (0,0) grid (6,6);
-			
-			% Draw the thick border
-			\draw[very thick] (0,0) rectangle (6,6);
-			
-			% Draw the central black dot
-			\filldraw[draw=black,fill=white] (3,4) circle (12pt);
-			\filldraw[draw=black,fill=white] (2,3) circle (12pt);
-			\filldraw[draw=black,fill=white] (4,3) circle (12pt);
-			\filldraw[black] (3,3) circle (12pt);
-			\filldraw[OliveGreen] (3,2) circle (6pt);  
-			\filldraw[black] (3,1) circle (12pt);
-			\filldraw[black] (2,2) circle (12pt);
-			\filldraw[black] (4,2) circle (12pt);
-			\path (3,3) node [white]{2};
-		\end{scope}
-	\end{tikzpicture}
+\begin{goban}[7, hoshi = false, resume = {ko1, numbers}]
+\end{goban}
+\quad
+\begin{goban}[7, hoshi = false, resume = ko1, captures]
+	\moves{D4}
+	\mark[filled circle, fill = {true, color = OliveGreen}]{D3}
+\end{goban}
 	\caption{White cannot play at the \textcolor{OliveGreen}{green intersection}, as doing so repeats a prior board position.}
 	\label{regla_ko_ej}
 \end{figure}
@@ -523,303 +288,62 @@ To evaluate a move, we first verify whether it results in a capture. If so, the 
 The basic \textit{ko rule} is insufficient, as cycles exist where the board position is repeated without immediately recapturing the same stone. See Figure~\ref{ciclo_ko}, in which an earlier position is reached once again via a sequence of captures that do not violate the basic \textit{ko rule}.
 \begin{figure}[H]
 	\centering
-	\begin{tikzpicture}[scale=0.5] \tikzstyle{every node}=[font=\small]
-		% Draw the background
-		\fill[goban] (-0.5,-0.5) rectangle (6.5,6.5);
-		
-		% Draw the grid lines
-		\draw[step=1cm, black] (0,0) grid (6,6);
-		
-		% Draw the thick border
-		\draw[very thick] (0,0) rectangle (6,6);
-		
-		% Draw the central black dot
-		\filldraw[draw=black,fill=white] (0,5) circle (12pt);
-		\filldraw[black] (1,6) circle (12pt);
-		\filldraw[black] (1,5) circle (12pt);
-		\filldraw[draw=black,fill=white] (0,3) circle (12pt);
-		\filldraw[draw=black,fill=white] (1,3) circle (12pt);
-		\filldraw[draw=black,fill=white] (1,4) circle (12pt);
-		\filldraw[draw=black,fill=white] (2,4) circle (12pt);
-		\filldraw[draw=black,fill=white] (2,5) circle (12pt);
-		\filldraw[draw=black,fill=white] (3,5) circle (12pt);
-		\filldraw[draw=black,fill=white] (3,6) circle (12pt);
-		\filldraw[black] (4,6) circle (12pt);
-		\filldraw[black] (4,5) circle (12pt);
-		\filldraw[black] (4,4) circle (12pt);
-		\filldraw[black] (3,4) circle (12pt);
-		\filldraw[black] (2,3) circle (12pt);
-		\filldraw[black] (2,2) circle (12pt);
-		\filldraw[black] (1,2) circle (12pt);
-		\filldraw[black] (0,2) circle (12pt);
-		\filldraw[black] (4,2) circle (12pt);
-		\begin{scope}[xshift=7.5cm]
-			% Draw the background
-			\fill[goban] (-0.5,-0.5) rectangle (6.5,6.5);
-			
-			% Draw the grid lines
-			\draw[step=1cm, black] (0,0) grid (6,6);
-			
-			% Draw the thick border
-			\draw[very thick] (0,0) rectangle (6,6);
-			
-			% Draw the central black dot
-			\filldraw[draw=black,fill=white] (0,5) circle (12pt);
-			\filldraw[black] (1,6) circle (12pt);
-			\filldraw[black] (1,5) circle (12pt);
-			\filldraw[draw=black,fill=white] (0,3) circle (12pt);
-			\filldraw[draw=black,fill=white] (1,3) circle (12pt);
-			\filldraw[draw=black,fill=white] (1,4) circle (12pt);
-			\filldraw[draw=black,fill=white] (2,4) circle (12pt);
-			\filldraw[draw=black,fill=white] (2,5) circle (12pt);
-			\filldraw[draw=black,fill=white] (3,5) circle (12pt);
-			\filldraw[draw=black,fill=white] (3,6) circle (12pt);
-			\filldraw[black] (4,6) circle (12pt);
-			\filldraw[black] (4,5) circle (12pt);
-			\filldraw[black] (4,4) circle (12pt);
-			\filldraw[black] (3,4) circle (12pt);
-			\filldraw[black] (2,3) circle (12pt);
-			\filldraw[black] (2,2) circle (12pt);
-			\filldraw[black] (1,2) circle (12pt);
-			\filldraw[black] (0,2) circle (12pt);
-			\filldraw[black] (4,2) circle (12pt);
-			\filldraw[draw=black,fill=white] (0,6) circle (12pt);
-			\path (0,6) node [black]{1};
-		\end{scope}
-		\begin{scope}[xshift=15cm]
-			% Draw the background
-			\fill[goban] (-0.5,-0.5) rectangle (6.5,6.5);
-			
-			% Draw the grid lines
-			\draw[step=1cm, black] (0,0) grid (6,6);
-			
-			% Draw the thick border
-			\draw[very thick] (0,0) rectangle (6,6);
-			
-			% Draw the central black dot
-			\filldraw[black] (1,6) circle (12pt);
-			\filldraw[black] (1,5) circle (12pt);
-			\filldraw[draw=black,fill=white] (0,3) circle (12pt);
-			\filldraw[draw=black,fill=white] (1,3) circle (12pt);
-			\filldraw[draw=black,fill=white] (1,4) circle (12pt);
-			\filldraw[draw=black,fill=white] (2,4) circle (12pt);
-			\filldraw[draw=black,fill=white] (2,5) circle (12pt);
-			\filldraw[draw=black,fill=white] (3,5) circle (12pt);
-			\filldraw[draw=black,fill=white] (3,6) circle (12pt);
-			\filldraw[black] (4,6) circle (12pt);
-			\filldraw[black] (4,5) circle (12pt);
-			\filldraw[black] (4,4) circle (12pt);
-			\filldraw[black] (3,4) circle (12pt);
-			\filldraw[black] (2,3) circle (12pt);
-			\filldraw[black] (2,2) circle (12pt);
-			\filldraw[black] (1,2) circle (12pt);
-			\filldraw[black] (0,2) circle (12pt);
-			\filldraw[black] (4,2) circle (12pt);
-			\filldraw[black] (0,4) circle (12pt);
-			\path (0,4) node [white]{2};
-		\end{scope}
-		
-		\begin{scope}[xshift=22.5cm]
-			% Draw the background
-			\fill[goban] (-0.5,-0.5) rectangle (6.5,6.5);
-			
-			% Draw the grid lines
-			\draw[step=1cm, black] (0,0) grid (6,6);
-			
-			% Draw the thick border
-			\draw[very thick] (0,0) rectangle (6,6);
-			
-			% Draw the central black dot
-			\filldraw[black] (1,6) circle (12pt);
-			\filldraw[black] (1,5) circle (12pt);
-			\filldraw[draw=black,fill=white] (0,3) circle (12pt);
-			\filldraw[draw=black,fill=white] (1,3) circle (12pt);
-			\filldraw[draw=black,fill=white] (1,4) circle (12pt);
-			\filldraw[draw=black,fill=white] (2,4) circle (12pt);
-			\filldraw[draw=black,fill=white] (2,5) circle (12pt);
-			\filldraw[draw=black,fill=white] (3,5) circle (12pt);
-			\filldraw[draw=black,fill=white] (3,6) circle (12pt);
-			\filldraw[black] (4,6) circle (12pt);
-			\filldraw[black] (4,5) circle (12pt);
-			\filldraw[black] (4,4) circle (12pt);
-			\filldraw[black] (3,4) circle (12pt);
-			\filldraw[black] (2,3) circle (12pt);
-			\filldraw[black] (2,2) circle (12pt);
-			\filldraw[black] (1,2) circle (12pt);
-			\filldraw[black] (0,2) circle (12pt);
-			\filldraw[black] (4,2) circle (12pt);
-			\filldraw[draw=black,fill=white] (0,5) circle (12pt);
-			\path (0,5) node [black]{3};
-		\end{scope}
-	\end{tikzpicture}
+	\begin{goban}[7, hoshi = false, name = borde0]
+		\stones[w]{A4, A6, B4:5, C5:6, D6:7}
+		\stones[b]{A3, B3, B6:7, C3:4, D5, E3, E5:7}
+	\end{goban}
+	\quad
+	\begin{goban}[7, hoshi = false, resume = borde0]
+		\moves[w, from = 1]{A7}
+	\end{goban}
+	\quad
+	\begin{goban}[7, hoshi = false, resume = borde0]
+		\moves[b, from = 2]{A5}
+	\end{goban}
+	\quad
+	\begin{goban}[7, hoshi = false, resume = borde0]
+		\moves[w, from = 3]{A6}
+	\end{goban}
 	\caption{Board configuration featuring a three-move cycle.}
 	\label{ciclo_ko}
 \end{figure}
 Because repeating positions is prohibited, we require a more general rule. To illustrate an extreme case, see Figure~\ref{ciclo_inf}.\footnote{There exist examples involving far longer cycles; to explore them in greater depth, see \cite{cicloinfinito}.}
 \begin{figure}[H]
 	\centering
-	\begin{tikzpicture}[scale=0.9]
-		% Draw the background
-		\fill[goban] (-0.5,-0.5) rectangle (2.5,2.5);
-		% Draw the grid lines
-		\draw[step=1cm, black] (0,0) grid (2,2);
-		% Draw the thick border
-		\draw[very thick] (0,0) rectangle (2,2);
-		
-		% Draw the central black dot
-		\filldraw[draw=black,fill=white] (0,2) circle (12pt);
-		\filldraw[draw=black,fill=white] (1,1) circle (12pt);
-		\filldraw[draw=black,fill=white] (0,0) circle (12pt);
-		\filldraw[black] (1,2) circle (12pt);
-		\filldraw[black] (2,1) circle (12pt);
-		\filldraw[black] (1,0) circle (12pt);
-		
-		\begin{scope}[xshift=3.5cm]
-			% Draw the background
-			\fill[goban] (-0.5,-0.5) rectangle (2.5,2.5);
-			% Draw the grid lines
-			\draw[step=1cm, black] (0,0) grid (2,2);
-			% Draw the thick border
-			\draw[very thick] (0,0) rectangle (2,2);
-			\filldraw[draw=black,fill=white] (0,2) circle (12pt);
-			\filldraw[draw=black,fill=white] (1,1) circle (12pt);
-			\filldraw[draw=black,fill=white] (0,0) circle (12pt);
-			\filldraw[black] (2,1) circle (12pt);
-			\filldraw[black] (1,0) circle (12pt);
-			\filldraw[draw=black,fill=white] (2,2) circle (12pt);
-			\path (2,2) node [black]{1};
-		\end{scope}
-		\begin{scope}[xshift=7cm]
-			% Draw the background
-			\fill[goban] (-0.5,-0.5) rectangle (2.5,2.5);
-			% Draw the grid lines
-			\draw[step=1cm, black] (0,0) grid (2,2);
-			% Draw the thick border
-			\draw[very thick] (0,0) rectangle (2,2);
-			\filldraw[draw=black,fill=white] (0,2) circle (12pt);
-			\filldraw[draw=black,fill=white] (1,1) circle (12pt);
-			\filldraw[black] (2,1) circle (12pt);
-			\filldraw[black] (1,0) circle (12pt);
-			\filldraw[black] (0,1) circle (12pt);
-			\filldraw[draw=black,fill=white] (2,2) circle (12pt);
-			\path (2,2) node [black]{1};
-			\path (0,1) node [white]{2};
-		\end{scope}
-		\begin{scope}[xshift=10.5cm]
-			% Draw the background
-			\fill[goban] (-0.5,-0.5) rectangle (2.5,2.5);
-			% Draw the grid lines
-			\draw[step=1cm, black] (0,0) grid (2,2);
-			% Draw the thick border
-			\draw[very thick] (0,0) rectangle (2,2);
-			\filldraw[draw=black,fill=white] (0,2) circle (12pt);
-			\filldraw[draw=black,fill=white] (1,1) circle (12pt);
-			\filldraw[black] (1,0) circle (12pt);
-			\filldraw[black] (0,1) circle (12pt);
-			\filldraw[draw=black,fill=white] (2,2) circle (12pt);
-			\filldraw[draw=black,fill=white] (2,0) circle (12pt);
-			\path (2,2) node [black]{1};
-			\path (0,1) node [white]{2};
-			\path (2,0) node [black]{3};
-		\end{scope}
-		\begin{scope}[xshift=14cm]
-			% Draw the background
-			\fill[goban] (-0.5,-0.5) rectangle (2.5,2.5);
-			% Draw the grid lines
-			\draw[step=1cm, black] (0,0) grid (2,2);
-			% Draw the thick border
-			\draw[very thick] (0,0) rectangle (2,2);
-			\filldraw[draw=black,fill=white] (1,1) circle (12pt);
-			\filldraw[black] (1,0) circle (12pt);
-			\filldraw[black] (0,1) circle (12pt);
-			\filldraw[draw=black,fill=white] (2,2) circle (12pt);
-			\filldraw[draw=black,fill=white] (2,0) circle (12pt);
-			\filldraw[black] (1,2) circle (12pt);
-			\path (2,2) node [black]{1};
-			\path (0,1) node [white]{2};
-			\path (2,0) node [black]{3};
-			\path (1,2) node [white]{4};
-		\end{scope}
-		\begin{scope}[xshift=0cm,yshift=-3.5cm]
-			% Draw the background
-			\fill[goban] (-0.5,-0.5) rectangle (2.5,2.5);
-			% Draw the grid lines
-			\draw[step=1cm, black] (0,0) grid (2,2);
-			% Draw the thick border
-			\draw[very thick] (0,0) rectangle (2,2);
-			\filldraw[draw=black,fill=white] (1,1) circle (12pt);
-			\filldraw[black] (0,1) circle (12pt);
-			\filldraw[draw=black,fill=white] (2,2) circle (12pt);
-			\filldraw[draw=black,fill=white] (2,0) circle (12pt);
-			\filldraw[black] (1,2) circle (12pt);
-			\filldraw[draw=black,fill=white] (0,0) circle (12pt);
-			\path (2,2) node [black]{1};
-			\path (0,1) node [white]{2};
-			\path (2,0) node [black]{3};
-			\path (1,2) node [white]{4};
-			\path (0,0) node [black]{5};
-		\end{scope}
-		\begin{scope}[xshift=3.5cm,yshift=-3.5cm]
-			% Draw the background
-			\fill[goban] (-0.5,-0.5) rectangle (2.5,2.5);
-			% Draw the grid lines
-			\draw[step=1cm, black] (0,0) grid (2,2);
-			% Draw the thick border
-			\draw[very thick] (0,0) rectangle (2,2);
-			\filldraw[draw=black,fill=white] (1,1) circle (12pt);
-			\filldraw[black] (0,1) circle (12pt);
-			\filldraw[draw=black,fill=white] (2,0) circle (12pt);
-			\filldraw[black] (1,2) circle (12pt);
-			\filldraw[draw=black,fill=white] (0,0) circle (12pt);
-			\filldraw[black] (2,1) circle (12pt);
-			\path (0,1) node [white]{2};
-			\path (2,0) node [black]{3};
-			\path (1,2) node [white]{4};
-			\path (0,0) node [black]{5};
-			\path (2,1) node [white]{6};
-		\end{scope}
-		\begin{scope}[xshift=7cm,yshift=-3.5cm]
-			% Draw the background
-			\fill[goban] (-0.5,-0.5) rectangle (2.5,2.5);
-			% Draw the grid lines
-			\draw[step=1cm, black] (0,0) grid (2,2);
-			% Draw the thick border
-			\draw[very thick] (0,0) rectangle (2,2);
-			\filldraw[draw=black,fill=white] (1,1) circle (12pt);
-			\filldraw[draw=black,fill=white] (2,0) circle (12pt);
-			\filldraw[black] (1,2) circle (12pt);
-			\filldraw[draw=black,fill=white] (0,0) circle (12pt);
-			\filldraw[black] (2,1) circle (12pt);
-			\filldraw[draw=black,fill=white] (0,2) circle (12pt);
-			\path (2,0) node [black]{3};
-			\path (1,2) node [white]{4};
-			\path (0,0) node [black]{5};
-			\path (2,1) node [white]{6};
-			\path (0,2) node [black]{7};
-		\end{scope}
-		\begin{scope}[xshift=10.5cm,yshift=-3.5cm]
-			% Draw the background
-			\fill[goban] (-0.5,-0.5) rectangle (2.5,2.5);
-			% Draw the grid lines
-			\draw[step=1cm, black] (0,0) grid (2,2);
-			% Draw the thick border
-			\draw[very thick] (0,0) rectangle (2,2);
-			\filldraw[draw=black,fill=white] (1,1) circle (12pt);
-			\filldraw[black] (1,2) circle (12pt);
-			\filldraw[draw=black,fill=white] (0,0) circle (12pt);
-			\filldraw[black] (2,1) circle (12pt);
-			\filldraw[black] (1,0) circle (12pt);
-			\filldraw[draw=black,fill=white] (0,2) circle (12pt);
-			\path (1,2) node [white]{4};
-			\path (0,0) node [black]{5};
-			\path (2,1) node [white]{6};
-			\path (0,2) node [black]{7};
-			\path (1,0) node [white]{8};
-		\end{scope}
-		\begin{scope}[xshift=14cm,yshift=-3.5cm]
-			\path (1,1) node [black]{\Huge{\dots}};
-		\end{scope}
-	\end{tikzpicture}
+	\begin{pgfgolayout}[columns = 5]
+		\begin{goban}[3, name = t3x3]
+			\stones[w]{A1, A3, B2}
+			\stones[b]{B1, B3, C2}
+		\end{goban}
+		\begin{goban}[3, name = t3x3-1, resume = t3x3]
+			\stone[w, forget]{B3} % En el original (1,2) desaparece en el paso 1
+			\moves[w, from = 1]{C3}
+		\end{goban}
+		\begin{goban}[3, name = t3x3-2, resume = {t3x3-1, numbers}, captures]
+			\moves{A2}
+		\end{goban}
+		\begin{goban}[3, name = t3x3-3, resume = {t3x3-2, numbers}, captures]
+			\moves{C1}
+		\end{goban}
+		\begin{goban}[3, name = t3x3-4, resume = {t3x3-3, numbers}, captures]
+			\moves{B3}
+		\end{goban}
+		\begin{goban}[3, name = t3x3-5, resume = {t3x3-4, numbers}, captures]
+			\moves{A1}
+		\end{goban}
+		\begin{goban}[3, name = t3x3-6, resume = t3x3-5]
+			\stone[b]{A2}\moves[b, from = 2]{A2}
+			\moves[w, from = 3]{C1, B3, A1, C2}
+		\end{goban}
+		\begin{goban}[3, name = t3x3-7, resume = t3x3-6]
+			\moves[w, from = 3]{C1, B3, A1, C2, A3}
+		\end{goban}
+		\begin{goban}[3]
+			\stones[w]{A1, A3, B2}
+			\stones[b]{B3, C2}
+			\moves[b, from = 4]{B3, A1, C2, A3, B1}
+		\end{goban}
+	\end{pgfgolayout}
 	\caption{A cycle of length 8 that can be repeated indefinitely in the absence of a Superko rule.}
 	\label{ciclo_inf}
 \end{figure}
@@ -909,38 +433,6 @@ Furthermore, we have characterized not only when a move is legal, but also which
 	\item Executing a capture by means of suicide.
 \end{enumerate}
 
-%		\subsection{SuperKo en dos dimensiones}
-%		\label{SuperKo2d}
-%		
-%		Durante una partida, la detección visual de un \textit{ko} inmediato es natural; sin embargo, cuando enfrentamos una extensa seguidilla de jugadas que desemboca en una repetición cíclica del tablero, identificar la infracción puede volverse sumamente complejo. Para poder detectar cuándo ocurre esta repetición, necesitamos un método algorítmico que nos permita revisar el historial de la partida y determinar si, para un turno $t$, existió algún turno anterior $t-k$ en el que la posición se haya repetido.
-%		
-%		Si nuestro tablero es de $n \times m$, podemos representar su estado fácilmente mediante la siguiente matriz:
-%		\[
-%		\text{Go}(t) = \begin{bmatrix}
-	%			e_{1,1} & e_{1,2} & \dots  & e_{1,m} \\
-	%			e_{2,1} & e_{2,2} & \dots  & e_{2,m} \\
-	%			\vdots  & \vdots  & \ddots & \vdots  \\
-	%			e_{n,1} & e_{n,2} & \dots  & e_{n,m}
-	%		\end{bmatrix}.
-%		\]
-%		Aquí, $\text{Go}(t)$ representa la matriz de estado de cada punto del tablero en el turno $t$.
-%		
-%		Supongamos que, en un turno $t$, nuestro tablero posee una piedra blanca en la posición $(1,1)$, adoptando la siguiente forma:
-%		\[
-%		\mathrm{Go}(t) = \begin{bmatrix}
-	%			2 & e_{1,2} & \dots  & e_{1,m} \\
-	%			e_{2,1} & e_{2,2} & \dots  & e_{2,m} \\
-	%			\vdots  & \vdots  & \ddots & \vdots  \\
-	%			e_{n,1} & e_{n,2} & \dots  & e_{n,m}
-	%		\end{bmatrix}, \quad
-%		\mathrm{Go}(t+k) = \begin{bmatrix}
-	%			0 & e_{1,2} & \dots  & e_{1,m} \\
-	%			e_{2,1} & e_{2,2} & \dots  & e_{2,m} \\
-	%			\vdots  & \vdots  & \ddots & \vdots  \\
-	%			e_{n,1} & e_{n,2} & \dots  & e_{n,m}
-	%		\end{bmatrix}.
-%		\]
-%		Supongamos también que, luego de $k$ turnos, nos encontramos con un tablero $\mathrm{Go}(t+k)$ que es idéntico a $\mathrm{Go}(t)$, a excepción de esa primera posición, donde ahora $e_{1,1}(t+k) = 0$. Si en este momento es el turno del jugador blanco, sería ilegal que jugara en $(1,1)$, puesto que dicha acción viola la regla del \textit{SuperKo}.
 \subsection{Scoring}\label{contarpuntos}
 Eventually, by virtue of Superko and mutual agreement, the game concludes. The winner in Go is the player who amasses the greatest number of points. To compute this, it suffices to sum each player's living stones remaining on the board at the end of the game and add their secured territory. In addition, the \textit{komi} is added to White's total.
 
@@ -1003,58 +495,19 @@ Indeed, the sum of the parts equals the total number of points:
 \[ \left(\frac{3}{9} + \frac{2}{9} + \frac{4}{9}\right) \cdot 4 = 4. \]
 \begin{figure}
 	\centering
-	\begin{tikzpicture}[scale=0.65] \tikzstyle{every node}=[font=\small]
-		% Draw the background
-		\fill[goban] (-0.5,-0.5) rectangle (6.5,6.5);
-		
-		% Draw the grid lines
-		\draw[step=1cm, black] (0,0) grid (6,6);
-		
-		% Draw the thick border
-		\draw[very thick] (0,0) rectangle (6,6);
-		
-		% Draw the central black dot
-		
-		\filldraw[Red] (2,4) circle (12pt);
-		\filldraw[Red] (3,4) circle (12pt);
-		\filldraw[Red] (4,3) circle (12pt);
-		\filldraw[Red] (4,4) circle (12pt);
-		\fill[RawSienna] (3,3) circle (12pt);
-		\fill[TealBlue] (1,4) circle (12pt);
-		\fill[TealBlue] (5,4) circle (12pt);
-		\fill[OliveGreen] (3,5) circle (12pt);
-		\fill[OliveGreen] (2,5) circle (12pt);
-		\fill[OliveGreen] (4,5) circle (12pt);
-		\fill[RawSienna] (4,2) circle (12pt);
-		\fill[RawSienna] (2,3) circle (12pt);
-		
-		\begin{scope}[xshift=8cm]
-			\fill[goban] (-0.5,-0.5) rectangle (6.5,6.5);
-			
-			% Draw the grid lines
-			\draw[step=1cm, black] (0,0) grid (6,6);
-			
-			% Draw the thick border
-			\draw[very thick] (0,0) rectangle (6,6);
-			
-			% Draw the central black dot
-			
-			%\filldraw[Red] (2,4) circle (12pt);
-			%\filldraw[Red] (3,4) circle (12pt);
-			%\filldraw[Red] (4,3) circle (12pt);
-			%\filldraw[Red] (4,4) circle (12pt);
-			\fill[RawSienna] (3,3) circle (12pt);
-			\fill[TealBlue] (1,4) circle (12pt);
-			\fill[TealBlue] (5,4) circle (12pt);
-			\fill[OliveGreen] (3,5) circle (12pt);
-			\fill[OliveGreen] (2,5) circle (12pt);
-			\fill[OliveGreen] (4,5) circle (12pt);
-			\fill[RawSienna] (4,2) circle (12pt);
-			\fill[RawSienna] (2,3) circle (12pt);
-			\fill[RawSienna] (5,3) circle (12pt);
-			\path (5,3) node [white]{1};
-		\end{scope}
-	\end{tikzpicture}
+\begin{goban}[7, hoshi = false]
+	\stones[fill = {color = Red}]{C5, D5, E4, E5}
+	\stones[fill = {color = RawSienna}, line = false]{C4, D4, E3}
+	\stones[fill = {color = TealBlue}, line = false]{B5, F5}
+	\stones[fill = {color = OliveGreen}, line = false]{C6:E6}
+\end{goban}
+\quad
+\begin{goban}[7, hoshi = false]
+	\stones[fill = {color = RawSienna}, line = false]{C4, D4, E3}
+	\stones[fill = {color = TealBlue}, line = false]{B5, F5}
+	\stones[fill = {color = OliveGreen}, line = false]{C6:E6}
+	\moves[b, from = 1, fill = {color = RawSienna}, line = false, label = {color = white}]{F4}
+\end{goban}
 	\caption{
 		Capture in $\mathrm{Go}^{2}_{4}$. Brown plays and captures the red group.}
 	\label{fig:capturasm}
@@ -1241,8 +694,12 @@ $$p(\text{no error}) = \left( 1 - \frac{1}{2^{n+m}} \right)^{2^n} \approx \left(
 \end{table}
 Therefore, it would suffice to utilize 21-bit or even 32-bit numbers to achieve a probability of avoiding a Type 1 error of 0.9999995 or 0.9999999997, respectively. We could generate two, three, or however many verification sequences we deem necessary in order to minimize the error.
 
-To verify the \textit{Superko} rule, it suffices to perform $S \cdot (t-1)$ operations, where $S$ is the total number of independent hash sequences implemented. If $H_{s}(t)$ represents the hash value at turn $t$ for sequence $s$, then:
-$$ \text{SuperKo at turn } t \iff H_{s}(t) \oplus H_{s}(t-k) = \vec{0}\ \ \text{and}\ \  f(t),f(t-k)\neq \varnothing.$$
+\begin{definition}[SuperKo detection]
+	Given a board $T$, a play $f(t)\neq \varnothing$ breaks the SuperKo rule exactly when:
+	$$\text{SuperKo}(f(t)) = 1 \iff \exists k \in \{1, \dots, t-1\} : T_t = T_{t-k}.$$
+\end{definition}
+In the context of Zobrist, to verify the \textit{Superko} rule, it suffices to perform $S \cdot (t-1)$ operations, where $S$ is the total number of independent hash sequences implemented. If $H_{s}(t)$ represents the hash value at turn $t$ for sequence $s$, then:
+$$ \text{SuperKo}(f(t)) = 1 \iff H_{s}(t) \oplus H_{s}(t-k) = \vec{0}\ \ \text{and}\ \  f(t),f(t-k)\neq \varnothing.$$
 for some $k \in \{1, 2, \dots, t-1\}$ and for every sequence $s \in \{1, \dots, S\}$. We shall denote the numbers assigned to the stones by $h_s(i)$. Furthermore, to process captures, we shall make use of the XOR operator properties assumed previously. When a stone is captured, it is removed from the board. Therefore, if stone $p_{j}$ is removed, it suffices to apply the operation $H_s(t) \oplus h_s(i_{j})$ to the current state.
 
 By virtue of Properties P1 and P2, we can rearrange the hash calculation:
@@ -1280,70 +737,21 @@ We initialize the game hash to the null vector $\vec{0} = 00000000 $, representi
 %\begin{wrapfigure}[4]{r}{0.5\textwidth}
 \begin{figure}[H]
 	\centering
-	\begin{tikzpicture}[scale=1]
-		% Draw the background
-		\fill[goban] (-0.5,-0.5) rectangle (2.5,2.5);
-		% Draw the grid lines
-		\draw[step=1cm, black] (0,0) grid (2,2);
-		% Draw the thick border
-		\draw[very thick] (0,0) rectangle (2,2);
-		
-		% Draw the central black dot
-		\filldraw[draw=black,fill=white] (0,2) circle (12pt);
-		\filldraw[draw=black,fill=white] (1,0) circle (12pt);
-		%\filldraw[draw=black,fill=white] (2,1) circle (12pt);
-		\filldraw[black] (1,1) circle (12pt);
-		\filldraw[black] (1,2) circle (12pt);
-		\filldraw[black] (2,0) circle (12pt);
-		\path (1,1) node [white]{1};
-		\path (0,2) node [black]{2};
-		\path (1,2) node [white]{3};
-		\path (1,0) node [black]{4};
-		\path (2,0) node [white]{5};
-		
-		\begin{scope}[xshift=3.5cm]
-			% Draw the background
-			\fill[goban] (-0.5,-0.5) rectangle (2.5,2.5);
-			% Draw the grid lines
-			\draw[step=1cm, black] (0,0) grid (2,2);
-			% Draw the thick border
-			\draw[very thick] (0,0) rectangle (2,2);
-			
-			% Draw the central black dot
-			\filldraw[draw=black,fill=white] (0,2) circle (12pt);
-			\filldraw[draw=black,fill=white] (1,0) circle (12pt);
-			\filldraw[draw=black,fill=white] (2,1) circle (12pt);
-			\filldraw[black] (1,1) circle (12pt);
-			\filldraw[black] (1,2) circle (12pt);
-			\path (1,1) node [white]{1};
-			\path (0,2) node [black]{2};
-			\path (1,2) node [white]{3};
-			\path (1,0) node [black]{4};
-			\path (2,1) node [black]{6};
-			
-		\end{scope}
-		\begin{scope}[xshift=7cm]
-			% Draw the background
-			\fill[goban] (-0.5,-0.5) rectangle (2.5,2.5);
-			% Draw the grid lines
-			\draw[step=1cm, black] (0,0) grid (2,2);
-			% Draw the thick border
-			\draw[very thick] (0,0) rectangle (2,2);
-			
-			% Draw the central black dot
-			%\filldraw[draw=black,fill=white] (0,2) circle (12pt);
-			\filldraw[draw=black,fill=white] (1,0) circle (12pt);
-			\filldraw[draw=black,fill=white] (2,1) circle (12pt);
-			\filldraw[black] (1,1) circle (12pt);
-			\filldraw[black] (1,2) circle (12pt);
-			\filldraw[black] (0,1) circle (12pt);
-			\path (1,1) node [white]{1};
-			\path (0,1) node [white]{7};
-			\path (1,2) node [white]{3};
-			\path (1,0) node [black]{4};
-			\path (2,1) node [black]{6};
-		\end{scope}
-	\end{tikzpicture}
+	\begin{goban}[3]
+		\moves[b, from = 1]{B2, A3, B3, B1}
+		\moves[b, from = 5]{C1}
+	\end{goban}
+	\quad
+	\begin{goban}[3]
+		\moves[b, from = 1]{B2, A3, B3, B1}
+		\moves[w, from = 6]{C2}
+	\end{goban}
+	\quad
+	\begin{goban}[3]
+		\moves[b, from = 1]{B2}
+		\moves[b, from = 3]{B3, B1}
+		\moves[w, from = 6]{C2, A2}
+	\end{goban}
 	\caption{Finished game on a $3\times 3$ board.}
 	\label{fig:tablero_ejsko}
 \end{figure}
@@ -1534,43 +942,18 @@ where, to a Go game $(G, E, A)$, we adjoin the transition function $\Delta: \mat
 %	$$P(k)= \sum|I(k)|+	\sum|J(k)|+ Cap(k)$$
 %	Para cada $k \in E\setminus \{0\}$, el mayor $P(k)$ gana. Si hay hay más de uno que es mayor, es empate. Aquí no consideramos \textbf{komi} por ser el generalizado, en cuyo caso (dos jugadores), sumar \textbf{komi} al jugador $2$.
 %	
-%	Un $Go$ además es notado por $Go^{n}_{m}$. Si quisiéramos explicitar: $Go^{2}_{2}(19,19)$ para el tablero convencional. En caso de omitir los jugadores, se interpretará que se está hablando del tablero de dimensión $n$, para cualquier cantidad de jugadores: $Go^{n}$. Del mismo modo, $Go_{m}$ representará el tablero de cualquier dimensión y de $m$ jugadores.
-%\onecolumn
-%	\newpage
+
 
 \section{Life in the Game of Go}\label{sec-vida}
 
 If we recall the rules, towards the very end we briefly encountered the concept of being \textit{alive}. In this section, we shall formalize this notion.
 
-\begin{wrapfigure}[12]{r}{0.3\textwidth}
-	%\begin{figure}[H]
+\begin{wrapfigure}[12]{r}{0.35\textwidth}
 	\centering
-	\vspace{-25pt}
-	\begin{tikzpicture}[scale=0.65] \tikzstyle{every node}=[font=\small]
-		% Draw the background
-		\fill[goban] (-0.5,-0.5) rectangle (6.5,6.5);
-		
-		% Draw the grid lines
-		\draw[step=1cm, black] (0,0) grid (6,6);
-		
-		% Draw the thick border
-		\draw[very thick] (0,0) rectangle (6,6);
-		\filldraw[draw=black,fill=white] (2,1) circle (12pt);
-		\filldraw[draw=black,fill=white] (2,2) circle (12pt);
-		\filldraw[draw=black,fill=white] (0,2) circle (12pt);
-		\filldraw[draw=black,fill=white] (1,2) circle (12pt);
-		\filldraw[draw=black,fill=white] (3,2) circle (12pt);
-		\filldraw[draw=black,fill=white] (4,2) circle (12pt);
-		\filldraw[draw=black,fill=white] (4,1) circle (12pt);
-		\filldraw[draw=black,fill=white] (4,0) circle (12pt);
-		\filldraw[black] (0,1) circle (12pt);
-		\filldraw[black] (1,1) circle (12pt);
-		\filldraw[black] (1,0) circle (12pt);
-		\filldraw[black] (3,1) circle (12pt);
-		\filldraw[black] (2,1) circle (12pt);
-		\filldraw[black] (3,0) circle (12pt);
-		% Draw the central black dot
-	\end{tikzpicture}
+	\begin{goban}[7, hoshi = false]
+		\stones[w]{A3:E3, E1:2}
+		\stones[b]{A2, B1:2, C2, D1:2}
+	\end{goban}
 	\caption{Board with a black group that has unconditional life.}
 	\label{fig:vida_incond_ejemplo}
 \end{wrapfigure}In Figure~\ref{fig:vida_incond_ejemplo}, White cannot capture because the suicide rule prohibits them from playing on Black's remaining liberties. The algorithm for determining unconditional life is straightforward: we simulate Black passing while White attempts to occupy their liberties. If White fails to capture it, the group possesses unconditional life.
@@ -1588,165 +971,43 @@ We know that the set $K(R)$ contains the stones adjacent to the region. As seen 
 It is crucial to note the difference: $\partial R$ collects the adjacent groups, whereas $K(R)$ collects the adjacent stones; Figure~\ref{fig:dif_k_partial} illustrates this distinction.
 \begin{figure}[H]
 	\centering
-	\begin{tikzpicture}[scale=0.65] \tikzstyle{every node}=[font=\small]
-		% Draw the background
-		\fill[goban] (-0.5,-0.5) rectangle (6.5,6.5);
-		
-		% Draw the grid lines
-		\draw[step=1cm, black] (0,0) grid (6,6);
-		
-		% Draw the thick border
-		\draw[very thick] (0,0) rectangle (6,6);
-		
-		\filldraw[black] (3,2) circle (12pt);
-		\filldraw[black] (4,2) circle (12pt);
-		\filldraw[OliveGreen] (3,2) circle (4pt);
-		\filldraw[OliveGreen] (4,2) circle (4pt);
-		
-		\filldraw[draw=black,fill=white] (2,3) circle (12pt);
-		\filldraw[draw=black,fill=white] (1,3) circle (12pt);
-		\filldraw[draw=black,fill=white] (0,3) circle (12pt);
-		\filldraw[magenta] (2,3) circle (4pt);
-		\filldraw[magenta] (1,3) circle (4pt);
-		\filldraw[magenta] (0,3) circle (4pt);
-		
-		\filldraw[draw=black,fill=white] (3,4) circle (12pt);
-		\filldraw[draw=black,fill=white] (4,4) circle (12pt);
-		\filldraw[draw=black,fill=white] (3,5) circle (12pt);
-		\filldraw[draw=black,fill=white] (2,5) circle (12pt);
-		\filldraw[draw=black,fill=white] (4,4) circle (12pt);
-		\filldraw[draw=black,fill=white] (5,3) circle (12pt);
-		\filldraw[draw=black,fill=white] (6,2) circle (12pt);
-		\filldraw[Orange] (3,4) circle (4pt);
-		\filldraw[Orange] (3,5) circle (4pt);
-		\filldraw[Orange] (2,5) circle (4pt);
-		\filldraw[Orange] (4,4) circle (4pt);
-		\filldraw[Blue] (5,3) circle (4pt);
-		\fill[draw=black,fill=Red, very thin] (3.25,3.25) rectangle (2.75,2.75);
-		\fill[draw=black,fill=Red, very thin] (4.25,3.25) rectangle (3.75,2.75);
-		
-		\begin{scope}[xshift=8cm]
-			\fill[goban] (-0.5,-0.5) rectangle (6.5,6.5);
-			
-			% Draw the grid lines
-			\draw[step=1cm, black] (0,0) grid (6,6);
-			
-			% Draw the thick border
-			\draw[very thick] (0,0) rectangle (6,6);
-			
-			\filldraw[black] (3,2) circle (12pt);
-			\filldraw[black] (4,2) circle (12pt);
-			\filldraw[OliveGreen] (3,2) circle (4pt);
-			\filldraw[OliveGreen] (4,2) circle (4pt);
-			\filldraw[draw=black,fill=white] (2,3) circle (12pt);
-			\filldraw[draw=black,fill=white] (1,3) circle (12pt);
-			\filldraw[draw=black,fill=white] (0,3) circle (12pt);
-			\filldraw[OliveGreen] (2,3) circle (4pt);
-			
-			\filldraw[draw=black,fill=white] (3,4) circle (12pt);
-			\filldraw[draw=black,fill=white] (4,4) circle (12pt);
-			\filldraw[draw=black,fill=white] (3,5) circle (12pt);
-			\filldraw[draw=black,fill=white] (2,5) circle (12pt);
-			\filldraw[draw=black,fill=white] (4,4) circle (12pt);
-			\filldraw[draw=black,fill=white] (5,3) circle (12pt);
-			\filldraw[draw=black,fill=white] (6,2) circle (12pt);
-			\filldraw[OliveGreen] (3,4) circle (4pt);
-			\filldraw[OliveGreen] (4,4) circle (4pt);
-			\filldraw[OliveGreen] (5,3) circle (4pt);
-			\fill[draw=black,fill=Red, very thin] (3.25,3.25) rectangle (2.75,2.75);
-			\fill[draw=black,fill=Red, very thin] (4.25,3.25) rectangle (3.75,2.75);
-		\end{scope}
-		
-		% Draw the central black dot
-	\end{tikzpicture}
+\begin{goban}[7, hoshi = false]
+	\stones[b, mark = {filled circle, fill = {true, color = OliveGreen}}]{D3, E3}
+	\stones[w, mark = {filled circle, fill = {true, color = magenta}}]{A4:C4}
+	\stones[w, mark = {filled circle, fill = {true, color = Orange}}]{C6, D5:6, E5}
+	\stone[w, mark = {filled circle, fill = {true, color = Blue}}]{F4}
+	\stone[w]{G3}
+	\marks[filled square, fill = {true, color = Red}, line = {color = black}]{D4, E4}
+\end{goban}
+\begin{goban}[7, hoshi = false]
+	\stones[b, mark = {filled circle, fill = {true, color = OliveGreen}}]{D3, E3}
+	\stones[w]{A4:B4, C6, D6, G3}
+	\stones[w, mark = {filled circle, fill = {true, color = OliveGreen}}]{C4, D5, E5, F4}
+	\marks[filled square, fill = {true, color = Red}, line = {color = black}]{D4, E4}
+\end{goban}
 	\caption{Left: Board with the \textit{neighborhood groups} of a \textcolor{Red}{Region}; \textcolor{Orange}{Orange}, \textcolor{magenta}{Magenta}, \textcolor{OliveGreen}{Green}, \textcolor{Blue}{Blue}. Right: \textcolor{OliveGreen}{Adjacencies} of a \textcolor{Red}{Region}.}
 	\label{fig:dif_k_partial}
 \end{figure}
 The cardinality of this set indicates exactly how many independent groups and stones surround the empty region.
 
-However, quantity alone does not suffice; we must also evaluate the quality of these regions. In Benson's terminology, they must be \textit{healthy} for the groups that contain them. 
-%	\begin{figure}[H]
-%			\centering
-%			\begin{tikzpicture}[scale=0.65] \tikzstyle{every node}=[font=\small]
-%					% Draw the background
-%					\fill[goban] (-0.5,-0.5) rectangle (6.5,6.5);
-%					
-%					% Draw the grid lines
-%					\draw[step=1cm, black] (0,0) grid (6,6);
-%					
-%					% Draw the thick border
-%					\draw[very thick] (0,0) rectangle (6,6);
-%					\filldraw[black] (0,1) circle (12pt);
-%					\filldraw[black] (1,0) circle (12pt);
-%					\filldraw[Salmon] (0,1) circle (4pt);
-%					\filldraw[Orange] (1,0) circle (4pt);
-%					
-%					\filldraw[black] (2,2) circle (12pt);
-%					\filldraw[magenta] (2,2) circle (4pt);
-%					\filldraw[black] (3,3) circle (12pt);
-%					\filldraw[magenta] (3,3) circle (4pt);
-%					\filldraw[black] (4,3) circle (12pt);
-%					\filldraw[magenta] (4,3) circle (4pt);
-%					\filldraw[black] (3,1) circle (12pt);
-%					\filldraw[Violet] (3,1) circle (4pt);
-%					\filldraw[black] (2,3) circle (12pt);
-%					\filldraw[Magenta] (2,3) circle (4pt);
-%					\filldraw[draw=black,fill=white] (4,1) circle (12pt);
-%					\filldraw[OliveGreen] (4,1) circle (4pt);
-%					\filldraw[draw=black,fill=white] (5,2) circle (12pt);
-%					\filldraw[RawSienna] (5,2) circle (4pt);
-%		
-%					\fill[draw=black,fill=Blue, very thin] (3.25,1.75) rectangle (2.75,2.25);
-%					\fill[draw=black,fill=Blue, very thin] (4.25,1.75) rectangle (3.75,2.25);
-%					\fill[draw=black,fill=Red, very thin] (0.25,0.25) rectangle (-0.25,-0.25);
-%		
-%					% Draw the central black dot
-%				\end{tikzpicture}
-%			\caption{Tablero con un grupos frontera; \textcolor{Orange}{Naranja}, \textcolor{Salmon}{Salmón}; \textcolor{magenta}{Magenta}, \textcolor{Violet}{Violeta}, \textcolor{OliveGreen}{Verde}, \textcolor{RawSienna}{Marrón}. Que rodean respectivamente a una región \textcolor{Red}{Roja} y otra \textcolor{Blue}{Azul}.}
-%			\label{fig:ej_frontera}
-%		\end{figure}
-\begin{wrapfigure}[14]{r}{0.3\textwidth}
-  	\vspace{15pt}
-	\centering
-	\begin{tikzpicture}[scale=0.65] \tikzstyle{every node}=[font=\small]
-		% Draw the background
-		\fill[goban] (-0.5,-0.5) rectangle (6.5,6.5);
-		
-		% Draw the grid lines
-		\draw[step=1cm, black] (0,0) grid (6,6);
-		
-		% Draw the thick border
-		\draw[very thick] (0,0) rectangle (6,6);
-		\filldraw[draw=black,fill=white] (0,0) circle (12pt);
-		\filldraw[draw=black,fill=white] (0,1) circle (12pt);
-		\filldraw[draw=black,fill=white] (0,2) circle (12pt);
-		\filldraw[draw=black,fill=white] (1,2) circle (12pt);
-		\filldraw[draw=black,fill=white] (2,3) circle (12pt);
-		\filldraw[draw=black,fill=white] (3,3) circle (12pt);
-		\filldraw[draw=black,fill=white] (4,3) circle (12pt);
-		\filldraw[draw=black,fill=white] (4,2) circle (12pt);
-		\filldraw[draw=black,fill=white] (5,2) circle (12pt);
-		\filldraw[draw=black,fill=white] (6,2) circle (12pt);
-		\filldraw[draw=black,fill=white] (6,1) circle (12pt);
-		\filldraw[draw=black,fill=white] (6,0) circle (12pt);
-		\filldraw[black] (1,0) circle (12pt);
-		\filldraw[black] (1,1) circle (12pt);
-		\filldraw[black] (2,2) circle (12pt);
-		\filldraw[black] (3,2) circle (12pt);
-		\filldraw[black] (3,1) circle (12pt);
-		\filldraw[black] (4,1) circle (12pt);
-		\filldraw[black] (5,1) circle (12pt);
-		\filldraw[black] (5,0) circle (12pt);
-		
-		\fill[draw=black,fill=OliveGreen, very thin] (2.25,0.25) rectangle (1.75,-0.25);
-		\fill[draw=black,fill=OliveGreen, very thin] (3.25,0.25) rectangle (2.75,-0.25);
-	\end{tikzpicture}
-	\caption{Board with black groups whose controlled \textcolor{Blue}{region} is \textcolor{OliveGreen}{unhealthy}.}
-	\label{fig:benson_ej_2}
-\end{wrapfigure}\begin{definition}[Healthy region]
+However, quantity alone does not suffice; we must also evaluate the quality of these regions. In Benson's terminology, they must be \textit{healthy} for the groups that contain them.
+
+\begin{definition}
+[Healthy region]
 Let $P$ be a set of groups and stones of the same color, and let $R$ be a region surrounded by $P$ (that is, $\partial R \subset P$). We say that $R$ is healthy for a group $I \in P$ (or $i\in P$) if every element of $R$ is a liberty for $I$ ($i$). Formally:
 $$R \text{ is healthy for } I \in P \iff R \subseteq L(I).$$\end{definition}
-This condition ensures that if the opponent attempts to play within the region, they will immediately come into contact with the group $I$ ($i$). In the example of Figure~\ref{fig:benson_ej_2}, the intersections marked in \textcolor{OliveGreen}{green} do not satisfy this premise; therefore, that region is not healthy for any black group. \break
+This condition ensures that if the opponent attempts to play within the region, they will immediately come into contact with the group $I$ ($i$). In the example of Figure~\ref{fig:benson_ej_2}, the intersections marked in \textcolor{OliveGreen}{green} do not satisfy this premise; therefore, that region is not healthy for any black group.
+\begin{figure}[H]
+  	\vspace{15pt}
+	\centering
+\begin{goban}[7, hoshi = false]
+	\stones[w]{A1:3, B3, C4:E4, E3:G3, G1:2}
+	\stones[b]{B1:2, C3, D2:3, E2, F1:2}
+	\marks[filled square, fill = {true, color = OliveGreen}, line = {color = black}]{C1, D1}
+\end{goban}
+	\caption{Board with black groups whose controlled \textcolor{Blue}{region} is \textcolor{OliveGreen}{unhealthy}.}
+	\label{fig:benson_ej_2}
+\end{figure}
 
 \begin{definition}[Vital region]\label{def:reg_vital}
 	Let $P$ be a set of groups and stones of the same color, let $I \in P$ be a specific group, and let $R$ be a region. We shall say that $R$ is vital for $I$ in $P$ if the following conditions are simultaneously satisfied:
@@ -1768,105 +1029,21 @@ When the region is surrounded by multiple distinct groups of the same color, it 
 
 \begin{figure}[H]
 	\centering
-	\begin{tikzpicture}[scale=0.65] \tikzstyle{every node}=[font=\small]
-		% --------------------------------------------------------
-		% TABLERO 1: Saludable vs No Saludable
-		% --------------------------------------------------------
-		\fill[goban] (-0.5,-0.5) rectangle (6.5,6.5);
-		\draw[step=1cm, black] (0,0) grid (6,6);
-		\draw[very thick] (0,0) rectangle (6,6);
-		
-		% Draw the thick border
-		\draw[very thick] (0,0) rectangle (6,6);
-		\filldraw[draw=black,fill=white] (0,0) circle (12pt);
-		\filldraw[draw=black,fill=white] (0,1) circle (12pt);
-		\filldraw[draw=black,fill=white] (0,2) circle (12pt);
-		\filldraw[draw=black,fill=white] (1,2) circle (12pt);
-		\filldraw[draw=black,fill=white] (2,3) circle (12pt);
-		\filldraw[draw=black,fill=white] (3,3) circle (12pt);
-		\filldraw[draw=black,fill=white] (4,3) circle (12pt);
-		\filldraw[draw=black,fill=white] (4,2) circle (12pt);
-		\filldraw[draw=black,fill=white] (5,2) circle (12pt);
-		\filldraw[draw=black,fill=white] (6,2) circle (12pt);
-		\filldraw[draw=black,fill=white] (6,1) circle (12pt);
-		\filldraw[draw=black,fill=white] (6,0) circle (12pt);
-		\filldraw[draw=black,fill=white] (1,3) circle (12pt);
-		\filldraw[black] (1,0) circle (12pt);
-		\filldraw[black] (1,1) circle (12pt);
-		\filldraw[black] (2,2) circle (12pt);
-		\filldraw[black] (3,2) circle (12pt);
-		\filldraw[black] (3,1) circle (12pt);
-		\filldraw[black] (4,1) circle (12pt);
-		\filldraw[black] (5,1) circle (12pt);
-		\filldraw[black] (5,0) circle (12pt);
-		
-		\fill[draw=black,fill=OliveGreen, very thin] (2.25,0.25) rectangle (1.75,-0.25);
-		\fill[draw=black,fill=OliveGreen, very thin] (3.25,0.25) rectangle (2.75,-0.25);
-		%				\fill[draw=black,fill=OliveGreen, very thin] (4.25,0.25) rectangle (3.75,-0.25);
-		%				\fill[draw=black,fill=OliveGreen, very thin] (2.25,1.25) rectangle (1.75,0.75);
-		
-		\filldraw[black] (0,4) circle (12pt);
-		\filldraw[black] (1,4) circle (12pt);
-		\filldraw[black] (2,4) circle (12pt);
-		\filldraw[black] (3,4) circle (12pt);
-		\filldraw[black] (3,5) circle (12pt);
-		\filldraw[black] (0,6) circle (12pt);
-		\filldraw[black] (1,6) circle (12pt);
-		\filldraw[black] (2,6) circle (12pt);
-		
-		\fill[draw=black,fill=Orange, very thin] (-0.25,4.75) rectangle (0.25,5.25);
-		\fill[draw=black,fill=Orange, very thin] (0.75,4.75) rectangle (1.25,5.25);
-		\fill[draw=black,fill=Orange, very thin] (1.75,4.75) rectangle (2.25,5.25);
-		% --------------------------------------------------------
-		% TABLERO 2: ojo vs union
-		% --------------------------------------------------------
-		\begin{scope}[xshift=8cm]
-			\fill[goban] (-0.5,-0.5) rectangle (6.5,6.5);
-			\draw[step=1cm, black] (0,0) grid (6,6);
-			\draw[very thick] (0,0) rectangle (6,6);
-			
-			\filldraw[black] (3,6) circle (12pt);
-			\filldraw[black] (0,4) circle (12pt);
-			\filldraw[black] (1,4) circle (12pt);
-			\filldraw[black] (2,4) circle (12pt);
-			\filldraw[black] (3,4) circle (12pt);
-			\filldraw[black] (3,5) circle (12pt);
-			\filldraw[black] (0,6) circle (12pt);
-			\filldraw[black] (1,6) circle (12pt);
-			\filldraw[black] (2,6) circle (12pt);
-			\fill[draw=black,fill=purple, very thin] (-0.25,4.75) rectangle (0.25,5.25);
-			\fill[draw=black,fill=purple, very thin] (0.75,4.75) rectangle (1.25,5.25);
-			\fill[draw=black,fill=purple, very thin] (1.75,4.75) rectangle (2.25,5.25);
-			
-			\filldraw[draw=black,fill=white] (2,1) circle (12pt);
-			\filldraw[draw=black,fill=white] (2,2) circle (12pt);
-			\filldraw[draw=black,fill=white] (0,2) circle (12pt);
-			\filldraw[draw=black,fill=white] (1,2) circle (12pt);
-			\filldraw[draw=black,fill=white] (3,2) circle (12pt);
-			\filldraw[draw=black,fill=white] (4,2) circle (12pt);
-			\filldraw[draw=black,fill=white] (4,1) circle (12pt);
-			\filldraw[draw=black,fill=white] (3,1) circle (12pt);
-			\filldraw[black] (0,1) circle (12pt);
-			\filldraw[black] (1,1) circle (12pt);
-			\filldraw[black] (1,0) circle (12pt);
-			\filldraw[black] (3,1) circle (12pt);
-			\filldraw[draw=black,fill=white] (2,1) circle (12pt);
-			\filldraw[draw=black,fill=white] (5,3) circle (12pt);
-			\filldraw[black] (4,1) circle (12pt);
-			\filldraw[black] (4,0) circle (12pt);
-			\filldraw[black] (2,0) circle (12pt);
-			\filldraw[black] (5,2) circle (12pt);
-			\filldraw[black] (6,2) circle (12pt);
-			\filldraw[black] (6,1) circle (12pt);
-			\filldraw[black] (6,0) circle (12pt);
-			\fill[draw=black,fill=purple, very thin] (-0.25,-0.25) rectangle (0.25,0.25);
-			\fill[draw=black,fill=cyan, very thin] (2.75,-0.25) rectangle (3.25,0.25);
-			\fill[draw=black,fill=cyan, very thin] (4.75,0.75) rectangle (5.25,1.25);
-			\fill[draw=black,fill=cyan, very thin] (4.75,-0.25) rectangle (5.25,0.25);
-			
-		\end{scope}
-		
-	\end{tikzpicture}
+	\begin{goban}[7, hoshi = false]
+		\stones[w]{A1:3, B3:4, C4:E4, E3:G3, G1:2}
+		\stones[b]{B1:2, C3, D2:3, E2, F1:2}
+		\stones[b]{A5:D5, D6, A7:C7}
+		\marks[filled square, fill = {true, color = OliveGreen}, line = {color = black}]{C1, D1}
+		\marks[filled square, fill = {true, color = Orange}, line = {color = black}]{A6:C6}
+	\end{goban}
+	\quad
+	\begin{goban}[7, hoshi = false]
+		\stones[b]{A5:D5, D6:7, A7:C7}
+		\stones[w]{A3:E3, C2, E2, F4}
+		\stones[b]{A2, B1:2, C1, D2, E1:2, F3, G1:3}
+		\marks[filled square, fill = {true, color = purple}, line = {color = black}]{A1, A6:C6}
+		\marks[filled square, fill = {true, color = cyan}, line = {color = black}]{D1, F1:2}
+	\end{goban}
 	\caption{Left: \textcolor{Orange}{healthy} and \textcolor{OliveGreen}{unhealthy}. Right: \textcolor{purple}{eyes} and \textcolor{cyan}{unions}.}
 	\label{fig:benson_ejemplos}
 \end{figure}
@@ -1889,43 +1066,6 @@ Let us apply the theory and examine Benson's Theorem. Before proceeding to the m
 	
 	As a result, it is impossible to completely eliminate either of the two eyes by means of legal moves. Therefore, $I$ possesses unconditional life.
 \end{proof}
-%	\begin{figure}[H]
-	%		\centering
-	%		\begin{tikzpicture}[scale=0.65] \tikzstyle{every node}=[font=\small]
-		%			% Draw the background
-		%			\fill[goban] (-0.5,-0.5) rectangle (6.5,6.5);
-		%			
-		%			% Draw the grid lines
-		%			\draw[step=1cm, black] (0,0) grid (6,6);
-		%			
-		%			% Draw the thick border
-		%			\draw[very thick] (0,0) rectangle (6,6);
-		%			\filldraw[draw=black,fill=white] (2,1) circle (12pt);
-		%			\filldraw[draw=black,fill=white] (2,2) circle (12pt);
-		%	
-		%
-		%			\filldraw[draw=black,fill=white] (3,2) circle (12pt);
-		%			\filldraw[draw=black,fill=white] (4,2) circle (12pt);
-		%			\filldraw[draw=black,fill=white] (4,1) circle (12pt);
-		%			\filldraw[draw=black,fill=white] (3,1) circle (12pt);
-		%			\filldraw[black] (0,1) circle (12pt);
-		%			\filldraw[black] (1,1) circle (12pt);
-		%			\filldraw[black] (1,0) circle (12pt);
-		%			\filldraw[black] (3,1) circle (12pt);
-		%			\filldraw[black] (2,1) circle (12pt);
-		%			\filldraw[black] (5,0) circle (12pt);
-		%			\filldraw[black] (5,1) circle (12pt);
-		%			\filldraw[black] (1,2) circle (12pt);
-		%			\filldraw[black] (0,3) circle (12pt);
-		%			\filldraw[draw=black,fill=white] (0,4) circle (12pt);
-		%			\filldraw[draw=black,fill=white] (1,3) circle (12pt);
-		%			\fill[draw=black,fill=Red, very thin] (0.25,0.25) rectangle (-0.25,-0.25);
-		%			\fill[draw=black,fill=OliveGreen, very thin] (0.25,2.25) rectangle (-0.25,1.75);
-		%			% Draw the central black dot
-		%		\end{tikzpicture}
-	%		\caption{Tablero con un \textcolor{Red}{Ojo} y una \textcolor{OliveGreen}{Unión}.}
-	%		\label{fig:dif_Unión}
-	%	\end{figure}
 \begin{lemma}\label{lem_2_benson}
 	Let $S$ be a set of groups of the same color such that $|S| \ge 2$. If a group $I_1 \in S$ possesses an eye $O$ and at least one union $U$ whose neighborhood contains another distinct group $I_2 \in S$, then $I_2$ must be captured before $I_1$ can be captured.
 \end{lemma}
@@ -1949,75 +1089,18 @@ In summary, to capture a group that possesses an eye and is connected to a union
 \end{proof}
 \begin{figure}[H]
 	\centering
-	\begin{tikzpicture}[scale=0.65] \tikzstyle{every node}=[font=\small]
-		% Draw the background
-		\fill[goban] (-0.5,-0.5) rectangle (6.5,6.5);
-		
-		% Draw the grid lines
-		\draw[step=1cm, black] (0,0) grid (6,6);
-		
-		% Draw the thick border
-		\draw[very thick] (0,0) rectangle (6,6);
-		\filldraw[draw=black,fill=white] (2,1) circle (12pt);
-		\filldraw[draw=black,fill=white] (2,2) circle (12pt);
-		\filldraw[draw=black,fill=white] (0,2) circle (12pt);
-		\filldraw[draw=black,fill=white] (1,2) circle (12pt);
-		\filldraw[draw=black,fill=white] (3,2) circle (12pt);
-		\filldraw[draw=black,fill=white] (4,2) circle (12pt);
-		\filldraw[draw=black,fill=white] (4,1) circle (12pt);
-		\filldraw[draw=black,fill=white] (3,1) circle (12pt);
-		\filldraw[black] (0,1) circle (12pt);
-		\filldraw[black] (1,1) circle (12pt);
-		\filldraw[black] (1,0) circle (12pt);
-		\filldraw[black] (3,1) circle (12pt);
-		\filldraw[draw=black,fill=white] (2,1) circle (12pt);
-		\filldraw[draw=black,fill=white] (5,1) circle (12pt);
-		\filldraw[black] (4,1) circle (12pt);
-		\filldraw[black] (4,0) circle (12pt);
-		\filldraw[black] (2,0) circle (12pt);
-		\filldraw[Red] (0,0) circle (6pt);
-		\filldraw[Blue] (3,0) circle (6pt);
-		\fill[draw=black,fill=Red, very thin] (-0.25,-0.25) rectangle (0.25,0.25);
-		\fill[draw=black,fill=Blue, very thin] (2.75,-0.25) rectangle (3.25,0.25);
-		
-		\begin{scope}[xshift=8cm]
-			\fill[goban] (-0.5,-0.5) rectangle (6.5,6.5);
-			
-			% Draw the grid lines
-			\draw[step=1cm, black] (0,0) grid (6,6);
-			
-			% Draw the thick border
-			\draw[very thick] (0,0) rectangle (6,6);
-			\filldraw[draw=black,fill=white] (1,3) circle (12pt);
-			\filldraw[draw=black,fill=white] (1,6) circle (12pt);
-			\filldraw[draw=black,fill=white] (1,5) circle (12pt);
-			\filldraw[draw=black,fill=white] (2,3) circle (12pt);
-			\filldraw[draw=black,fill=white] (2,5) circle (12pt);
-			\filldraw[draw=black,fill=white] (1,4) circle (12pt);
-			\filldraw[draw=black,fill=white] (3,4) circle (12pt);
-			\filldraw[draw=black,fill=white] (3,6) circle (12pt);
-			\filldraw[draw=black,fill=white] (4,6) circle (12pt);
-			\filldraw[draw=black,fill=white] (5,6) circle (12pt);
-			\filldraw[draw=black,fill=white] (6,5) circle (12pt);
-			\filldraw[black] (0,6) circle (12pt);
-			\filldraw[black] (0,5) circle (12pt);
-			\filldraw[black] (0,4) circle (12pt);
-			\filldraw[black] (0,3) circle (12pt);
-			\filldraw[black] (0,2) circle (12pt);
-			\filldraw[black] (1,2) circle (12pt);
-			\filldraw[black] (2,2) circle (12pt);
-			\filldraw[black] (3,2) circle (12pt);
-			\filldraw[black] (4,2) circle (12pt);
-			\filldraw[black] (4,3) circle (12pt);
-			\filldraw[black] (4,4) circle (12pt);
-			\filldraw[black] (4,5) circle (12pt);
-			\filldraw[black] (5,5) circle (12pt);
-			\fill[draw=black,fill=Blue, very thin] (1.75,5.75) rectangle (2.25,6.25);
-			\fill[draw=black,fill=Blue, very thin] (5.75,5.75) rectangle (6.25,6.25);
-			\fill[draw=black,fill=Blue, very thin] (1.75,3.75) rectangle (2.25,4.25);
-		\end{scope}
-		% Draw the central black dot
-	\end{tikzpicture}
+	\begin{goban}[7, hoshi = false]
+		\stones[w]{A3:E3, C2, E2, F2}
+		\stones[b]{A2, B1:2, C1, D2, E1:2}
+		\mark[filled square, fill = {true, color = Red}, line = {color = black}]{A1}
+		\mark[filled square, fill = {true, color = Blue}, line = {color = black}]{D1}
+	\end{goban}
+	\quad
+	\begin{goban}[7, hoshi = false]
+		\stones[w]{B4:7, C4, C6, D5, D7:F7, G6}
+		\stones[b]{A3:7, B3:E3, E4:6, F6}
+		\marks[filled square, fill = {true, color = Blue}, line = {color = black}]{C5, C7, G7}
+	\end{goban}
 	\caption{Left: The black group possesses one eye (red) and one union (blue); White must first capture the group on the right (Lemma~\ref{lem_2_benson}). Right: The upper-left white group lacks eyes, but shares three unions (blue); Black must capture the neighboring groups in at least two of them before being able to capture it (Lemma~\ref{lem_3_benson}).}
 	\label{fig:lem_benson}
 \end{figure}
@@ -2055,78 +1138,29 @@ We shall begin by proving the backward implication. Then, via the contrapositive
 \begin{wrapfigure}[9]{r}{0.3\textwidth}
 	\vspace{-10pt}
 	\centering
-	\begin{tikzpicture}[scale=0.65] \tikzstyle{every node}=[font=\small]
-		% Draw the background
-		\fill[goban] (-0.5,-0.5) rectangle (6.5,6.5);
-		
-		% Draw the grid lines
-		\draw[step=1cm, black] (0,0) grid (6,6);
-		
-		% Draw the thick border
-		\draw[very thick] (0,0) rectangle (6,6);
-		\filldraw[draw=black,fill=white] (2,1) circle (12pt);
-		\filldraw[draw=black,fill=white] (2,2) circle (12pt);
-		\filldraw[draw=black,fill=white] (0,2) circle (12pt);
-		\filldraw[draw=black,fill=white] (1,2) circle (12pt);
-		\filldraw[draw=black,fill=white] (3,2) circle (12pt);
-		\filldraw[draw=black,fill=white] (4,2) circle (12pt);
-		\filldraw[draw=black,fill=white] (4,1) circle (12pt);
-		\filldraw[draw=black,fill=white] (3,1) circle (12pt);
-		\filldraw[black] (0,1) circle (12pt);
-		\filldraw[black] (1,1) circle (12pt);
-		\filldraw[black] (1,0) circle (12pt);
-		\filldraw[black] (3,1) circle (12pt);
-		\filldraw[black] (2,1) circle (12pt);
-		\filldraw[black] (5,0) circle (12pt);
-		\filldraw[black] (5,1) circle (12pt);
-		\fill[draw=black,fill=Red, very thin] (0.25,0.25) rectangle (-0.25,-0.25);
-		\fill[draw=black,fill=Blue, very thin] (1.75,0.25) rectangle (2.25,-0.25);
-		\fill[draw=black,fill=OliveGreen, very thin] (2.75,0.25) rectangle (3.25,-0.25);
-		\fill[draw=black,fill=Blue, very thin] (3.75,0.25) rectangle (4.25,-0.25);
-		% Draw the central black dot
-	\end{tikzpicture}
+\begin{goban}[7, hoshi = false]
+	\stones[w]{A3:E3, E2}
+	\stones[b]{A2:D2, B1, F1:2}
+	\mark[filled square, fill = {true, color = Red}, line = {color = black}]{A1}
+	\marks[filled square, fill = {true, color = Blue}, line = {color = black}]{C1, E1}
+	\mark[filled square, fill = {true, color = OliveGreen}, line = {color = black}]{D1}
+\end{goban}
 	\caption{Board with an \textcolor{Red}{eye} and a \textcolor{Blue}{union}.}
 	\label{fig:ej_vidas}
 \end{wrapfigure}
 It is crucial to distinguish between being Alive and being Unconditionally Alive. In Figure~\ref{fig:ej_vidas}, if Black were to play at the \textcolor{OliveGreen}{green intersection}, they would achieve unconditional life; in its current state, the group lacks it. In a game, a group lacking unconditional life may be practically alive, requiring merely one or two moves to secure it. The distinction lies precisely therein: unconditional life implies that, statically, a group cannot die; life in Go, however, is a question of how quickly one can achieve it and whether the other players can prevent it.
+
+\newpage
 \subsection{Seki}
 
 \begin{wrapfigure}[11]{r}{0.3\textwidth}
-	\vspace{-10pt}
+	\vspace{-20pt}
 	\centering
-	\begin{tikzpicture}[scale=0.65] \tikzstyle{every node}=[font=\small]
-		% Draw the background
-		\fill[goban] (-0.5,-0.5) rectangle (6.5,6.5);
-		
-		% Draw the grid lines
-		\draw[step=1cm, black] (0,0) grid (6,6);
-		
-		% Draw the thick border
-		\draw[very thick] (0,0) rectangle (6,6);
-		\filldraw[draw=black,fill=white] (1,0) circle (12pt);
-		\filldraw[draw=black,fill=white] (1,1) circle (12pt);
-		\filldraw[draw=black,fill=white] (1,2) circle (12pt);
-		\filldraw[draw=black,fill=white] (1,3) circle (12pt);
-		\filldraw[draw=black,fill=white] (2,3) circle (12pt);
-		\filldraw[draw=black,fill=white] (3,3) circle (12pt);
-		\filldraw[black] (4,3) circle (12pt);
-		\filldraw[black] (5,3) circle (12pt);
-		\filldraw[black] (5,2) circle (12pt);
-		\filldraw[black] (5,1) circle (12pt);
-		\filldraw[black] (5,0) circle (12pt);
-		\filldraw[draw=black,fill=white] (4,0) circle (12pt);
-		\filldraw[draw=black,fill=white] (4,1) circle (12pt);
-		\filldraw[draw=black,fill=white] (4,2) circle (12pt);
-		\filldraw[black] (3,2) circle (12pt);
-		\filldraw[black] (2,2) circle (12pt);
-		\filldraw[black] (2,1) circle (12pt);
-		\filldraw[black] (2,0) circle (12pt);
-		
-		
-		\fill[draw=black,fill=OliveGreen, very thin] (2.75,0.25) rectangle (3.25,-0.25);
-		\fill[draw=black,fill=OliveGreen, very thin] (2.75,1.25) rectangle (3.25,0.75);
-		% Draw the central black dot
-	\end{tikzpicture}
+\begin{goban}[7, hoshi = false]
+	\stones[w]{B1:4, C4:D4, E1:3}
+	\stones[b]{C1:3, D3, E4:F4, F1:3}
+	\marks[filled square, fill = {true, color = OliveGreen}, line = {color = black}]{D1:2}
+\end{goban}
 	\caption{Board with groups in \textit{seki}.}
 	\label{fig:seki}
 \end{wrapfigure}Having examined unconditional life, it is time to address conditional life. There exists another common structure in Go termed \textit{seki}; this occurs when two groups of distinct colors share liberties in such a manner that, if either of them attempts to capture the other, the initiator ends up losing (see Figure~\ref{fig:seki}). In Figure~\ref{fig:seki}, whoever plays first and takes one of the two \textcolor{OliveGreen}{liberties} of the interior groups loses, since it will no longer be their turn and the other player can (and most likely will) execute the capture.
@@ -2135,47 +1169,15 @@ It is crucial to distinguish between being Alive and being Unconditionally Alive
 \end{definition}
 This definition perfectly encapsulates \textit{seki} without eyes, for if any player attempts to play in $R$, there will eventually remain a single liberty; whoever plays on the subsequent turn will execute the capture. It is necessary to require that $|R|\geq 2$; were this not the case, it would mean that both groups possess only a single liberty, and it would suffice for the active player to play on that liberty to execute a capture. By Benson's theorem, a group with two eyes possesses unconditional life. It remains, then, to analyze the case of groups possessing a single eye that find themselves in \textit{seki}.
 
-\begin{wrapfigure}[10]{r}{0.3\textwidth}
-	\vspace{-5pt}
+\begin{wrapfigure}[8]{r}{0.3\textwidth}
+	\vspace{-20pt}
 	\centering
-	\begin{tikzpicture}[scale=0.65] \tikzstyle{every node}=[font=\small]
-		% Draw the background
-		\fill[goban] (-0.5,-0.5) rectangle (6.5,6.5);
-		
-		% Draw the grid lines
-		\draw[step=1cm, black] (0,0) grid (6,6);
-		
-		% Draw the thick border
-		\draw[very thick] (0,0) rectangle (6,6);
-		
-		\filldraw[black] (1,6) circle (12pt);
-		\filldraw[black] (1,5) circle (12pt);
-		\filldraw[black] (0,5) circle (12pt);
-		\filldraw[black] (2,5) circle (12pt);
-		\filldraw[draw=black,fill=white] (3,5) circle (12pt);
-		\filldraw[draw=black,fill=white] (3,6) circle (12pt);
-		\filldraw[draw=black,fill=white] (4,5) circle (12pt);
-		\filldraw[draw=black,fill=white] (5,5) circle (12pt);
-		\filldraw[draw=black,fill=white] (5,6) circle (12pt);
-		\filldraw[black] (6,6) circle (12pt);
-		\filldraw[black] (6,5) circle (12pt);
-		\filldraw[black] (6,4) circle (12pt);
-		\filldraw[black] (5,4) circle (12pt);
-		\filldraw[black] (4,4) circle (12pt);
-		\filldraw[black] (3,4) circle (12pt);
-		\filldraw[draw=black,fill=white] (2,4) circle (12pt);
-		\filldraw[draw=black,fill=white] (1,4) circle (12pt);
-		\filldraw[draw=black,fill=white] (0,4) circle (12pt);
-		\filldraw[draw=black,fill=white] (2,3) circle (12pt);
-		
-		
-		
-		\fill[draw=black,fill=OliveGreen, very thin] (1.75,5.75) rectangle (2.25,6.25);
-		\fill[draw=black,fill=Red, very thin] (-0.25,5.75) rectangle (0.25,6.25);
-		\fill[draw=black,fill=Red, very thin] (3.75,5.75) rectangle (4.25,6.25);
-		
-		% Draw the central black dot
-	\end{tikzpicture}
+	\begin{goban}[7, hoshi = false]
+		\stones[b]{A6:C6, B7, D5:G5, G6:7}
+		\stones[w]{A5:C5, C4, D6:7, E6:F6, F7}
+		\mark[filled square, fill = {true, color = OliveGreen}, line = {color = black}]{C7}
+		\marks[filled square, fill = {true, color = Red}, line = {color = black}]{A7, E7}
+	\end{goban}
 	\caption{Board with groups in \textit{seki}.}
 	\label{fig:sekiojos}
 \end{wrapfigure}\begin{definition}[Seki with eyes]
