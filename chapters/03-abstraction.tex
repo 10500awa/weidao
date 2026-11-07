@@ -84,23 +84,23 @@ Observing the two-dimensional board in Figure~\ref{fig: tableronm}, we can note 
 	\caption{Go board of size $x\times y$.}
 	\label{fig: tableronm}
 \end{figure}
-By Lemma~\ref{lem:2n}, these nodes have $2$, $3$, or $4$ adjacencies. The $4$ vertices possess $2$ adjacencies. There are four edges—two of length \((x-2)\) and two of length \((y-2)\)—whose nodes have $3$ adjacencies. Furthermore, there is an internal region of \((x-2)(y-2)\) nodes, each with $4$ adjacencies. This allows us to define the total number of adjacencies on a \(\mathrm{Go}^{2}\) board.
+By Lemma~\ref{lem:2n}, for $x, y \ge 2$, these nodes have $2$, $3$, or $4$ adjacencies. The $4$ vertices possess $2$ adjacencies. There are four edges—two of length \((x-2)\) and two of length \((y-2)\)—whose nodes have $3$ adjacencies. Furthermore, there is an internal region of \((x-2)(y-2)\) nodes, each with $4$ adjacencies. This allows us to compute the sum of vertex degrees (total directed adjacencies) on a \(\mathrm{Go}^{2}\) board.
 
-Let \(A(x,y)\) be the total number of adjacencies on a board of dimensions \(x\times y\).
+Let \(A(x,y) = \sum_{t \in G} |K(t)|\) be the total number of directed adjacencies on a board of dimensions \(x\times y\) ($x, y \ge 2$).
 \begin{align*}
 	A(x,y)&= 2\cdot4 + 3(2(x-2))+3(2(y-2))+4(x-2)(y-2)\\
 	A(x,y)&= 8 + 6x-12+6y-12+4xy-8x-8y+16\\
 	A(x,y)&= 4xy-2x-2y.
 \end{align*}
-Let us also define the average number of adjacencies on a board, which follows immediately from the definition of total adjacencies; it suffices to divide by the total number of nodes.
+Let us also define the average number of adjacencies (average degree) on a board, which follows immediately from the definition of total adjacencies; it suffices to divide by the total number of nodes.
 
-Let \(\tilde{A}(x,y)\) be the average number of liberties on a two-dimensional board, then:
+Let \(\tilde{A}(x,y)\) be the average number of liberties of a single stone on a two-dimensional board, then:
 \begin{align*}
 	\tilde{A}(x,y)= \frac{4xy-2x-2y}{xy}.
 \end{align*}
 \subsection{Go in Three Dimensions}
 
-Let us consider the case for \(\mathrm{Go}^3\), consisting of \(xyz\) nodes. To this end, we rely on the following diagram, Figure~\ref{fig:3dim_esquema} (left):
+Let us consider the case for \(\mathrm{Go}^3\), consisting of \(xyz\) nodes ($x, y, z \ge 2$). To this end, we rely on the following diagram, Figure~\ref{fig:3dim_esquema} (left):
 \begin{figure}[H]
 	\centering
 	\begin{tikzpicture}[scale=1]
@@ -216,9 +216,9 @@ Next, we have the faces. These are divided into three pairs: $2$ faces of \((x-2
 	\label{fig:3gocaras}
 \end{figure}
 
-Remaining is the internal volume, which consists of \((x-2)(y-2)(z-2)\) nodes, each with $6$ adjacencies. We are thus in a position to define the total number of liberties on a three-dimensional board. 
+Remaining is the internal volume, which consists of \((x-2)(y-2)(z-2)\) nodes, each with $6$ adjacencies. We are thus in a position to define the total number of directed adjacencies on a three-dimensional board. 
 
-Let \(A(x,y,z)\) be the number of adjacencies of a three-dimensional board; if:
+Let \(A(x,y,z)\) be the number of directed adjacencies of a three-dimensional board; if:
 \begin{itemize}
 	\item \(V = 8 \cdot 3\), adjacencies of the vertices.
 	\item \(R = 4(4(x-2)+4(y-2)+4(z-2))\), adjacencies of the edges.
@@ -236,7 +236,7 @@ And its average,
 	\tilde{A}(x,y,z)&=\frac{6 x y z - 2 x y - 2 x z - 2 y z}{xyz}.
 \end{align*}
 
-In turn, we can define the \textit{exterior} of the three-dimensional board; let \(A(x,y,z)_{\partial}\) be the number of adjacencies of a board of dimensions \(x, y, z\) that only takes the exterior into account. As seen previously, it suffices to sum the vertices, the edges, and, in the case of the faces, we no longer count the adjacency pointing toward the interior, since it ceases to exist as there are no interior nodes, such that our faces have $4$ adjacencies. It suffices to take \(C'= 4(2(x-2)(y-2)+2(x-2)(z-2)+2(y-2)(z-2))\), hence:
+In turn, for $x, y, z \ge 3$, we can define the \textit{exterior} of the three-dimensional board; let \(A(x,y,z)_{\partial}\) be the number of adjacencies of a board of dimensions \(x, y, z\) that only takes the exterior into account. As seen previously, it suffices to sum the vertices, the edges, and, in the case of the faces, we no longer count the adjacency pointing toward the interior, since it ceases to exist as there are no interior nodes, such that our faces have $4$ adjacencies. It suffices to take \(C'= 4(2(x-2)(y-2)+2(x-2)(z-2)+2(y-2)(z-2))\), hence:
 \begin{align*}
 	A(x,y,z)_{\partial}&=V+R+C'\\
 	A(x,y,z)_{\partial}&=8 (x y + x z - 2 x + y z - 2 y - 2 z + 3).
@@ -461,13 +461,13 @@ Let us observe how the adjacencies of the vertices have changed: in the plane, w
 \end{figure}
 It is therefore worth asking: Is it possible to do this in any dimension? That is, taking them to their ``toroidal'' form. Indeed, it is possible, and furthermore, it is very simple and, unlike Figure~\ref{fig:Fig 27}, we do not lose points.
 
-Under our scrutiny, $G$ contains only points, and the adjacency criterion determines their relationships. To relate the edges, it suffices to add new relationships. What we seek is to join each face with its opposite; to achieve this, we formulate the following definition of the adjacency criterion by opposites, denoted as \(A_{op}\). Let \(G = N_1 \times \dots \times N_m\) be a board, where \(|N_k| = n_k\). We shall say that two points $g_1, g_2 \in G$ are oppositely related if they are identical in all their coordinates except in one, the $k$-th, where they take values at the extremes:
+Under our scrutiny, $G$ contains only points, and the adjacency criterion determines their relationships. To relate the edges, it suffices to add new relationships. What we seek is to join each face with its opposite; to achieve this, we formulate the following definition of the adjacency criterion by opposites, denoted as \(A_{op}\). Let \(G = N_1 \times \dots \times N_n\) be an $n$-dimensional board, where \(|N_k| = n_k \ge 3\). We shall say that two points $g_1, g_2 \in G$ are oppositely related if they are identical in all their coordinates except in one, the $k$-th, where they take values at the extremes:
 \begin{equation*}
-	g_1=(x_1,\dots, 1, \dots, x_d) \ \sim \ (x_1, \dots, n_k, \dots, x_d)=g_2.
+	g_1=(x_1,\dots, 1, \dots, x_n) \ \sim \ (x_1, \dots, n_k, \dots, x_n)=g_2.
 \end{equation*}
 Thus, in this simple manner, we have defined the toroidal board, which is nothing more than the same board as before, except that we are now considering more adjacent points. Formally, if we call the canonical criterion \(A_{ort}\) (orthogonal adjacencies), we transition from the form \((G,A_{ort})\) to \((G,A_{ort} \cup A_{op})\).
 
-It is clear that the toroidal board will have $4$ adjacencies for each of its nodes. Let \(A(x,y)_{\tau}\) be the number of adjacencies on a toroidal board of size \(xy\); let us carry out once again the process we performed at the beginning. The toroidal board will have no vertices, no edges, and consequently, a single face composed of \(xy\) nodes which, as we have already seen, possess $4$ adjacencies per node; thus:
+It is clear that the toroidal board will have $4$ adjacencies for each of its nodes. Let \(A(x,y)_{T}\) be the number of adjacencies on a toroidal board of size \(xy\); let us carry out once again the process we performed at the beginning. The toroidal board will have no vertices, no edges, and consequently, a single face composed of \(xy\) nodes which, as we have already seen, possess $4$ adjacencies per node; thus:
 $$A(x,y)_{T}=4xy.$$
 And its average will be $4$, since:
 $$\tilde{A}(x,y)_{T}=4xy/xy=4.$$
@@ -516,20 +516,20 @@ Here, if we apply the new relation, we obtain that all points will have $6$ adja
 		\fill[color=Red] (-2.3,-2.3) circle (0.07);
 		
 	\end{tikzpicture}
-	\caption{Faces of the $Go^{3}$.}
+	\caption{Faces of the $\mathrm{Go}^{3}$.}
 	\label{carasgo3}
 \end{figure}
 
 Now then, what would happen if we consider only the points lying on the boundary?
 
-If \(x\in G\), \(x=(x_1,\dots,x_n)\) with \(x_i \leq k_i=|n_i|\), the boundary will be that of the points given by
+If \(x\in G\), \(x=(x_1,\dots,x_n)\) with \(x_i \leq n_i = |N_i|\), the boundary will be that of the points given by
 $$G'=\{x\in G: \exists i, (x_i= 1 \lor x_i =n_i) \}.$$ Through the canonical adjacency criterion, we obtain a board such that it possesses, in the limit, $4$ adjacencies per point, since only the vertices possess $3$ adjacencies, as we saw in Section~\ref{def_partial}.
 
-If we attach to this board the adjacencies given by the opposite criterion, obtaining \((G',A\cup A_o)\), it will have $5$ adjacencies for every face point (and $6$ for edge and vertex points); since they lack the interior points, the faces lose one adjacency, but they gain it back through the opposite face. The edges, which possess $4$ adjacencies, gain $2$, and the vertices obtain $3$. Since the faces account for the largest number of points, it is clear that their limit will be $5$, naturally, when scaled to large sizes.
+If we attach to this board the adjacencies given by the opposite criterion, obtaining \((G',A_{ort}\cup A_{op})\), it will have $5$ adjacencies for every face point (and $6$ for edge and vertex points); since they lack the interior points, the faces lose one adjacency, but they gain it back through the opposite face. The edges, which possess $4$ adjacencies, gain $2$, and the vertices obtain $3$. Since the faces account for the largest number of points, it is clear that their limit will be $5$, naturally, when scaled to large sizes.
 
 If we recall Lemma~\ref{lem:2n}, upon applying these procedures to any given board, we can always achieve the equality of $2n$ adjacencies per point, for the opposite criterion guarantees the filling of all missing adjacencies. It is easy to see that, by taking arbitrarily large boards, any \(n\)-dimensional board possesses an average of $2n$ adjacencies in the limit.
 
-For this problem, for \(n=2\), \(A_{ort}\) provides a solution for the case with a degree as close to $4$ as possible, whereas the relation \(\mathcal{A} = A_{ort} \cup A_{{op}}\) satisfies the degree condition of exactly $4$. Furthermore, for the case \(n = 3\), we were able to find a partial solution on the boundary: if \(G' = \{ x \in G \mid \exists i \text{ such that } (x_i = 1 \lor x_i = n_i) \}\) denotes the boundary, then the graph \((G', \mathcal{A} )\) is a solution for the case with a degree as close to $4$ as possible on the surface.
+For this problem, for \(n=2\), \(A_{ort}\) provides a solution for the case with a degree as close to $4$ as possible, whereas the relation \(\mathcal{A} = A_{ort} \cup A_{{op}}\) satisfies the degree condition of exactly $4$. Furthermore, for the case \(n = 3\), we were able to find a partial solution on the boundary: if \(G' = \{ x \in G \mid \exists i \text{ such that } (x_i = 1 \lor x_i = n_i) \}\) denotes the boundary, then the graph \((G', A_{ort}|_{G'})\) is a solution for the case with a degree as close to $4$ as possible on the surface.
 
 \newpage
 \section{Go in One Dimension}\label{Go_1dim}
@@ -553,17 +553,17 @@ For this problem, for \(n=2\), \(A_{ort}\) provides a solution for the case with
 \end{wrapfigure}
 First, let us examine what it looks like, Figure~\ref{fig:1dim_go}. Clearly, there are two liberties per point, except at the boundaries, which possess one. Therefore,
 \begin{align*}
-	A(n)&=2*1+(n-2)*2=2n-2.\\
+	A(n)&=2\cdot 1+(n-2)\cdot 2=2n-2.\\
 	\tilde{A}(n)&=\frac{2n-2}{n}=2-\frac{2}{n}.
 \end{align*}
 Then, it is clear that the limit of its average is $2$.
 
 \label{teoremas_go1}
 \begin{lemma}
-	In canonical \(\mathrm{Go}^{1}\), the only regions that can constitute an eye are the extreme points of the board; any other vital region is a union.
+	In canonical $\mathrm{Go}^1$ on $G = \{1, \dots, n\}$ ($n \ge 3$), the only regions that can constitute an eye are the single-point extreme regions $\{(0, 1)\}$ and $\{(0, n)\}$. Any other interior vital region is necessarily a single-point joiner.
 \end{lemma}
 \begin{proof}
-	By definition, an eye for a group is a vital region completely surrounded by a single group \(I\). Let \(R\) be a region; for \(I\) to surround \(R\) and for \(R\) to be vital, its boundary \(\partial R\) must belong to \(I\).
+	Every connected empty region $R$ corresponds to a discrete interval of vacant points $P(R) = \{a, a+1, \dots, b\}$ with $1 \le a \le b \le n$.
 \begin{figure}[H]
 	\centering
 	\begin{goban}[7x1]
@@ -573,18 +573,22 @@ Then, it is clear that the limit of its average is $2$.
 		\mark[filled square, fill = {true, color = purple}, line = {color = black}]{A1}
 		\mark[filled square, fill = {true, color = cyan}, line = {color = black}]{E1}
 	\end{goban}
-		\caption{\textcolor{purple}{Eye} at the boundary, \textcolor{cyan}{union} in the interior.}
+		\caption{\textcolor{purple}{Eye} at the boundary, \textcolor{cyan}{joiner} in the interior.}
 		\label{fig:ej_go1dim}
 	\end{figure}
-	\paragraph{\(R\) in the interior:}
-	By Lemma~\ref{lem:2n}, if \(x\in R\), it possesses two adjacencies: \(x-1\) and \(x+1\).
-	
-	For \(R\) to be an eye of \(I\), it must hold that \(\{(x-1, e), (x+1, e)\} \subset I\). Since \(I\) is connected, there would exist a path in \(I\) between \(x-1\) and \(x+1\). However, the geometry of the board forces the path to pass through \(x\), which is empty; thus, such a path does not exist.
-	
-	Consequently, \(x-1\) and \(x+1\) are disconnected and cannot belong to the same group \(I\). An interior region is always surrounded by two distinct groups. At most, it may happen that \(\partial R\) is given by two groups of the same color, in which case it is a union.
-	
-	\paragraph{\(R\) at the boundary:}
-	If \(x = 1\), its only adjacency is point $2$. If a group \(I\) possesses a stone at $2$, then the entire boundary of \(x\) belongs to \(I\). Therefore, \(x\) is vital for \(I\) and, since there is a single group surrounding \(x\), \(x\) is an eye for \(I\). The case \(x=n\) is analogous.
+	\begin{itemize}
+		\item \textbf{$R$ in the interior ($1 < a \le b < n$):} The adjacency set of $R$ consists of the
+		stones at $a-1$ and $b+1$.
+		Since the interval $\{a, \dots, b\}$ is vacant, no path of stones of
+		color $e \neq 0$ can connect $a-1$ to $b+1$. Thus, the stones $(e, a-1)$ and $(e, b+1)$ belong
+		to two distinct groups $I_1 \neq I_2$, so $|\partial R| = 2$.
+		Consequently, $R$ cannot be an eye; if $b = a$ and $I_1, I_2 \in P$ share color $e$, $R = \{(0, a)\}$ is a joiner.
+		
+		\item \textbf{$R$ at the boundary ($a = 1$ or $b = n$):} Suppose $a = 1$ (the case $b = n$ is
+		analogous). If $b = n$, the board is empty.
+		If $b < n$, the only stone adjacent to $R$ lies at $b+1$, belonging to a single group $I$ ($|\partial R| = 1$).
+		For $R$ to be healthy for $I$ ($R \subseteq L(I)$), every point in $P(R)$ must be adjacent to $b+1$, which forces $a = b = 1$. Hence $R = \{(0, 1)\}$ is an eye for $I$.
+	\end{itemize}
 \end{proof}
 \section{Common Origin}
 
@@ -592,14 +596,15 @@ Thus far, we have constructed two-dimensional Go and explored its generalization
 
 A Go game is determined by a structure \((G,E,A,\Delta)\). To relate different variants, we shall introduce certain natural mappings that allow us to construct some variants from others while preserving the adjacencies and the rules of the game.
 
-$$\phi:(G,E,A,\Delta)\to(G\times\{1\},E,A,\Delta),$$given by $\phi(g)=(g,1)$.The preservation of adjacency is immediate; furthermore, $\phi$ is injective:
+$$\phi:(G,E,A,\Delta)\to(G\times\{1\},E,A_{G\times\{1\}},\Delta_{G\times\{1\}}),$$given by $\phi(g)=(g,1)$. The preservation of adjacency is immediate; furthermore, $\phi$ is injective:
 $$\phi(g_1)\sim\phi(g_2)\iff(g_1,1)\sim(g_2,1).$$
-To expand the board with a set $M$, we make use of the mapping
-$$\Xi:(G,E,A,\Delta)\to(G\times M,E,A,\Delta).$$
-Fixing a coordinate $m \in M$, we define $\Xi(g) = (g,m)$.
 
-Once again, adjacency is preserved and the mapping is injective, since $(g_1,m) = (g_2,m) \implies g_1 = g_2$:$$\Xi(g_1) \sim \Xi(g_2) \iff (g_1,m) \sim (g_2,m).$$To incorporate additional players, we define an inclusion
-$$\iota: (G,E,A,\Delta) \to (G,E \cup \{y\},A,\Delta),$$
+To expand the board with a finite set $M = \{1, \dots, k\}$, we define the dimension-expansion operator
+$$
+\Xi_M : (G, E, A, \Delta) \mapsto (G \times M, E, A_{G \times M}, \Delta_{G \times M}).
+$$
+Fixing a slice coordinate $m \in M$, the canonical embedding $\xi_m: G \hookrightarrow G \times M$ given by $\xi_m(g) = (g,m)$ preserves adjacency and is injective, since $(g_1,m) = (g_2,m) \implies g_1 = g_2$:$$\xi_m(g_1) \sim \xi_m(g_2) \iff (g_1,m) \sim (g_2,m).$$To incorporate additional players, we define an inclusion
+$$\iota: (G,E,A,\Delta) \to (G,E \cup \{y\},A,\Delta_{E \cup \{y\}}),$$
 with $y \notin E$, such that $\iota(e) = e$ for all $e \in E$.
 
 It is injective ($\iota(e_1) = \iota(e_2) \Rightarrow e_1 = e_2$) and preserves the identity of previous states. By design, it is non-surjective, so as to accommodate the new element.
@@ -666,16 +671,16 @@ We can go a bit further; recalling what was seen in Section~\ref{key:sectoro}, w
 This mapping alters neither the number of nodes nor the players; it merely modifies the adjacency relations, identifying opposite positions on the board.
 
 We thus define the toroidal mapping
-$$\tau:(G,E,A,\Delta)\to(G,E,A\cup A_o,\Delta),$$
-where $A$ is the original adjacency relation and $A_o$ is the relation between opposite positions.
+$$\tau:(G,E,A,\Delta)\to(G,E,A\cup A_{op},\Delta_{\tau}),$$
+where $A$ is the original adjacency relation and $A_{op}$ is the relation between opposite positions.
 
-The mapping acts as the identity on the nodes. Furthermore,$$g_1\sim_A g_2\implies\tau(g_1)\sim_{A\cup A_o}\tau(g_2).$$Since $A\subseteq A\cup A_o$, this property is immediate. In particular, $\tau$ is injective.
+The mapping acts as the identity on the nodes. Furthermore,$$g_1\sim_A g_2\implies\tau(g_1)\sim_{A\cup A_{op}}\tau(g_2).$$Since $A\subseteq A\cup A_{op}$, this property is immediate. In particular, $\tau$ is injective on the vertex set.
 
 On the other hand, recalling the adjacency analysis carried out in Section~\ref{chap:6}, we observe that boundary positions exhibit a different behavior from that of interior positions.
 
-To isolate this phenomenon, we introduce the boundary mapping
-$$\partial:(G,E,A,\Delta)\to(\partial G,E,A,\Delta),$$
-where $\partial G = \{ x \in G : \exists i, x_i = 1 \text{ or } x_i = n_i \}$, as we defined it in Section~\ref{key:sectoro}.
+To isolate this phenomenon, we introduce the boundary restriction operator
+$$\partial:(G,E,A,\Delta)\to(\partial G,E,A|_{\partial G},\Delta_{\partial G}),$$
+where $\partial G = \{ x \in G : \exists i, x_i = 1 \text{ or } x_i = n_i \}$ and $A|_{\partial G} = A \cap (\partial G \times \partial G)$, as we defined it in Section~\ref{key:sectoro}.
 
 \subsection*{The Hollow Torus}
 
@@ -1225,7 +1230,7 @@ Combining both constructions allows us to build the diagram of Figure~\ref{fig: 
 	To study the geometric properties of the board, as in Section~\ref{chap:6}, it is useful to temporarily ignore the state of the positions and the game dynamics.
 	We thus define the mapping
 	\[U:(G,E,A,\Delta)\to (G,A).\]
-	This mapping associates each game with its underlying graph. In this way, properties such as the number of liberties $A(n,m)$ can be studied solely from the adjacency structure.Note that different games may determine the same graph, so the mapping is not injective.
+	This mapping associates each game with its underlying graph. In this way, properties such as the number of adjacencies $A(x,y)$ can be studied solely from the adjacency structure. Note that different games may determine the same graph, so the mapping is not injective.
 	
 	\section{Toward Surrounding Games}\label{sec_JR}
 	
@@ -1233,41 +1238,27 @@ Combining both constructions allows us to build the diagram of Figure~\ref{fig: 
 	
 	\subsection*{Othello}
 	
-	In Figure~\ref{fig:Tab_Othello}, on the Othello board, play takes place inside the squares; this poses no difficulty, as it suffices to think of the intersections as the squares. Unlike Go, stones are adjacent in all directions (including diagonals); we simply need to modify \(A\). Furthermore, in Othello, ``capturing'' consists of flipping the stones to change their color. In turn, to ``surround,'' it is only necessary to do so in one dimension—that is, to enclose a group of another color along a straight line, either orthogonally or diagonally. We can already accomplish this: it suffices to consider that upon capturing, instead of removing the stones (i.e., assigning \(C(i)=0\)), we assign the color of the capturing player (by flipping them).
-	
-	\begin{wrapfigure}[10]{i}{0.55\textwidth}
+	\begin{wrapfigure}[13]{i}{0.35\textwidth}
 		\centering
-		\begin{tikzpicture}[scale=0.5] \tikzstyle{every node}=[font=\small]
-			% Draw the background
-			\fill[OliveGreen] (-0.5,-0.5) rectangle (8.5,8.5);
-			
-			% Draw the grid lines
-			\draw[step=1cm, black] (0,0) grid (8,8);
-			
-			% Draw the thick border
-			\draw[very thick] (0,0) rectangle (8,8);
-			
-			% Draw the central black dot
-			\filldraw[draw=black,fill=white] (4.5,3.5) circle (12pt);
-			\filldraw[draw=black,fill=white] (3.5,4.5) circle (12pt);
-			
-			
-			%\filldraw[Blue] (0,0) circle (6pt);
-			\filldraw[black] (3.5,3.5)  circle (12pt);
-			\filldraw[black] (4.5,4.5)  circle (12pt);
-			
-		\end{tikzpicture}
-		\caption{Othello board with its initial position.}
+		\begin{goban}
+			[goban={
+				size=9,
+				scale=1.25,
+				background ={fill = {color = OliveGreen}},
+				hoshi = {false}
+			}]
+		\end{goban}
+		\caption{Othello board.}
 		\label{fig:Tab_Othello}
-	\end{wrapfigure}
-	If we had \(\Delta_{oth}\), Othello can be constructed over the game:
-	$(N\times N, \{0,1,2\}, A_{ort} \cup A_{diag}, \Delta_{Oth}).$
-	With $|N|=8$, $A_{diag}$ being the criterion that takes diagonals $(\pm1,\pm1)$ into account, and $\Delta_{Oth}$ the rules of change in Othello. Thus, the developed construction suggests a possible formalization of \textit{Othello} within the same theoretical framework.\hfill\break\subsection*{Havannah}
+	\end{wrapfigure}In Figure~\ref{fig:Tab_Othello}, on the Othello board, play takes place inside the squares; this poses no difficulty, as it suffices to think of the intersections as the squares. Unlike Go, stones are adjacent in all directions (diagonals too); we simply need to modify \(A\). Furthermore, in Othello, ``capturing'' consists of flipping the stones to change their color. In turn, to ``surround,'' it is only necessary to do so in one dimension, that is, to enclose a group of another color along a straight line, either orthogonally or diagonally. We can already accomplish this: it suffices to consider that upon capturing, instead of removing the stones (i.e., assigning \(C(i)=0\)), we assign the color of the capturing player (by flipping them). If we had \(\Delta_{Oth}\), Othello can be constructed over the game:
+	$(N\times N, \{0,1,2\}, A_{ort} \cup A_{diag}, \Delta_{Oth}).$	With $|N|=8$, $A_{diag}$ being the criterion that takes diagonals $(\pm1,\pm1)$ into account, and $\Delta_{Oth}$ the rules of change in Othello. Thus, the developed construction suggests a possible formalization of \textit{Othello} within the same theoretical framework.
+	
+	\subsection*{Havannah}
 	
 	\begin{wrapfigure}[11]{r}{0.35\textwidth}
-		\vspace{-20pt}
+		\vspace{-40pt}
 		\centering
-		\begin{tikzpicture}[scale=0.5] \tikzstyle{every node}=[font=\small]
+		\begin{tikzpicture}[scale=0.55] \tikzstyle{every node}=[font=\small]
 			
 			% Parámetros del hexágono
 			\def\r{0.58}
@@ -1295,7 +1286,6 @@ Combining both constructions allows us to build the diagram of Figure~\ref{fig: 
 			
 			\foreach \q/\s in {
 				0/1,1/0,1/-1,0/-1,-1/0,-1/1, -1/1
-				%				0/2,2/0,2/-2,0/-2,-2/0,-2/2
 			}{
 				\pgfmathsetmacro{\x}{0.575*sqrt(3)*(\q+\s/2)}
 				\pgfmathsetmacro{\y}{0.575*1.5*\s}
@@ -1352,7 +1342,7 @@ Combining both constructions allows us to build the diagram of Figure~\ref{fig: 
 	
 	Recalling the properties of $|K(i)|$ discussed in Part~\ref{parte1}, this suffices for us to identify which points belong to the corners or edges (Section~\ref{posicion_espacial}). In this manner, Havannah's winning condition can be expressed solely in terms of groups, regions, and board subsets. Consequently, the game appears to admit a natural formalization within the same theoretical framework.
 	\subsection*{Hex}
-	\begin{wrapfigure}[11]{i}{0.47\textwidth}
+	\begin{wrapfigure}[12]{i}{0.47\textwidth}
 		\centering
 		\begin{tikzpicture}[scale=0.4]
 			\def\r{0.55}
@@ -1452,7 +1442,18 @@ Combining both constructions allows us to build the diagram of Figure~\ref{fig: 
 		\caption{The blue edges belong to Short, the red ones to Cut, and the black ones remain free. The set of blue edges determines a path between the distinguished vertices $A$ and $B$, so Short wins.}
 	\end{figure}
 	
-	Let $G=(V,E)$ be a finite graph, and let $A,B\in V$ be two distinguished vertices. We shall consider each edge of the graph as a playable position. Consequently, the set of positions will be given by $T=E$. The possible states of a position will be $E_s=\{0,1,2\}$, where $0$ represents a free edge, $1$ an edge controlled by Short, and $2$ an edge controlled by Cut. We define an adjacency relation $\sim_s$ on $T$: two positions $e_1, e_2 \in T$ are adjacent when the corresponding edges share a vertex—that is,$$e_1\sim e_2 \iff e_1\cap e_2\neq\varnothing.$$With this definition, the groups introduced earlier coincide with connected components of edges of the same color. We denote the game dynamics by $\Delta_s$; any Shannon game associated with the graph $G$ can be represented by the structure:$$(T, E_s, \sim_s, \Delta_s).$$This example is especially revealing, as it shows that the developed structure does not depend on geometric notions such as regions or territories. Even though it is a game defined on an arbitrary graph, the notions of position, state, adjacency, and group remain sufficient to completely describe its dynamics. It appears that the developed theory describes not only Go, but a broader family of games: \emph{Surrounding Games} ($\mathsf{SG}$).\footnote{This name is not entirely accurate, but it is the one that emerged during development. It is adopted here for convenience and does not pretend to identify an established branch of mathematics. Determining an appropriate designation would require a broader study.}
+	Let $\mathcal{H} = (V_{\mathcal{H}}, E_{\mathcal{H}})$ be a finite graph, and let $A, B \in V_{\mathcal{H}}$ be two distinguished vertices. We consider each edge of $\mathcal{H}$ as a playable
+	position, so the game space is $G_s = E_{\mathcal{H}}$. The state set is $E_s = \{0, 1, 2\}$,
+	where $0$ represents a free edge, $1$ an edge claimed by Short, and $2$ an edge removed by Cut.
+	Two positions $e_1, e_2 \in G_s$ are adjacent ($e_1 \sim_s e_2$) if and only if they share an
+	endpoint:
+	\[
+	e_1 \sim_s e_2 \iff e_1 \cap e_2 \neq \varnothing \;\text{ and }\; e_1 \neq e_2.
+	\]
+	Thus, any Shannon switching game on $\mathcal{H}$ is represented by the structure $\Gamma_s = (G_s,
+	E_s, \sim_s, \Delta_s)$.
+	
+	This example is especially revealing, as it shows that the developed structure does not depend on geometric notions such as regions or territories. Even though it is a game defined on an arbitrary graph, the notions of position, state, adjacency, and group remain sufficient to completely describe its dynamics. It appears that the developed theory describes not only Go, but a broader family of games: \emph{Surrounding Games} ($\mathsf{SG}$).\footnote{This name is not entirely accurate, but it is the one that emerged during development. It is adopted here for convenience and does not pretend to identify an established branch of mathematics. Determining an appropriate designation would require a broader study.}
 	%	por lo tanto, $Othello \in \textsf{JR}$.
 	\newpage
 	%\section*{Glosario (Parte III)}
