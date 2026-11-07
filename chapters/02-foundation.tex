@@ -409,6 +409,8 @@ With these functions, we can formally characterize when a move is legal.
 	The truth table demonstrates that the only rows rendering the full proposition true correspond precisely to the three configurations deduced in the forward direction.
 \end{proof}
 
+Also, $f(n)=\varnothing$ its always legal. As there is no stone to be legal or not.
+
 Furthermore, we have characterized not only when a move is legal, but also which types of moves exist:
 \begin{enumerate}
 	\item Placing a stone without capturing.
@@ -510,7 +512,7 @@ We can define \textit{komi} as a function that depends strictly on the turn orde
 $$K(j) = (j - 1) \cdot \alpha.$$
 
 \subsection*{Irrational Komi}
-If we additionally seek to preserve the second historical function of \textit{komi}—preventing draws—we must ensure that no two players can achieve the same final score. Let $Q_j \in \mathbb{Q}$ denote the rational score of player $j \in E \setminus \{0\}$ derived from stones, territories, and proportional captures, and let $\gamma_j \in \mathbb{R}$ be the \textit{komi} assigned to player $j$. A tie between players $j$ and $k$ ($j \neq k$) occurs if and only if
+If we additionally seek to preserve the second historical function of \textit{komi}, preventing draws, we must ensure that no two players can achieve the same score. Let $Q_j \in \mathbb{Q}$ denote the rational score of player $j \in E \setminus \{0\}$ derived from stones, territories, and proportional captures, and let $\gamma_j \in \mathbb{R}$ be the \textit{komi} assigned to player $j$. A tie between players $j$ and $k$ ($j \neq k$) occurs if and only if
 $$Q_j + \gamma_j = Q_k + \gamma_k \iff \gamma_j - \gamma_k = Q_k - Q_j \in \mathbb{Q}.$$
 Therefore, to guarantee the impossibility of ties, it is necessary and sufficient to assign \textit{komi} values such that $\gamma_j - \gamma_k \notin \mathbb{Q}$ for all $j \neq k$. In particular, choosing an irrational constant $\alpha \in \mathbb{R} \setminus \mathbb{Q}$ in the Stepped Komi formula $\gamma_j = (j - 1)\alpha$ automatically satisfies $\gamma_j - \gamma_k = (j - k)\alpha \notin \mathbb{Q}$ for all $j \neq k$, eliminating any possibility of a tie.
 
@@ -956,8 +958,8 @@ To achieve this, we first need to count how many groups surround a region. Let $
 We know that the set $K(R)$ contains the stones adjacent to the region. As seen in Part~\ref{parte1}, $0 \notin C(K(R))$.
 
 \begin{definition}[Neighborhood of a region]
- Let $T$ be a board, let $\mathcal{G}(T)$ denote the family of all groups and isolated stones (treated as singletons) of non-zero color on $T$, and let $R \in I^0$ be a region. We define the Neighborhood of $R$, denoted by $\partial R$, as the set of all groups or isolated stones that have a non-empty intersection with the adjacencies of the region:
-	$$\partial R \coloneqq \{I \in \mathcal{G}(T) \mid I \cap K(R) \neq \varnothing\}.$$
+ Let $T$ be a board, and let $R \in I^0$ be a region. We define the Neighborhood of $R$, denoted by $\partial R$, as the set of all groups or isolated stones that have a non-empty intersection with the adjacencies of the region:
+	$$\partial R \coloneqq \{I \in T \mid I \cap K(R) \neq \varnothing, C(I)\neq0\}.$$
 	\end{definition}
 It is crucial to note the difference: $\partial R$ collects the adjacent groups, whereas $K(R)$ collects the adjacent stones; Figure~\ref{fig:dif_k_partial} illustrates this distinction.
 \begin{figure}[H]
