@@ -143,8 +143,6 @@ It will prove very useful to identify the adjacencies of a stone or group. To th
 	$$K(I) = \{i \in T \setminus I : I \sim i\}.$$
 \end{definition}
 
-Note that any adjacent stone of the same color already belongs to the group. Thus, $K(I^e)\subseteq E\setminus\{e\}$.
-
 To characterize the states of these adjacencies, we will make use (and abuse) of the functions previously defined.
 
 \begin{definition}[State of the Adjacencies of a Group or Stone]\label{def_estados}
@@ -211,8 +209,7 @@ f(10) &= (2,(2,1)), & f(11) &= \varnothing, & f(12) &= \varnothing.
 \begin{figure}[H]
 	\centering
 \begin{goban}[7, hoshi = false]
-	\stone[w]{B3}
-	\moves{C3, E5, C4, E3, D4, D3, E6, E4, D6, C2}
+	\moves{B2, E4 ,B3, D4, C3, C2, D5, D3, C5, B1}
 \end{goban}
 \end{figure}
 The function records the moves, but not their legality. Let us analyze the rules. The \textit{suicide rule} prohibits placing a stone if doing so results in the immediate capture of one's own group (Figure~\ref{sui_ej}). There exists a single exception: a move played with no liberties is legal if it simultaneously captures a group of the opposite color (see Figure~\ref{fig: fig1.19}). Note that, due to this mechanic, when it is Black's turn, only white groups may be captured, and vice versa.
@@ -1261,20 +1258,21 @@ Furthermore, if we omit the arbitrary board-size restriction imposed by Kim, the
 \end{figure}	
 	
 \newpage
-\section{Behind the curtaint}
-All of this chapter is about what we need to have (do) to ensure that Go is representated. We've find that the game setups on a structure of the following,
+\section{Behind the curtain}
+All of this chapter is about what we need to have (do) to ensure that Go is representated.
+We have found that the game rests upon a four component structure:
 $$(G,E,\sim,\Delta).$$
 Where,
 \begin{itemize}
 \item $G$ is the abstraction of \textit{where} we play.
-\item $E$ is the abstraction of \textit{who} plays and perhaps a neutral state (as in our case of the game of Go.)
+\item $E$ is the abstraction of \textit{who} plays and perhaps with a neutral or vacant state (such as 0 in Go).
 \item $\sim$ is the abstraction of \textit{how} it plays \textit{where} its done.
-\item $\Delta$ is the abstraction of a play, that it, its legality and realization.
+\item $\Delta$ is the dynamical abstraction of a move, that is, its legality and transition.
 \end{itemize}
 
 Thus, $(G,E,\sim)$ is a static game (whatever you want to name it) and $(G,E,\sim,\Delta)$ The game itself.
 
-On what follows, we'll get into this structure $(G,E,\sim)$ and lastly $(G,E,\sim,\Delta)$. Not noly we will generalized the game of Go but also it will be shown that other games like the game of Go are posible to be understood by this strucuture too.
+On what follows, we'll get into this structure $(G,E,\sim)$ and lastly $(G,E,\sim,\Delta)$. Not only will we generalize the game of Go, but we will also demonstrate that a broader class of board games can be naturally understood within this same mathematical framework.
 
 
 %
