@@ -11,6 +11,7 @@
 \definecolor{goban}{HTML}{efce8f}
 \definecolor{othello}{HTML}{485d3f}
 \definecolor{linkdark}{HTML}{000055}
+\definecolor{bg}{HTML}{103170}
 
 \usepackage{graphicx}
 \usepackage{wrapfig}
@@ -18,10 +19,12 @@
 \usepackage{pdfpages}
 
 % --- 3. MATEMÁTICAS Y TIPOGRAFÍA ---
-\usepackage{mathtools}
-\usepackage{amsmath,amsthm,amsfonts}
-\usepackage{newpxtext,newpxmath}
+\usepackage{amsmath,amsthm,mathtools} % mathtools ya carga amsmath internamente
+\usepackage{amsfonts}
+
+% --- TIPOGRAFÍA OCCIDENTAL Y MATEMÁTICA ---
 \usepackage[no-math]{fontspec}
+\usepackage{libertinus} % Carga Libertinus para texto y matemáticas (reemplaza a newpx)
 
 \usepackage{microtype}
 
@@ -29,9 +32,10 @@
 \setlength{\parskip}{0.5ex plus 0.2ex minus 0.2ex}
 \setlength{\parindent}{1.2em}
 
+% --- TIPOGRAFÍA ASIÁTICA (CJK) ---
 \usepackage{luatexja-fontspec}
-\setmainjfont{FandolSong} 
-
+% Nombre exacto de la fuente y ajuste de escala para empatar con Libertinus
+\setmainjfont[Scale=0.95]{LXGW WenKai TC}
 
 % --- 4. TIKZ Y PGFPLOTS ---
 \usepackage{tikz}

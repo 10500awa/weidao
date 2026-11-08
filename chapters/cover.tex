@@ -4,9 +4,8 @@
 	% 
 	% PALETTE 
 	% 
-	\definecolor{bpbg}{HTML}{efce8f}
-	\definecolor{shadowcolor}{HTML}{457B9D}
-	\definecolor{textcolor}{HTML}{0B132B}
+	\definecolor{bpbg}{HTML}{103170}
+	\definecolor{textcolor}{HTML}{efce8f}
 	
 	% Center anchor shifted slightly up to leave room for the minimalist title below
 	\coordinate (C) at ([yshift=0cm]current page.center);
@@ -26,16 +25,17 @@
 	% 3. CHARACTERS 
 	% 
 	% Offset cyan
-	\node[font=\fontsize{180}{156}\bfseries\selectfont, text=shadowcolor, opacity=0.28] 
+	\node[font=\fontsize{180}{156}\selectfont, text=textcolor!75!bpbg, opacity=0.28] 
 	at ([shift={(0.08cm,-0.1cm)}]CharTop) {圍};
-	\node[font=\fontsize{180}{156}\bfseries\selectfont, text=shadowcolor, opacity=0.28] 
+	
+	\node[font=\fontsize{180}{156}\selectfont, text=textcolor!75!bpbg, opacity=0.28] 
 	at ([shift={(0.08cm,-0.1cm)}]CharBot) {道};
 	
 	% characters
-	\node[font=\fontsize{180}{156}\bfseries\selectfont, text=textcolor]
+	\node[font=\fontsize{180}{156}\selectfont, text=textcolor]
 	at ([shift={(0cm,0cm)}]CharTop) {圍};
 	
-	\node[font=\fontsize{180}{156}\bfseries\selectfont, text=textcolor]
+	\node[font=\fontsize{180}{156}\selectfont, text=textcolor]
 	at ([shift={(0cm,0cm)}]CharBot) {道};
 	
 	
@@ -46,13 +46,13 @@
 	\coordinate (RuleCenter) at ([yshift=-8.5cm]C);
 	
 	% Split horizontal rule leaving a 1.3cm gap in the center for the Go stones
-	\draw[textcolor, line width=0.6pt] ([xshift=-3.25cm]RuleCenter) -- ([xshift=-0.65cm]RuleCenter);
-	\draw[textcolor, line width=0.6pt] ([xshift=0.65cm]RuleCenter)  -- ([xshift=3.25cm]RuleCenter);
+	\draw[textcolor, line width=1.5pt] ([xshift=-3cm]RuleCenter) -- ([xshift=-0.6cm]RuleCenter);
+	\draw[textcolor, line width=1.5pt] ([xshift=0.6cm]RuleCenter)  -- ([xshift=3cm]RuleCenter);
 	
-	% Minimalist capture
-	\fill[textcolor] (RuleCenter) circle (3.5pt); % Surrounded black stone
+	\filldraw[fill=black, draw=black, line width=0.5pt] 
+	([shift={(0 cm,0 cm)}]RuleCenter) circle (3.25pt); % 4 surrounding white stones
 	\foreach \dx/\dy in {-0.25/0, 0.25/0, 0/0.25, 0/-0.25} {
-		\filldraw[fill=white, draw=textcolor, line width=0.5pt] 
+		\filldraw[fill=white, draw=black, line width=0.5pt] 
 		([shift={(\dx cm,\dy cm)}]RuleCenter) circle (3.25pt); % 4 surrounding white stones
 	}
 	

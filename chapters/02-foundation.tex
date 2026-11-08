@@ -424,7 +424,7 @@ Eventually, by virtue of Superko and mutual agreement, the game concludes. The w
 
 If we define $P(2)$ as White's score and $P(1)$ as Black's score, we obtain:
 $$P(1) = \sum_{I_1 \in I^{1}} |I_{1}| + \sum_{J_1 \in J^{1}} |J_{1}|, \quad P(2) = \sum_{I_2 \in I^{2}} |I_2| + \sum_{J_2 \in J^{2}} |J_{2}| + \textit{komi}.$$
-To determine the winner, it suffices to evaluate the difference. If $P(2) - P(1) \geq 0$, White wins; otherwise, Black wins.\footnote{We employ $\geq$ to account for the possibility of playing without \textit{komi} or with a \textit{komi} of $0$ points, thereby allowing for a draw.}
+To determine the winner, it suffices to evaluate the difference. If $P(2) - P(1) > 0$, White wins; otherwise, Black wins.
 
 \section{Go in \texorpdfstring{$n$}{n} Dimensions and with \texorpdfstring{$m$}{m} Players}\label{Go_n_m}
 
@@ -817,7 +817,7 @@ If $f(t) = i^{*} = (e, p)$, we must validate said move. The computation of the n
 	$$T' = \left(T_{t-1} \setminus \{(0, p)\}\right) \cup \{(e, p)\}.$$
 	
 	\item \textbf{Capture Detection:} Evaluating the adjacencies in $T'$, we identify the set $Cap$ by taking the union of all opposing groups that possess no liberties.
-	$$Cap = \bigcup \{ i\in I^{e'} \subseteq T' \mid L_{T'}(I^{e'}) = \varnothing, e' \notin \{0, e\}\}.$$If $Cap \neq \varnothing$, the move is exempt from the suicide check and we skip to step 4; otherwise, we proceed to the next step.
+	$$Cap = \bigcup \{I^{e'} \subseteq T' \mid L_{T'}(I^{e'}) = \varnothing, e' \notin \{0, e\}\}.$$If $Cap \neq \varnothing$, the move is exempt from the suicide check and we skip to step 4; otherwise, we proceed to the next step.
 	
 	\item \textbf{Suicide Detection:} Considering $Cap = \varnothing$, we evaluate the state of the played stone $i^* = (e, p)$ in $T'$. The analysis is divided into two cases:
 	\begin{itemize}
@@ -958,7 +958,7 @@ To achieve this, we first need to count how many groups surround a region. Let $
 We know that the set $K(R)$ contains the stones adjacent to the region. As seen in Part~\ref{parte1}, $0 \notin C(K(R))$.
 
 \begin{definition}[Neighborhood of a region]
- Let $T$ be a board, and let $R \in I^0$ be a region. We define the Neighborhood of $R$, denoted by $\partial R$, as the set of all groups or isolated stones that have a non-empty intersection with the adjacencies of the region:
+ Let $T$ be a board, and let $R$ be a region. We define the Neighborhood of $R$, denoted by $\partial R$, as the set of all groups or stones that have a non-empty intersection with the adjacencies of the region:
 	$$\partial R \coloneqq \{I \in T \mid I \cap K(R) \neq \varnothing, C(I)\neq0\}.$$
 	\end{definition}
 It is crucial to note the difference: $\partial R$ collects the adjacent groups, whereas $K(R)$ collects the adjacent stones; Figure~\ref{fig:dif_k_partial} illustrates this distinction.
