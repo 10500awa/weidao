@@ -1,72 +1,39 @@
 \thispagestyle{empty}
 \begin{tikzpicture}[remember picture, overlay, >=stealth]
 	
-	% 
 	% PALETTE 
-	% 
 	\definecolor{bpbg}{HTML}{0B2450}
+	\definecolor{spinebg}{HTML}{071836}
 	\definecolor{textcolor}{HTML}{efce8f}
-	\definecolor{subtextcolor}{HTML}{d4af37}
+	\definecolor{sealred}{HTML}{9E2A2B}
 	
-	% Center anchor shifted slightly up to leave room for the minimalist title below
-	\coordinate (C) at ([yshift=0.5cm]current page.center);
+	\coordinate (C) at ([xshift=0cm, yshift=0cm]current page.center);
 	
-	% 
 	% 1. BACKGROUND
-	% 
 	\fill[bpbg] (current page.south west) rectangle (current page.north east);
 	
-	% Decorative thin inner frame for editorial elegance
-	\draw[textcolor!40, line width=0.6pt] 
-	([shift={(1.2cm,1.2cm)}]current page.south west) 
-	rectangle 
-	([shift={(-1.2cm,-1.2cm)}]current page.north east);
+
 	
-	%
-	% 2. CALLIGRAPHY PLATES 
-	% 
-	\coordinate (CharTop) at ([yshift=4.2cm]C);
-	\coordinate (CharBot) at ([yshift=-1.8cm]C);
-	
-	% 
-	% 3. CHARACTERS (WI - DAO)
-	% 
-	% Shadow/Depth layer
-	\node[font=\fontsize{170}{150}\selectfont, text=black, opacity=0.35] 
-	at ([shift={(0.12cm,-0.12cm)}]CharTop) {圍};
-	
-	\node[font=\fontsize{170}{150}\selectfont, text=black, opacity=0.35] 
-	at ([shift={(0.12cm,-0.12cm)}]CharBot) {道};
-	
-	% Main characters
-	\node[font=\fontsize{170}{150}\selectfont, text=textcolor]
-	at (CharTop) {圍};
-	
-	\node[font=\fontsize{170}{150}\selectfont, text=textcolor]
-	at (CharBot) {道};
-	
-	%
-	% 4. SUBTITLE & METADATA BLOCK
-	%
-	\coordinate (TitleCenter) at ([yshift=-6.2cm]C);
-	
-	% 
-	% 5. FOOTER MOTIF (GO STONES & DIVIDER)
-	% 
-	\coordinate (RuleCenter) at ([yshift=-9.5cm]C);
-	
-	% Split horizontal rule
-	\draw[textcolor!80, line width=1.2pt] ([xshift=-3.5cm]RuleCenter) -- ([xshift=-0.8cm]RuleCenter);
-	\draw[textcolor!80, line width=1.2pt] ([xshift=0.8cm]RuleCenter)  -- ([xshift=3.5cm]RuleCenter);
-	
-	% Central Go stones motif (Black stone surrounded by 4 white stones)
-	\filldraw[fill=black, draw=black, line width=0.4pt] 
-	(RuleCenter) circle (3.5pt);
-	
-	\foreach \dx/\dy in {-0.28/0, 0.28/0, 0/0.28, 0/-0.28} {
-		\filldraw[fill=white, draw=black, line width=0.5pt] 
-		([shift={(\dx cm,\dy cm)}]RuleCenter) circle (3.5pt);
+	% 4. CARACTERES (WEI - DAO)
+	\foreach \char/\y in {圍/4.0, 道/-2.0} {
+		\node[font=\fontsize{170}{150}\selectfont, text=black, opacity=0.35] 
+		at ([shift={(0.12cm,\y cm - 0.12cm)}]C) {\char};
+		\node[font=\fontsize{170}{150}\selectfont, text=textcolor] 
+		at ([yshift=\y cm]C) {\char};
 	}
 
+	% 5. SELLO CHINO (Yinzhang vertical: Xuanxuan)
+	\node[
+	fill=sealred,
+	draw=textcolor,
+	line width=0.5pt,
+	double=sealred,
+	double distance=1.8pt,
+	rounded corners=1pt,
+	inner sep=3.5pt,
+	font=\fontsize{14}{14}\selectfont,
+	text=textcolor,
+	text opacity=0.92
+	] at ([xshift=4.2cm, yshift=-5.2cm]C) {\shortstack{玄\\[-1pt]玄}};
 	
 \end{tikzpicture}
