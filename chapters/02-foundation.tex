@@ -1,5 +1,7 @@
 \pagecolor{bg}
 \thispagestyle{empty}
+\text{}
+\vfill
 \noindent
 \begin{minipage}[t]{0.35\textwidth}
 	\begin{flushright}
@@ -40,7 +42,7 @@
 \end{minipage}
 
 \vspace{1em}
-\hfill {\textcolor{goban}{normalfont  道德經 — \textsc{Dàodé Jīng, Chapter 11}}}
+\hfill {\textcolor{goban}{道德經 — \textsc{Dàodé Jīng, Chapter 11}}}
 
 
 \vfill
@@ -534,7 +536,7 @@ Before proceeding, let us highlight a geometric property of vital importance for
 	For each coordinate of $t$, there exists at least one valid direction, since if one is blocked by the edge, the opposite direction remains available (as $n_i \ge 2$). Consequently, each dimension contributes at least one adjacency. At an interior point, each coordinate contributes exactly two. Therefore, there are at least $n$ adjacencies and at most $2n$.
 \end{proof}
 
-To simplify notation, we shall adopt the convention of denoting Go in $n$ dimensions and with $m$ players as $\mathrm{Go}^n_m$. Should we wish to explicitly specify the size of each dimension, we may do so in the following manner: $\mathrm{Go}^2_2(19,19)$ for the case of the standard board. If the number of players is omitted, it is to be understood that we are referring to a generic $n$-dimensional board, denoted by $\mathrm{Go}^n$. Likewise, $\mathrm{Go}_m$ will represent a board of arbitrary\footnote{The infinite theory of Go is yet to be developed; I am referring to numerable dimension.} dimension played by $m$ players.
+To simplify notation, we shall adopt the convention of denoting Go in $n$ dimensions and with $m$ players as $\mathrm{Go}^n_m$. Should we wish to explicitly specify the size of each dimension, we may do so in the following manner: $\mathrm{Go}^2_2(19,19)$ for the case of the standard board. If the number of players is omitted, it is to be understood that we are referring to a generic $n$-dimensional board, denoted by $\mathrm{Go}^n$. Likewise, $\mathrm{Go}_m$ will represent a board of arbitrary\footnote{The infinite theory of Go is yet to be developed; I am referring to finite dimension.} dimension played by $m$ players.
 
 \subsection{Captures and Points for \texorpdfstring{$m$}{m} Players}\label{capturas_n_jug}
 
@@ -1032,7 +1034,7 @@ We know that the set $K(R)$ contains the stones adjacent to the region. As seen 
 	\partial R := \left\{ I \in \bigcup_{e \in E \setminus \{0\}} I^e \;\middle|\; I \cap K(R) \neq \emptyset \right\}.
 	\]
 \end{definition}
-It is crucial to note the difference: $\partial R$ collects the adjacent groups, whereas $K(R)$ collects the adjacent stones; Figure 2.14 illustrates this distinction. The cardinality $|\partial R|$ indicates exactly how many independent groups surround the empty region.
+It is crucial to note the difference: $\partial R$ collects the adjacent groups, whereas $K(R)$ collects the adjacent stones; Figure~\ref{fig:dif_k_partial} illustrates this distinction. The cardinality $|\partial R|$ indicates exactly how many independent groups surround the empty region.
 \begin{figure}[H]
 	\centering
 \begin{goban}[7, hoshi = false]
@@ -1077,7 +1079,7 @@ This condition ensures that if the opponent attempts to play within the region, 
 	\label{fig:benson_ej_2}
 \end{figure}
 
-\begin{definition}[Vital region]
+\begin{definition}[Vital region]\label{def:reg_vital}
 	Let $P \subseteq I^e$ be a set of groups of the same color $e \in E \setminus \{0\}$, let $I \in P$ be a specific group, and let $R \in I^0$ be a region. We shall say that $R$ is \emph{vital} for $I$ in $P$ if the following conditions are simultaneously satisfied:
 	\begin{enumerate}
 		\item $R$ is healthy for $I$: $R \subseteq L(I)$.
@@ -1094,7 +1096,7 @@ We shall denote vital regions by $V$. This definition formalizes the requirement
 When the region is surrounded by multiple distinct groups of the same color, it constitutes a joiner.
 
 \begin{definition}[Joiner]
-	Let $V \in I^0$ be a vital region for a group $I$ within a set $P \subseteq I^e$ (so that $V \subseteq L(I)$ and $\partial V \subseteq P$). If the neighborhood of $V$ contains more than one group in $P$---that is, if $|\partial V| > 1$---and $V$ is vital for at least two distinct groups in $\partial V$, then $V$ constitutes a \emph{joiner} in $P$. Figure 2.16 illustrates the subtle difference between Benson's definitions.
+	Let $V \in I^0$ be a vital region for a group $I$ within a set $P \subseteq I^e$ (so that $V \subseteq L(I)$ and $\partial V \subseteq P$). If the neighborhood of $V$ contains more than one group in $P$---that is, if $|\partial V| > 1$---and $V$ is vital for at least two distinct groups in $\partial V$, then $V$ constitutes a \emph{joiner} in $P$. Figure~\ref{fig:benson_ejemplos} illustrates the subtle difference between Benson's definitions.
 \end{definition}
 
 \begin{figure}[H]
@@ -1259,7 +1261,7 @@ Having examined unconditional life, it is time to address conditional life. Ther
 This definition perfectly encapsulates \textit{seki} without eyes, for if any player attempts to play in $R$, there will immediately remain a single liberty; whoever plays on the subsequent turn will execute the capture. It is necessary to require that $|R| = 2$; if $|R| = 1$, both groups would possess only a single liberty, and it would suffice for the active player to play on that liberty to execute a capture. By Benson's theorem, a group with two eyes possesses unconditional life. It remains, then, to analyze the case of groups possessing a single eye that find themselves in \textit{seki}.
 
 \begin{definition}[Basic Seki with one eye]
-	Let $I \in I^e$ and $J \in I^{e'}$ ($e \neq e'$) be two groups of distinct colors possessing single-point eyes $O_I$ and $O_J$, respectively. If there exists a shared region $R \subseteq L(I) \cap L(J)$ with $|R| = 1$ (or $|R| \ge 1$ such that reducing $R$ reaches $|R| = 1$) satisfying $L(I) = R \cup O_I$ and $L(J) = R \cup O_J$, then $I$ and $J$ are in \emph{seki}.
+	Let $I \in I^e$ and $J \in I^{e'}$ ($e \neq e'$) be two groups of distinct colors possessing single-point eyes $O_I$ and $O_J$, respectively. If there exists a shared region $R \subseteq L(I) \cap L(J)$ with $|R| = 1$ (or $|R| \ge 1$ such that reducing $R$ reaches $|R| = 1$) satisfying $L(I) = R \cup O_I$ and $L(J) = R \cup O_J$, then $I$ and $J$ are in \emph{seki}. (See (Figure~\ref{fig:sekiojos}))
 \end{definition}
 \begin{figure}[H]
 	\centering
@@ -1331,21 +1333,22 @@ Furthermore, if we omit the arbitrary board-size restriction imposed by Kim, the
 \end{figure}	
 	
 \newpage
-\section*{Behind the curtain}
-All of this chapter is about what we need to have (do) to ensure that Go is represented.
-We have found that the game rests upon a four component structure:
-$$(G,E,\sim,\Delta).$$
-Where,
+\section*{Behind the Curtain}
+
+Throughout this part, our goal has been to identify the minimal mathematical ingredients required to represent Go faithfully. We have shown that the game rests upon a four-component structure:
+\[
+(G, E, \sim, \Delta),
+\]
+where:
 \begin{itemize}
-\item $G$ is the abstraction of \textit{where} we play.
-\item $E$ is the abstraction of \textit{who} plays and perhaps with a neutral or vacant state (such as 0 in Go).
-\item $\sim$ is the abstraction of \textit{how} it plays \textit{where} its done.
-\item $\Delta$ is the dynamical abstraction of a move, that is, its legality and transition.
+	\item $G$ is the spatial abstraction of \textit{where} we play.
+	\item $E$ is the abstraction of \textit{who} plays, together with a neutral or vacant state (such as $0$ in Go).
+	\item ${\sim}$ is the relational abstraction of \textit{how} positions are connected in space.
+	\item $\Delta$ is the dynamical abstraction of a move, governing both its legality and the resulting state transition.
 \end{itemize}
+Thus, the triple $(G, E, \sim)$ defines the static arena of play, whereas the full tuple $(G, E, \sim, \Delta)$ constitutes the game itself.
 
-Thus, $(G,E,\sim)$ is a static game (whatever you want to name it) and $(G,E,\sim,\Delta)$ The game itself.
-
-On what follows, we'll get into this structure $(G,E,\sim)$ and lastly $(G,E,\sim,\Delta)$. Not only will we generalize the game of Go, but we will also demonstrate that a broader class of board games can be naturally understood within this same mathematical framework.
+In what follows, we shall examine the static structure $(G, E, \sim)$ from an external perspective before returning to the full dynamical system $(G, E, \sim, \Delta)$. Not only will this allow us to generalize the game of Go across dimensions and topologies, but it will also demonstrate that a much broader class of board games can be naturally understood within this same mathematical framework.
 \newpage
 
 %

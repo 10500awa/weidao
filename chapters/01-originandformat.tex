@@ -1,42 +1,95 @@
-\mainmatter
-
-{\centering
-	\chapter{Origins and format}\label{parte1}
-}
-
+\pagecolor{bg}
 \thispagestyle{empty}
+\text{}
+\vfill
+
 \noindent
 \begin{minipage}[t]{0.35\textwidth}
 	\begin{flushright}
-		\large
+	\textcolor{goban}{	\large
 		合抱之木，\\
 		生於毫末；\\[0.5em]
 		九層之臺，\\
 		起於累土；\\[0.5em]
 		千里之行，\\
-		始於足下。
+		始於足下。}
 	\end{flushright}
 \end{minipage}%
 \hfill
-\vrule
+{\color{goban}\vrule}
 \hfill
 \begin{minipage}[t]{0.48\textwidth}
 	\raggedright
-	\emph{
-		$\!\!$A tree as big as a man's embrace\\
-		grows from a tiny shoot;\\[0.5em]
-		A tower of nine storeys\\
-		begins with a heap of earth;\\[0.5em]
-		The journey of a thousand li\\
-		starts from where one stands. 
+	\textcolor{goban}{\emph{
+			$\!\!$A tree as big as a man's embrace\\
+			grows from a tiny shoot;\\[0.5em]
+			A tower of nine storeys\\
+			begins with a heap of earth;\\[0.5em]
+			The journey of a thousand li\\
+			starts from where one stands. }
 	}
 \end{minipage}
-
 \vspace{1em}
-\hfill { 道德經 — \textsc{Dàodé jīng, Chapter 64}}
+
+\hfill {\textcolor{goban}{道德經 — \textsc{Dàodé jīng, Chapter 64}}}
+
+\vfill
+
+\begin{center}
+	\begin{tikzpicture}[>=stealth]
+		% PALETA DE LA PORTADA
+		\definecolor{bpbg}{HTML}{0B2450}
+		\definecolor{textcolor}{HTML}{efce8f}
+		\definecolor{sealred}{HTML}{9E2A2B}
+		
+		\coordinate (Centro) at (0,0);
+		
+		% Anillos de crecimiento (El árbol, la torre, la expansión del tablero)
+		% Cada cuadrado se aleja del centro y se desvanece en el vacío
+		\foreach \i/\op in {0.6/0.7, 1.2/0.4, 1.8/0.15, 2.4/0.04} {
+			\draw[textcolor, line width=0.4pt, opacity=\op]
+			(-\i, -\i) rectangle (\i, \i);
+		}
+		
+		% Los ejes de dirección (El viaje de mil li que comienza bajo los pies)
+		\foreach \i/\op in {0.6/0.8, 1.2/0.5, 1.8/0.2, 2.4/0.05} {
+			\draw[textcolor, line width=0.5pt, opacity=\op] (\i-0.6, 0) -- (\i, 0);
+			\draw[textcolor, line width=0.5pt, opacity=\op] (-\i+0.6, 0) -- (-\i, 0);
+			\draw[textcolor, line width=0.5pt, opacity=\op] (0, \i-0.6) -- (0, \i);
+			\draw[textcolor, line width=0.5pt, opacity=\op] (0, -\i+0.6) -- (0, -\i);
+		}
+		
+		% Los cuatro primeros brotes (intersecciones ortogonales directas)
+		\foreach \a in {0, 90, 180, 270} {
+			\fill[textcolor, opacity=0.85] (\a:0.6) circle (0.8pt);
+		}
+		
+		% El Sello: "Donde uno está de pie" (La primera piedra / El Origen)
+		\node[
+		fill=sealred,
+		draw=textcolor,
+		line width=0.4pt,
+		inner sep=3.5pt,
+		rounded corners=0.8pt,
+		font=\fontsize{14}{14}\selectfont,
+		text=textcolor,
+		text opacity=0.95
+		] at (Centro) {始};
+		
+	\end{tikzpicture}
+\end{center}
+\vfill
+\newpage
+\mainmatter
+\setcounter{page}{1}
+\pagecolor{white}
+{\centering\chapter{Origins and format}\label{parte1}}
+
+
+
 
 \section{圍棋 (Wéi Qí): History and Rules}
-\setcounter{page}{1}
+
 
 \subsection{History of Go in China}
 The term 圍棋 (Wéi Qí) originates from the characters 圍 (Wéi), meaning ‘to surround’, and 棋 (Qí), which refers to a ‘board game’. In the West, it is commonly known as Go, a name derived from the Japanese 囲碁" (Igo). Although its exact chronology remains uncertain, ancient literary, pictorial, and archaeological records demonstrate that the game was an integral part of Chinese culture since BCE times.
@@ -138,7 +191,7 @@ For the second round, held on September 2, Aguilar prepared exhaustively to face
 \end{quote}
 Before departing for \textit{Tokyo, Japan}, where the tournament was hosted, \textit{Fernando} recounts:
 \begin{quote}
-	``I left Formosa on Wednesday, August 28, and spent the night in Buenos Aires. There I saw my father, who saw me off saying: `You already know that professionals are not invincible.'\,''
+	``I left Formosa on Wednesday, August 28, and spent the night in Buenos Aires. There I saw my father, who saw me off saying: `You already know that professionals are not invincible.’\,''
 \end{quote} 
 Once there, he managed to defeat \textit{Yo Kagen}:
 \begin{quote}
