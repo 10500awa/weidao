@@ -1,51 +1,102 @@
-{\centering
-	\chapter{Foundation}\label{parte2}}
+\pagecolor{bg}
 \thispagestyle{empty}
 \noindent
 \begin{minipage}[t]{0.35\textwidth}
 	\begin{flushright}
-		\large
-		\vspace{1pt}
-		三十輻共一轂，\\
-		當其無，有車之用。\\
-		\vspace{0.5em}
-		埏埴以為器，\\
-		當其無，有器之用。\\
-		\vspace{0.5em}
-		鑿戶牖以為室，\\
-		當其無，有室之用。\\
-		\vspace{0.5em}
-		故有之以為利，\\
-		無之以為用。
+		\textcolor{goban}{\large
+			\\
+			三十輻共一轂，\\
+			當其無，有車之用。\\
+			\vspace{0.5em}
+			埏埴以為器，\\
+			當其無，有器之用。\\
+			\vspace{0.5em}
+			鑿戶牖以為室，\\
+			當其無，有室之用。\\
+			\vspace{0.5em}
+			故有之以為利，\\
+			無之以為用。}
 	\end{flushright}
 \end{minipage}%
 \hfill
-\vrule width 0.5pt % La línea vertical
+{\color{goban}\vrule}
 \hfill
 \begin{minipage}[t]{0.55\textwidth}
 	\vspace{1pt}
 	\raggedright
-	\emph{
-		Thirty spokes converge to form a wheel hub.\\
-		But it is the emptiness inside the hub that makes it useful.\\
-		\vspace{0.8em}
-		Clay is kneaded to form a pot.\\
-		But it is the emptiness inside it that makes it useful.\\
-		\vspace{0.8em}
-		Doorways and window bays are chiselled to form a house.\\
-		But it is the emptiness inside it that makes it useful.\\
-		\vspace{0.8em}
-		Substance brings benefits.\\
-		Emptiness brings usefulness.
+	\textcolor{goban}{\emph{
+			Thirty spokes converge to form a wheel hub.\\
+			But it is the emptiness inside the hub that makes it useful.\\
+			\vspace{0.8em}
+			Clay is kneaded to form a pot.\\
+			But it is the emptiness inside it that makes it useful.\\
+			\vspace{0.8em}
+			Doorways and window bays are chiselled to form a house.\\
+			But it is the emptiness inside it that makes it useful.\\
+			\vspace{0.8em}
+			Substance brings benefits.\\
+			Emptiness brings usefulness.}
 	}
 \end{minipage}
 
 \vspace{1em}
-\hfill {\normalfont  道德經 — \textsc{Dàodé Jīng, Chapter 11}}
+\hfill {\textcolor{goban}{normalfont  道德經 — \textsc{Dàodé Jīng, Chapter 11}}}
+
+
+\vfill
+\begin{center}
+\begin{tikzpicture}[>=stealth]
+	% PALETA DE LA PORTADA
+	\definecolor{bpbg}{HTML}{0B2450}
+	\definecolor{textcolor}{HTML}{efce8f}
+	\definecolor{sealred}{HTML}{9E2A2B}
+	
+	% Fondo opcional (descomentar si la página entera debe ser azul)
+	% \fill[bpbg] (current page.south west) rectangle (current page.north east);
+	
+	% Centro de la composición
+	\coordinate (Centro) at (0,0);
+	
+	% El halo del vacío central (donde "reside su utilidad")
+	\draw[textcolor, line width=0.3pt, opacity=0.2] (Centro) circle (1.2cm);
+	
+	% Los 30 radios del Capítulo 11 del Daode Jing (360 / 30 = 12 grados)
+	\foreach \a in {0, 12, ..., 348} {
+		
+		% El radio exterior: materia continua (Parte I)
+		\draw[textcolor, line width=0.4pt, opacity=0.75]
+		(\a:4.0cm) -- (\a:1.6cm);
+		
+		% Discretización hacia el vacío: coordenadas matemáticas (Parte II)
+		\foreach \r/\op in {1.45/0.8, 1.35/0.5, 1.25/0.25} {
+			\fill[textcolor, opacity=\op] (\a:\r cm) circle (0.6pt);
+		}
+	}
+	
+	% El Sello de la vacuidad / Estado e=0
+	\node[
+	fill=sealred,
+	draw=textcolor,
+	line width=0.4pt,
+	inner sep=3.5pt,
+	rounded corners=1pt,
+	font=\fontsize{14}{14}\selectfont,
+	text=textcolor,
+	text opacity=0.95
+	] at (Centro) {無};
+	
+\end{tikzpicture}
+\end{center}
+
+\vfill
+\newpage
+\pagecolor{white}
+
+{\centering\chapter{Foundation}\label{parte2}}
 
 \section{Go in two dimensions and two players.}
 
-\begin{wrapfigure}[12]{r}{0.35\textwidth}
+\begin{wrapfigure}[12]{r}{0.33\textwidth}
 	\centering
 	\vspace{-10pt}
 	\begin{goban}
@@ -126,6 +177,7 @@ From now on, unless explicitly stated otherwise, the letter $I$ will denote a gr
 
 \begin{wrapfigure}[13]{r}{0.35\textwidth}
 	%\begin{figure}[H]
+	\vspace{-20pt}
 	\centering
 	\begin{goban}[7, hoshi = false]
 		\stones[b]{C5, D5, E4, E5}
@@ -1273,14 +1325,14 @@ Furthermore, if we omit the arbitrary board-size restriction imposed by Kim, the
 
 \begin{figure}[H]
 	\centering
-	\includegraphics[width=\linewidth]{figures/Kimcontraej}
+	\includegraphics[width=0.6\linewidth]{figures/Kimcontraej}
 	\caption{Minimal counterexample to Kim's result. A two-dimensional black group possessing unconditional life on a $2 \times 2 \times 3$ board.}
 	\label{fig:Kimcontraejemplo}
 \end{figure}	
 	
 \newpage
-\section{Behind the curtain}
-All of this chapter is about what we need to have (do) to ensure that Go is representated.
+\section*{Behind the curtain}
+All of this chapter is about what we need to have (do) to ensure that Go is represented.
 We have found that the game rests upon a four component structure:
 $$(G,E,\sim,\Delta).$$
 Where,
@@ -1294,7 +1346,7 @@ Where,
 Thus, $(G,E,\sim)$ is a static game (whatever you want to name it) and $(G,E,\sim,\Delta)$ The game itself.
 
 On what follows, we'll get into this structure $(G,E,\sim)$ and lastly $(G,E,\sim,\Delta)$. Not only will we generalize the game of Go, but we will also demonstrate that a broader class of board games can be naturally understood within this same mathematical framework.
-
+\newpage
 
 %
 %\vfill
@@ -1312,4 +1364,3 @@ On what follows, we'll get into this structure $(G,E,\sim)$ and lastly $(G,E,\si
 	%		\bottomrule
 	%	\end{tabular}
 %\end{center}
-\clearpage

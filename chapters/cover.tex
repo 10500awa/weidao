@@ -3,37 +3,33 @@
 	
 	% PALETTE 
 	\definecolor{bpbg}{HTML}{0B2450}
-	\definecolor{spinebg}{HTML}{071836}
 	\definecolor{textcolor}{HTML}{efce8f}
 	\definecolor{sealred}{HTML}{9E2A2B}
 	
-	\coordinate (C) at ([xshift=0cm, yshift=0cm]current page.center);
+	% Center:
+	\coordinate (C) at ([yshift=0.8cm]current page.center);
 	
-	% 1. BACKGROUND
+	% 1. BACKGROUND 
 	\fill[bpbg] (current page.south west) rectangle (current page.north east);
+	\pgfmathsetseed{14} %ruido y semilla
+	\foreach \i in {1,...,280} {
+		\draw[textcolor, opacity=0.018, line width=0.25pt] 
+		([shift={(rnd*21cm, rnd*29.7cm)}]current page.south west) -- ++(rnd*0.6cm-0.3cm, rnd*0.12cm-0.06cm);
+	}
 	
-
-	
-	% 4. CARACTERES (WEI - DAO)
-	\foreach \char/\y in {圍/4.0, 道/-2.0} {
-		\node[font=\fontsize{170}{150}\selectfont, text=black, opacity=0.35] 
-		at ([shift={(0.12cm,\y cm - 0.12cm)}]C) {\char};
-		\node[font=\fontsize{170}{150}\selectfont, text=textcolor] 
+	% 2. CARACTERES
+	\foreach \char/\y in {圍/2.75, 道/-2.75} {
+		\node[font=\fontsize{160}{145}\selectfont, text=textcolor] 
 		at ([yshift=\y cm]C) {\char};
 	}
-
-	% 5. SELLO CHINO (Yinzhang vertical: Xuanxuan)
+	
+	% 3. SELLO
+	\coordinate (SealPos) at ([xshift=3.85cm, yshift=-5.5cm]C);
 	\node[
 	fill=sealred,
-	draw=textcolor,
-	line width=0.5pt,
-	double=sealred,
-	double distance=1.8pt,
-	rounded corners=1pt,
-	inner sep=3.5pt,
-	font=\fontsize{14}{14}\selectfont,
-	text=textcolor,
-	text opacity=0.92
-	] at ([xshift=4.2cm, yshift=-5.2cm]C) {\shortstack{玄\\[-1pt]玄}};
-	
+	rounded corners=2pt,
+	inner sep=3.2pt,
+	font=\fontsize{12}{13}\selectfont,
+	text=bpbg
+	] (Seal) at (SealPos) {\shortstack{玄\\[0.8pt]玄}};
 \end{tikzpicture}

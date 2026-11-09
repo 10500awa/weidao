@@ -1,11 +1,11 @@
-	{\centering
-	\chapter{Abstraction}\label{parte3}}
 \thispagestyle{empty}
+\pagecolor{bg}
+
 \noindent
 \begin{minipage}[t]{0.35\textwidth}
 	\begin{flushright}
-		{\large
-			\vspace{1pt}
+		\textcolor{goban}{\large
+			\\
 			井蛙不可以語於海者，\\
 			拘於虛也；\\[0.5em]
 			夏蟲不可以語於冰者，\\
@@ -16,23 +16,142 @@
 	\end{flushright}
 \end{minipage}%
 \hfill
-\vrule
+{\color{goban}\vrule}
 \hfill
 \begin{minipage}[t]{0.48\textwidth}
 	\vspace{1pt}
 	\raggedright
 	\emph{
-		$\!\!$A frog in a well cannot be spoken to about the ocean\\
-		because it is confined by its own space.\\[0.5em]
-		A summer insect cannot be spoken to about ice \\
-		because it is bound by its own season.\\[0.5em]
-		A narrow-minded person cannot be spoken to about the Way \\
-		because they are bound by their own teachings.
+		$\!\!$\textcolor{goban}{A frog in a well cannot be spoken to about the ocean\\
+			because it is confined by its own space.\\[0.5em]
+			A summer insect cannot be spoken to about ice \\
+			because it is bound by its own season.\\[0.5em]
+			A narrow-minded person cannot be spoken to about the Way \\
+			because they are bound by their own teachings.}
 	}
 \end{minipage}
 
 \vspace{1em}
-\hfill {   秋水 — \textsc{Zhuāngzǐ, Chapter 17}}
+\hfill {\textcolor{goban}{秋水 — \textsc{Zhuāngzǐ, Chapter 17}}}
+\vfill
+\begin{center}
+	\begin{tikzpicture}[scale=3]
+		% PALETA DE LA PORTADA
+		\definecolor{bpbg}{HTML}{0B2450}
+		\definecolor{textcolor}{HTML}{efce8f}
+		\definecolor{sealred}{HTML}{9E2A2B}
+		\definecolor{goban}{HTML}{efce8f}
+		\pgfplotsset{
+			% New colormap specifically for the shadow
+			colormap={shadow}{
+				gray=(0.1)
+				gray=(0.1)
+			}
+		}
+		\begin{axis}[
+			hide axis,
+			view={4}{45},
+			axis equal image,
+			samples=20,
+			domain=0:360,
+			y domain=0:360,
+			z buffer=sort,
+			]
+			
+			% 1. Sombra
+			\addplot3[
+			surf,
+			shader=interp,
+			draw=none,     
+			colormap name=shadow,
+			opacity=0.1
+			]
+			(
+			{(2 + cos(y)) * cos(x)},
+			{(2 + cos(y)) * sin(x)},
+			{-1} 
+			);
+			
+			% 2. Toro de Weidao (Malla de Go de 19x19 doblada sobre sí misma)
+			\addplot3[
+			surf,
+			shader=flat,
+			fill=bpbg,          % Bloquea la malla trasera (usar el color del fondo del papel)
+			draw=textcolor,     % Color hueso de la portada para las líneas
+			line width=0.4pt,
+			opacity=0.95
+			]
+			(
+			{(2 + cos(y)) * cos(x)},
+			{(2 + cos(y)) * sin(x)},
+			{sin(y)}
+			);
+			
+			
+			%%%%%%%%%%%%%%%%%%%%  puntos negros
+			\addplot3[
+			only marks,
+			xslant=-0.15,
+			yslant=-0.5,
+			mark options={shading=ball, ball color=white},
+			mark size=0.25pt,
+			shading=ball,
+			color=goban
+			] coordinates {(1.190, 3.94, 0)};
+			
+			\addplot3[
+			only marks,
+			mark options={shading=ball, ball color=white},
+			mark size=0.5pt,
+			shading=ball,
+			color=goban
+			] coordinates {(-1.96, 0.675, 0)};
+			
+			\addplot3[ %centro
+			only marks,
+			mark options={shading=ball, ball color=white},
+			mark size=0.5pt,
+			shading=ball,
+			color=goban
+			] coordinates {(0.975, -0.61, 0)};
+			
+			\addplot3[ %arriba derecha
+			only marks,
+			yslant=0.25,
+			mark options={shading=ball, ball color=white},
+			mark size=0.5pt,
+			shading=ball,
+			color=goban
+			] coordinates {(1.09, 1, 0)};
+			
+			\addplot3[ %abajo derecha
+			only marks,
+			yslant=0.5,
+			mark options={shading=ball, ball color=black},
+			mark size=0.5pt,
+			shading=ball,
+			color=goban
+			] coordinates {(1.870,-6.179, 0)};
+			% 3. El Vacío Central / Sello (El cubo de la rueda del Cap 11 o el Retorno del Cap 16)
+			\node[
+			fill=sealred,
+			scale=0.5,
+			draw=textcolor,
+			line width=0.4pt,
+			inner sep=3pt,
+			rounded corners=1pt,
+			font=\fontsize{12}{12}\selectfont,
+			text=textcolor,
+			text opacity=0.95
+			] at (axis cs: 0, 0, 0) {復};
+		\end{axis}
+	\end{tikzpicture}
+\end{center}
+\vfill
+\newpage
+\pagecolor{white}
+
+{\centering\chapter{Abstraction}\label{parte3}}
 
 \section{Comparing Adjacencies}\label{chap:6}
 
@@ -251,7 +370,7 @@ We immediately define the average by subtracting the nodes we are not considerin
 Prior to the development of this work, as a Go player, I wondered whether a three-dimensional version of the game existed. Upon finding only conceptual images on the Internet, I asked myself: why not develop it? Thus, \href{https://github.com/10500x/3dGo}{3dGo} was born.
 \begin{figure}[H]
 	\begin{center}
-		\includegraphics[width=0.9\linewidth]{figures/3dgofoto1}
+		\includegraphics[width=0.6\linewidth]{figures/3dgofoto1}
 	\end{center}
 	\caption{Go board of size $5\times 4\times 3$ in \href{https://github.com/10500x/3dGo}{3dGo}.}
 \end{figure}
@@ -531,7 +650,6 @@ If we recall Lemma~\ref{lem:2n}, upon applying these procedures to any given boa
 
 For this problem, for \(n=2\), \(A_{ort}\) provides a solution for the case with a degree as close to $4$ as possible, whereas the relation \(\mathcal{A} = A_{ort} \cup A_{{op}}\) satisfies the degree condition of exactly $4$. Furthermore, for the case \(n = 3\), we were able to find a partial solution on the boundary: if \(G' = \{ x \in G \mid \exists i \text{ such that } (x_i = 1 \lor x_i = n_i) \}\) denotes the boundary, then the graph \((G', A_{ort}|_{G'})\) is a solution for the case with a degree as close to $4$ as possible on the surface.
 
-\newpage
 \section{Go in One Dimension}\label{Go_1dim}
 %\begin{figure}[H]
 \begin{wrapfigure}[5]{r}{0.4\textwidth}
@@ -1254,8 +1372,8 @@ Combining both constructions allows us to build the diagram of Figure~\ref{fig: 
 	
 	\subsection*{Havannah}
 	
-	\begin{wrapfigure}[11]{r}{0.35\textwidth}
-		\vspace{-40pt}
+	\begin{wrapfigure}[10]{r}{0.35\textwidth}
+		\vspace{-45pt}
 		\centering
 		\begin{tikzpicture}[scale=0.55] \tikzstyle{every node}=[font=\small]
 			
@@ -1340,7 +1458,6 @@ Combining both constructions allows us to build the diagram of Figure~\ref{fig: 
 	Our theory already accounts for the case of the \textcolor{Blue}{ring}. Indeed, a ring is simply a group that encloses a region. If we distinguish the six corners of the board as special subsets of positions, a \textcolor{Red}{bridge} can be described as a group containing stones in at least two distinct corners. Likewise, if we distinguish the six edges of the board, a \textcolor{OliveGreen}{fork} can be described as a group containing stones in at least three distinct edges.
 	
 	Recalling the properties of $|K(i)|$ discussed in Part~\ref{parte1}, this suffices for us to identify which points belong to the corners or edges (Section~\ref{posicion_espacial}). In this manner, Havannah's winning condition can be expressed solely in terms of groups, regions, and board subsets. Consequently, the game appears to admit a natural formalization within the same theoretical framework.
-	\newpage
 	
 	\subsection*{Hex}
 	\begin{wrapfigure}[11]{i}{0.47\textwidth}
