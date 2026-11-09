@@ -299,13 +299,14 @@ There is, however, an exception to this rule: playing on an intersection with no
 			\sgf[from = 7, to = 7]{fig6}
 		\end{goban}
 		\begin{goban}[sgf size = fig6, captures, scale = 1.1]
-			\sgf[from = 8, to = 8]{fig6}
+			\sgf[from = 7, to = 8]{fig6}
 		\end{goban}
 		\begin{goban}[sgf size = fig6, captures, scale = 1.1]
-			\sgf[from = 9, to = 9]{fig6}
+			\sgf[from = 8, to = 9]{fig6}
+			\filldraw[Blue] (4,4) circle (3pt);
 		\end{goban}
 		\begin{goban}[sgf size = fig6, captures, scale = 1.1]
-			\sgf[from = 10, to = 10]{fig6}
+			\sgf[from = 9, to = 10]{fig6}
 		\end{goban}
 	\end{pgfgolayout}
 	\caption{An illegal position, as it reverts to a previous state. Following Black's move at \((4, 6)\), Black could recapture at \((4, 4)\) on a subsequent turn. White prevents this possibility by playing at \((4, 4)\).}
@@ -358,8 +359,9 @@ Were this compensation applied to the preceding example, White would win by 0.5 
 
 A group possesses an \textit{eye} if it completely surrounds an empty intersection. With at least two \textit{eyes}, it achieves the state of being \textit{alive} and can never be captured.
 
-In Figure~\ref{fig:Fig 12} (left), even if White attempts to attack the black group, they can only place one stone per turn. Because occupying either space would violate the suicide rule, White would need to play into both eyes simultaneously to capture, which is impossible. Consequently, the black group is \textit{alive}.
-\begin{figure}[h]
+Consequently, the black group is \textit{alive}. There exist, however, so-called false eyes: intersections that resemble \textit{eyes}, but where one of the surrounding groups is at risk of being reduced to a single liberty (the eye). As a result, if the opponent succeeds in capturing this vulnerable group, the structure collapses and the eye is lost (see Figure~\ref{fig:Fig 12}, right).
+
+\begin{figure}[H]
 	\centering
 \begin{goban}[7, hoshi = false]
 	\stones[w]{A7, A6, B6, B5, C5, C4, C3, D3, D2, D1, E1}
@@ -372,7 +374,10 @@ In Figure~\ref{fig:Fig 12} (left), even if White attempts to attack the black gr
 		Final board position of a completed game, with its intersections scored; the black stone marked with the \textcolor{Orange}{orange} dot must be removed as it is dead.}
 	\label{fig: Fig 10}
 \end{figure}
-There exist, however, so-called false eyes: intersections that resemble \textit{eyes}, but where one of the surrounding groups is at risk of being reduced to a single liberty (the eye). As a result, if the opponent succeeds in capturing this vulnerable group, the structure collapses and the eye is lost (see Figure~\ref{fig:Fig 12}, right).
+
+
+In Figure~\ref{fig:Fig 12} (left), even if White attempts to attack the black group, they can only place one stone per turn. Because occupying either space would violate the suicide rule, White would need to play into both eyes simultaneously to capture, which is impossible. 
+
 \begin{figure}[H]
 	\centering
 	\begin{pgfgolayout}[columns = 2, width = natural]

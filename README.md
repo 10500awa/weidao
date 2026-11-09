@@ -1,36 +1,35 @@
 ## Disclaimer
 
-I've realized there are many more papers that I didn't knew, I'm going to read them and make this project a Compendium of them all, the Book of the Game of Go (hopefully), that's my spirit. It will take me some time, but I'll get there.
+I've realized there are many more papers that I didn't know about; I'm going to read them and make this project a Compendium of them all—the Book of the Game of Go (hopefully), that's my spirit. It will take me some time, but I'll get there.
 
 # 圍道 — Wéi Dào: The Art of Surrounding
 
 [![License: CC BY-NC-SA 4.0](https://img.shields.io/badge/License-CC%20BY--NC--SA%204.0-lightgrey.svg)](https://creativecommons.org/licenses/by-nc-sa/4.0/)
-[![PDF Release](https://img.shields.io/github/v/release/10500awa/EADR.svg?label=PDF+Release)](https://github.com/10500awa/EADR/releases)
+[![PDF Release](https://img.shields.io/github/v/release/10500awa/weidao.svg?label=PDF+Release)](https://github.com/10500awa/weidao/releases)
+
 *A mathematical and formal exploration of the game of Go, covering its history, rigorous formalizations, and further abstractions.*
 
 ## Overview
 
-This repository contains the complete LaTeX source code for **圍道 — Wéi Dào: The Art of Surrounding**. The work is structured into three main parts and one draft:
+This repository contains the complete LaTeX source code for **圍道 — Wéi Dào: The Art of Surrounding**. The work is structured into three main parts and one work-in-progress part:
 
 - **Part I: Foundations** — Historical background spanning from ancient China to its evolution in Argentina, alongside the rules of the game.
 - **Part II: Construction** — Formal two-dimensional, two-player mathematical model. Precise formulations of legal moves, captures, Superko resolution (via Zobrist hashing), $n$-dimensional generalization ($m$ players), and group life theory (revisiting David Benson's work).
 - **Part III: Abstractions** — Geometric and graph-theoretic behavior of adjacencies in higher dimensions, an analysis of three-dimensional Go, one-dimensional variants, and common underlying structures across abstract board games.
-
-- **Part IV: Abstractions** - WIP, infinite Go discussion.
-
-
-
+- **Part IV: Infinite Go (WIP)** — Discussion and formalization of Go on infinite boards.
 
 ## Prerequisites & LaTeX Dependencies
 
-To compile `main.tex`, you will need a running distribution of **LuaLaTeX** and **Biber**, along with the following packages:
+To compile `main.tex`, you will need a running distribution of **LuaLaTeX** and **Biber**, along with the following packages and fonts:
 
-* **Language & Fonts:** `babel` (English), `fontspec`, `luatexja-fontspec` (*FandolSong* font), `csquotes`, `newpxtext`, `newpxmath`, `microtype`.
+* **Language & Typography:** `babel` (English), `fontspec` (`no-math`), `libertinus` (text and math), `luatexja-fontspec`, `csquotes`, `microtype`, `xspace`.
+  * *System Font Requirement:* **LXGW WenKai TC** must be installed on your system to render CJK characters.
 * **Mathematics:** `amsmath`, `amsthm`, `amsfonts`, `mathtools`.
-* **Graphics & Diagramming:** `tikz`, `tikz-cd`, `pgfplots`, `xcolor`, `graphicx`, `wrapfig`, `float`, `pdfpages`.
-  * *TikZ libraries:* `arrows.meta`, `bending`, `positioning`, `shadows`, `calc`, `shapes.geometric`, `decorations.text`, `babel`.
+* **Go Diagrams & SGF:** `pgf-go` suite (`pgf-go`, `pgf-go-marks`, `pgf-go-stones`, `pgf-go-goban`, `pgf-go-sgf`, `pgf-go-pages`, `pgf-go-territory`, `pgf-go-layout`, `pgf-go-profiles`, `pgf-go-players`).
+* **Graphics & Diagramming:** `tikz`, `tikz-cd`, `pgfplots` (compat `1.18`), `xcolor` (`dvipsnames`), `graphicx`, `wrapfig`, `float`, `pdfpages`.
+  * *TikZ libraries:* `babel`, `arrows.meta`, `bending`, `positioning`, `shadows`, `calc`, `shapes.geometric`, `decorations.text`.
 * **Layout & Editorial:** `geometry`, `fancyhdr`, `tocloft`, `caption`, `epigraph`, `booktabs`, `multicol`, `multirow`, `emptypage`.
-* **Citations & Hyperlinks:** `biblatex` (with `biber`), `hyperref`, `xurl`, `xspace`.
+* **Citations & Hyperlinks:** `biblatex` (with `biber`, `numeric-comp`), `hyperref`, `xurl`.
 
 ## Contributing
 

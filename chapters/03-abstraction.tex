@@ -1341,8 +1341,10 @@ Combining both constructions allows us to build the diagram of Figure~\ref{fig: 
 	Our theory already accounts for the case of the \textcolor{Blue}{ring}. Indeed, a ring is simply a group that encloses a region. If we distinguish the six corners of the board as special subsets of positions, a \textcolor{Red}{bridge} can be described as a group containing stones in at least two distinct corners. Likewise, if we distinguish the six edges of the board, a \textcolor{OliveGreen}{fork} can be described as a group containing stones in at least three distinct edges.
 	
 	Recalling the properties of $|K(i)|$ discussed in Part~\ref{parte1}, this suffices for us to identify which points belong to the corners or edges (Section~\ref{posicion_espacial}). In this manner, Havannah's winning condition can be expressed solely in terms of groups, regions, and board subsets. Consequently, the game appears to admit a natural formalization within the same theoretical framework.
+	\newpage
+	
 	\subsection*{Hex}
-	\begin{wrapfigure}[12]{i}{0.47\textwidth}
+	\begin{wrapfigure}[11]{i}{0.47\textwidth}
 		\centering
 		\begin{tikzpicture}[scale=0.4]
 			\def\r{0.55}
@@ -1453,9 +1455,7 @@ Combining both constructions allows us to build the diagram of Figure~\ref{fig: 
 	Thus, any Shannon switching game on $\mathcal{H}$ is represented by the structure $\Gamma_s = (G_s,
 	E_s, \sim_s, \Delta_s)$.
 	
-	This example is especially revealing, as it shows that the developed structure does not depend on geometric notions such as regions or territories. Even though it is a game defined on an arbitrary graph, the notions of position, state, adjacency, and group remain sufficient to completely describe its dynamics. It appears that the developed theory describes not only Go, but a broader family of games: \emph{Surrounding Games} ($\mathsf{SG}$).\footnote{This name is not entirely accurate, but it is the one that emerged during development. It is adopted here for convenience and does not pretend to identify an established branch of mathematics. Determining an appropriate designation would require a broader study.}
-	%	por lo tanto, $Othello \in \textsf{JR}$.
-	\newpage
+	This example is especially revealing, as it shows that the developed structure does not depend on geometric notions such as regions or territories. Even though it is a game defined on an arbitrary graph, the notions of position, state, adjacency, and group remain sufficient to completely describe its dynamics.
 	%\section*{Glosario (Parte III)}
 	%\begin{center}
 	%	\begin{tabular}{p{2cm} p{4.7cm} p{2cm} p{4.7cm}}
