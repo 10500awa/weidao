@@ -1013,6 +1013,12 @@ where, to a Go structure $(G, E, A)$, we adjoin the transition function $\Delta:
 If we recall the rules, towards the very end we briefly encountered the concept of being \textit{alive}. In this section, we shall formalize this notion.
 
 In Figure~\ref{fig:vida_incond_ejemplo}, White cannot capture because the suicide rule prohibits them from playing on Black's remaining liberties. The algorithm for determining unconditional life is straightforward: we simulate Black passing while White attempts to occupy their liberties. If White fails to capture it, the group possesses unconditional life.
+
+Now, formally,
+\begin{definition}[Unconditional Life]\label{def:unconditional_life}
+	Let $T_0 \in \mathfrak{T}$ be a board and let $S \subseteq I^e(T_0)$ be a non-empty set of groups of color $e \in E \setminus \{0\}$. We say that $S$ possesses \textbf{unconditional life} on $T_0$ if there exists no finite sequence of legal moves $f(1), \dots, f(n) \in \mathcal{F}$ ($n \in \mathbb{N}$), satisfying $f(t) = \emptyset$ whenever $t \equiv e \pmod{|E \setminus \{0\}|}$, such that some group $I \in S$ has no liberties on the tentative board $T'_n$ ($L_{T'_n}(I) = \emptyset$). In particular, a group $I \in I^e(T_0)$ possesses unconditional life on $T_0$ if $\{I\}$ possesses unconditional life on $T_0$.
+\end{definition}
+
 \begin{figure}[H]
 	\centering
 	\begin{goban}[7, hoshi = false]
