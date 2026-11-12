@@ -1,0 +1,543 @@
+% $ biblatex auxiliary file $
+% $ biblatex bbl format version 3.3 $
+% Do not modify the above lines!
+%
+% This is an auxiliary file used by the 'biblatex' package.
+% This file may safely be deleted. It will be recreated by
+% biber as required.
+%
+\begingroup
+\makeatletter
+\@ifundefined{ver@biblatex.sty}
+  {\@latex@error
+     {Missing 'biblatex' package}
+     {The bibliography requires the 'biblatex' package.}
+      \aftergroup\endinput}
+  {}
+\endgroup
+
+
+\refsection{0}
+  \datalist[entry]{nty/global//global/global/global}
+    \entry{Long_Hubert}{article}{}{}
+      \name{author}{1}{}{%
+        {{hash=96d78597e310a40473f01b9bbb6e0630}{%
+           family={AAGo},
+           familyi={A\bibinitperiod}}}%
+      }
+      \strng{namehash}{96d78597e310a40473f01b9bbb6e0630}
+      \strng{fullhash}{96d78597e310a40473f01b9bbb6e0630}
+      \strng{fullhashraw}{96d78597e310a40473f01b9bbb6e0630}
+      \strng{bibnamehash}{96d78597e310a40473f01b9bbb6e0630}
+      \strng{authorbibnamehash}{96d78597e310a40473f01b9bbb6e0630}
+      \strng{authornamehash}{96d78597e310a40473f01b9bbb6e0630}
+      \strng{authorfullhash}{96d78597e310a40473f01b9bbb6e0630}
+      \strng{authorfullhashraw}{96d78597e310a40473f01b9bbb6e0630}
+      \field{sortinit}{A}
+      \field{sortinithash}{2f401846e2029bad6b3ecc16d50031e2}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{AAGo}
+      \field{note}{\url{go.org.ar/contenido/relatos/192-apuntes-de-la-historia-del-go-en-mi-vida}}
+      \field{title}{Apuntes de la historia del go en mi vida}
+      \field{year}{2018}
+    \endentry
+    \entry{Aguilar2}{article}{}{}
+      \name{author}{1}{}{%
+        {{hash=5d0699af80014bcd39e7af1683cc0e0b}{%
+           family={Aguilar},
+           familyi={A\bibinitperiod},
+           given={Fernando},
+           giveni={F\bibinitperiod}}}%
+      }
+      \strng{namehash}{5d0699af80014bcd39e7af1683cc0e0b}
+      \strng{fullhash}{5d0699af80014bcd39e7af1683cc0e0b}
+      \strng{fullhashraw}{5d0699af80014bcd39e7af1683cc0e0b}
+      \strng{bibnamehash}{5d0699af80014bcd39e7af1683cc0e0b}
+      \strng{authorbibnamehash}{5d0699af80014bcd39e7af1683cc0e0b}
+      \strng{authornamehash}{5d0699af80014bcd39e7af1683cc0e0b}
+      \strng{authorfullhash}{5d0699af80014bcd39e7af1683cc0e0b}
+      \strng{authorfullhashraw}{5d0699af80014bcd39e7af1683cc0e0b}
+      \field{extraname}{1}
+      \field{sortinit}{A}
+      \field{sortinithash}{2f401846e2029bad6b3ecc16d50031e2}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{AAGo}
+      \field{note}{\url{go.org.ar/contenido/relatos/189-mi-participacion-en-el-mundial-de-go-oza}}
+      \field{title}{Mi participación en el Mundial de Go - Oza (Parte 1)}
+      \field{year}{2002}
+    \endentry
+    \entry{Aguilar1}{article}{}{}
+      \name{author}{1}{}{%
+        {{hash=5d0699af80014bcd39e7af1683cc0e0b}{%
+           family={Aguilar},
+           familyi={A\bibinitperiod},
+           given={Fernando},
+           giveni={F\bibinitperiod}}}%
+      }
+      \strng{namehash}{5d0699af80014bcd39e7af1683cc0e0b}
+      \strng{fullhash}{5d0699af80014bcd39e7af1683cc0e0b}
+      \strng{fullhashraw}{5d0699af80014bcd39e7af1683cc0e0b}
+      \strng{bibnamehash}{5d0699af80014bcd39e7af1683cc0e0b}
+      \strng{authorbibnamehash}{5d0699af80014bcd39e7af1683cc0e0b}
+      \strng{authornamehash}{5d0699af80014bcd39e7af1683cc0e0b}
+      \strng{authorfullhash}{5d0699af80014bcd39e7af1683cc0e0b}
+      \strng{authorfullhashraw}{5d0699af80014bcd39e7af1683cc0e0b}
+      \field{extraname}{2}
+      \field{sortinit}{A}
+      \field{sortinithash}{2f401846e2029bad6b3ecc16d50031e2}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{AAGo}
+      \field{note}{\url{go.org.ar/contenido/relatos/190-mi-participacion-en-el-mundial-de-go-oza-2}}
+      \field{title}{Mi participación en el Mundial de Go - Oza (Parte 2)}
+      \field{year}{2002}
+    \endentry
+    \entry{Aguilar3}{article}{}{}
+      \name{author}{1}{}{%
+        {{hash=559d5d25cc1bdcd5c7cf236b7fffa420}{%
+           family={Andalucía-Go},
+           familyi={A\bibinithyphendelim G\bibinitperiod}}}%
+      }
+      \strng{namehash}{559d5d25cc1bdcd5c7cf236b7fffa420}
+      \strng{fullhash}{559d5d25cc1bdcd5c7cf236b7fffa420}
+      \strng{fullhashraw}{559d5d25cc1bdcd5c7cf236b7fffa420}
+      \strng{bibnamehash}{559d5d25cc1bdcd5c7cf236b7fffa420}
+      \strng{authorbibnamehash}{559d5d25cc1bdcd5c7cf236b7fffa420}
+      \strng{authornamehash}{559d5d25cc1bdcd5c7cf236b7fffa420}
+      \strng{authorfullhash}{559d5d25cc1bdcd5c7cf236b7fffa420}
+      \strng{authorfullhashraw}{559d5d25cc1bdcd5c7cf236b7fffa420}
+      \field{sortinit}{A}
+      \field{sortinithash}{2f401846e2029bad6b3ecc16d50031e2}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Andalucía-Go}
+      \field{note}{\url{andalucia-go.org/entrevista-a-fernando-aguilar/}}
+      \field{title}{Entrevista a Fernando Aguilar}
+      \field{year}{2012}
+    \endentry
+    \entry{Benson}{article}{}{}
+      \name{author}{1}{}{%
+        {{hash=f0aa8803e5a5bfaeeab47dc1f819f552}{%
+           family={Benson},
+           familyi={B\bibinitperiod},
+           given={David\bibnamedelima B.},
+           giveni={D\bibinitperiod\bibinitdelim B\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Elsevier}%
+      }
+      \strng{namehash}{f0aa8803e5a5bfaeeab47dc1f819f552}
+      \strng{fullhash}{f0aa8803e5a5bfaeeab47dc1f819f552}
+      \strng{fullhashraw}{f0aa8803e5a5bfaeeab47dc1f819f552}
+      \strng{bibnamehash}{f0aa8803e5a5bfaeeab47dc1f819f552}
+      \strng{authorbibnamehash}{f0aa8803e5a5bfaeeab47dc1f819f552}
+      \strng{authornamehash}{f0aa8803e5a5bfaeeab47dc1f819f552}
+      \strng{authorfullhash}{f0aa8803e5a5bfaeeab47dc1f819f552}
+      \strng{authorfullhashraw}{f0aa8803e5a5bfaeeab47dc1f819f552}
+      \field{sortinit}{B}
+      \field{sortinithash}{d7095fff47cda75ca2589920aae98399}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Information Sciences}
+      \field{note}{\url{sciencedirect.com/science/article/abs/pii/S0020025576905545}}
+      \field{number}{1}
+      \field{title}{Life in the Game of {Go}}
+      \field{volume}{10}
+      \field{year}{1976}
+      \field{pages}{17\bibrangedash 29}
+      \range{pages}{13}
+    \endentry
+    \entry{Hist}{misc}{}{}
+      \name{author}{1}{}{%
+        {{hash=a719e9092e8203079c3503f7069b2739}{%
+           family={Fairbairn},
+           familyi={F\bibinitperiod},
+           given={John},
+           giveni={J\bibinitperiod}}}%
+      }
+      \strng{namehash}{a719e9092e8203079c3503f7069b2739}
+      \strng{fullhash}{a719e9092e8203079c3503f7069b2739}
+      \strng{fullhashraw}{a719e9092e8203079c3503f7069b2739}
+      \strng{bibnamehash}{a719e9092e8203079c3503f7069b2739}
+      \strng{authorbibnamehash}{a719e9092e8203079c3503f7069b2739}
+      \strng{authornamehash}{a719e9092e8203079c3503f7069b2739}
+      \strng{authorfullhash}{a719e9092e8203079c3503f7069b2739}
+      \strng{authorfullhashraw}{a719e9092e8203079c3503f7069b2739}
+      \field{sortinit}{F}
+      \field{sortinithash}{2638baaa20439f1b5a8f80c6c08a13b4}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{note}{\url{gobase.org/reading/history/china/?sec=part-5}}
+      \field{title}{History of {Go} in {China}}
+      \field{year}{1995}
+    \endentry
+    \entry{Goodell1957}{book}{}{}
+      \name{author}{1}{}{%
+        {{hash=760b72085a4e62d7cf58eb4465b17485}{%
+           family={Goodell},
+           familyi={G\bibinitperiod},
+           given={John\bibnamedelima D.},
+           giveni={J\bibinitperiod\bibinitdelim D\bibinitperiod}}}%
+      }
+      \list{location}{1}{%
+        {St. Paul, Minnesota}%
+      }
+      \list{publisher}{1}{%
+        {Riverside Research Press}%
+      }
+      \strng{namehash}{760b72085a4e62d7cf58eb4465b17485}
+      \strng{fullhash}{760b72085a4e62d7cf58eb4465b17485}
+      \strng{fullhashraw}{760b72085a4e62d7cf58eb4465b17485}
+      \strng{bibnamehash}{760b72085a4e62d7cf58eb4465b17485}
+      \strng{authorbibnamehash}{760b72085a4e62d7cf58eb4465b17485}
+      \strng{authornamehash}{760b72085a4e62d7cf58eb4465b17485}
+      \strng{authorfullhash}{760b72085a4e62d7cf58eb4465b17485}
+      \strng{authorfullhashraw}{760b72085a4e62d7cf58eb4465b17485}
+      \field{sortinit}{G}
+      \field{sortinithash}{32d67eca0634bf53703493fb1090a2e8}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{The World of {Ki}}
+      \field{year}{1957}
+      \true{nocite}
+      \field{pages}{215}
+      \range{pages}{1}
+    \endentry
+    \entry{KJB1}{article}{}{}
+      \name{author}{1}{}{%
+        {{hash=5e4e75baad562963ab9b373b55b6e832}{%
+           family={Kim},
+           familyi={K\bibinitperiod},
+           given={Jin\bibnamedelima Bai},
+           giveni={J\bibinitperiod\bibinitdelim B\bibinitperiod}}}%
+      }
+      \strng{namehash}{5e4e75baad562963ab9b373b55b6e832}
+      \strng{fullhash}{5e4e75baad562963ab9b373b55b6e832}
+      \strng{fullhashraw}{5e4e75baad562963ab9b373b55b6e832}
+      \strng{bibnamehash}{5e4e75baad562963ab9b373b55b6e832}
+      \strng{authorbibnamehash}{5e4e75baad562963ab9b373b55b6e832}
+      \strng{authornamehash}{5e4e75baad562963ab9b373b55b6e832}
+      \strng{authorfullhash}{5e4e75baad562963ab9b373b55b6e832}
+      \strng{authorfullhashraw}{5e4e75baad562963ab9b373b55b6e832}
+      \field{extraname}{1}
+      \field{sortinit}{K}
+      \field{sortinithash}{c02bf6bff1c488450c352b40f5d853ab}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Journal of the Korean Mathematical Society}
+      \field{note}{\url{koreascience.kr/article/JAKO197825748112276.pdf}}
+      \field{title}{On the Game of {Go} (I)}
+      \field{year}{1978}
+    \endentry
+    \entry{KJB2}{article}{}{}
+      \name{author}{1}{}{%
+        {{hash=5e4e75baad562963ab9b373b55b6e832}{%
+           family={Kim},
+           familyi={K\bibinitperiod},
+           given={Jin\bibnamedelima Bai},
+           giveni={J\bibinitperiod\bibinitdelim B\bibinitperiod}}}%
+      }
+      \strng{namehash}{5e4e75baad562963ab9b373b55b6e832}
+      \strng{fullhash}{5e4e75baad562963ab9b373b55b6e832}
+      \strng{fullhashraw}{5e4e75baad562963ab9b373b55b6e832}
+      \strng{bibnamehash}{5e4e75baad562963ab9b373b55b6e832}
+      \strng{authorbibnamehash}{5e4e75baad562963ab9b373b55b6e832}
+      \strng{authornamehash}{5e4e75baad562963ab9b373b55b6e832}
+      \strng{authorfullhash}{5e4e75baad562963ab9b373b55b6e832}
+      \strng{authorfullhashraw}{5e4e75baad562963ab9b373b55b6e832}
+      \field{extraname}{2}
+      \field{sortinit}{K}
+      \field{sortinithash}{c02bf6bff1c488450c352b40f5d853ab}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Journal of the Korean Mathematical Society}
+      \field{note}{\url{koreascience.kr/article/JAKO197821048975921.pdf}}
+      \field{title}{On the Game of {Go} (II)}
+      \field{volume}{15}
+      \field{year}{1978}
+    \endentry
+    \entry{WQJ}{misc}{}{}
+      \name{author}{1}{}{%
+        {{hash=d26860b2baa9cbf48c9430cbf81f9409}{%
+           family={Li},
+           familyi={L\bibinitperiod},
+           given={Yimin},
+           giveni={Y\bibinitperiod}}}%
+      }
+      \strng{namehash}{d26860b2baa9cbf48c9430cbf81f9409}
+      \strng{fullhash}{d26860b2baa9cbf48c9430cbf81f9409}
+      \strng{fullhashraw}{d26860b2baa9cbf48c9430cbf81f9409}
+      \strng{bibnamehash}{d26860b2baa9cbf48c9430cbf81f9409}
+      \strng{authorbibnamehash}{d26860b2baa9cbf48c9430cbf81f9409}
+      \strng{authornamehash}{d26860b2baa9cbf48c9430cbf81f9409}
+      \strng{authorfullhash}{d26860b2baa9cbf48c9430cbf81f9409}
+      \strng{authorfullhashraw}{d26860b2baa9cbf48c9430cbf81f9409}
+      \field{sortinit}{L}
+      \field{sortinithash}{7c47d417cecb1f4bd38d1825c427a61a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{note}{Song Dynasty collection. \url{senseis.xmp.net/?WangYouQingLeJi}}
+      \field{title}{{Wangyou Qingle Ji} (The Classic of the Carefree and Innocent)}
+      \field{year}{c. 1100}
+      \true{nocite}
+    \endentry
+    \entry{ventaja}{misc}{}{}
+      \name{author}{1}{}{%
+        {{hash=7fa16c2310d8324116221ef0e926fe55}{%
+           family={Library},
+           familyi={L\bibinitperiod},
+           given={Sensei's},
+           giveni={S\bibinitperiod}}}%
+      }
+      \strng{namehash}{7fa16c2310d8324116221ef0e926fe55}
+      \strng{fullhash}{7fa16c2310d8324116221ef0e926fe55}
+      \strng{fullhashraw}{7fa16c2310d8324116221ef0e926fe55}
+      \strng{bibnamehash}{7fa16c2310d8324116221ef0e926fe55}
+      \strng{authorbibnamehash}{7fa16c2310d8324116221ef0e926fe55}
+      \strng{authornamehash}{7fa16c2310d8324116221ef0e926fe55}
+      \strng{authorfullhash}{7fa16c2310d8324116221ef0e926fe55}
+      \strng{authorfullhashraw}{7fa16c2310d8324116221ef0e926fe55}
+      \field{extraname}{1}
+      \field{sortinit}{L}
+      \field{sortinithash}{7c47d417cecb1f4bd38d1825c427a61a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{note}{\url{senseis.xmp.net/?HandicapStonePlacementOnSmallerBoards}}
+      \field{title}{Handicap Stone Placement on Smaller Boards}
+      \field{year}{s.f.}
+      \true{nocite}
+    \endentry
+    \entry{cicloinfinito}{misc}{}{}
+      \name{author}{1}{}{%
+        {{hash=7fa16c2310d8324116221ef0e926fe55}{%
+           family={Library},
+           familyi={L\bibinitperiod},
+           given={Sensei's},
+           giveni={S\bibinitperiod}}}%
+      }
+      \strng{namehash}{7fa16c2310d8324116221ef0e926fe55}
+      \strng{fullhash}{7fa16c2310d8324116221ef0e926fe55}
+      \strng{fullhashraw}{7fa16c2310d8324116221ef0e926fe55}
+      \strng{bibnamehash}{7fa16c2310d8324116221ef0e926fe55}
+      \strng{authorbibnamehash}{7fa16c2310d8324116221ef0e926fe55}
+      \strng{authornamehash}{7fa16c2310d8324116221ef0e926fe55}
+      \strng{authorfullhash}{7fa16c2310d8324116221ef0e926fe55}
+      \strng{authorfullhashraw}{7fa16c2310d8324116221ef0e926fe55}
+      \field{extraname}{2}
+      \field{sortinit}{L}
+      \field{sortinithash}{7c47d417cecb1f4bd38d1825c427a61a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{note}{\url{senseis.xmp.net/?PinwheelKo}}
+      \field{title}{PinwheelKo}
+      \field{year}{s.f.}
+    \endentry
+    \entry{Long83}{book}{}{}
+      \name{author}{2}{}{%
+        {{hash=b67b5ad337726f52441965e4f0e7ac86}{%
+           family={Long},
+           familyi={L\bibinitperiod},
+           given={Hilario\bibnamedelima Fernández},
+           giveni={H\bibinitperiod\bibinitdelim F\bibinitperiod}}}%
+        {{hash=4b5ae94d0334495f672f7556d4f0f6c6}{%
+           family={Moderc},
+           familyi={M\bibinitperiod},
+           given={Adalberto},
+           giveni={A\bibinitperiod}}}%
+      }
+      \list{location}{1}{%
+        {Buenos Aires}%
+      }
+      \list{publisher}{1}{%
+        {Asociación Argentina de Go}%
+      }
+      \strng{namehash}{b305c8a886a38b614e0756d5a5542742}
+      \strng{fullhash}{b305c8a886a38b614e0756d5a5542742}
+      \strng{fullhashraw}{b305c8a886a38b614e0756d5a5542742}
+      \strng{bibnamehash}{b305c8a886a38b614e0756d5a5542742}
+      \strng{authorbibnamehash}{b305c8a886a38b614e0756d5a5542742}
+      \strng{authornamehash}{b305c8a886a38b614e0756d5a5542742}
+      \strng{authorfullhash}{b305c8a886a38b614e0756d5a5542742}
+      \strng{authorfullhashraw}{b305c8a886a38b614e0756d5a5542742}
+      \field{extraname}{1}
+      \field{sortinit}{L}
+      \field{sortinithash}{7c47d417cecb1f4bd38d1825c427a61a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{note}{\url{abr.uns.edu.ar/cgi-bin/opacmarc/wxis?IsisScript=opac/xis/opac.xis&task=BIB-RECORD&db=abr&cn=042962}}
+      \field{title}{Introducción al {Go}}
+      \field{year}{1983}
+    \endentry
+    \entry{Long74}{book}{}{}
+      \name{author}{2}{}{%
+        {{hash=b67b5ad337726f52441965e4f0e7ac86}{%
+           family={Long},
+           familyi={L\bibinitperiod},
+           given={Hilario\bibnamedelima Fernández},
+           giveni={H\bibinitperiod\bibinitdelim F\bibinitperiod}}}%
+        {{hash=4b5ae94d0334495f672f7556d4f0f6c6}{%
+           family={Moderc},
+           familyi={M\bibinitperiod},
+           given={Adalberto},
+           giveni={A\bibinitperiod}}}%
+      }
+      \list{location}{1}{%
+        {Buenos Aires}%
+      }
+      \list{publisher}{1}{%
+        {Asociación Argentina de Go}%
+      }
+      \strng{namehash}{b305c8a886a38b614e0756d5a5542742}
+      \strng{fullhash}{b305c8a886a38b614e0756d5a5542742}
+      \strng{fullhashraw}{b305c8a886a38b614e0756d5a5542742}
+      \strng{bibnamehash}{b305c8a886a38b614e0756d5a5542742}
+      \strng{authorbibnamehash}{b305c8a886a38b614e0756d5a5542742}
+      \strng{authornamehash}{b305c8a886a38b614e0756d5a5542742}
+      \strng{authorfullhash}{b305c8a886a38b614e0756d5a5542742}
+      \strng{authorfullhashraw}{b305c8a886a38b614e0756d5a5542742}
+      \field{extraname}{2}
+      \field{sortinit}{L}
+      \field{sortinithash}{7c47d417cecb1f4bd38d1825c427a61a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{note}{\url{biblioteca.unm.edu.ar/cgi-bin/koha/opac-detail.pl?biblionumber=9665}}
+      \field{title}{Manual de {Go}}
+      \field{year}{1974}
+      \true{nocite}
+    \endentry
+    \entry{Smith}{book}{}{}
+      \name{author}{1}{}{%
+        {{hash=9c855075c7ab53ad38ec38086eda2029}{%
+           family={Smith},
+           familyi={S\bibinitperiod},
+           given={Arthur},
+           giveni={A\bibinitperiod}}}%
+      }
+      \list{location}{1}{%
+        {London}%
+      }
+      \list{publisher}{2}{%
+        {Longmans, Green,}%
+        {Co.}%
+      }
+      \strng{namehash}{9c855075c7ab53ad38ec38086eda2029}
+      \strng{fullhash}{9c855075c7ab53ad38ec38086eda2029}
+      \strng{fullhashraw}{9c855075c7ab53ad38ec38086eda2029}
+      \strng{bibnamehash}{9c855075c7ab53ad38ec38086eda2029}
+      \strng{authorbibnamehash}{9c855075c7ab53ad38ec38086eda2029}
+      \strng{authornamehash}{9c855075c7ab53ad38ec38086eda2029}
+      \strng{authorfullhash}{9c855075c7ab53ad38ec38086eda2029}
+      \strng{authorfullhashraw}{9c855075c7ab53ad38ec38086eda2029}
+      \field{sortinit}{S}
+      \field{sortinithash}{b164b07b29984b41daf1e85279fbc5ab}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{The Game of {Go}: The National Game of {Japan}}
+      \field{year}{1908}
+    \endentry
+    \entry{TandW64}{article}{}{}
+      \name{author}{2}{}{%
+        {{hash=cf54a318be8469e5d3ab1a08fba2222a}{%
+           family={Thorp},
+           familyi={T\bibinitperiod},
+           given={E.\bibnamedelimi O.},
+           giveni={E\bibinitperiod\bibinitdelim O\bibinitperiod}}}%
+        {{hash=632603b582d4f963eb96469591c5b64d}{%
+           family={Walden},
+           familyi={W\bibinitperiod},
+           given={W.\bibnamedelimi E.},
+           giveni={W\bibinitperiod\bibinitdelim E\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Oxford University Press}%
+      }
+      \strng{namehash}{20ba7638e6795093f8481aa45d105e15}
+      \strng{fullhash}{20ba7638e6795093f8481aa45d105e15}
+      \strng{fullhashraw}{20ba7638e6795093f8481aa45d105e15}
+      \strng{bibnamehash}{20ba7638e6795093f8481aa45d105e15}
+      \strng{authorbibnamehash}{20ba7638e6795093f8481aa45d105e15}
+      \strng{authornamehash}{20ba7638e6795093f8481aa45d105e15}
+      \strng{authorfullhash}{20ba7638e6795093f8481aa45d105e15}
+      \strng{authorfullhashraw}{20ba7638e6795093f8481aa45d105e15}
+      \field{extraname}{1}
+      \field{sortinit}{T}
+      \field{sortinithash}{9af77f0292593c26bde9a56e688eaee9}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{The Computer Journal}
+      \field{number}{3}
+      \field{title}{A Partial Analysis of {Go}}
+      \field{volume}{7}
+      \field{year}{1964}
+      \field{pages}{203\bibrangedash 207}
+      \range{pages}{5}
+    \endentry
+    \entry{TandW2}{misc}{}{}
+      \name{author}{2}{}{%
+        {{hash=31cd0468b93fadd1283b3e2f9d204840}{%
+           family={Thorp},
+           familyi={T\bibinitperiod},
+           given={Edward\bibnamedelima O.},
+           giveni={E\bibinitperiod\bibinitdelim O\bibinitperiod}}}%
+        {{hash=b0ff4c6301224fd7ebd53eecba77dc0d}{%
+           family={Walden},
+           familyi={W\bibinitperiod},
+           given={William\bibnamedelima E.},
+           giveni={W\bibinitperiod\bibinitdelim E\bibinitperiod}}}%
+      }
+      \strng{namehash}{d04b8bab9fcf4ccabbca9cfabd017540}
+      \strng{fullhash}{d04b8bab9fcf4ccabbca9cfabd017540}
+      \strng{fullhashraw}{d04b8bab9fcf4ccabbca9cfabd017540}
+      \strng{bibnamehash}{d04b8bab9fcf4ccabbca9cfabd017540}
+      \strng{authorbibnamehash}{d04b8bab9fcf4ccabbca9cfabd017540}
+      \strng{authornamehash}{d04b8bab9fcf4ccabbca9cfabd017540}
+      \strng{authorfullhash}{d04b8bab9fcf4ccabbca9cfabd017540}
+      \strng{authorfullhashraw}{d04b8bab9fcf4ccabbca9cfabd017540}
+      \field{extraname}{2}
+      \field{sortinit}{T}
+      \field{sortinithash}{9af77f0292593c26bde9a56e688eaee9}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{note}{\url{edwardothorp.com/wp-content/uploads/2016/11/AComputerAssistedStudyOfGoOnMxNBoards.pdf}}
+      \field{title}{A Computer Assisted Study of {Go} on $M \times N$ Boards}
+      \field{year}{1972}
+      \true{nocite}
+    \endentry
+    \entry{zobrist1970hashing}{report}{}{}
+      \name{author}{1}{}{%
+        {{hash=1b30d7a05ff7e326e9b60db09be2b126}{%
+           family={Zobrist},
+           familyi={Z\bibinitperiod},
+           given={Albert\bibnamedelima L.},
+           giveni={A\bibinitperiod\bibinitdelim L\bibinitperiod}}}%
+      }
+      \list{institution}{1}{%
+        {University of Wisconsin-Madison Department of Computer Sciences}%
+      }
+      \list{location}{1}{%
+        {Madison, WI, USA}%
+      }
+      \strng{namehash}{1b30d7a05ff7e326e9b60db09be2b126}
+      \strng{fullhash}{1b30d7a05ff7e326e9b60db09be2b126}
+      \strng{fullhashraw}{1b30d7a05ff7e326e9b60db09be2b126}
+      \strng{bibnamehash}{1b30d7a05ff7e326e9b60db09be2b126}
+      \strng{authorbibnamehash}{1b30d7a05ff7e326e9b60db09be2b126}
+      \strng{authornamehash}{1b30d7a05ff7e326e9b60db09be2b126}
+      \strng{authorfullhash}{1b30d7a05ff7e326e9b60db09be2b126}
+      \strng{authorfullhashraw}{1b30d7a05ff7e326e9b60db09be2b126}
+      \field{sortinit}{Z}
+      \field{sortinithash}{96892c0b0a36bb8557c40c49813d48b3}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{note}{\url{research.cs.wisc.edu/techreports/1970/TR88.pdf}}
+      \field{number}{TR88}
+      \field{title}{A New Hashing Method With Application for Game Playing}
+      \field{type}{techreport}
+      \field{year}{1970}
+    \endentry
+  \enddatalist
+\endrefsection
+\endinput
+

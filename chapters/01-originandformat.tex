@@ -36,7 +36,7 @@
 \vfill
 
 \begin{center}
-	\begin{tikzpicture}[>=stealth]
+	\begin{tikzpicture}[>=stealth,scale=2]
 		% PALETA DE LA PORTADA
 		\definecolor{bpbg}{HTML}{0B2450}
 		\definecolor{textcolor}{HTML}{efce8f}
@@ -84,7 +84,7 @@
 \setcounter{page}{1}
 \pagecolor{white}
 {\centering\chapter{Origins and format}\label{parte1}}
-
+\thispagestyle{empty}
 
 
 
@@ -92,17 +92,19 @@
 
 
 \subsection{History of Go in China}
-The term 圍棋 (Wéi Qí) originates from the characters 圍 (Wéi), meaning ‘to surround’, and 棋 (Qí), which refers to a ‘board game’. In the West, it is commonly known as Go, a name derived from the Japanese 囲碁" (Igo). Although its exact chronology remains uncertain, ancient literary, pictorial, and archaeological records demonstrate that the game was an integral part of Chinese culture since BCE times.
+The term 圍棋 (Wéi Qí) originates from the characters 圍 (Wéi), meaning ‘to surround’, and 棋 (Qí), which refers to a ‘board game’. In the West, it is commonly known as Go, a name derived from the Japanese 囲碁 (Igo). Although its exact chronology remains uncertain, ancient literary, pictorial, and archaeological records demonstrate that the game was an integral part of Chinese culture since BCE times.
 \begin{figure}[H]
 	\centering
-	\includegraphics[width=0.51\linewidth]{figures/Go_1200x1200}
-	\caption{A game of Go on a traditional board.}
+	\includegraphics[width=0.51\linewidth]{figures/weiqi}
+	\caption{A lady playing Go.}
 	\label{fig:go1200x1200}
 \end{figure}
-
 Regarding its origins, mythical tradition holds that the legendary Emperor Yáo (堯) (2356–2257 BCE) invented it to enlighten the mind of his son, Dān Zhū (丹朱). Another account claims that Emperor Shùn (舜) (2255–2208 BCE) created it to educate his son, Shāng Jūn (商均). Furthermore, several sources attribute its invention to Wǔ, a vassal of Emperor Xià Jié (夏桀) (1818–1767 BCE), a courtier also celebrated for having devised the card game \cite{Smith}.
 
-The first reliable mention of the game dates to the 3rd century BCE, when Mèngzǐ (孟子) describes Yì Qiū (弈秋), a master of the game during the Warring States period who was recognized as one of the foremost exponents of his time. On the other hand, a notable game is preserved in the Wàngyōu Qīnglè Jí (忘憂清樂集), a mid-12th-century compilation. This work records one of the earliest recorded games, dating from the Han period (2nd century BCE – 2nd century CE) and contested between General Sūn Cè (孙策) and his captain Lǚ Fàn (Figure~\ref{fig:Fig 1}) \cite{Hist}. In conclusion, while it is unlikely that Go is 4,000 years old—as certain traditions suggest—its existence has been documented for at least 2,500 years. Its recurring appearance in texts and chronicles of the period suggests that, by then, the game enjoyed widespread enough familiarity for analogies based on it to be readily understood.
+The first reliable mention of the game dates to the 3rd century BCE, when Mèngzǐ (孟子) describes Yì Qiū (弈秋), a master of the game during the Warring States period who was recognized as one of the foremost exponents of his time. On the other hand, a notable game is preserved in the Wàngyōu Qīnglè Jí (忘憂清樂集), a mid-12th-century compilation.
+
+This work records one of the earliest recorded games, dating from the Han period (2nd century BCE – 2nd century CE) and contested between General Sūn Cè (孙策) and his captain Lǚ Fàn (Figure~\ref{fig:Fig 1}) \cite{Hist}. In conclusion, while it is unlikely that Go is 4,000 years old—as certain traditions suggest—its existence has been documented for at least 2,500 years. Its recurring appearance in texts and chronicles of the period suggests that, by then, the game enjoyed widespread enough familiarity for analogies based on it to be readily understood.
+
 \begin{figure}[H]
 	\centering
 	\begin{goban}[19x19,label={at = {south, west}},scale=1.3]
@@ -120,39 +122,39 @@ Engineer Hilario Fernández Long was the pioneer of Go in Argentina. After learn
 It is imperative to highlight the figure of Fernando Aguilar \cite{Long_Hubert, Aguilar2, Aguilar1}, Fernández Long's first cousin once removed and arguably the foremost exponent of Go in Argentina. Although he took his first steps in the world of strategy games through chess, under the tutelage of his father, Pedro Antonio Aguilar, Fernando discovered Go through the print media\footnote{The original quotes are in Spanish.}:
 
 \begin{quote}
-	``At home, we used to buy the newspaper \textit{La Nación}. Chess columns were published there regularly [\dots] At a certain point, articles about Go began to appear. The author was the same person who wrote the chess ones.''
+	At home, we used to buy the newspaper \textit{La Nación}. Chess columns were published there regularly [\dots] At a certain point, articles about Go began to appear. The author was the same person who wrote the chess ones.
 \end{quote}
 Driven by curiosity, he consulted his father, who replied:
 \begin{quote}
-	``Let's go visit your uncle Hilario so he can teach us how to play Go.''
+	Let's go visit your uncle Hilario so he can teach us how to play Go.
 \end{quote}
 Aguilar, at the age of twelve~\cite{Aguilar3}, recalls his beginnings as follows:
 \begin{quote}
-	``Hilario explained the rules to us and gave us some general guidelines. As we parted, he gave us a board and stones set, as well as a book: \textit{How to Play Go}, an English translation of a work by \textit{Takagawa Shukaku} [\dots] From then on, the study sessions with my father consisted of reading a chapter of the book—which he translated for me from English—followed by a game played between us.''
+	Hilario explained the rules to us and gave us some general guidelines. As we parted, he gave us a board and stones set, as well as a book: \textit{How to Play Go}, an English translation of a work by \textit{Takagawa Shukaku} [\dots] From then on, the study sessions with my father consisted of reading a chapter of the book—which he translated for me from English—followed by a game played between us.
 \end{quote}
 Having mastered the rules, it was time to compete.
 \begin{quote}
-	``The year was 1972, and Go activity across the country was in full swing. In September of that year, Master \textit{Iwamoto Kaoru} visited our country.''
+	The year was 1972, and Go activity across the country was in full swing. In September of that year, Master \textit{Iwamoto Kaoru} visited our country.
 \end{quote}
 Following the match between \textit{Enrique Lindenbaum} and \textit{Iwamoto}, it was the amateurs' turn:
 \begin{quote}
-	``Then came the simultaneous exhibition, where I had my first experience facing a professional player. I was at a beginner's level (or slightly above) and was supposed to take a nine-stone handicap, but \textit{Sachiko Kondo} asked to play with seven stones [\dots] When it became evident that White's victory was overwhelming, the professional asked to suspend the game.''\footnote{Since Aguilar was the weaker player, he played first (taking Black), leaving \textit{Kondo} to play with White.}
+	Then came the simultaneous exhibition, where I had my first experience facing a professional player. I was at a beginner's level (or slightly above) and was supposed to take a nine-stone handicap, but \textit{Sachiko Kondo} asked to play with seven stones [\dots] When it became evident that White's victory was overwhelming, the professional asked to suspend the game.\footnote{Since Aguilar was the weaker player, he played first (taking Black), leaving \textit{Kondo} to play with White.}
 \end{quote}
 Despite the defeat, \textit{Fernando's} ambition only continued to grow:
 \begin{quote}
-	``The next step my father and I took was joining the Argentine Go Association [\dots] Soon after came the \textit{Copa La Nación} tournament. Its second edition took place in 1972.''
+	The next step my father and I took was joining the Argentine Go Association [\dots] Soon after came the \textit{Copa La Nación} tournament. Its second edition took place in 1972.
 \end{quote}
 Although he did not have a standout performance that year, he certainly did the following year:
 \begin{quote}
-	``Well into 1973, the time came to contest the third edition of the \textit{Copa La Nación} [\dots] The tournament was fiercely contested, but I managed to win it undefeated, relegating \textit{Pedro Hecht} to second place.''
+	Well into 1973, the time came to contest the third edition of the \textit{Copa La Nación} [\dots] The tournament was fiercely contested, but I managed to win it undefeated, relegating \textit{Pedro Hecht} to second place.
 \end{quote}
 The most significant milestone of his career came in 2002. After securing third place in the \textit{Ibero-American Cup}, he qualified for the 1st \textit{Toyota \& Denso Cup -- World Go Oza}. In the first round, on March 19, he faced \textit{Hasegawa Sunao} ($9p$) (Figure~\ref{fig:aguilar_hasegawa_1}). The opening proceeded customarily:
 \begin{quote}
-	``I grabbed a handful of stones, and my opponent guessed correctly that it was an odd number, so he was assigned to play with Black.''\footnote{To determine who plays first in an even game, Japanese tradition employs a method called \textit{Nigiri} (握り). One player (customarily the senior or higher-ranked player, though in international tournaments either player may hold the stones) takes a handful of white stones and conceals them in hand. The opponent then places one black stone on the board to guess an odd count, or two black stones to guess an even count. The white stones are then counted in pairs, if the guess is correct, the guessing player takes Black and moves first. Otherwise, the players swap colors.}
+	I grabbed a handful of stones, and my opponent guessed correctly that it was an odd number, so he was assigned to play with Black.\footnote{To determine who plays first in an even game, Japanese tradition employs a method called \textit{Nigiri} (握り). One player (customarily the senior or higher-ranked player, though in international tournaments either player may hold the stones) takes a handful of white stones and conceals them in hand. The opponent then places one black stone on the board to guess an odd count, or two black stones to guess an even count. The white stones are then counted in pairs, if the guess is correct, the guessing player takes Black and moves first. Otherwise, the players swap colors.}
 \end{quote}
 Against all odds, the game ended in \textit{Aguilar's} favor:
 \begin{quote}
-	``The final margin was 3.5 points in my favor. The difference caught my attention, and it surprised Hasegawa: he asked for the game record and spent quite a while confirming that it was indeed so.''
+	The final margin was 3.5 points in my favor. The difference caught my attention, and it surprised Hasegawa: he asked for the game record and spent quite a while confirming that it was indeed so.
 \end{quote}
 
 \begin{figure}[H]
@@ -187,15 +189,15 @@ Against all odds, the game ended in \textit{Aguilar's} favor:
 \end{figure}
 For the second round, held on September 2, Aguilar prepared exhaustively to face \textit{Yo Kagen} (Figure~\ref{fig:aguilar_kagen_1}). His preliminary analysis reveals the profound depth with which he perceived the game:
 \begin{quote}
-	``I was struck by the artistic manner in which he applies the `surrounding principle.' His moves seemingly do not build anything specific [\dots] yet observing the board on a large scale, one notices that his groups form a grand enveloping maneuver [\dots] In a sense, I could say I `fell in love' with \textit{Yo's} style of play.''
+	I was struck by the artistic manner in which he applies the `surrounding principle.' His moves seemingly do not build anything specific [\dots] yet observing the board on a large scale, one notices that his groups form a grand enveloping maneuver [\dots] In a sense, I could say I `fell in love' with \textit{Yo's} style of play.
 \end{quote}
 Before departing for \textit{Tokyo, Japan}, where the tournament was hosted, \textit{Fernando} recounts:
 \begin{quote}
-	``I left Formosa on Wednesday, August 28, and spent the night in Buenos Aires. There I saw my father, who saw me off saying: `You already know that professionals are not invincible.’\,''
+	I left Formosa on Wednesday, August 28, and spent the night in Buenos Aires. There I saw my father, who saw me off saying: `You already know that professionals are not invincible.’\,
 \end{quote} 
 Once there, he managed to defeat \textit{Yo Kagen}:
 \begin{quote}
-	``\textit{Yo} appeared deeply disheartened upon realizing the outcome was decided. It took him about 40 minutes to compose himself, connect the final ko with White 268, and fill the dame in order to count [\dots] I felt that the most respectful thing to do was to wait in silence. We quickly sorted out the territories, confirmed the result, put away the stones, and \textit{Yo Kagen} left quietly.''
+	\textit{Yo} appeared deeply disheartened upon realizing the outcome was decided. It took him about 40 minutes to compose himself, connect the final ko with White 268, and fill the dame in order to count [\dots] I felt that the most respectful thing to do was to wait in silence. We quickly sorted out the territories, confirmed the result, put away the stones, and \textit{Yo Kagen} left quietly.
 \end{quote}
 
 \begin{figure}[H]
@@ -269,20 +271,20 @@ Finally, mention must be made of the work of \textit{Jin Bai Kim}, conceived in 
 	\begin{goban}
 		\stones[w]{B2,B3,C3}
 		\stones[b]{D3,E3,E5}
-		\filldraw[Blue] (1,2) circle (3pt);
-		\filldraw[Blue] (1,3) circle (3pt);
-		\filldraw[Blue] (2,1) circle (3pt);
-		\filldraw[Blue] (2,4) circle (3pt);
-		\filldraw[Blue] (3,2) circle (3pt);
-		\filldraw[Blue] (3,4) circle (3pt);
-		\filldraw[Orange] (4,5) circle (3pt);
-		\filldraw[Orange] (5,6) circle (3pt);
-		\filldraw[Orange] (6,5) circle (3pt);
-		\filldraw[OliveGreen] (4,4) circle (3pt);
-		\filldraw[OliveGreen] (6,3) circle (3pt);
-		\filldraw[OliveGreen] (5,2) circle (3pt);
-		\filldraw[OliveGreen] (4,2) circle (3pt);
-		\filldraw[Orange!50!Green] (5,4) circle (3pt);
+		\filldraw[bg] (1,2) circle (3pt);
+		\filldraw[bg] (1,3) circle (3pt);
+		\filldraw[bg] (2,1) circle (3pt);
+		\filldraw[bg] (2,4) circle (3pt);
+		\filldraw[bg] (3,2) circle (3pt);
+		\filldraw[bg] (3,4) circle (3pt);
+		\filldraw[terracotta] (4,5) circle (3pt);
+		\filldraw[terracotta] (5,6) circle (3pt);
+		\filldraw[terracotta] (6,5) circle (3pt);
+		\filldraw[Moss] (4,4) circle (3pt);
+		\filldraw[Moss] (6,3) circle (3pt);
+		\filldraw[Moss] (5,2) circle (3pt);
+		\filldraw[Moss] (4,2) circle (3pt);
+		\filldraw[terracotta!50!Green] (5,4) circle (3pt);
 	\end{goban}
 	\caption{An empty board, alongside a board illustrating the liberties of a single stone and of groups.}
 	\label{fig:Fig 3}
@@ -301,7 +303,7 @@ It can be observed that, on the second board, the black stone has four liberties
 	\begin{goban}
 		\stones[w]{E4}
 		\stones[b]{E3,E5,F4}
-		\filldraw[Blue] (4,4) circle (3pt);
+		\filldraw[bg] (4,4) circle (3pt);
 	\end{goban}
 	\begin{goban}
 		\stones[w]{E4}
@@ -311,7 +313,7 @@ It can be observed that, on the second board, the black stone has four liberties
 	\begin{goban}
 		\stones[w]{D4,D3,E3,F3,G4,H4,E5}
 		\stones[b]{E4,F4}
-		\filldraw[OliveGreen] (6,5) circle (3pt);
+		\filldraw[Moss] (6,5) circle (3pt);
 	\end{goban}
 	\begin{goban}
 		\stones[w]{D4,D3,E3,F3,G4,H4,E5}
@@ -331,18 +333,18 @@ For a stone to be placed on the board, it must have liberties at the intersectio
 		\begin{goban}
 			\stones[w]{A3,B3,C3,C2,C1}
 			\stones[b]{A2,B2,B1}
-			\filldraw[Blue] (1,1) circle (3pt);
+			\filldraw[bg] (1,1) circle (3pt);
 		\end{goban}
 		\begin{goban}
 			\stones[w]{D5,D3,C4,E4}
 			\stones[b]{A3,B3,C3,C1}
-				\filldraw[Blue] (4,4) circle (3pt);
+				\filldraw[bg] (4,4) circle (3pt);
 		\end{goban}
 	\end{pgfgolayout}
 	\caption{In blue the illegal moves for Black as they are suicide.}
 	\label{fig:suicidio}
 \end{figure} 
-There is, however, an exception to this rule: playing on an intersection with no liberties is legal if the move results in a capture. Upon removing the captured stones, the newly placed stone immediately gains liberties (see Figure~\ref{fig:Fig 6})\label{primerreglako}. Furthermore, as seen in the figure, if both players were allowed to play on that intersection, the cycle of reciprocal captures could continue indefinitely. To prevent this loop, the \textit{ko rule} is introduced. If Black were to play at coordinates \((4, 4)\) (\textcolor{Blue}{blue} dot in the figure), the board would revert to the exact position of the preceding turn.\footnote{We will see that the standard \textit{ko rule} proves insufficient in certain scenarios, as longer cycles can occur that repeat a previous board position without violating this basic rule (see Section~\ref{sec-superko}).}
+There is, however, an exception to this rule: playing on an intersection with no liberties is legal if the move results in a capture. Upon removing the captured stones, the newly placed stone immediately gains liberties (see Figure~\ref{fig:Fig 6})\label{primerreglako}. Furthermore, as seen in the figure, if both players were allowed to play on that intersection, the cycle of reciprocal captures could continue indefinitely. To prevent this loop, the \textit{ko rule} is introduced. If Black were to play at coordinates \((4, 4)\) (\textcolor{bg}{blue} dot in the figure), the board would revert to the exact position of the preceding turn.\footnote{We will see that the standard \textit{ko rule} proves insufficient in certain scenarios, as longer cycles can occur that repeat a previous board position without violating this basic rule (see Section~\ref{sec-superko}).}
 
 \pgfgodefinesgf{fig6}{figures/fig6.sgf}
 \begin{figure}[H]
@@ -356,7 +358,7 @@ There is, however, an exception to this rule: playing on an intersection with no
 		\end{goban}
 		\begin{goban}[sgf size = fig6, captures, scale = 1.1]
 			\sgf[from = 8, to = 9]{fig6}
-			\filldraw[Blue] (4,4) circle (3pt);
+			\filldraw[bg] (4,4) circle (3pt);
 		\end{goban}
 		\begin{goban}[sgf size = fig6, captures, scale = 1.1]
 			\sgf[from = 9, to = 10]{fig6}
@@ -370,11 +372,11 @@ There is, however, an exception to this rule: playing on an intersection with no
 	\begin{goban}[7, hoshi = false]
 		\stones[w]{A7, A6, B6, B5, C5, C4, C3, D3, D2, D1, E1}
 		\stones[b]{B7, C7, C6, D6, D5, E5, D4, E4, F4, G4}
-		\marks[filled circle, fill = {true, color = Blue}]{A1:5, B1:4, C1:2}
-		\marks[filled circle, fill = {true, color = OliveGreen}]{D:F7, E6, F6, F5, G5:7}
-		\marks[filled circle, fill = {true, color = Orange}]{E2:3, F1:3, G1:3}
+		\marks[filled circle, fill = {true, color = bg}]{A1:5, B1:4, C1:2}
+		\marks[filled circle, fill = {true, color = Moss}]{D:F7, E6, F6, F5, G5:7}
+		\marks[filled circle, fill = {true, color = terracotta}]{E2:3, F1:3, G1:3}
 	\end{goban}
-	\caption{Black \textcolor{OliveGreen}{territory}, white \textcolor{Blue}{territory} and \textcolor{Orange}{neutral}.}
+	\caption{Black \textcolor{Moss}{territory}, white \textcolor{bg}{territory} and \textcolor{terracotta}{neutral}.}
 	\label{fig:Fig 9}
 \end{wrapfigure}To recapture, Black must first play elsewhere on the board (a ko threat). This generates a different board configuration; if the opponent responds, Black may then play at \((4, 4)\) to recapture, as the board state will no longer be identical to the earlier one (see the final board in Figure~\ref{fig:Fig 6}). An empty intersection (or a group thereof) is considered the \textit{territory} of a given color if it is completely surrounded by stones of that color. Conversely, if an empty space is bounded by stones of both players, it is regarded as neutral, belonging to neither player (see Figure~\ref{fig:Fig 9}).
 
@@ -419,12 +421,12 @@ Consequently, the black group is \textit{alive}. There exist, however, so-called
 \begin{goban}[7, hoshi = false]
 	\stones[w]{A7, A6, B6, B5, C5, C4, C3, D3, D2, D1, E1}
 	\stones[b]{B7, C7, C6, D6, D5, E5, D4, E3, E2, F1, G2}
-	\stone[b, mark = {filled circle, fill = {true, color = Orange}}]{B4}
-	\marks[filled circle, fill = {true, color = Blue}]{A1:5, B1:3, C1:2}
-	\marks[filled circle, fill = {true, color = OliveGreen}]{D7, E4, E6:7, F2:7, G1, G3:7}
+	\stone[b, mark = {filled circle, fill = {true, color = terracotta}}]{B4}
+	\marks[filled circle, fill = {true, color = bg}]{A1:5, B1:3, C1:2}
+	\marks[filled circle, fill = {true, color = Moss}]{D7, E4, E6:7, F2:7, G1, G3:7}
 \end{goban}
 	\caption{
-		Final board position of a completed game, with its intersections scored; the black stone marked with the \textcolor{Orange}{orange} dot must be removed as it is dead.}
+		Final board position of a completed game, with its intersections scored; the black stone marked with the \textcolor{terracotta}{orange} dot must be removed as it is dead.}
 	\label{fig: Fig 10}
 \end{figure}
 
@@ -437,17 +439,17 @@ In Figure~\ref{fig:Fig 12} (left), even if White attempts to attack the black gr
 		\begin{goban}[7, hoshi = {at = D4}]
 			\stones[b]{G5, F6, E6, E7, G7, G4}
 			\stones[w]{D7, D6, E5, F5, F4}
-			\marks[filled circle, fill = {true, color = Blue}]{F7, G6}
+			\marks[filled circle, fill = {true, color = bg}]{F7, G6}
 		\end{goban}
 		\begin{goban}[7, hoshi = {at = D4}]
 			\stones[b]{G6, G5, F7}
 			\stones[w]{F6, E6}
-			\marks[filled circle, fill = {true, color = OliveGreen}]{G7}
-			\marks[filled circle, fill = {true, color = Red}]{E7}
+			\marks[filled circle, fill = {true, color = Moss}]{G7}
+			\marks[filled circle, fill = {true, color = sealred}]{E7}
 		\end{goban}
 	\end{pgfgolayout}
 	\caption{
-		Eyes of a living group (\textcolor{Blue}{blue}). False eye (\textcolor{OliveGreen}{green}). If White plays at the \textcolor{Red}{red} point, Black will be forced to fill their own eye with a stone, or risk losing it.}
+		Eyes of a living group (\textcolor{bg}{blue}). False eye (\textcolor{Moss}{green}). If White plays at the \textcolor{sealred}{red} point, Black will be forced to fill their own eye with a stone, or risk losing it.}
 	\label{fig:Fig 12}
 \end{figure}
 To build Go, we require four elements: \textit{where}, \textit{who}, \textit{what}, and \textit{how}.

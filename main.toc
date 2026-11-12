@@ -1,0 +1,37 @@
+\babel@toc {english}{}\relax 
+\contentsline {chapter}{\numberline {I}Origins and format}{1}{chapter.1}%
+\contentsline {section}{\numberline {1.1}圍棋 (Wéi Qí): History and Rules}{1}{section.1.1}%
+\contentsline {subsection}{\numberline {1.1.1}History of Go in China}{1}{subsection.1.1.1}%
+\contentsline {subsection}{\numberline {1.1.2}History of Go in Argentina}{2}{subsection.1.1.2}%
+\contentsline {subsection}{\numberline {1.1.3}History of Go Models}{6}{subsection.1.1.3}%
+\contentsline {subsection}{\numberline {1.1.4}Rules and formats}{7}{subsection.1.1.4}%
+\contentsline {chapter}{\numberline {II}Foundation}{13}{chapter.2}%
+\contentsline {section}{\numberline {2.1}Go in two dimensions and two players}{13}{section.2.1}%
+\contentsline {section}{\numberline {2.2}Toward Movement}{17}{section.2.2}%
+\contentsline {subsection}{\numberline {2.2.1}Move Function and Legality}{17}{subsection.2.2.1}%
+\contentsline {subsection}{\numberline {2.2.2}Legal Move Theorem}{21}{subsection.2.2.2}%
+\contentsline {subsection}{\numberline {2.2.3}Scoring}{22}{subsection.2.2.3}%
+\contentsline {section}{\numberline {2.3}Go in $n$ Dimensions and with $m$ Players}{23}{section.2.3}%
+\contentsline {subsection}{\numberline {2.3.1}Captures and Points for $m$ Players}{24}{subsection.2.3.1}%
+\contentsline {subsection}{\numberline {2.3.2}Komi for Multiple Players}{25}{subsection.2.3.2}%
+\contentsline {section}{\numberline {2.4}Positional Superko Detection}{26}{section.2.4}%
+\contentsline {subsection}{\numberline {2.4.1}Zobrist Hashing}{26}{subsection.2.4.1}%
+\contentsline {section}{\numberline {2.5}The Structure of Time}{30}{section.2.5}%
+\contentsline {subsection}{\numberline {2.5.1}The Game as a Trajectory}{30}{subsection.2.5.1}%
+\contentsline {subsection}{\numberline {2.5.2}State Dynamics}{31}{subsection.2.5.2}%
+\contentsline {subsection}{\numberline {2.5.3}Anatomy of a Move}{31}{subsection.2.5.3}%
+\contentsline {section}{\numberline {2.6}Life in the Game of Go}{32}{section.2.6}%
+\contentsline {subsection}{\numberline {2.6.1}Benson's Theorem}{37}{subsection.2.6.1}%
+\contentsline {subsection}{\numberline {2.6.2}Seki}{42}{subsection.2.6.2}%
+\contentsline {subsection}{\numberline {2.6.3}Remark on Kim's Theorem 2}{45}{subsection.2.6.3}%
+\contentsline {section}{\numberline {2.7}Behind the Curtain}{46}{section.2.7}%
+\contentsline {chapter}{\numberline {III}Abstraction}{48}{chapter.3}%
+\contentsline {section}{\numberline {3.1}Comparing Adjacencies}{48}{section.3.1}%
+\contentsline {subsection}{\numberline {3.1.1}Go in Three Dimensions}{49}{subsection.3.1.1}%
+\contentsline {subsection}{\numberline {3.1.2}Comparing Average Adjacencies}{50}{subsection.3.1.2}%
+\contentsline {subsection}{\numberline {3.1.3}Removing Nodes, Yes. But How?}{51}{subsection.3.1.3}%
+\contentsline {subsection}{\numberline {3.1.4}Toroidal Board}{51}{subsection.3.1.4}%
+\contentsline {section}{\numberline {3.2}Go in One Dimension}{54}{section.3.2}%
+\contentsline {section}{\numberline {3.3}Common Origin}{55}{section.3.3}%
+\contentsline {section}{\numberline {3.4}Toward Surrounding Games}{58}{section.3.4}%
+\contentsline {section}{\numberline {3.5}Conclusion}{60}{section.3.5}%

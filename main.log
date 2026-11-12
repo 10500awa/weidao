@@ -1,0 +1,4204 @@
+This is LuaHBTeX, Version 1.24.0 (TeX Live 2026/Arch Linux)  (format=lualatex 2026.9.26)  12 NOV 2026 15:57
+ restricted system commands enabled.
+**main.tex
+(./main.tex
+LaTeX2e <2025-11-01>
+L3 programming layer <2026-01-19>
+Lua module: luaotfload 2024-12-03 v3.29 Lua based OpenType font support
+Lua module: lualibs 2023-07-13 v2.76 ConTeXt Lua standard libraries.
+Lua module: lualibs-extended 2023-07-13 v2.76 ConTeXt Lua libraries -- extended 
+collection.
+luaotfload | conf : Root cache directory is "/home/dmq/.texlive/texmf-var/luatex
+-cache/generic/names".
+luaotfload | init : Loading fontloader "fontloader-2023-12-28.lua" from kpse-res
+olved path "/usr/share/texmf-dist/tex/luatex/luaotfload/fontloader-2023-12-28.lu
+a".
+Lua-only attribute luaotfload@noligature = 1
+luaotfload | init : Context OpenType loader version 3.134
+Inserting `luaotfload.node_processor' in `pre_linebreak_filter'.
+Inserting `luaotfload.node_processor' in `hpack_filter'.
+Inserting `luaotfload.glyph_stream' in `glyph_stream_provider'.
+Inserting `luaotfload.define_font' in `define_font'.
+Lua-only attribute luaotfload_color_attribute = 2
+luaotfload | conf : Root cache directory is "/home/dmq/.texlive/texmf-var/luatex
+-cache/generic/names".
+Inserting `luaotfload.harf.strip_prefix' in `find_opentype_file'.
+Inserting `luaotfload.harf.strip_prefix' in `find_truetype_file'.
+Removing  `luaotfload.glyph_stream' from `glyph_stream_provider'.
+Inserting `luaotfload.harf.glyphstream' in `glyph_stream_provider'.
+Inserting `luaotfload.harf.finalize_vlist' in `post_linebreak_filter'.
+Inserting `luaotfload.harf.finalize_hlist' in `hpack_filter'.
+Inserting `luaotfload.cleanup_files' in `wrapup_run'.
+Inserting `luaotfload.harf.finalize_unicode' in `finish_pdffile'.
+Inserting `luaotfload.glyphinfo' in `glyph_info'.
+Lua-only attribute luaotfload.letterspace_done = 3
+Inserting `luaotfload.aux.set_sscale_dimens' in `luaotfload.patch_font'.
+Inserting `luaotfload.aux.set_font_index' in `luaotfload.patch_font'.
+Inserting `luaotfload.aux.patch_cambria_domh' in `luaotfload.patch_font'.
+Inserting `luaotfload.aux.fixup_fontdata' in `luaotfload.patch_font_unsafe'.
+Inserting `luaotfload.aux.set_capheight' in `luaotfload.patch_font'.
+Inserting `luaotfload.aux.set_xheight' in `luaotfload.patch_font'.
+Inserting `luaotfload.rewrite_fontname' in `luaotfload.patch_font'.
+Inserting `tracingstacklevels' in `input_level_string'. (/usr/share/texmf-dist/
+tex/latex/base/book.cls
+Document Class: book 2025/01/22 v1.4n Standard LaTeX document class
+(/usr/share/texmf-dist/tex/latex/base/bk12.clo
+File: bk12.clo 2025/01/22 v1.4n Standard LaTeX file (size option)
+luaotfload | db : Font names database loaded from /home/dmq/.texlive/texmf-var/l
+uatex-cache/generic/names/luaotfload-names.luc.gz)
+\c@part=\count273
+\c@chapter=\count274
+\c@section=\count275
+\c@subsection=\count276
+\c@subsubsection=\count277
+\c@paragraph=\count278
+\c@subparagraph=\count279
+\c@figure=\count280
+\c@table=\count281
+\abovecaptionskip=\skip49
+\belowcaptionskip=\skip50
+\bibindent=\dimen147
+) (./preamble/settings.tex
+(/usr/share/texmf-dist/tex/latex/geometry/geometry.sty
+Package: geometry 2020/01/02 v5.9 Page Geometry
+
+(/usr/share/texmf-dist/tex/latex/graphics/keyval.sty
+Package: keyval 2022/05/29 v1.15 key=value parser (DPC)
+\KV@toks@=\toks17
+)
+(/usr/share/texmf-dist/tex/generic/iftex/ifvtex.sty
+Package: ifvtex 2019/10/25 v1.7 ifvtex legacy package. Use iftex instead.
+
+(/usr/share/texmf-dist/tex/generic/iftex/iftex.sty
+Package: iftex 2024/12/12 v1.0g TeX engine tests
+))
+\Gm@cnth=\count282
+\Gm@cntv=\count283
+\c@Gm@tempcnt=\count284
+\Gm@bindingoffset=\dimen148
+\Gm@wd@mp=\dimen149
+\Gm@odd@mp=\dimen150
+\Gm@even@mp=\dimen151
+\Gm@layoutwidth=\dimen152
+\Gm@layoutheight=\dimen153
+\Gm@layouthoffset=\dimen154
+\Gm@layoutvoffset=\dimen155
+\Gm@dimlist=\toks18
+)
+(/usr/share/texmf-dist/tex/latex/emptypage/emptypage.sty
+Package: emptypage 2010/05/30 v1.2 Suppress page numbers and headings on empty 
+pages
+)
+(/usr/share/texmf-dist/tex/generic/babel/babel.sty
+Package: babel 2026/02/14 v26.3 The multilingual framework for LuaLaTeX, pdfLaT
+eX and XeLaTeX
+
+(/usr/share/texmf-dist/tex/generic/babel/luababel.def
+\bbl@readstream=\read2
+\l@dumylang=\language2
+Package babel Info: Non-standard hyphenation setup on input line 118.
+\l@nohyphenation=\language3
+\l@pinyin=\language4
+\l@catalan=\language5
+\l@galician=\language6
+\l@spanish=\language7
+\babelcatcodetablenum=\catcodetable14
+\bbl@pattcodes=\catcodetable15
+)
+\babel@savecnt=\count285
+LaTeX Encoding Info:    Redeclaring text command \ij (encoding OT1) on input li
+ne 2078.
+LaTeX Encoding Info:    Redeclaring text command \IJ (encoding OT1) on input li
+ne 2080.
+LaTeX Encoding Info:    Redeclaring text command \ij (encoding T1) on input lin
+e 2082.
+LaTeX Encoding Info:    Redeclaring text command \IJ (encoding T1) on input lin
+e 2083.
+LaTeX Encoding Info:    Ignoring declaration for text command \ij (encoding ?) 
+on input line 2084.
+LaTeX Encoding Info:    Ignoring declaration for text command \IJ (encoding ?) 
+on input line 2086.
+LaTeX Encoding Info:    Ignoring declaration for text command \SS (encoding ?) 
+on input line 2111.
+\U@D=\dimen156
+\l@unhyphenated=\language8
+
+(/usr/share/texmf-dist/tex/generic/babel/luababel.def
+\bbl@attr@locale=\attribute4
+)
+(/usr/share/texmf-dist/tex/generic/babel/locale/en/babel-english.tex)
+Package babel Info: Importing font and identification data for english
+(babel)             from babel-en.ini. Reported on input line 4330.
+
+(/usr/share/texmf-dist/tex/generic/babel-english/english.ldf
+Language: english 2017/06/06 v3.3r English support from the babel system
+Package babel Info: Hyphen rules for 'british' set to \l@english
+(babel)             (\language0). Reported on input line 82.
+Package babel Info: Hyphen rules for 'UKenglish' set to \l@english
+(babel)             (\language0). Reported on input line 83.
+Package babel Info: Hyphen rules for 'canadian' set to \l@english
+(babel)             (\language0). Reported on input line 102.
+Package babel Info: Hyphen rules for 'australian' set to \l@english
+(babel)             (\language0). Reported on input line 105.
+Package babel Info: Hyphen rules for 'newzealand' set to \l@english
+(babel)             (\language0). Reported on input line 108.
+))
+(/usr/share/texmf-dist/tex/latex/csquotes/csquotes.sty
+Package: csquotes 2024-04-04 v5.2o context-sensitive quotations (JAW)
+
+(/usr/share/texmf-dist/tex/latex/etoolbox/etoolbox.sty
+Package: etoolbox 2025/10/02 v2.5m e-TeX tools for LaTeX (JAW)
+\etb@tempcnta=\count286
+)
+\csq@reset=\count287
+\csq@gtype=\count288
+\csq@glevel=\count289
+\csq@qlevel=\count290
+\csq@maxlvl=\count291
+\csq@tshold=\count292
+\csq@ltx@everypar=\toks19
+
+(/usr/share/texmf-dist/tex/latex/csquotes/csquotes.def
+File: csquotes.def 2024-04-04 v5.2o csquotes generic definitions (JAW)
+)
+Package csquotes Info: Trying to load configuration file 'csquotes.cfg'...
+Package csquotes Info: ... configuration file loaded successfully.
+
+(/usr/share/texmf-dist/tex/latex/csquotes/csquotes.cfg
+File: csquotes.cfg 
+))
+(/usr/share/texmf-dist/tex/latex/tools/xspace.sty
+Package: xspace 2014/10/28 v1.13 Space after command names (DPC,MH)
+)
+(/usr/share/texmf-dist/tex/latex/xcolor/xcolor.sty
+Package: xcolor 2024/09/29 v3.02 LaTeX color extensions (UK)
+
+(/usr/share/texmf-dist/tex/latex/graphics-cfg/color.cfg
+File: color.cfg 2016/01/02 v1.6 sample color configuration
+)
+Package xcolor Info: Driver file: luatex.def on input line 274.
+
+(/usr/share/texmf-dist/tex/latex/graphics-def/luatex.def
+File: luatex.def 2025/09/29 v1.2f Graphics/color driver for luatex
+)
+(/usr/share/texmf-dist/tex/latex/graphics/mathcolor.ltx)
+Package xcolor Info: Model `cmy' substituted by `cmy0' on input line 1349.
+Package xcolor Info: Model `hsb' substituted by `rgb' on input line 1353.
+Package xcolor Info: Model `RGB' extended on input line 1365.
+Package xcolor Info: Model `HTML' substituted by `rgb' on input line 1367.
+Package xcolor Info: Model `Hsb' substituted by `hsb' on input line 1368.
+Package xcolor Info: Model `tHsb' substituted by `hsb' on input line 1369.
+Package xcolor Info: Model `HSB' substituted by `hsb' on input line 1370.
+Package xcolor Info: Model `Gray' substituted by `gray' on input line 1371.
+Package xcolor Info: Model `wave' substituted by `hsb' on input line 1372.
+)
+(/usr/share/texmf-dist/tex/latex/graphics/dvipsnam.def
+File: dvipsnam.def 2016/06/17 v3.0m Driver-dependent file (DPC,SPQR)
+)
+(/usr/share/texmf-dist/tex/latex/graphics/graphicx.sty
+Package: graphicx 2024/12/31 v1.2e Enhanced LaTeX Graphics (DPC,SPQR)
+
+(/usr/share/texmf-dist/tex/latex/graphics/graphics.sty
+Package: graphics 2024/08/06 v1.4g Standard LaTeX Graphics (DPC,SPQR)
+
+(/usr/share/texmf-dist/tex/latex/graphics/trig.sty
+Package: trig 2023/12/02 v1.11 sin cos tan (DPC)
+)
+(/usr/share/texmf-dist/tex/latex/graphics-cfg/graphics.cfg
+File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
+)
+Package graphics Info: Driver file: luatex.def on input line 106.
+)
+\Gin@req@height=\dimen157
+\Gin@req@width=\dimen158
+)
+(/usr/share/texmf-dist/tex/latex/wrapfig/wrapfig.sty
+\wrapoverhang=\dimen159
+\WF@size=\dimen160
+\c@WF@wrappedlines=\count293
+\WF@box=\box53
+\WF@everypar=\toks20
+Package: wrapfig 2003/01/31  v 3.6
+)
+(/usr/share/texmf-dist/tex/latex/float/float.sty
+Package: float 2001/11/08 v1.3d Float enhancements (AL)
+\c@float@type=\count294
+\float@exts=\toks21
+\float@box=\box54
+\@float@everytoks=\toks22
+\@floatcapt=\box55
+)
+(/usr/share/texmf-dist/tex/latex/pdfpages/pdfpages.sty
+Package: pdfpages 2025/07/23 v0.6g Insert pages of external PDF documents (AM)
+
+(/usr/share/texmf-dist/tex/latex/base/ifthen.sty
+Package: ifthen 2024/03/16 v1.1e Standard LaTeX ifthen package (DPC)
+)
+(/usr/share/texmf-dist/tex/latex/tools/calc.sty
+Package: calc 2025/03/01 v4.3b Infix arithmetic (KKT,FJ)
+\calc@Acount=\count295
+\calc@Bcount=\count296
+\calc@Adimen=\dimen161
+\calc@Bdimen=\dimen162
+\calc@Askip=\skip51
+\calc@Bskip=\skip52
+LaTeX Info: Redefining \setlength on input line 86.
+LaTeX Info: Redefining \addtolength on input line 87.
+\calc@Ccount=\count297
+\calc@Cskip=\skip53
+)
+(/usr/share/texmf-dist/tex/latex/eso-pic/eso-pic.sty
+Package: eso-pic 2025/12/10 v3.0d eso-pic (RN)
+\ESO@tempdima=\dimen163
+\ESO@tempdimb=\dimen164
+)
+\AM@pagewidth=\dimen165
+\AM@pageheight=\dimen166
+\AM@fboxrule=\dimen167
+
+(/usr/share/texmf-dist/tex/latex/pdfpages/ppluatex.def
+File: ppluatex.def 2025/07/23 v0.6g Pdfpages driver for LuaTeX (AM)
+)
+\pdfpages@includegraphics@status=\count298
+\AM@pagebox=\box56
+\AM@global@opts=\toks23
+\AM@pagecnt=\count299
+\AM@toc@title=\toks24
+\AM@lof@heading=\toks25
+\c@AM@survey=\count300
+\AM@templatesizebox=\box57
+)
+(/usr/share/texmf-dist/tex/latex/amsmath/amsmath.sty
+Package: amsmath 2025/07/09 v2.17z AMS math features
+\@mathmargin=\skip54
+
+For additional information on amsmath, use the `?' option.
+(/usr/share/texmf-dist/tex/latex/amsmath/amstext.sty
+Package: amstext 2024/11/17 v2.01 AMS text
+
+(/usr/share/texmf-dist/tex/latex/amsmath/amsgen.sty
+File: amsgen.sty 1999/11/30 v2.0 generic functions
+\@emptytoks=\toks26
+\ex@=\dimen168
+))
+(/usr/share/texmf-dist/tex/latex/amsmath/amsbsy.sty
+Package: amsbsy 1999/11/29 v1.2d Bold Symbols
+\pmbraise@=\dimen169
+)
+(/usr/share/texmf-dist/tex/latex/amsmath/amsopn.sty
+Package: amsopn 2022/04/08 v2.04 operator names
+)
+\inf@bad=\count301
+LaTeX Info: Redefining \frac on input line 235.
+\uproot@=\count302
+\leftroot@=\count303
+LaTeX Info: Redefining \overline on input line 398.
+LaTeX Info: Redefining \colon on input line 409.
+\classnum@=\count304
+\DOTSCASE@=\count305
+LaTeX Info: Redefining \ldots on input line 495.
+LaTeX Info: Redefining \dots on input line 498.
+LaTeX Info: Redefining \cdots on input line 619.
+\Mathstrutbox@=\box58
+\strutbox@=\box59
+LaTeX Info: Redefining \big on input line 721.
+LaTeX Info: Redefining \Big on input line 722.
+LaTeX Info: Redefining \bigg on input line 723.
+LaTeX Info: Redefining \Bigg on input line 724.
+\big@size=\dimen170
+LaTeX Font Info:    Redeclaring font encoding OML on input line 742.
+LaTeX Font Info:    Redeclaring font encoding OMS on input line 743.
+\macc@depth=\count306
+LaTeX Info: Redefining \bmod on input line 904.
+LaTeX Info: Redefining \pmod on input line 909.
+LaTeX Info: Redefining \smash on input line 939.
+LaTeX Info: Redefining \relbar on input line 969.
+LaTeX Info: Redefining \Relbar on input line 970.
+\c@MaxMatrixCols=\count307
+\dotsspace@=\muskip17
+\c@parentequation=\count308
+\dspbrk@lvl=\count309
+\tag@help=\toks27
+\row@=\count310
+\column@=\count311
+\maxfields@=\count312
+\andhelp@=\toks28
+\eqnshift@=\dimen171
+\alignsep@=\dimen172
+\tagshift@=\dimen173
+\tagwidth@=\dimen174
+\totwidth@=\dimen175
+\lineht@=\dimen176
+\@envbody=\toks29
+\multlinegap=\skip55
+\multlinetaggap=\skip56
+\mathdisplay@stack=\toks30
+LaTeX Info: Redefining \[ on input line 2950.
+LaTeX Info: Redefining \] on input line 2951.
+)
+(/usr/share/texmf-dist/tex/latex/amscls/amsthm.sty
+Package: amsthm 2020/05/29 v2.20.6
+\thm@style=\toks31
+\thm@bodyfont=\toks32
+\thm@headfont=\toks33
+\thm@notefont=\toks34
+\thm@headpunct=\toks35
+\thm@preskip=\skip57
+\thm@postskip=\skip58
+\thm@headsep=\skip59
+\dth@everypar=\toks36
+)
+(/usr/share/texmf-dist/tex/latex/mathtools/mathtools.sty
+Package: mathtools 2024/10/04 v1.31 mathematical typesetting tools
+
+(/usr/share/texmf-dist/tex/latex/mathtools/mhsetup.sty
+Package: mhsetup 2021/03/18 v1.4 programming setup (MH)
+)
+\g_MT_multlinerow_int=\count313
+\l_MT_multwidth_dim=\dimen177
+\origjot=\skip60
+\l_MT_shortvdotswithinadjustabove_dim=\dimen178
+\l_MT_shortvdotswithinadjustbelow_dim=\dimen179
+\l_MT_above_intertext_sep=\dimen180
+\l_MT_below_intertext_sep=\dimen181
+\l_MT_above_shortintertext_sep=\dimen182
+\l_MT_below_shortintertext_sep=\dimen183
+\xmathstrut@box=\box60
+\xmathstrut@dim=\dimen184
+)
+(/usr/share/texmf-dist/tex/latex/amsfonts/amsfonts.sty
+Package: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
+\symAMSa=\mathgroup4
+\symAMSb=\mathgroup5
+LaTeX Font Info:    Redeclaring math symbol \hbar on input line 98.
+LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
+(Font)                  U/euf/m/n --> U/euf/b/n on input line 106.
+)
+(/usr/share/texmf-dist/tex/latex/base/fontenc.sty
+Package: fontenc 2025/07/18 v2.1d Standard LaTeX package
+LaTeX Font Info:    Trying to load font information for T1+lmr on input line 11
+6.
+
+(/usr/share/texmf-dist/tex/latex/lm/t1lmr.fd
+File: t1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
+))
+(/usr/share/texmf-dist/tex/latex/newpx/newpxtext.sty
+Package: newpxtext 2025/06/07 v1.542 LaTeX and unicode LaTeX support for TeXGyr
+ePagellaX (Michael Sharpe)
+
+`newpxtext' v1.542, 2025/06/07 Text macros taking advantage of TeXGyre Pagella 
+and its extensions (msharpe) (/usr/share/texmf-dist/tex/latex/base/fontenc.sty
+Package: fontenc 2025/07/18 v2.1d Standard LaTeX package
+) (/usr/share/texmf-dist/tex/latex/xpatch/xpatch.sty
+(/usr/share/texmf-dist/tex/latex/l3kernel/expl3.sty
+Package: expl3 2026-01-19 L3 programming layer (loader) 
+
+(/usr/share/texmf-dist/tex/latex/l3backend/l3backend-luatex.def
+File: l3backend-luatex.def 2025-10-09 L3 backend support: PDF output (LuaTeX)
+\l__color_backend_stack_int=\count314
+Inserting `l3color' in `luaotfload.parse_color'.))
+Package: xpatch 2020/03/25 v0.3a Extending etoolbox patching commands
+
+(/usr/share/texmf-dist/tex/latex/l3packages/xparse/xparse.sty
+Package: xparse 2025-10-09 L3 Experimental document command parser
+))
+(/usr/share/texmf-dist/tex/latex/xkeyval/xkeyval.sty
+Package: xkeyval 2025/11/04 v2.10 package option processing (HA)
+
+(/usr/share/texmf-dist/tex/generic/xkeyval/xkeyval.tex
+(/usr/share/texmf-dist/tex/generic/xkeyval/xkvutils.tex
+\XKV@toks=\toks37
+\XKV@tempa@toks=\toks38
+\XKV@tempb@toks=\toks39
+)
+\XKV@depth=\count315
+File: xkeyval.tex 2014/12/03 v2.7a key=value parser (HA)
+))
+(/usr/share/texmf-dist/tex/latex/base/textcomp.sty
+Package: textcomp 2024/04/24 v2.1b Standard LaTeX package
+)
+(/usr/share/texmf-dist/tex/generic/xstring/xstring.sty
+(/usr/share/texmf-dist/tex/generic/xstring/xstring.tex
+\xs_counta=\count316
+\xs_countb=\count317
+)
+Package: xstring 2023/08/22 v1.86 String manipulations (CT)
+)
+(/usr/share/texmf-dist/tex/latex/carlisle/scalefnt.sty)
+\zpl@cnt=\count318
+
+(/usr/share/texmf-dist/tex/latex/fontspec/fontspec.sty
+Package: fontspec 2025/09/29 v2.9g Font selection for XeLaTeX and LuaLaTeX
+Lua module: fontspec 2025/09/29 v2.9g Font selection for XeLaTeX and LuaLaTeX
+(/usr/share/texmf-dist/tex/latex/fontspec/fontspec-luatex.sty
+Package: fontspec-luatex 2025/09/29 v2.9g Font selection for XeLaTeX and LuaLaT
+eX
+\l__fontspec_script_int=\count319
+\l__fontspec_language_int=\count320
+\l__fontspec_strnum_int=\count321
+\l__fontspec_tmp_int=\count322
+\l__fontspec_tmpa_int=\count323
+\l__fontspec_tmpb_int=\count324
+\l__fontspec_tmpc_int=\count325
+\l__fontspec_em_int=\count326
+\l__fontspec_emdef_int=\count327
+\l__fontspec_strong_int=\count328
+\l__fontspec_strongdef_int=\count329
+\l__fontspec_tmpa_dim=\dimen185
+\l__fontspec_tmpb_dim=\dimen186
+\l__fontspec_tmpc_dim=\dimen187
+
+(/usr/share/texmf-dist/tex/latex/base/fontenc.sty
+Package: fontenc 2025/07/18 v2.1d Standard LaTeX package
+)
+(/usr/share/texmf-dist/tex/latex/fontspec/fontspec.cfg)))
+\zpl@sixem=\dimen188
+\zpl@y=\dimen189
+\zpl@x=\dimen190
+\zpl@tmpdima=\dimen191
+\zpl@tmpdimb=\dimen192
+\zpl@tmpdimc=\dimen193
+\zpl@tmpdimd=\dimen194
+\zpl@tmpdime=\dimen195
+\zpl@tmpdimf=\dimen196
+\zpl@dimA=\dimen197
+\zpl@dimAA=\dimen198
+\zpl@dimB=\dimen199
+\zpl@dimBB=\dimen256
+\zpl@dimC=\dimen257
+LaTeX Info: Redefining \oldstylenums on input line 798.
+LaTeX Info: Redefining \liningnums on input line 800.
+)
+(/usr/share/texmf-dist/tex/latex/eulerpx/eulerpx.sty
+Package: eulerpx 2022/07/14 v1.0
+
+Package: `eulerpx' v1.0 <2022/07/14>
+(/usr/share/texmf-dist/tex/latex/newpx/newpxmath.sty
+Package: newpxmath 2025/10/30 v1.551 LaTeX math support for newpx (Michael Shar
+pe)
+
+`newpxmath' v1.551, 2025/10/30 Math macros based on pxfonts (msharpe)
+(/usr/share/texmf-dist/tex/generic/kastrup/binhex.tex)
+(/usr/share/texmf-dist/tex/latex/oberdiek/centernot.sty
+Package: centernot 2016/05/16 v1.4 Centers the not symbol horizontally (HO)
+)
+\px@tA=\toks40
+\px@tB=\toks41
+\px@su=\read3
+\px@Isdigit=\count330
+
+amsthm NOT loaded
+LaTeX Font Info:    Redeclaring symbol font `operators' on input line 224.
+LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
+(Font)                  OT1/cmr/m/n --> OT1/lmr/m/n on input line 224.
+LaTeX Font Info:    Overwriting symbol font `operators' in version `bold'
+(Font)                  OT1/cmr/bx/n --> OT1/lmr/m/n on input line 224.
+LaTeX Font Info:    Overwriting symbol font `operators' in version `bold'
+(Font)                  OT1/lmr/m/n --> OT1/lmr/b/n on input line 225.
+LaTeX Font Info:    Redeclaring math alphabet \mathsf on input line 228.
+LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `normal'
+(Font)                  OT1/cmss/m/n --> TU/lmss/m/n on input line 228.
+LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `bold'
+(Font)                  OT1/cmss/bx/n --> TU/lmss/m/n on input line 228.
+LaTeX Font Info:    Redeclaring math alphabet \mathit on input line 229.
+LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `normal'
+(Font)                  OT1/cmr/m/it --> OT1/lmr/m/it on input line 229.
+LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `bold'
+(Font)                  OT1/cmr/bx/it --> OT1/lmr/m/it on input line 229.
+LaTeX Font Info:    Redeclaring math alphabet \mathtt on input line 230.
+LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `normal'
+(Font)                  OT1/cmtt/m/n --> TU/lmtt/m/n on input line 230.
+LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
+(Font)                  OT1/cmtt/m/n --> TU/lmtt/m/n on input line 230.
+LaTeX Font Info:    Redeclaring math alphabet \mathbf on input line 232.
+LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `normal'
+(Font)                  OT1/cmr/bx/n --> OT1/lmr/b/n on input line 232.
+LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `bold'
+(Font)                  OT1/cmr/bx/n --> OT1/lmr/b/n on input line 232.
+LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `bold'
+(Font)                  OT1/lmr/m/it --> OT1/lmr/b/it on input line 233.
+LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `bold'
+(Font)                  TU/lmss/m/n --> TU/lmss/b/n on input line 235.
+LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
+(Font)                  TU/lmtt/m/n --> TU/lmtt/b/n on input line 236.
+LaTeX Font Info:    Redeclaring symbol font `letters' on input line 247.
+LaTeX Font Info:    Overwriting symbol font `letters' in version `normal'
+(Font)                  OML/cmm/m/it --> OML/npxmi/m/it on input line 247.
+LaTeX Font Info:    Overwriting symbol font `letters' in version `bold'
+(Font)                  OML/cmm/b/it --> OML/npxmi/m/it on input line 247.
+LaTeX Font Info:    Overwriting symbol font `letters' in version `bold'
+(Font)                  OML/npxmi/m/it --> OML/npxmi/b/it on input line 248.
+\symlettersA=\mathgroup6
+LaTeX Font Info:    Overwriting symbol font `lettersA' in version `bold'
+(Font)                  U/npxmia/m/it --> U/npxmia/b/it on input line 266.
+LaTeX Font Info:    Redeclaring math alphabet \mathfrak on input line 268.
+LaTeX Font Info:    Redeclaring symbol font `symbols' on input line 276.
+LaTeX Font Info:    Encoding `OMS' has changed to `LMS' for symbol font
+(Font)              `symbols' in the math version `normal' on input line 276.
+LaTeX Font Info:    Overwriting symbol font `symbols' in version `normal'
+(Font)                  OMS/cmsy/m/n --> LMS/npxsy/m/n on input line 276.
+LaTeX Font Info:    Encoding `OMS' has changed to `LMS' for symbol font
+(Font)              `symbols' in the math version `bold' on input line 276.
+LaTeX Font Info:    Overwriting symbol font `symbols' in version `bold'
+(Font)                  OMS/cmsy/b/n --> LMS/npxsy/m/n on input line 276.
+LaTeX Font Info:    Overwriting symbol font `symbols' in version `bold'
+(Font)                  LMS/npxsy/m/n --> LMS/npxsy/b/n on input line 277.
+\symAMSm=\mathgroup7
+LaTeX Font Info:    Overwriting symbol font `AMSm' in version `bold'
+(Font)                  U/npxsym/m/n --> U/npxsym/b/n on input line 297.
+\symsymbolsC=\mathgroup8
+LaTeX Font Info:    Overwriting symbol font `symbolsC' in version `bold'
+(Font)                  U/npxsyc/m/n --> U/npxsyc/b/n on input line 319.
+LaTeX Font Info:    Redeclaring symbol font `largesymbols' on input line 339.
+LaTeX Font Info:    Encoding `OMX' has changed to `LMX' for symbol font
+(Font)              `largesymbols' in the math version `normal' on input line 3
+39.
+LaTeX Font Info:    Overwriting symbol font `largesymbols' in version `normal'
+(Font)                  OMX/cmex/m/n --> LMX/npxexx/m/n on input line 339.
+LaTeX Font Info:    Encoding `OMX' has changed to `LMX' for symbol font
+(Font)              `largesymbols' in the math version `bold' on input line 339
+.
+LaTeX Font Info:    Overwriting symbol font `largesymbols' in version `bold'
+(Font)                  OMX/cmex/m/n --> LMX/npxexx/m/n on input line 339.
+LaTeX Font Info:    Overwriting symbol font `largesymbols' in version `bold'
+(Font)                  LMX/npxexx/m/n --> LMX/npxexx/b/n on input line 340.
+\symlargesymbolsPXA=\mathgroup9
+LaTeX Font Info:    Overwriting symbol font `largesymbolsPXA' in version `bold'
+
+(Font)                  U/npxexa/m/n --> U/npxexa/b/n on input line 347.
+\px@cntz=\count331
+\px@IsAlNum=\count332
+\px@sbptoks=\toks42
+LaTeX Font Info:    Redeclaring math delimiter \lfloor on input line 502.
+LaTeX Font Info:    Redeclaring math delimiter \rfloor on input line 503.
+LaTeX Font Info:    Redeclaring math delimiter \lceil on input line 504.
+LaTeX Font Info:    Redeclaring math delimiter \rceil on input line 505.
+LaTeX Font Info:    Redeclaring math delimiter \lbrace on input line 510.
+LaTeX Font Info:    Redeclaring math delimiter \rbrace on input line 511.
+LaTeX Font Info:    Redeclaring math delimiter \langle on input line 513.
+LaTeX Font Info:    Redeclaring math delimiter \rangle on input line 515.
+LaTeX Font Info:    Redeclaring math delimiter \arrowvert on input line 519.
+LaTeX Font Info:    Redeclaring math delimiter \vert on input line 520.
+LaTeX Font Info:    Redeclaring math symbol \parallel on input line 521.
+LaTeX Font Info:    Redeclaring math delimiter \Arrowvert on input line 522.
+LaTeX Font Info:    Redeclaring math accent \grave on input line 562.
+LaTeX Font Info:    Redeclaring math accent \acute on input line 563.
+LaTeX Font Info:    Redeclaring math accent \hat on input line 564.
+LaTeX Font Info:    Redeclaring math accent \tilde on input line 565.
+LaTeX Font Info:    Redeclaring math accent \bar on input line 566.
+LaTeX Font Info:    Redeclaring math accent \breve on input line 567.
+LaTeX Font Info:    Redeclaring math accent \mathring on input line 568.
+LaTeX Font Info:    Redeclaring math accent \check on input line 569.
+LaTeX Font Info:    Redeclaring math accent \dot on input line 573.
+LaTeX Font Info:    Redeclaring math accent \ddot on input line 574.
+LaTeX Font Info:    Redeclaring math accent \vec on input line 1631.
+LaTeX Info: Redefining \Bbbk on input line 2208.
+LaTeX Info: Redefining \not on input line 2548.
+LaTeX Info: Redefining \textsquare on input line 2563.
+LaTeX Info: Redefining \openbox on input line 2565.
+)
+LaTeX Font Info:    Redeclaring math symbol \ldotp on input line 104.
+LaTeX Font Info:    Redeclaring symbol font `operators' on input line 108.
+LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
+(Font)                  OT1/lmr/m/n --> OT1/lmr/m/n on input line 108.
+LaTeX Font Info:    Overwriting symbol font `operators' in version `bold'
+(Font)                  OT1/lmr/b/n --> OT1/lmr/m/n on input line 108.
+LaTeX Font Info:    Overwriting symbol font `operators' in version `bold'
+(Font)                  OT1/lmr/m/n --> OT1/lmr/b/n on input line 109.
+LaTeX Font Info:    Redeclaring math alphabet \mathsf on input line 114.
+LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `normal'
+(Font)                  TU/lmss/m/n --> TU/lmss/m/n on input line 114.
+LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `bold'
+(Font)                  TU/lmss/b/n --> TU/lmss/m/n on input line 114.
+LaTeX Font Info:    Redeclaring math alphabet \mathit on input line 115.
+LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `normal'
+(Font)                  OT1/lmr/m/it --> OT1/lmr/m/it on input line 115.
+LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `bold'
+(Font)                  OT1/lmr/b/it --> OT1/lmr/m/it on input line 115.
+LaTeX Font Info:    Redeclaring math alphabet \mathtt on input line 116.
+LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `normal'
+(Font)                  TU/lmtt/m/n --> TU/lmtt/m/n on input line 116.
+LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
+(Font)                  TU/lmtt/b/n --> TU/lmtt/m/n on input line 116.
+LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `bold'
+(Font)                  TU/lmss/m/n --> TU/lmss/b/n on input line 117.
+LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `bold'
+(Font)                  OT1/lmr/m/it --> OT1/lmr/b/it on input line 118.
+LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
+(Font)                  TU/lmtt/m/n --> TU/lmtt/b/n on input line 119.
+LaTeX Font Info:    Redeclaring math alphabet \mathbf on input line 120.
+LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `normal'
+(Font)                  OT1/lmr/b/n --> OT1/lmr/b/n on input line 120.
+LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `bold'
+(Font)                  OT1/lmr/b/n --> OT1/lmr/b/n on input line 120.
+\symEulerRoman=\mathgroup10
+LaTeX Font Info:    Overwriting symbol font `EulerRoman' in version `bold'
+(Font)                  U/zeur/m/n --> U/zeur/b/n on input line 124.
+LaTeX Font Info:    Overwriting math alphabet `\mathscr' in version `bold'
+(Font)                  U/zeus/m/n --> U/zeus/b/n on input line 132.
+LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
+(Font)                  U/euf/m/n --> U/euf/b/n on input line 151.
+LaTeX Font Info:    Redeclaring math symbol \Gamma on input line 156.
+LaTeX Font Info:    Redeclaring math symbol \Delta on input line 157.
+LaTeX Font Info:    Redeclaring math symbol \Theta on input line 158.
+LaTeX Font Info:    Redeclaring math symbol \Lambda on input line 159.
+LaTeX Font Info:    Redeclaring math symbol \Xi on input line 160.
+LaTeX Font Info:    Redeclaring math symbol \Pi on input line 161.
+LaTeX Font Info:    Redeclaring math symbol \Sigma on input line 162.
+LaTeX Font Info:    Redeclaring math symbol \Upsilon on input line 163.
+LaTeX Font Info:    Redeclaring math symbol \Phi on input line 164.
+LaTeX Font Info:    Redeclaring math symbol \Psi on input line 165.
+LaTeX Font Info:    Redeclaring math symbol \Omega on input line 166.
+LaTeX Font Info:    Redeclaring math symbol \alpha on input line 169.
+LaTeX Font Info:    Redeclaring math symbol \beta on input line 170.
+LaTeX Font Info:    Redeclaring math symbol \gamma on input line 171.
+LaTeX Font Info:    Redeclaring math symbol \delta on input line 172.
+LaTeX Font Info:    Redeclaring math symbol \epsilon on input line 173.
+LaTeX Font Info:    Redeclaring math symbol \zeta on input line 174.
+LaTeX Font Info:    Redeclaring math symbol \eta on input line 175.
+LaTeX Font Info:    Redeclaring math symbol \theta on input line 176.
+LaTeX Font Info:    Redeclaring math symbol \iota on input line 177.
+LaTeX Font Info:    Redeclaring math symbol \kappa on input line 178.
+LaTeX Font Info:    Redeclaring math symbol \lambda on input line 179.
+LaTeX Font Info:    Redeclaring math symbol \mu on input line 180.
+LaTeX Font Info:    Redeclaring math symbol \nu on input line 181.
+LaTeX Font Info:    Redeclaring math symbol \xi on input line 182.
+LaTeX Font Info:    Redeclaring math symbol \pi on input line 183.
+LaTeX Font Info:    Redeclaring math symbol \rho on input line 184.
+LaTeX Font Info:    Redeclaring math symbol \sigma on input line 185.
+LaTeX Font Info:    Redeclaring math symbol \tau on input line 186.
+LaTeX Font Info:    Redeclaring math symbol \upsilon on input line 187.
+LaTeX Font Info:    Redeclaring math symbol \phi on input line 188.
+LaTeX Font Info:    Redeclaring math symbol \chi on input line 189.
+LaTeX Font Info:    Redeclaring math symbol \psi on input line 190.
+LaTeX Font Info:    Redeclaring math symbol \omega on input line 191.
+LaTeX Font Info:    Redeclaring math symbol \varepsilon on input line 192.
+LaTeX Font Info:    Redeclaring math symbol \vartheta on input line 193.
+LaTeX Font Info:    Redeclaring math symbol \varpi on input line 194.
+LaTeX Font Info:    Redeclaring math symbol \varphi on input line 197.
+LaTeX Font Info:    Redeclaring math symbol \partial on input line 215.
+LaTeX Font Info:    Redeclaring math symbol \ell on input line 245.
+LaTeX Font Info:    Redeclaring math symbol \imath on input line 275.
+LaTeX Font Info:    Redeclaring math symbol \jmath on input line 276.
+LaTeX Font Info:    Redeclaring math symbol \wp on input line 277.
+) (/usr/share/texmf-dist/tex/latex/microtype/microtype.sty
+Package: microtype 2026/03/01 v3.2d Micro-typographical refinements (RS)
+\MT@toks=\toks43
+\MT@tempbox=\box61
+\MT@count=\count333
+LaTeX Info: Redefining \noprotrusionifhmode on input line 1084.
+LaTeX Info: Redefining \leftprotrusion on input line 1085.
+\MT@prot@toks=\toks44
+LaTeX Info: Redefining \rightprotrusion on input line 1104.
+LaTeX Info: Redefining \textls on input line 1449.
+\MT@outer@kern=\dimen258
+LaTeX Info: Redefining \microtypecontext on input line 2053.
+LaTeX Info: Redefining \textmicrotypecontext on input line 2070.
+\MT@listname@count=\count334
+
+(/usr/share/texmf-dist/tex/latex/microtype/microtype-luatex.def
+File: microtype-luatex.def 2026/03/01 v3.2d Definitions specific to luatex (RS)
+
+Lua module: microtype 2026/03/01 v3.2d microtype module.
+Module microtype Info: overwriting function `keepligature' on input line 63
+LaTeX Info: Redefining \lsstyle on input line 779.
+LaTeX Info: Redefining \lslig on input line 779.
+\MT@outer@space=\skip61
+)
+Package microtype Info: Loading configuration file microtype.cfg.
+
+(/usr/share/texmf-dist/tex/latex/microtype/microtype.cfg
+File: microtype.cfg 2026/03/01 v3.2d microtype main configuration file (RS)
+)
+LaTeX Info: Redefining \microtypesetup on input line 3065.
+)
+(/usr/share/texmf-dist/tex/luatex/luatexja/addons/luatexja-fontspec.sty
+Package: luatexja-fontspec 2025-09-30 fontspec support of LuaTeX-ja
+
+(/usr/share/texmf-dist/tex/latex/l3packages/l3keys2e/l3keys2e.sty
+Package: l3keys2e 2025-10-09 LaTeX2e option processing using LaTeX3 keys
+)
+(/usr/share/texmf-dist/tex/luatex/luatexja/luatexja.sty
+Package: luatexja 2026-01-30 Japanese Typesetting with Lua(La)TeX
+
+(/usr/share/texmf-dist/tex/luatex/luatexja/luatexja-core.sty
+Package: luatexja-core 2023-10-07 Core of LuaTeX-ja
+
+(/usr/share/texmf-dist/tex/generic/infwarerr/infwarerr.sty
+Package: infwarerr 2019/12/03 v1.5 Providing info/warning/error messages (HO)
+)
+(/usr/share/texmf-dist/tex/luatex/luatexbase/luatexbase.sty
+Package: luatexbase 2015/10/04 v1.3 luatexbase interface to LuaTeX 
+
+(/usr/share/texmf-dist/tex/luatex/ctablestack/ctablestack.sty
+Package: ctablestack 2015/10/01 v1.0 Catcode table stable support
+\@catcodetablestackcnt=\count335
+)
+\CatcodeTableOther=\catcodetable16
+\CatcodeTableExpl=\catcodetable17
+)
+(/usr/share/texmf-dist/tex/generic/ltxcmds/ltxcmds.sty
+Package: ltxcmds 2023-12-04 v1.26 LaTeX kernel commands for general use (HO)
+)
+(/usr/share/texmf-dist/tex/generic/pdftexcmds/pdftexcmds.sty
+Package: pdftexcmds 2020-06-27 v0.33 Utility functions of pdfTeX for LuaTeX (HO
+)
+Package pdftexcmds Info: \pdf@primitive is available.
+Package pdftexcmds Info: \pdf@ifprimitive is available.
+Package pdftexcmds Info: \pdfdraftmode found.
+\pdftexcmds@toks=\toks45
+)
+(/usr/share/texmf-dist/tex/latex/everyhook/everyhook.sty
+(/usr/share/texmf-dist/tex/latex/svn-prov/svn-prov.sty
+Package: svn-prov 2010/04/24 v3.1862 Package Date/Version from SVN Keywords
+)
+Package: everyhook 2014/11/26 v1.2 (SVN Rev: 12)\ Hooks for low level TeX every
+X primitives.
+\everypar=\toks46
+\frozen@everymath=\toks47
+\frozen@everydisplay=\toks48
+\everyhbox=\toks49
+\everyvbox=\toks50
+\everycr=\toks51
+)
+\ltjlineendcomment=\count336
+\ltj@dimen@zw=\dimen259
+\ltj@dimen@zh=\dimen260
+\ltj@dimen@jQ=\dimen261
+\ltj@icflag=\attribute5
+\ltj@curjfnt=\attribute6
+\ltj@curtfnt=\attribute7
+\ltj@charclass=\attribute8
+\ltj@charcode=\attribute9
+\ltj@autospc=\attribute10
+\ltj@autoxspc=\attribute11
+\ltj@yablshift=\attribute12
+\ltj@ykblshift=\attribute13
+\ltj@tablshift=\attribute14
+\ltj@tkblshift=\attribute15
+\jfam=\attribute16
+\ltj@vert@ori=\attribute17
+\ltj@dir=\attribute18
+\ltj@@japanese=\language9
+\ltj@tempcnta=\count337
+\ltj@tempdima=\dimen262
+\ltj@@stack=\count338
+\ltj@@group@level=\count339
+\ltj@kcat0=\attribute19
+\ltj@kcat1=\attribute20
+\ltj@kcat2=\attribute21
+\ltj@kcat3=\attribute22
+\ltj@kcat4=\attribute23
+\ltj@kcat5=\attribute24
+\ltj@kcat6=\attribute25
+Custom whatsit inhibitglue = 1
+Custom whatsit stack_marker = 2
+Custom whatsit begin_par = 3
+Custom whatsit direction = 4
+Custom whatsit box_boundary = 5
+Custom whatsit ja_al_boundary = 6
+Module luatexbase Info: Uninstalling kernel luatexbase code on input line 184
+(load cache: ltj-cid-auto-adobe-japan1.luc)
+Lua module: luatexja.charrange 2022-08-19 Handling the range of Japanese charact
+ers
+Lua module: luatexja.stack 2022-08-20 LuaTeX-ja stack system
+Inserting `ltj.create_dir_whatsit' in `hpack_filter'.
+Inserting `ltj.create_dir_whatsit' in `post_linebreak_filter'.
+Inserting `ltj.direction' in `vpack_filter'.
+Inserting `ltj.direction' in `pre_output_filter'.
+Inserting `ltj.lineskip' in `post_linebreak_filter'.
+Inserting `ltj.lineskip' in `append_to_vlist_filter'.
+Lua module: luatexja.jfont 2025-05-04 Loader for Japanese fonts
+Removing  `luaotfload.define_font' from `define_font'.
+Inserting `luatexja.font_callback' in `define_font'.
+Removing  `luaotfload.aux.set_sscale_dimens' from `luaotfload.patch_font'.
+Removing  `luaotfload.aux.set_font_index' from `luaotfload.patch_font'.
+Removing  `luaotfload.aux.patch_cambria_domh' from `luaotfload.patch_font'.
+Removing  `luaotfload.aux.set_capheight' from `luaotfload.patch_font'.
+Removing  `luaotfload.aux.set_xheight' from `luaotfload.patch_font'.
+Removing  `luaotfload.rewrite_fontname' from `luaotfload.patch_font'.
+Inserting `ltj.prepare_extra_data' in `luaotfload.patch_font'.
+Inserting `luaotfload.aux.set_sscale_dimens' in `luaotfload.patch_font'.
+Inserting `luaotfload.aux.set_font_index' in `luaotfload.patch_font'.
+Inserting `luaotfload.aux.patch_cambria_domh' in `luaotfload.patch_font'.
+Inserting `luaotfload.aux.set_capheight' in `luaotfload.patch_font'.
+Inserting `luaotfload.aux.set_xheight' in `luaotfload.patch_font'.
+Inserting `luaotfload.rewrite_fontname' in `luaotfload.patch_font'.
+Inserting `ltj.prepare_extra_data' in `luatexja.define_font'.(load cache: extra_
+lmroman12-regular.luc)(load cache: extra_lmroman12-bold.luc)
+Inserting `ltj.get_vert_form' in `luatexja.define_jfont'.
+Removing  `ltj.prepare_extra_data' from `luaotfload.patch_font'.
+Removing  `luaotfload.aux.set_sscale_dimens' from `luaotfload.patch_font'.
+Removing  `luaotfload.aux.set_font_index' from `luaotfload.patch_font'.
+Removing  `luaotfload.aux.patch_cambria_domh' from `luaotfload.patch_font'.
+Removing  `luaotfload.aux.set_capheight' from `luaotfload.patch_font'.
+Removing  `luaotfload.aux.set_xheight' from `luaotfload.patch_font'.
+Removing  `luaotfload.rewrite_fontname' from `luaotfload.patch_font'.
+Inserting `ltj.supply_tounicode' in `luaotfload.patch_font'.
+Inserting `ltj.prepare_extra_data' in `luaotfload.patch_font'.
+Inserting `luaotfload.aux.set_sscale_dimens' in `luaotfload.patch_font'.
+Inserting `luaotfload.aux.set_font_index' in `luaotfload.patch_font'.
+Inserting `luaotfload.aux.patch_cambria_domh' in `luaotfload.patch_font'.
+Inserting `luaotfload.aux.set_capheight' in `luaotfload.patch_font'.
+Inserting `luaotfload.aux.set_xheight' in `luaotfload.patch_font'.
+Inserting `luaotfload.rewrite_fontname' in `luaotfload.patch_font'.
+Inserting `ltj.process_input_buffer' in `process_input_buffer'.
+Inserting `ltj.hyphenate' in `hyphenate'.
+Removing  `luaotfload.node_processor' from `hpack_filter'.
+Removing  `luaotfload.harf.finalize_hlist' from `hpack_filter'.
+Removing  `ltj.create_dir_whatsit' from `hpack_filter'.
+Inserting `ltj.set_stack_level' in `hpack_filter'.
+Inserting `luaotfload.node_processor' in `hpack_filter'.
+Inserting `luaotfload.harf.finalize_hlist' in `hpack_filter'.
+Inserting `ltj.create_dir_whatsit' in `hpack_filter'.
+Removing  `luaotfload.node_processor' from `pre_linebreak_filter'.
+Inserting `ltj.set_stack_level' in `pre_linebreak_filter'.
+Inserting `luaotfload.node_processor' in `pre_linebreak_filter'.
+Lua module: luatexja.jfmglue 2026-01-07 Insertion process of JFM glues, [x]kanji
+skip and others
+Inserting `luatexja.beginpar.np_info' in `luatexja.jfmglue.whatsit_getinfo'.
+Inserting `luatexja.beginpar.np_info_after' in `luatexja.jfmglue.whatsit_after'.
+Inserting `ltj.mlist_to_hlist_pre' in `pre_mlist_to_hlist_filter'.
+Inserting `ltj.main' in `pre_linebreak_filter'.
+Removing  `luaotfload.harf.finalize_hlist' from `hpack_filter'.
+Removing  `ltj.create_dir_whatsit' from `hpack_filter'.
+Inserting `ltj.main' in `hpack_filter'.
+Inserting `luaotfload.harf.finalize_hlist' in `hpack_filter'.
+Inserting `ltj.create_dir_whatsit' in `hpack_filter'.
+Removing  `ltj.set_stack_level' from `pre_linebreak_filter'.
+Removing  `luaotfload.node_processor' from `pre_linebreak_filter'.
+Removing  `ltj.main' from `pre_linebreak_filter'.
+Inserting `ltj.adjust_icflag' in `pre_linebreak_filter'.
+Inserting `ltj.set_stack_level' in `pre_linebreak_filter'.
+Inserting `luaotfload.node_processor' in `pre_linebreak_filter'.
+Inserting `ltj.main' in `pre_linebreak_filter'.
+Removing  `ltj.set_stack_level' from `hpack_filter'.
+Removing  `luaotfload.node_processor' from `hpack_filter'.
+Removing  `ltj.main' from `hpack_filter'.
+Removing  `luaotfload.harf.finalize_hlist' from `hpack_filter'.
+Removing  `ltj.create_dir_whatsit' from `hpack_filter'.
+Inserting `ltj.adjust_icflag' in `hpack_filter'.
+Inserting `ltj.set_stack_level' in `hpack_filter'.
+Inserting `luaotfload.node_processor' in `hpack_filter'.
+Inserting `ltj.main' in `hpack_filter'.
+Inserting `luaotfload.harf.finalize_hlist' in `hpack_filter'.
+Inserting `ltj.create_dir_whatsit' in `hpack_filter'.
+(/usr/share/texmf-dist/tex/luatex/luatexja/ltj-base.sty
+Package: ltj-base 2021-03-16
+\ltj@tempcntb=\count340
+\ltj@tempcntc=\count341
+\ltj@afbox=\box62
+)
+\ltj@@italic@inner=\luafunction31
+\ltj@@start@time@measure@inner=\luafunction32
+\ltj@@stop@time@measure@inner=\luafunction33
+\ltj@@jfont@inner=\luafunction34
+\ltj@zw@inner=\luafunction35
+\ltj@zh@inner=\luafunction36
+\ltj@reset@globaldefs@inner=\luafunction37
+\ltj@restore@globaldefs@inner=\luafunction38
+\ltj@@disihb@inner=\luafunction39
+\ltj@@ihb@inner=\luafunction40
+\ltj@@fakeparbegin@inner=\luafunction41
+\ltj@@fakeboxbdd@inner=\luafunction42
+\ltj@@ins@xk@inner=\luafunction43
+\ltj@@ins@k@inner=\luafunction44
+\ltjsetkanjiskip@inner=\luafunction45
+\ltjsetxkanjiskip@inner=\luafunction46
+\ltj@@getparam@one@inner=\luafunction47
+\ltj@alljachar@inner=\luafunction48
+\ltj@@lua@populate@insertwhatsit@inner=\luafunction49
+\ltj@@vadjust@begin@inner=\luafunction50
+\ltj@@vadjust@dirhook@inner=\luafunction51
+\ltj@@vadjust@check@dir@inner=\luafunction52
+\ltj@@box@dirhook@inner=\luafunction53
+\ltj@@reset@badness@inner=\luafunction54
+\ltj@@lua@raisebox@inner=\luafunction55
+\ltj@@vsplit@inner=\luafunction56
+\ltj@@lua@unboxcheckdir@inner=\luafunction57
+\ltj@@lua@uncopycheckdir@inner=\luafunction58
+\ltj@@lua@uncopy@restore@whatsit@inner=\luafunction59
+(load cache: ltj-kinsoku_default.luc)
+(/usr/share/texmf-dist/tex/luatex/luatexja/ltj-latex.sty
+Package: ltj-latex 2025-06-08 LaTeX support of LuaTeX-ja
+Inserting `ltj.direction' in `pre_shipout_filter'.
+(/usr/share/texmf-dist/tex/luatex/luatexja/patches/lltjfont.sty
+Package: lltjfont 2025-10-26 Patch to NFSS2 for LuaTeX-ja
+\ltj@@latex@plv=\count342
+
+(/usr/share/texmf-dist/tex/latex/base/tuenc.def
+File: tuenc.def 2025/07/18 v2.1d Standard LaTeX file
+\@remove@tlig@@@=\luafunction60
+LaTeX Font Info:    Redeclaring font encoding TU on input line 105.
+LaTeX Encoding Info:    Redeclaring text command \textquotesingle (encoding TU)
+ on input line 148.
+LaTeX Encoding Info:    Redeclaring text command \textasciigrave (encoding TU) 
+on input line 149.
+LaTeX Encoding Info:    Redeclaring text command \textquotedbl (encoding TU) on
+ input line 150.
+LaTeX Encoding Info:    Redeclaring text command \textdollar (encoding TU) on i
+nput line 151.
+LaTeX Encoding Info:    Redeclaring text command \textless (encoding TU) on inp
+ut line 152.
+LaTeX Encoding Info:    Redeclaring text command \textgreater (encoding TU) on 
+input line 153.
+LaTeX Encoding Info:    Redeclaring text command \textbackslash (encoding TU) o
+n input line 154.
+LaTeX Encoding Info:    Redeclaring text command \textasciicircum (encoding TU)
+ on input line 155.
+LaTeX Encoding Info:    Redeclaring text command \textunderscore (encoding TU) 
+on input line 156.
+LaTeX Encoding Info:    Redeclaring text command \textbraceleft (encoding TU) o
+n input line 157.
+LaTeX Encoding Info:    Redeclaring text command \textbar (encoding TU) on inpu
+t line 158.
+LaTeX Encoding Info:    Redeclaring text command \textbraceright (encoding TU) 
+on input line 159.
+LaTeX Encoding Info:    Redeclaring text command \textasciitilde (encoding TU) 
+on input line 160.
+LaTeX Encoding Info:    Redeclaring text command \textexclamdown (encoding TU) 
+on input line 161.
+LaTeX Encoding Info:    Redeclaring text command \textcent (encoding TU) on inp
+ut line 162.
+LaTeX Encoding Info:    Redeclaring text command \textsterling (encoding TU) on
+ input line 163.
+LaTeX Encoding Info:    Redeclaring text command \textcurrency (encoding TU) on
+ input line 164.
+LaTeX Encoding Info:    Redeclaring text command \textyen (encoding TU) on inpu
+t line 165.
+LaTeX Encoding Info:    Redeclaring text command \textbrokenbar (encoding TU) o
+n input line 166.
+LaTeX Encoding Info:    Redeclaring text command \textsection (encoding TU) on 
+input line 167.
+LaTeX Encoding Info:    Redeclaring text command \textasciidieresis (encoding T
+U) on input line 168.
+LaTeX Encoding Info:    Redeclaring text command \textcopyright (encoding TU) o
+n input line 169.
+LaTeX Encoding Info:    Redeclaring text command \textordfeminine (encoding TU)
+ on input line 170.
+LaTeX Encoding Info:    Redeclaring text command \guillemetleft (encoding TU) o
+n input line 171.
+LaTeX Encoding Info:    Redeclaring text command \guillemotleft (encoding TU) o
+n input line 172.
+LaTeX Encoding Info:    Redeclaring text command \textlnot (encoding TU) on inp
+ut line 173.
+LaTeX Encoding Info:    Redeclaring text command \textregistered (encoding TU) 
+on input line 174.
+LaTeX Encoding Info:    Redeclaring text command \textasciimacron (encoding TU)
+ on input line 175.
+LaTeX Encoding Info:    Redeclaring text command \textdegree (encoding TU) on i
+nput line 176.
+LaTeX Encoding Info:    Redeclaring text command \textpm (encoding TU) on input
+ line 177.
+LaTeX Encoding Info:    Redeclaring text command \texttwosuperior (encoding TU)
+ on input line 178.
+LaTeX Encoding Info:    Redeclaring text command \textthreesuperior (encoding T
+U) on input line 179.
+LaTeX Encoding Info:    Redeclaring text command \textasciiacute (encoding TU) 
+on input line 180.
+LaTeX Encoding Info:    Redeclaring text command \textmu (encoding TU) on input
+ line 181.
+LaTeX Encoding Info:    Redeclaring text command \textparagraph (encoding TU) o
+n input line 182.
+LaTeX Encoding Info:    Redeclaring text command \textperiodcentered (encoding 
+TU) on input line 183.
+LaTeX Encoding Info:    Redeclaring text command \textonesuperior (encoding TU)
+ on input line 184.
+LaTeX Encoding Info:    Redeclaring text command \textordmasculine (encoding TU
+) on input line 185.
+LaTeX Encoding Info:    Redeclaring text command \guillemetright (encoding TU) 
+on input line 186.
+LaTeX Encoding Info:    Redeclaring text command \guillemotright (encoding TU) 
+on input line 187.
+LaTeX Encoding Info:    Redeclaring text command \textonequarter (encoding TU) 
+on input line 188.
+LaTeX Encoding Info:    Redeclaring text command \textonehalf (encoding TU) on 
+input line 189.
+LaTeX Encoding Info:    Redeclaring text command \textthreequarters (encoding T
+U) on input line 190.
+LaTeX Encoding Info:    Redeclaring text command \textquestiondown (encoding TU
+) on input line 191.
+LaTeX Encoding Info:    Redeclaring text command \AE (encoding TU) on input lin
+e 192.
+LaTeX Encoding Info:    Redeclaring text command \DH (encoding TU) on input lin
+e 193.
+LaTeX Encoding Info:    Redeclaring text command \texttimes (encoding TU) on in
+put line 194.
+LaTeX Encoding Info:    Redeclaring text command \O (encoding TU) on input line
+ 195.
+LaTeX Encoding Info:    Redeclaring text command \TH (encoding TU) on input lin
+e 196.
+LaTeX Encoding Info:    Redeclaring text command \ss (encoding TU) on input lin
+e 197.
+LaTeX Encoding Info:    Redeclaring text command \ae (encoding TU) on input lin
+e 198.
+LaTeX Encoding Info:    Redeclaring text command \dh (encoding TU) on input lin
+e 199.
+LaTeX Encoding Info:    Redeclaring text command \textdiv (encoding TU) on inpu
+t line 200.
+LaTeX Encoding Info:    Redeclaring text command \o (encoding TU) on input line
+ 201.
+LaTeX Encoding Info:    Redeclaring text command \th (encoding TU) on input lin
+e 202.
+LaTeX Encoding Info:    Redeclaring text command \DJ (encoding TU) on input lin
+e 203.
+LaTeX Encoding Info:    Redeclaring text command \dj (encoding TU) on input lin
+e 204.
+LaTeX Encoding Info:    Redeclaring text command \i (encoding TU) on input line
+ 205.
+LaTeX Encoding Info:    Redeclaring text command \IJ (encoding TU) on input lin
+e 206.
+LaTeX Encoding Info:    Redeclaring text command \ij (encoding TU) on input lin
+e 207.
+LaTeX Encoding Info:    Redeclaring text command \L (encoding TU) on input line
+ 208.
+LaTeX Encoding Info:    Redeclaring text command \l (encoding TU) on input line
+ 209.
+LaTeX Encoding Info:    Redeclaring text command \NG (encoding TU) on input lin
+e 210.
+LaTeX Encoding Info:    Redeclaring text command \ng (encoding TU) on input lin
+e 211.
+LaTeX Encoding Info:    Redeclaring text command \OE (encoding TU) on input lin
+e 212.
+LaTeX Encoding Info:    Redeclaring text command \oe (encoding TU) on input lin
+e 213.
+LaTeX Encoding Info:    Redeclaring text command \textflorin (encoding TU) on i
+nput line 214.
+LaTeX Encoding Info:    Redeclaring text command \j (encoding TU) on input line
+ 215.
+LaTeX Encoding Info:    Redeclaring text command \textasciicaron (encoding TU) 
+on input line 216.
+LaTeX Encoding Info:    Redeclaring text command \textasciibreve (encoding TU) 
+on input line 217.
+LaTeX Encoding Info:    Redeclaring text command \textacutedbl (encoding TU) on
+ input line 218.
+LaTeX Encoding Info:    Redeclaring text command \textgravedbl (encoding TU) on
+ input line 219.
+LaTeX Encoding Info:    Redeclaring text command \texttildelow (encoding TU) on
+ input line 220.
+LaTeX Encoding Info:    Redeclaring text command \textbaht (encoding TU) on inp
+ut line 221.
+LaTeX Encoding Info:    Redeclaring text command \SS (encoding TU) on input lin
+e 222.
+LaTeX Encoding Info:    Redeclaring text command \textcompwordmark (encoding TU
+) on input line 223.
+LaTeX Encoding Info:    Redeclaring text command \textendash (encoding TU) on i
+nput line 224.
+LaTeX Encoding Info:    Redeclaring text command \textemdash (encoding TU) on i
+nput line 225.
+LaTeX Encoding Info:    Redeclaring text command \textnonbreakinghyphen (encodi
+ng TU) on input line 226.
+LaTeX Encoding Info:    Redeclaring text command \textfiguredash (encoding TU) 
+on input line 228.
+LaTeX Encoding Info:    Redeclaring text command \texthorizontalbar (encoding T
+U) on input line 230.
+LaTeX Encoding Info:    Redeclaring text command \textbardbl (encoding TU) on i
+nput line 232.
+LaTeX Encoding Info:    Redeclaring text command \textquoteleft (encoding TU) o
+n input line 233.
+LaTeX Encoding Info:    Redeclaring text command \textquoteright (encoding TU) 
+on input line 234.
+LaTeX Encoding Info:    Redeclaring text command \quotesinglbase (encoding TU) 
+on input line 235.
+LaTeX Encoding Info:    Redeclaring text command \textquotedblleft (encoding TU
+) on input line 236.
+LaTeX Encoding Info:    Redeclaring text command \textquotedblright (encoding T
+U) on input line 237.
+LaTeX Encoding Info:    Redeclaring text command \quotedblbase (encoding TU) on
+ input line 238.
+LaTeX Encoding Info:    Redeclaring text command \textdagger (encoding TU) on i
+nput line 239.
+LaTeX Encoding Info:    Redeclaring text command \textdaggerdbl (encoding TU) o
+n input line 240.
+LaTeX Encoding Info:    Redeclaring text command \textbullet (encoding TU) on i
+nput line 241.
+LaTeX Encoding Info:    Redeclaring text command \textellipsis (encoding TU) on
+ input line 242.
+LaTeX Encoding Info:    Redeclaring text command \textperthousand (encoding TU)
+ on input line 243.
+LaTeX Encoding Info:    Redeclaring text command \textpertenthousand (encoding 
+TU) on input line 244.
+LaTeX Encoding Info:    Redeclaring text command \guilsinglleft (encoding TU) o
+n input line 245.
+LaTeX Encoding Info:    Redeclaring text command \guilsinglright (encoding TU) 
+on input line 246.
+LaTeX Encoding Info:    Redeclaring text command \textreferencemark (encoding T
+U) on input line 247.
+LaTeX Encoding Info:    Redeclaring text command \textinterrobang (encoding TU)
+ on input line 248.
+LaTeX Encoding Info:    Redeclaring text command \textfractionsolidus (encoding
+ TU) on input line 249.
+LaTeX Encoding Info:    Redeclaring text command \textlquill (encoding TU) on i
+nput line 250.
+LaTeX Encoding Info:    Redeclaring text command \textrquill (encoding TU) on i
+nput line 251.
+LaTeX Encoding Info:    Redeclaring text command \textdiscount (encoding TU) on
+ input line 252.
+LaTeX Encoding Info:    Redeclaring text command \textcolonmonetary (encoding T
+U) on input line 253.
+LaTeX Encoding Info:    Redeclaring text command \textlira (encoding TU) on inp
+ut line 254.
+LaTeX Encoding Info:    Redeclaring text command \textnaira (encoding TU) on in
+put line 255.
+LaTeX Encoding Info:    Redeclaring text command \textwon (encoding TU) on inpu
+t line 256.
+LaTeX Encoding Info:    Redeclaring text command \textdong (encoding TU) on inp
+ut line 257.
+LaTeX Encoding Info:    Redeclaring text command \texteuro (encoding TU) on inp
+ut line 258.
+LaTeX Encoding Info:    Redeclaring text command \textpeso (encoding TU) on inp
+ut line 259.
+LaTeX Encoding Info:    Redeclaring text command \textcelsius (encoding TU) on 
+input line 260.
+LaTeX Encoding Info:    Redeclaring text command \textnumero (encoding TU) on i
+nput line 261.
+LaTeX Encoding Info:    Redeclaring text command \textcircledP (encoding TU) on
+ input line 262.
+LaTeX Encoding Info:    Redeclaring text command \textrecipe (encoding TU) on i
+nput line 263.
+LaTeX Encoding Info:    Redeclaring text command \textservicemark (encoding TU)
+ on input line 264.
+LaTeX Encoding Info:    Redeclaring text command \texttrademark (encoding TU) o
+n input line 265.
+LaTeX Encoding Info:    Redeclaring text command \textohm (encoding TU) on inpu
+t line 266.
+LaTeX Encoding Info:    Redeclaring text command \textmho (encoding TU) on inpu
+t line 267.
+LaTeX Encoding Info:    Redeclaring text command \textestimated (encoding TU) o
+n input line 268.
+LaTeX Encoding Info:    Redeclaring text command \textleftarrow (encoding TU) o
+n input line 269.
+LaTeX Encoding Info:    Redeclaring text command \textuparrow (encoding TU) on 
+input line 270.
+LaTeX Encoding Info:    Redeclaring text command \textrightarrow (encoding TU) 
+on input line 271.
+LaTeX Encoding Info:    Redeclaring text command \textdownarrow (encoding TU) o
+n input line 272.
+LaTeX Encoding Info:    Redeclaring text command \textminus (encoding TU) on in
+put line 273.
+LaTeX Encoding Info:    Redeclaring text command \Hwithstroke (encoding TU) on 
+input line 275.
+LaTeX Encoding Info:    Redeclaring text command \hwithstroke (encoding TU) on 
+input line 276.
+LaTeX Encoding Info:    Redeclaring text command \textasteriskcentered (encodin
+g TU) on input line 277.
+LaTeX Encoding Info:    Redeclaring text command \textsurd (encoding TU) on inp
+ut line 288.
+LaTeX Encoding Info:    Redeclaring text command \textlangle (encoding TU) on i
+nput line 289.
+LaTeX Encoding Info:    Redeclaring text command \textrangle (encoding TU) on i
+nput line 290.
+LaTeX Encoding Info:    Redeclaring text command \textblank (encoding TU) on in
+put line 291.
+LaTeX Encoding Info:    Redeclaring text command \textvisiblespace (encoding TU
+) on input line 292.
+LaTeX Encoding Info:    Redeclaring text command \textopenbullet (encoding TU) 
+on input line 293.
+LaTeX Encoding Info:    Redeclaring text command \textbigcircle (encoding TU) o
+n input line 294.
+LaTeX Encoding Info:    Redeclaring text command \textmusicalnote (encoding TU)
+ on input line 295.
+LaTeX Encoding Info:    Redeclaring text command \textmarried (encoding TU) on 
+input line 296.
+LaTeX Encoding Info:    Redeclaring text command \textdivorced (encoding TU) on
+ input line 297.
+LaTeX Encoding Info:    Redeclaring text command \textinterrobangdown (encoding
+ TU) on input line 298.
+LaTeX Encoding Info:    Redeclaring text command \` (encoding TU) on input line
+ 299.
+LaTeX Encoding Info:    Redeclaring text command \' (encoding TU) on input line
+ 300.
+LaTeX Encoding Info:    Redeclaring text command \^ (encoding TU) on input line
+ 301.
+LaTeX Encoding Info:    Redeclaring text command \~ (encoding TU) on input line
+ 302.
+LaTeX Encoding Info:    Redeclaring text command \= (encoding TU) on input line
+ 303.
+LaTeX Encoding Info:    Redeclaring text command \u (encoding TU) on input line
+ 304.
+LaTeX Encoding Info:    Redeclaring text command \. (encoding TU) on input line
+ 305.
+LaTeX Encoding Info:    Redeclaring text command \" (encoding TU) on input line
+ 306.
+LaTeX Encoding Info:    Redeclaring text command \r (encoding TU) on input line
+ 307.
+LaTeX Encoding Info:    Redeclaring text command \H (encoding TU) on input line
+ 308.
+LaTeX Encoding Info:    Redeclaring text command \v (encoding TU) on input line
+ 309.
+LaTeX Encoding Info:    Redeclaring text command \b (encoding TU) on input line
+ 310.
+LaTeX Encoding Info:    Redeclaring text command \d (encoding TU) on input line
+ 311.
+LaTeX Encoding Info:    Redeclaring text command \c (encoding TU) on input line
+ 312.
+LaTeX Encoding Info:    Redeclaring text command \k (encoding TU) on input line
+ 313.
+LaTeX Encoding Info:    Redeclaring text command \textcommabelow (encoding TU) 
+on input line 314.
+)
+\Cht=\dimen263
+\cht=\dimen264
+\Cdp=\dimen265
+\cdp=\dimen266
+\Cwd=\dimen267
+\cwd=\dimen268
+\Cvs=\dimen269
+\cvs=\dimen270
+\Chs=\dimen271
+\chs=\dimen272
+\cHT=\dimen273
+\dstrutbox=\box63
+\tstrutbox=\box64
+\zstrutbox=\box65
+LaTeX Info: Redefining \strut on input line 71.
+\ltj@@add@fenc@@inner=\luafunction61
+\ltj@@add@kyenc@@inner=\luafunction62
+\ltj@@add@ktenc@@inner=\luafunction63
+\ltj@@is@kyenc@@inner=\luafunction64
+\ltj@@is@ktenc@@inner=\luafunction65
+\ltj@@is@kenc@@inner=\luafunction66
+\ltj@@is@ffam@@inner=\luafunction67
+\ltj@@add@ffam@@inner=\luafunction68
+\ltj@@add@kfam@@inner=\luafunction69
+\ltj@@adjust@baseline@inner=\luafunction70
+LaTeX Info: Redefining \fontencoding on input line 573.
+LaTeX Info: Redefining \fontfamily on input line 619.
+LaTeX Info: Redefining \fontseries on input line 813.
+LaTeX Info: Redefining \fontseriesforce on input line 814.
+LaTeX Info: Redefining \fontshape on input line 822.
+LaTeX Info: Redefining \fontshapeforce on input line 833.
+\ltj@@jfont@@jfmonly@@inner=\luafunction71
+\ltj@@does@alt@set@@inner=\luafunction72
+\ltj@@cipath@clear@inner=\luafunction73
+)
+(/usr/share/texmf-dist/tex/luatex/luatexja/patches/lltjdefs.sty
+Package: lltjdefs 2024-05-16 Default font settings of LuaTeX-ja
+(load cache: extra_lmroman10-regular.luc)
+LaTeX Font Info:    Font shape `JT3/mc/m/n' will be
+(Font)              scaled to size 9.6222pt on input line 69.
+
+(/usr/share/texmf-dist/tex/luatex/luatexja/jfm-ujisv.lua)
+LaTeX Font Info:    Font shape `JY3/mc/m/n' will be
+(Font)              scaled to size 9.6222pt on input line 69.
+(load cache: extra_haranoajimincho-regular.luc)
+(/usr/share/texmf-dist/tex/luatex/luatexja/jfm-ujis.lua)
+\symmincho=\mathgroup11
+LaTeX Font Info:    Overwriting symbol font `mincho' in version `bold'
+(Font)                  JY3/mc/m/n --> JY3/gt/m/n on input line 78.
+)
+(/usr/share/texmf-dist/tex/luatex/luatexja/patches/lltjcore.sty
+Package: lltjcore 2025-06-12 Patch to LaTeX2e Kernel for LuaTeX-ja (for LaTeX2e
+ >=2025-06-01)
+\@tombowwidth=\dimen274
+\@TL=\box66
+\@Tl=\box67
+\@TC=\box68
+\@TR=\box69
+\@Tr=\box70
+\@BL=\box71
+\@Bl=\box72
+\@BC=\box73
+\@BR=\box74
+\@Br=\box75
+\@CL=\box76
+\@CR=\box77
+(load cache: extra_lmmono9-regular.luc)
+\@bannertoken=\toks52
+\@@paperheight=\dimen275
+\@@paperwidth=\dimen276
+\@@topmargin=\dimen277
+LaTeX Info: Redefining \underline on input line 300.
+)
+(/usr/share/texmf-dist/tex/luatex/luatexja/patches/lltjp-atbegshi.sty
+Package: lltjp-atbegshi 2024-05-14 Patching \shipout hooks for LuaTeX-ja
+\l__platex_shipout_dummy_box=\box78
+)
+(/usr/share/texmf-dist/tex/luatex/luatexja/patches/lltjp-fontspec.sty)
+(/usr/share/texmf-dist/tex/luatex/luatexja/patches/lltjp-microtype.sty
+
+Package luatexja Warning: LuaTeX-ja's patch against the microtype package 
+(luatexja)                (lltjp-microtype.sty, 2019-11-08) may not work.
+
+) (/usr/share/texmf-dist/tex/luatex/luatexja/patches/lltjp-geometry.sty
+Package: lltjp-geometry 2024-05-16 Patch to geometry for LuaTeX-ja with vertica
+l writing mode
+
+(/usr/share/texmf-dist/tex/generic/iftex/ifluatex.sty
+Package: ifluatex 2019/10/25 v1.5 ifluatex legacy package. Use iftex instead.
+)))
+\ltj@temp@cctb=\catcodetable18
+)
+(/usr/share/texmf-dist/tex/luatex/luatexja/luatexja-compat.sty
+Package: luatexja-compat 2025-09-21 Compatibility with pTeX
+(load cache: ltj-jisx0208.luc)
+\hour=\count343
+\minute=\count344
+))(load cache: extra_lmroman17-regular.luc)
+LaTeX Font Info:    Font shape `JT3/mc/m/n' will be
+(Font)              scaled to size 15.39551pt on input line 16.
+LaTeX Font Info:    Font shape `JY3/mc/m/n' will be
+(Font)              scaled to size 15.39551pt on input line 16.
+
+(/usr/share/texmf-dist/tex/luatex/luatexja/addons/luatexja-fontspec-29e.sty
+Package: luatexja-fontspec-29e 2025-11-01 fontspec support of LuaTeX-ja
+\g__ltj_fontspec_altnumber_int=\count345
+))
+luaotfload | cache : Lookup cache loaded from /home/dmq/.texlive/texmf-var/luate
+x-cache/generic/names/luaotfload-lookup-cache.luc.(load cache: extra_lxgwwenkait
+c-regular.luc)
+
+Package fontspec Info: 
+(fontspec)             LXGW WenKai TC scale = 0.96221923828125.
+
+
+Package fontspec Info: 
+(fontspec)             LXGW WenKai TC scale = 0.95.
+
+
+Package fontspec Info: 
+(fontspec)             Could not resolve font "LXGW WenKai TC/BI" (it probably
+(fontspec)             doesn't exist).
+
+(load cache: extra_lxgwwenkaitc-bold.luc)
+
+Package fontspec Info: 
+(fontspec)             Could not resolve font "LXGW WenKai TC/I" (it probably
+(fontspec)             doesn't exist).
+
+
+Package fontspec Info: 
+(fontspec)             LXGW WenKai TC scale = 0.96221923828125.
+
+
+Package fontspec Info: 
+(fontspec)             LXGW WenKai TC scale = 0.95.
+
+LaTeX Font Info:    Font shape `JT3/mc/m/n' will be
+(Font)              scaled to size 11.54663pt on input line 67.
+LaTeX Font Info:    Font shape `JY3/mc/m/n' will be
+(Font)              scaled to size 11.54663pt on input line 67.
+
+Package fontspec Info: 
+(fontspec)             LXGW WenKai TC scale = 0.96221923828125.
+
+
+Package fontspec Info: 
+(fontspec)             LXGW WenKai TC scale = 0.95.
+
+
+Package fontspec Info: 
+(fontspec)             LXGW WenKai TC/B scale = 0.96221923828125.
+
+
+Package fontspec Info: 
+(fontspec)             LXGW WenKai TC/B scale = 0.95.
+
+
+Package fontspec Info: 
+(fontspec)             LXGW WenKai TC/B scale = 0.96221923828125.
+
+
+Package fontspec Info: 
+(fontspec)             LXGW WenKai TC/B scale = 0.95.
+
+
+Package fontspec Info: 
+(fontspec)             Font family 'LXGWWenKaiTC(0)' created for font 'LXGW
+(fontspec)             WenKai TC' with options
+(fontspec)             [YokoFeatures={JFM=ujis},TateFeatures={JFM=ujisv},Scale=
+0.96221923828125,Kerning=Off,Script=CJK,Scale=0.95].
+(fontspec)              
+(fontspec)              This font family consists of the following NFSS
+(fontspec)             series/shapes:
+(fontspec)              
+
+LaTeX Font Info:    Redeclaring symbol font `mincho' on input line 67.
+LaTeX Font Info:    Overwriting symbol font `mincho' in version `normal'
+(Font)                  JY3/mc/m/n --> JY3/LXGWWenKaiTC(0)/m/n on input line 67
+.
+LaTeX Font Info:    Overwriting symbol font `mincho' in version `bold'
+(Font)                  JY3/gt/m/n --> JY3/LXGWWenKaiTC(0)/m/n on input line 67
+.
+LaTeX Font Info:    Overwriting symbol font `mincho' in version `bold'
+(Font)                  JY3/LXGWWenKaiTC(0)/m/n --> JY3/LXGWWenKaiTC(0)/b/n on 
+input line 67.
+LaTeX Font Info:    Font shape `JT3/LXGWWenKaiTC(0)/m/n' will be
+(Font)              scaled to size 9.49997pt on input line 67.
+LaTeX Font Info:    Font shape `JY3/LXGWWenKaiTC(0)/m/n' will be
+(Font)              scaled to size 9.49997pt on input line 67.
+
+(/usr/share/texmf-dist/tex/latex/pgf/frontendlayer/tikz.sty
+(/usr/share/texmf-dist/tex/latex/pgf/basiclayer/pgf.sty
+(/usr/share/texmf-dist/tex/latex/pgf/utilities/pgfrcs.sty
+(/usr/share/texmf-dist/tex/generic/pgf/utilities/pgfutil-common.tex
+\pgfutil@everybye=\toks53
+\pgfutil@tempdima=\dimen278
+\pgfutil@tempdimb=\dimen279
+)
+(/usr/share/texmf-dist/tex/generic/pgf/utilities/pgfutil-latex.def
+\pgfutil@abb=\box79
+)
+(/usr/share/texmf-dist/tex/generic/pgf/utilities/pgfrcs.code.tex
+(/usr/share/texmf-dist/tex/generic/pgf/pgf.revision.tex)
+Package: pgfrcs 2025-08-29 v3.1.11a (3.1.11a)
+))
+Package: pgf 2025-08-29 v3.1.11a (3.1.11a)
+
+(/usr/share/texmf-dist/tex/latex/pgf/basiclayer/pgfcore.sty
+(/usr/share/texmf-dist/tex/latex/pgf/systemlayer/pgfsys.sty
+(/usr/share/texmf-dist/tex/generic/pgf/systemlayer/pgfsys.code.tex
+Package: pgfsys 2025-08-29 v3.1.11a (3.1.11a)
+
+(/usr/share/texmf-dist/tex/generic/pgf/utilities/pgfkeys.code.tex
+\pgfkeys@pathtoks=\toks54
+\pgfkeys@temptoks=\toks55
+
+(/usr/share/texmf-dist/tex/generic/pgf/utilities/pgfkeyslibraryfiltered.code.te
+x
+\pgfkeys@tmptoks=\toks56
+))
+\pgf@x=\dimen280
+\pgf@y=\dimen281
+\pgf@xa=\dimen282
+\pgf@ya=\dimen283
+\pgf@xb=\dimen284
+\pgf@yb=\dimen285
+\pgf@xc=\dimen286
+\pgf@yc=\dimen287
+\pgf@xd=\dimen288
+\pgf@yd=\dimen289
+\w@pgf@writea=\write3
+\r@pgf@reada=\read4
+\c@pgf@counta=\count346
+\c@pgf@countb=\count347
+\c@pgf@countc=\count348
+\c@pgf@countd=\count349
+\t@pgf@toka=\toks57
+\t@pgf@tokb=\toks58
+\t@pgf@tokc=\toks59
+\pgf@sys@id@count=\count350
+ (/usr/share/texmf-dist/tex/generic/pgf/systemlayer/pgf.cfg
+File: pgf.cfg 2025-08-29 v3.1.11a (3.1.11a)
+)
+Driver file for pgf: pgfsys-luatex.def
+
+(/usr/share/texmf-dist/tex/generic/pgf/systemlayer/pgfsys-luatex.def
+File: pgfsys-luatex.def 2025-08-29 v3.1.11a (3.1.11a)
+
+(/usr/share/texmf-dist/tex/generic/pgf/systemlayer/pgfsys-common-pdf.def
+File: pgfsys-common-pdf.def 2025-08-29 v3.1.11a (3.1.11a)
+)))
+(/usr/share/texmf-dist/tex/generic/pgf/systemlayer/pgfsyssoftpath.code.tex
+File: pgfsyssoftpath.code.tex 2025-08-29 v3.1.11a (3.1.11a)
+\pgfsyssoftpath@smallbuffer@items=\count351
+\pgfsyssoftpath@bigbuffer@items=\count352
+)
+(/usr/share/texmf-dist/tex/generic/pgf/systemlayer/pgfsysprotocol.code.tex
+File: pgfsysprotocol.code.tex 2025-08-29 v3.1.11a (3.1.11a)
+))
+(/usr/share/texmf-dist/tex/generic/pgf/basiclayer/pgfcore.code.tex
+Package: pgfcore 2025-08-29 v3.1.11a (3.1.11a)
+
+(/usr/share/texmf-dist/tex/generic/pgf/math/pgfmath.code.tex
+(/usr/share/texmf-dist/tex/generic/pgf/math/pgfmathutil.code.tex)
+(/usr/share/texmf-dist/tex/generic/pgf/math/pgfmathparser.code.tex
+\pgfmath@dimen=\dimen290
+\pgfmath@count=\count353
+\pgfmath@box=\box80
+\pgfmath@toks=\toks60
+\pgfmath@stack@operand=\toks61
+\pgfmath@stack@operation=\toks62
+)
+(/usr/share/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.code.tex)
+(/usr/share/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.basic.code.tex)
+(/usr/share/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.trigonometric.code
+.tex)
+(/usr/share/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.random.code.tex)
+(/usr/share/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.comparison.code.te
+x) (/usr/share/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.base.code.tex)
+(/usr/share/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.round.code.tex)
+(/usr/share/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.misc.code.tex)
+(/usr/share/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.integerarithmetics
+.code.tex) (/usr/share/texmf-dist/tex/generic/pgf/math/pgfmathcalc.code.tex)
+(/usr/share/texmf-dist/tex/generic/pgf/math/pgfmathfloat.code.tex
+\c@pgfmathroundto@lastzeros=\count354
+))
+(/usr/share/texmf-dist/tex/generic/pgf/math/pgfint.code.tex)
+(/usr/share/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepoints.code.tex
+File: pgfcorepoints.code.tex 2025-08-29 v3.1.11a (3.1.11a)
+\pgf@picminx=\dimen291
+\pgf@picmaxx=\dimen292
+\pgf@picminy=\dimen293
+\pgf@picmaxy=\dimen294
+\pgf@pathminx=\dimen295
+\pgf@pathmaxx=\dimen296
+\pgf@pathminy=\dimen297
+\pgf@pathmaxy=\dimen298
+\pgf@xx=\dimen299
+\pgf@xy=\dimen300
+\pgf@yx=\dimen301
+\pgf@yy=\dimen302
+\pgf@zx=\dimen303
+\pgf@zy=\dimen304
+)
+(/usr/share/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepathconstruct.code.tex
+File: pgfcorepathconstruct.code.tex 2025-08-29 v3.1.11a (3.1.11a)
+\pgf@path@lastx=\dimen305
+\pgf@path@lasty=\dimen306
+) (/usr/share/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepathusage.code.tex
+File: pgfcorepathusage.code.tex 2025-08-29 v3.1.11a (3.1.11a)
+\pgf@shorten@end@additional=\dimen307
+\pgf@shorten@start@additional=\dimen308
+)
+(/usr/share/texmf-dist/tex/generic/pgf/basiclayer/pgfcorescopes.code.tex
+File: pgfcorescopes.code.tex 2025-08-29 v3.1.11a (3.1.11a)
+\pgfpic=\box81
+\pgf@hbox=\box82
+\pgf@layerbox@main=\box83
+\pgf@picture@serial@count=\count355
+)
+(/usr/share/texmf-dist/tex/generic/pgf/basiclayer/pgfcoregraphicstate.code.tex
+File: pgfcoregraphicstate.code.tex 2025-08-29 v3.1.11a (3.1.11a)
+\pgflinewidth=\dimen309
+)
+(/usr/share/texmf-dist/tex/generic/pgf/basiclayer/pgfcoretransformations.code.t
+ex
+File: pgfcoretransformations.code.tex 2025-08-29 v3.1.11a (3.1.11a)
+\pgf@pt@x=\dimen310
+\pgf@pt@y=\dimen311
+\pgf@pt@temp=\dimen312
+) (/usr/share/texmf-dist/tex/generic/pgf/basiclayer/pgfcorequick.code.tex
+File: pgfcorequick.code.tex 2025-08-29 v3.1.11a (3.1.11a)
+)
+(/usr/share/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreobjects.code.tex
+File: pgfcoreobjects.code.tex 2025-08-29 v3.1.11a (3.1.11a)
+)
+(/usr/share/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepathprocessing.code.te
+x
+File: pgfcorepathprocessing.code.tex 2025-08-29 v3.1.11a (3.1.11a)
+) (/usr/share/texmf-dist/tex/generic/pgf/basiclayer/pgfcorearrows.code.tex
+File: pgfcorearrows.code.tex 2025-08-29 v3.1.11a (3.1.11a)
+\pgfarrowsep=\dimen313
+)
+(/usr/share/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreshade.code.tex
+File: pgfcoreshade.code.tex 2025-08-29 v3.1.11a (3.1.11a)
+\pgf@max=\dimen314
+\pgf@sys@shading@range@num=\count356
+\pgf@shadingcount=\count357
+)
+(/usr/share/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreimage.code.tex
+File: pgfcoreimage.code.tex 2025-08-29 v3.1.11a (3.1.11a)
+)
+(/usr/share/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreexternal.code.tex
+File: pgfcoreexternal.code.tex 2025-08-29 v3.1.11a (3.1.11a)
+\pgfexternal@startupbox=\box84
+)
+(/usr/share/texmf-dist/tex/generic/pgf/basiclayer/pgfcorelayers.code.tex
+File: pgfcorelayers.code.tex 2025-08-29 v3.1.11a (3.1.11a)
+)
+(/usr/share/texmf-dist/tex/generic/pgf/basiclayer/pgfcoretransparency.code.tex
+File: pgfcoretransparency.code.tex 2025-08-29 v3.1.11a (3.1.11a)
+) (/usr/share/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepatterns.code.tex
+File: pgfcorepatterns.code.tex 2025-08-29 v3.1.11a (3.1.11a)
+)
+(/usr/share/texmf-dist/tex/generic/pgf/basiclayer/pgfcorerdf.code.tex
+File: pgfcorerdf.code.tex 2025-08-29 v3.1.11a (3.1.11a)
+)))
+(/usr/share/texmf-dist/tex/generic/pgf/modules/pgfmoduleshapes.code.tex
+File: pgfmoduleshapes.code.tex 2025-08-29 v3.1.11a (3.1.11a)
+\pgfnodeparttextbox=\box85
+)
+(/usr/share/texmf-dist/tex/generic/pgf/modules/pgfmoduleplot.code.tex
+File: pgfmoduleplot.code.tex 2025-08-29 v3.1.11a (3.1.11a)
+)
+(/usr/share/texmf-dist/tex/latex/pgf/compatibility/pgfcomp-version-0-65.sty
+Package: pgfcomp-version-0-65 2025-08-29 v3.1.11a (3.1.11a)
+\pgf@nodesepstart=\dimen315
+\pgf@nodesepend=\dimen316
+)
+(/usr/share/texmf-dist/tex/latex/pgf/compatibility/pgfcomp-version-1-18.sty
+Package: pgfcomp-version-1-18 2025-08-29 v3.1.11a (3.1.11a)
+))
+(/usr/share/texmf-dist/tex/latex/pgf/utilities/pgffor.sty
+(/usr/share/texmf-dist/tex/latex/pgf/utilities/pgfkeys.sty
+(/usr/share/texmf-dist/tex/generic/pgf/utilities/pgfkeys.code.tex))
+(/usr/share/texmf-dist/tex/latex/pgf/math/pgfmath.sty
+(/usr/share/texmf-dist/tex/generic/pgf/math/pgfmath.code.tex))
+(/usr/share/texmf-dist/tex/generic/pgf/utilities/pgffor.code.tex
+Package: pgffor 2025-08-29 v3.1.11a (3.1.11a)
+\pgffor@iter=\dimen317
+\pgffor@skip=\dimen318
+\pgffor@stack=\toks63
+\pgffor@toks=\toks64
+))
+(/usr/share/texmf-dist/tex/generic/pgf/frontendlayer/tikz/tikz.code.tex
+Package: tikz 2025-08-29 v3.1.11a (3.1.11a)
+
+(/usr/share/texmf-dist/tex/generic/pgf/libraries/pgflibraryplothandlers.code.te
+x
+File: pgflibraryplothandlers.code.tex 2025-08-29 v3.1.11a (3.1.11a)
+\pgf@plot@mark@count=\count358
+\pgfplotmarksize=\dimen319
+)
+\tikz@lastx=\dimen320
+\tikz@lasty=\dimen321
+\tikz@lastxsaved=\dimen322
+\tikz@lastysaved=\dimen323
+\tikz@lastmovetox=\dimen324
+\tikz@lastmovetoy=\dimen325
+\tikzleveldistance=\dimen326
+\tikzsiblingdistance=\dimen327
+\tikz@figbox=\box86
+\tikz@figbox@bg=\box87
+\tikz@tempbox=\box88
+\tikz@tempbox@bg=\box89
+\tikztreelevel=\count359
+\tikznumberofchildren=\count360
+\tikznumberofcurrentchild=\count361
+\tikz@fig@count=\count362
+ (/usr/share/texmf-dist/tex/generic/pgf/modules/pgfmodulematrix.code.tex
+File: pgfmodulematrix.code.tex 2025-08-29 v3.1.11a (3.1.11a)
+\pgfmatrixcurrentrow=\count363
+\pgfmatrixcurrentcolumn=\count364
+\pgf@matrix@numberofcolumns=\count365
+)
+\tikz@expandcount=\count366
+
+(/usr/share/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrary
+topaths.code.tex
+File: tikzlibrarytopaths.code.tex 2025-08-29 v3.1.11a (3.1.11a)
+))) (/usr/share/texmf-dist/tex/latex/tikz-cd/tikz-cd.sty
+Package: tikz-cd 2021/05/04 v1.0 Commutative diagrams with TikZ
+
+(/usr/share/texmf-dist/tex/generic/tikz-cd/tikzlibrarycd.code.tex
+(/usr/share/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrary
+matrix.code.tex
+File: tikzlibrarymatrix.code.tex 2025-08-29 v3.1.11a (3.1.11a)
+)
+(/usr/share/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrary
+quotes.code.tex
+File: tikzlibraryquotes.code.tex 2025-08-29 v3.1.11a (3.1.11a)
+)
+(/usr/share/texmf-dist/tex/generic/pgf/libraries/pgflibraryarrows.meta.code.tex
+File: pgflibraryarrows.meta.code.tex 2025-08-29 v3.1.11a (3.1.11a)
+\pgfarrowinset=\dimen328
+\pgfarrowlength=\dimen329
+\pgfarrowwidth=\dimen330
+\pgfarrowlinewidth=\dimen331
+))) (/usr/share/texmf-dist/tex/latex/pgfplots/pgfplots.sty
+(/usr/share/texmf-dist/tex/generic/pgfplots/pgfplots.revision.tex)
+Package: pgfplots 2025/08/14 v1.18.2 Data Visualization (1.18.2)
+
+(/usr/share/texmf-dist/tex/generic/pgfplots/pgfplots.code.tex
+(/usr/share/texmf-dist/tex/generic/pgfplots/pgfplotscore.code.tex
+Package pgfplots info on input line 124: Initializing with LUA version Lua 5.3
+\pgfplots@luabackend@table=\catcodetable19
+\t@pgfplots@toka=\toks65
+\t@pgfplots@tokb=\toks66
+\t@pgfplots@tokc=\toks67
+\pgfplots@tmpa=\dimen332
+\c@pgfplots@coordindex=\count367
+\c@pgfplots@scanlineindex=\count368
+
+(/usr/share/texmf-dist/tex/generic/pgfplots/sys/pgfplotssysgeneric.code.tex))
+(/usr/share/texmf-dist/tex/generic/pgfplots/libs/pgfplotslibrary.code.tex)
+(/usr/share/texmf-dist/tex/generic/pgfplots/oldpgfcompatib/pgfplotsoldpgfsupp_l
+oader.code.tex
+(/usr/share/texmf-dist/tex/generic/pgf/libraries/pgflibraryfpu.code.tex)
+(/usr/share/texmf-dist/tex/generic/pgfplots/oldpgfcompatib/pgfplotsoldpgfsupp_p
+gfutil-common-lists.tex)
+(/usr/share/texmf-dist/tex/generic/pgf/libraries/luamath/pgflibraryluamath.code
+.tex)
+Package pgfplots info on input line 292: luamath library shipped with pgf 3.1.1
+1a is up-to-date
+) (/usr/share/texmf-dist/tex/generic/pgfplots/util/pgfplotsutil.code.tex
+Package pgfplots info on input line 82: Found new luatex: initializing lua comm
+ands instead of write18 (shell-escape)
+
+(/usr/share/texmf-dist/tex/generic/pgfplots/liststructure/pgfplotsliststructure
+.code.tex)
+(/usr/share/texmf-dist/tex/generic/pgfplots/liststructure/pgfplotsliststructure
+ext.code.tex)
+(/usr/share/texmf-dist/tex/generic/pgfplots/liststructure/pgfplotsarray.code.te
+x
+\c@pgfplotsarray@tmp=\count369
+)
+(/usr/share/texmf-dist/tex/generic/pgfplots/liststructure/pgfplotsmatrix.code.t
+ex)
+(/usr/share/texmf-dist/tex/generic/pgfplots/numtable/pgfplotstableshared.code.t
+ex
+\c@pgfplotstable@counta=\count370
+\t@pgfplotstable@a=\toks68
+)
+(/usr/share/texmf-dist/tex/generic/pgfplots/liststructure/pgfplotsdeque.code.te
+x) (/usr/share/texmf-dist/tex/generic/pgfplots/util/pgfplotsbinary.code.tex
+(/usr/share/texmf-dist/tex/generic/pgfplots/util/pgfplotsbinary.data.code.tex)) (/usr/share/texmf-dist/tex/generic/pgfplots/util/pgfplotsutil.verb.code.tex)
+(/usr/share/texmf-dist/tex/generic/pgfplots/libs/pgflibrarypgfplots.surfshading
+.code.tex
+\c@pgfplotslibrarysurf@no=\count371
+
+(/usr/share/texmf-dist/tex/generic/pgfplots/sys/pgflibrarypgfplots.surfshading.
+pgfsys-luatex.def)))
+(/usr/share/texmf-dist/tex/generic/pgfplots/util/pgfplotscolormap.code.tex
+(/usr/share/texmf-dist/tex/generic/pgfplots/util/pgfplotscolor.code.tex))
+(/usr/share/texmf-dist/tex/generic/pgfplots/pgfplotsstackedplots.code.tex)
+(/usr/share/texmf-dist/tex/generic/pgfplots/pgfplotsplothandlers.code.tex
+(/usr/share/texmf-dist/tex/generic/pgfplots/pgfplotsmeshplothandler.code.tex
+(/usr/share/texmf-dist/tex/generic/pgfplots/pgfplotsmeshplotimage.code.tex)))
+(/usr/share/texmf-dist/tex/generic/pgfplots/pgfplots.scaling.code.tex)
+(/usr/share/texmf-dist/tex/generic/pgfplots/pgfplotscoordprocessing.code.tex)
+(/usr/share/texmf-dist/tex/generic/pgfplots/pgfplots.errorbars.code.tex)
+(/usr/share/texmf-dist/tex/generic/pgfplots/pgfplots.markers.code.tex)
+(/usr/share/texmf-dist/tex/generic/pgfplots/pgfplotsticks.code.tex)
+(/usr/share/texmf-dist/tex/generic/pgfplots/pgfplots.paths.code.tex)
+(/usr/share/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrary
+decorations.code.tex
+(/usr/share/texmf-dist/tex/generic/pgf/modules/pgfmoduledecorations.code.tex
+\pgfdecoratedcompleteddistance=\dimen333
+\pgfdecoratedremainingdistance=\dimen334
+\pgfdecoratedinputsegmentcompleteddistance=\dimen335
+\pgfdecoratedinputsegmentremainingdistance=\dimen336
+\pgf@decorate@distancetomove=\dimen337
+\pgf@decorate@repeatstate=\count372
+\pgfdecorationsegmentamplitude=\dimen338
+\pgfdecorationsegmentlength=\dimen339
+)
+\tikz@lib@dec@box=\box90
+)
+(/usr/share/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrary
+decorations.pathmorphing.code.tex
+(/usr/share/texmf-dist/tex/generic/pgf/libraries/decorations/pgflibrarydecorati
+ons.pathmorphing.code.tex))
+(/usr/share/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrary
+decorations.pathreplacing.code.tex
+(/usr/share/texmf-dist/tex/generic/pgf/libraries/decorations/pgflibrarydecorati
+ons.pathreplacing.code.tex))
+(/usr/share/texmf-dist/tex/generic/pgfplots/libs/tikzlibrarypgfplots.contourlua
+.code.tex)
+\pgfplots@numplots=\count373
+\pgfplots@xmin@reg=\dimen340
+\pgfplots@xmax@reg=\dimen341
+\pgfplots@ymin@reg=\dimen342
+\pgfplots@ymax@reg=\dimen343
+\pgfplots@zmin@reg=\dimen344
+\pgfplots@zmax@reg=\dimen345
+)
+(/usr/share/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrary
+plotmarks.code.tex
+File: tikzlibraryplotmarks.code.tex 2025-08-29 v3.1.11a (3.1.11a)
+
+(/usr/share/texmf-dist/tex/generic/pgf/libraries/pgflibraryplotmarks.code.tex
+File: pgflibraryplotmarks.code.tex 2025-08-29 v3.1.11a (3.1.11a)
+)))
+(/usr/share/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrary
+babel.code.tex
+File: tikzlibrarybabel.code.tex 2025-08-29 v3.1.11a (3.1.11a)
+)
+(/usr/share/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrary
+bending.code.tex
+File: tikzlibrarybending.code.tex 2025-08-29 v3.1.11a (3.1.11a)
+
+(/usr/share/texmf-dist/tex/generic/pgf/modules/pgfmodulebending.code.tex
+File: pgfmodulebending.code.tex 2025-08-29 v3.1.11a (3.1.11a)
+
+(/usr/share/texmf-dist/tex/generic/pgf/modules/pgfmodulenonlineartransformation
+s.code.tex
+File: pgfmodulenonlineartransformations.code.tex 2025-08-29 v3.1.11a (3.1.11a)
+\pgftransformnonlinearflatness=\dimen346
+)
+(/usr/share/texmf-dist/tex/generic/pgf/libraries/pgflibrarycurvilinear.code.tex
+File: pgflibrarycurvilinear.code.tex 2025-08-29 v3.1.11a (3.1.11a)
+\pgf@curvilinear@time@a=\dimen347
+\pgf@curvilinear@length@a=\dimen348
+\pgf@curvilinear@length@b=\dimen349
+\pgf@curvilinear@length@c=\dimen350
+\pgf@curvilinear@length@d=\dimen351
+)
+\pgf@arrows@the@rigidity=\dimen352
+))
+(/usr/share/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrary
+positioning.code.tex
+File: tikzlibrarypositioning.code.tex 2025-08-29 v3.1.11a (3.1.11a)
+)
+(/usr/share/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrary
+shadows.code.tex
+File: tikzlibraryshadows.code.tex 2025-08-29 v3.1.11a (3.1.11a)
+
+(/usr/share/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrary
+fadings.code.tex
+File: tikzlibraryfadings.code.tex 2025-08-29 v3.1.11a (3.1.11a)
+
+(/usr/share/texmf-dist/tex/generic/pgf/libraries/pgflibraryfadings.code.tex
+File: pgflibraryfadings.code.tex 2025-08-29 v3.1.11a (3.1.11a)
+)))
+(/usr/share/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrary
+calc.code.tex
+File: tikzlibrarycalc.code.tex 2025-08-29 v3.1.11a (3.1.11a)
+)
+(/usr/share/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrary
+shapes.geometric.code.tex
+File: tikzlibraryshapes.geometric.code.tex 2025-08-29 v3.1.11a (3.1.11a)
+
+(/usr/share/texmf-dist/tex/generic/pgf/libraries/shapes/pgflibraryshapes.geomet
+ric.code.tex
+File: pgflibraryshapes.geometric.code.tex 2025-08-29 v3.1.11a (3.1.11a)
+))
+(/usr/share/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrary
+decorations.text.code.tex
+(/usr/share/texmf-dist/tex/generic/pgf/libraries/decorations/pgflibrarydecorati
+ons.text.code.tex
+\pgf@lib@dec@text@box=\box91
+)
+\tikz@lib@dec@te@box=\box92
+) (/usr/share/texmf-dist/tex/latex/booktabs/booktabs.sty
+Package: booktabs 2020/01/12 v1.61803398 Publication quality tables
+\heavyrulewidth=\dimen353
+\lightrulewidth=\dimen354
+\cmidrulewidth=\dimen355
+\belowrulesep=\dimen356
+\belowbottomsep=\dimen357
+\aboverulesep=\dimen358
+\abovetopsep=\dimen359
+\cmidrulesep=\dimen360
+\cmidrulekern=\dimen361
+\defaultaddspace=\dimen362
+\@cmidla=\count374
+\@cmidlb=\count375
+\@aboverulesep=\dimen363
+\@belowrulesep=\dimen364
+\@thisruleclass=\count376
+\@lastruleclass=\count377
+\@thisrulewidth=\dimen365
+)
+(/usr/share/texmf-dist/tex/latex/tools/multicol.sty
+Package: multicol 2025/10/21 v2.0b multicolumn formatting (FMi)
+\c@tracingmulticols=\count378
+\mult@box=\box93
+\multicol@leftmargin=\dimen366
+\c@unbalance=\count379
+\c@collectmore=\count380
+\doublecol@number=\count381
+\multicoltolerance=\count382
+\multicolpretolerance=\count383
+\full@width=\dimen367
+\page@free=\dimen368
+\premulticols=\dimen369
+\postmulticols=\dimen370
+\multicolsep=\skip62
+\multicolbaselineskip=\skip63
+\partial@page=\box94
+\last@line=\box95
+\mc@boxedresult=\box96
+\maxbalancingoverflow=\dimen371
+\mult@rightbox=\box97
+\mult@grightbox=\box98
+\mult@firstbox=\box99
+\mult@gfirstbox=\box100
+\@tempa=\box101
+\@tempa=\box102
+\@tempa=\box103
+\@tempa=\box104
+\@tempa=\box105
+\@tempa=\box106
+\@tempa=\box107
+\@tempa=\box108
+\@tempa=\box109
+\@tempa=\box110
+\@tempa=\box111
+\@tempa=\box112
+\@tempa=\box113
+\@tempa=\box114
+\@tempa=\box115
+\@tempa=\box116
+\@tempa=\box117
+\@tempa=\box118
+\@tempa=\box119
+\@tempa=\box120
+\@tempa=\box121
+\@tempa=\box122
+\@tempa=\box123
+\@tempa=\box124
+\@tempa=\box125
+\@tempa=\box126
+\@tempa=\box127
+\@tempa=\box128
+\@tempa=\box129
+\@tempa=\box130
+\@tempa=\box131
+\@tempa=\box132
+\@tempa=\box133
+\@tempa=\box134
+\@tempa=\box135
+\@tempa=\box136
+\c@minrows=\count384
+\c@columnbadness=\count385
+\c@finalcolumnbadness=\count386
+\last@try=\dimen372
+\multicolovershoot=\dimen373
+\multicolundershoot=\dimen374
+\mult@nat@firstbox=\box137
+\colbreak@box=\box138
+\mc@col@check@num=\count387
+\g__mc_curr_col_int=\count388
+)
+(/usr/share/texmf-dist/tex/latex/multirow/multirow.sty
+Package: multirow 2024/11/12 v2.9 Span multiple rows of a table
+\multirow@colwidth=\skip64
+\multirow@cntb=\count389
+\multirow@dima=\skip65
+\bigstrutjot=\dimen375
+)
+(/usr/share/texmf-dist/tex/latex/epigraph/epigraph.sty
+Package: epigraph 2020/01/02 v1.5e typesetting epigraphs
+
+(/usr/share/texmf-dist/tex/latex/nextpage/nextpage.sty
+Package: nextpage 2009/09/03 v1.1a additional page commands
+)
+\beforeepigraphskip=\skip66
+\afterepigraphskip=\skip67
+\epigraphwidth=\skip68
+\epigraphrule=\skip69
+)
+(/usr/share/texmf-dist/tex/latex/caption/caption.sty
+Package: caption 2023/08/05 v3.6o Customizing captions (AR)
+
+(/usr/share/texmf-dist/tex/latex/caption/caption3.sty
+Package: caption3 2023/07/31 v2.4d caption3 kernel (AR)
+\caption@tempdima=\dimen376
+\captionmargin=\dimen377
+\caption@leftmargin=\dimen378
+\caption@rightmargin=\dimen379
+\caption@width=\dimen380
+\caption@indent=\dimen381
+\caption@parindent=\dimen382
+\caption@hangindent=\dimen383
+Package caption Info: Standard document class detected.
+)
+\c@caption@flags=\count390
+\c@continuedfloat=\count391
+Package caption Info: float package is loaded.
+Package caption Info: wrapfig package is loaded.
+)
+(/usr/share/texmf-dist/tex/latex/biblatex/biblatex.sty
+Package: biblatex 2025/07/10 v3.21 programmable bibliographies (PK/MW)
+
+(/usr/share/texmf-dist/tex/latex/kvoptions/kvoptions.sty
+Package: kvoptions 2022-06-15 v3.15 Key value format for package options (HO)
+
+(/usr/share/texmf-dist/tex/latex/kvsetkeys/kvsetkeys.sty
+Package: kvsetkeys 2022-10-05 v1.19 Key value parser (HO)
+))
+(/usr/share/texmf-dist/tex/latex/logreq/logreq.sty
+Package: logreq 2010/08/04 v1.0 xml request logger
+\lrq@indent=\count392
+
+(/usr/share/texmf-dist/tex/latex/logreq/logreq.def
+File: logreq.def 2010/08/04 v1.0 logreq spec v1.0
+))
+(/usr/share/texmf-dist/tex/latex/url/url.sty
+\Urlmuskip=\muskip18
+Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
+)
+\c@tabx@nest=\count393
+\c@listtotal=\count394
+\c@listcount=\count395
+\c@liststart=\count396
+\c@liststop=\count397
+\c@citecount=\count398
+\c@citetotal=\count399
+\c@multicitecount=\count400
+\c@multicitetotal=\count401
+\c@instcount=\count402
+\c@maxnames=\count403
+\c@minnames=\count404
+\c@maxitems=\count405
+\c@minitems=\count406
+\c@citecounter=\count407
+\c@maxcitecounter=\count408
+\c@savedcitecounter=\count409
+\c@uniquelist=\count410
+\c@uniquename=\count411
+\c@refsection=\count412
+\c@refsegment=\count413
+\c@maxextratitle=\count414
+\c@maxextratitleyear=\count415
+\c@maxextraname=\count416
+\c@maxextradate=\count417
+\c@maxextraalpha=\count418
+\c@abbrvpenalty=\count419
+\c@highnamepenalty=\count420
+\c@lownamepenalty=\count421
+\c@maxparens=\count422
+\c@parenlevel=\count423
+\blx@tempcnta=\count424
+\blx@tempcntb=\count425
+\blx@tempcntc=\count426
+\c@blx@maxsection=\count427
+\blx@maxsegment@0=\count428
+\blx@notetype=\count429
+\blx@parenlevel@text=\count430
+\blx@parenlevel@foot=\count431
+\blx@sectionciteorder@0=\count432
+\blx@sectionciteorderinternal@0=\count433
+\blx@entrysetcounter=\count434
+\blx@biblioinstance=\count435
+\labelnumberwidth=\skip70
+\labelalphawidth=\skip71
+\biblabelsep=\skip72
+\bibitemsep=\skip73
+\bibnamesep=\skip74
+\bibinitsep=\skip75
+\bibparsep=\skip76
+\bibhang=\skip77
+\blx@bcfin=\read5
+\blx@bcfout=\write4
+\blx@langwohyphens=\language10
+\c@mincomprange=\count436
+\c@maxcomprange=\count437
+\c@mincompwidth=\count438
+Package biblatex Info: Trying to load biblatex default data model...
+Package biblatex Info: ... file 'blx-dm.def' found.
+
+(/usr/share/texmf-dist/tex/latex/biblatex/blx-dm.def
+File: blx-dm.def 2025/07/10 v3.21 biblatex datamodel (PK/MW)
+)
+Package biblatex Info: Trying to load biblatex style data model...
+Package biblatex Info: ... file 'numeric-comp.dbx' not found.
+Package biblatex Info: Trying to load biblatex custom data model...
+Package biblatex Info: ... file 'biblatex-dm.cfg' not found.
+\c@afterword=\count439
+\c@savedafterword=\count440
+\c@annotator=\count441
+\c@savedannotator=\count442
+\c@author=\count443
+\c@savedauthor=\count444
+\c@bookauthor=\count445
+\c@savedbookauthor=\count446
+\c@commentator=\count447
+\c@savedcommentator=\count448
+\c@editor=\count449
+\c@savededitor=\count450
+\c@editora=\count451
+\c@savededitora=\count452
+\c@editorb=\count453
+\c@savededitorb=\count454
+\c@editorc=\count455
+\c@savededitorc=\count456
+\c@foreword=\count457
+\c@savedforeword=\count458
+\c@holder=\count459
+\c@savedholder=\count460
+\c@introduction=\count461
+\c@savedintroduction=\count462
+\c@namea=\count463
+\c@savednamea=\count464
+\c@nameb=\count465
+\c@savednameb=\count466
+\c@namec=\count467
+\c@savednamec=\count468
+\c@translator=\count469
+\c@savedtranslator=\count470
+\c@shortauthor=\count471
+\c@savedshortauthor=\count472
+\c@shorteditor=\count473
+\c@savedshorteditor=\count474
+\c@labelname=\count475
+\c@savedlabelname=\count476
+\c@institution=\count477
+\c@savedinstitution=\count478
+\c@lista=\count479
+\c@savedlista=\count480
+\c@listb=\count481
+\c@savedlistb=\count482
+\c@listc=\count483
+\c@savedlistc=\count484
+\c@listd=\count485
+\c@savedlistd=\count486
+\c@liste=\count487
+\c@savedliste=\count488
+\c@listf=\count489
+\c@savedlistf=\count490
+\c@location=\count491
+\c@savedlocation=\count492
+\c@organization=\count493
+\c@savedorganization=\count494
+\c@origlocation=\count495
+\c@savedoriglocation=\count496
+\c@origpublisher=\count497
+\c@savedorigpublisher=\count498
+\c@publisher=\count499
+\c@savedpublisher=\count500
+\c@language=\count501
+\c@savedlanguage=\count502
+\c@origlanguage=\count503
+\c@savedoriglanguage=\count504
+\c@pageref=\count505
+\c@savedpageref=\count506
+\shorthandwidth=\skip78
+\shortjournalwidth=\skip79
+\shortserieswidth=\skip80
+\shorttitlewidth=\skip81
+\shortauthorwidth=\skip82
+\shorteditorwidth=\skip83
+\locallabelnumberwidth=\skip84
+\locallabelalphawidth=\skip85
+\localshorthandwidth=\skip86
+\localshortjournalwidth=\skip87
+\localshortserieswidth=\skip88
+\localshorttitlewidth=\skip89
+\localshortauthorwidth=\skip90
+\localshorteditorwidth=\skip91
+Package biblatex Info: Trying to load enhanced support for Unicode engines...
+Package biblatex Info: ... file 'blx-unicode.def' found.
+
+(/usr/share/texmf-dist/tex/latex/biblatex/blx-unicode.def)
+Package biblatex Info: Trying to load compatibility code...
+Package biblatex Info: ... file 'blx-compat.def' found.
+
+(/usr/share/texmf-dist/tex/latex/biblatex/blx-compat.def
+File: blx-compat.def 2025/07/10 v3.21 biblatex compatibility (PK/MW)
+)
+Package biblatex Info: Trying to load generic definitions...
+Package biblatex Info: ... file 'biblatex.def' found.
+
+(/usr/share/texmf-dist/tex/latex/biblatex/biblatex.def
+File: biblatex.def 2025/07/10 v3.21 biblatex compatibility (PK/MW)
+\c@textcitecount=\count507
+\c@textcitetotal=\count508
+\c@textcitemaxnames=\count509
+\c@biburlbigbreakpenalty=\count510
+\c@biburlbreakpenalty=\count511
+\c@biburlnumpenalty=\count512
+\c@biburlucpenalty=\count513
+\c@biburllcpenalty=\count514
+\biburlbigskip=\muskip19
+\biburlnumskip=\muskip20
+\biburlucskip=\muskip21
+\biburllcskip=\muskip22
+\c@smartand=\count515
+)
+Package biblatex Info: Trying to load natbib compatibility...
+Package biblatex Info: ... file 'blx-natbib.def' found.
+
+(/usr/share/texmf-dist/tex/latex/biblatex/blx-natbib.def
+File: blx-natbib.def 2025/07/10 v3.21 biblatex compatibility (PK/MW)
+Package biblatex Info: Delimiter 'nameyeardelim' in context '' already defined,
+ overwriting.
+)
+Package biblatex Info: Trying to load bibliography style 'numeric-comp'...
+Package biblatex Info: ... file 'numeric-comp.bbx' found.
+
+(/usr/share/texmf-dist/tex/latex/biblatex/bbx/numeric-comp.bbx
+File: numeric-comp.bbx 2025/07/10 v3.21 biblatex bibliography style (PK/MW)
+Package biblatex Info: Trying to load bibliography style 'numeric'...
+Package biblatex Info: ... file 'numeric.bbx' found.
+
+(/usr/share/texmf-dist/tex/latex/biblatex/bbx/numeric.bbx
+File: numeric.bbx 2025/07/10 v3.21 biblatex bibliography style (PK/MW)
+Package biblatex Info: Trying to load bibliography style 'standard'...
+Package biblatex Info: ... file 'standard.bbx' found.
+
+(/usr/share/texmf-dist/tex/latex/biblatex/bbx/standard.bbx
+File: standard.bbx 2025/07/10 v3.21 biblatex bibliography style (PK/MW)
+\c@bbx:relatedcount=\count516
+\c@bbx:relatedtotal=\count517
+)))
+Package biblatex Info: Trying to load citation style 'numeric-comp'...
+Package biblatex Info: ... file 'numeric-comp.cbx' found.
+
+(/usr/share/texmf-dist/tex/latex/biblatex/cbx/numeric-comp.cbx
+File: numeric-comp.cbx 2025/07/10 v3.21 biblatex citation style (PK/MW)
+\c@cbx@tempcnta=\count518
+\c@cbx@tempcntb=\count519
+\c@cbx@tempcntc=\count520
+\c@cbx@tempcntd=\count521
+Package biblatex Info: Redefining '\cite'.
+Package biblatex Info: Redefining '\parencite'.
+Package biblatex Info: Redefining '\footcite'.
+Package biblatex Info: Redefining '\footcitetext'.
+Package biblatex Info: Redefining '\smartcite'.
+Package biblatex Info: Redefining '\supercite'.
+Package biblatex Info: Redefining '\textcite'.
+Package biblatex Info: Redefining '\textcites'.
+Package biblatex Info: Redefining '\cites'.
+Package biblatex Info: Redefining '\parencites'.
+Package biblatex Info: Redefining '\smartcites'.
+)
+Package biblatex Info: Trying to load configuration file...
+Package biblatex Info: ... file 'biblatex.cfg' found.
+
+(/usr/share/texmf-dist/tex/latex/biblatex/biblatex.cfg
+File: biblatex.cfg 
+)
+Package biblatex Info: LuaTeX detected.
+(biblatex)             Assuming input encoding 'utf8'.
+Package biblatex Info: Document encoding is UTF8 ....
+Package biblatex Info: ... and expl3
+(biblatex)             2026-01-19 L3 programming layer (loader) 
+(biblatex)             is new enough (at least 2020/04/06),
+(biblatex)             setting 'casechanger=expl3'.
+
+(/usr/share/texmf-dist/tex/latex/biblatex/blx-case-expl3.sty
+Package: blx-case-expl3 2025/07/10 v3.21 expl3 case changing code for biblatex
+))
+(/usr/share/texmf-dist/tex/latex/xurl/xurl.sty
+Package: xurl 2022/01/09 v 0.10 modify URL breaks
+
+xurl: Set penalties for biblatex
+) (/usr/share/texmf-dist/tex/latex/tocloft/tocloft.sty
+Package: tocloft 2017/08/31 v2.3i parameterised ToC, etc., typesetting
+Package tocloft Info: The document has chapter divisions on input line 51.
+\cftparskip=\skip92
+\cftbeforetoctitleskip=\skip93
+\cftaftertoctitleskip=\skip94
+\cftbeforepartskip=\skip95
+\cftpartnumwidth=\skip96
+\cftpartindent=\skip97
+\cftbeforechapskip=\skip98
+\cftchapindent=\skip99
+\cftchapnumwidth=\skip100
+\cftbeforesecskip=\skip101
+\cftsecindent=\skip102
+\cftsecnumwidth=\skip103
+\cftbeforesubsecskip=\skip104
+\cftsubsecindent=\skip105
+\cftsubsecnumwidth=\skip106
+\cftbeforesubsubsecskip=\skip107
+\cftsubsubsecindent=\skip108
+\cftsubsubsecnumwidth=\skip109
+\cftbeforeparaskip=\skip110
+\cftparaindent=\skip111
+\cftparanumwidth=\skip112
+\cftbeforesubparaskip=\skip113
+\cftsubparaindent=\skip114
+\cftsubparanumwidth=\skip115
+\cftbeforeloftitleskip=\skip116
+\cftafterloftitleskip=\skip117
+\cftbeforefigskip=\skip118
+\cftfigindent=\skip119
+\cftfignumwidth=\skip120
+\c@lofdepth=\count522
+\c@lotdepth=\count523
+\cftbeforelottitleskip=\skip121
+\cftafterlottitleskip=\skip122
+\cftbeforetabskip=\skip123
+\cfttabindent=\skip124
+\cfttabnumwidth=\skip125
+)
+(/usr/share/texmf-dist/tex/latex/fancyhdr/fancyhdr.sty
+Package: fancyhdr 2025/02/07 v5.2 Extensive control of page headers and footers
+
+\f@nch@headwidth=\skip126
+\f@nch@offset@elh=\skip127
+\f@nch@offset@erh=\skip128
+\f@nch@offset@olh=\skip129
+\f@nch@offset@orh=\skip130
+\f@nch@offset@elf=\skip131
+\f@nch@offset@erf=\skip132
+\f@nch@offset@olf=\skip133
+\f@nch@offset@orf=\skip134
+\f@nch@height=\skip135
+\f@nch@footalignment=\skip136
+\f@nch@widthL=\skip137
+\f@nch@widthC=\skip138
+\f@nch@widthR=\skip139
+\@temptokenb=\toks69
+)
+\c@theorem=\count524
+\c@definition=\count525
+
+(/usr/share/texmf-dist/tex/lualatex/pgf-go-0.2026.10.30/latex/pgf-go.sty
+Package: pgf-go 2026/10/30 v0.2026.10.30 Go diagrams with PGF
+
+(/usr/share/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrary
+patterns.code.tex
+File: tikzlibrarypatterns.code.tex 2025-08-29 v3.1.11a (3.1.11a)
+
+(/usr/share/texmf-dist/tex/generic/pgf/libraries/pgflibrarypatterns.code.tex
+File: pgflibrarypatterns.code.tex 2025-08-29 v3.1.11a (3.1.11a)
+))
+(/usr/share/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrary
+patterns.meta.code.tex
+(/usr/share/texmf-dist/tex/generic/pgf/libraries/pgflibrarypatterns.meta.code.t
+ex))
+(/usr/share/texmf-dist/tex/lualatex/pgf-go-0.2026.10.30/latex/pgf-go-kernel.sty
+File: pgf-go-kernel.sty 2026/10/30 v0.2026.10.30 pgf-go: compute kernel interfa
+ce
+\l_pgfgo_goban_size_x_int=\count526
+\l_pgfgo_goban_size_y_int=\count527
+\l_pgfgo_goban_from_x_int=\count528
+\l_pgfgo_goban_from_y_int=\count529
+\l_pgfgo_goban_to_x_int=\count530
+\l_pgfgo_goban_to_y_int=\count531
+\l_pgfgo_kernel_sgf_size_x_int=\count532
+\l_pgfgo_kernel_sgf_size_y_int=\count533
+\l_pgfgo_kernel_sgf_game_int=\count534
+\l_pgfgo_kernel_sgf_print_int=\count535
+\l_pgfgo_kernel_sgf_games_int=\count536
+\g__pgfgo_kernel_extent_from_x_int=\count537
+\g__pgfgo_kernel_extent_from_y_int=\count538
+\g__pgfgo_kernel_extent_to_x_int=\count539
+\g__pgfgo_kernel_extent_to_y_int=\count540
+
+(/usr/share/texmf-dist/tex/lualatex/pgf-go-0.2026.10.30/latex/pgf-go-kernel-lua
+.sty
+File: pgf-go-kernel-lua.sty 2026/10/30 v0.2026.10.30 pgf-go: Lua compute kernel
+
+\l__pgfgo_kernel_window_from_x_int=\count541
+\l__pgfgo_kernel_window_from_y_int=\count542
+\l__pgfgo_kernel_window_to_x_int=\count543
+\l__pgfgo_kernel_window_to_y_int=\count544
+))
+(/usr/share/texmf-dist/tex/lualatex/pgf-go-0.2026.10.30/latex/pgf-go-lang.sty
+File: pgf-go-lang.sty 2026/10/30 v0.2026.10.30 pgf-go: languages
+)
+(/usr/share/texmf-dist/tex/lualatex/pgf-go-0.2026.10.30/latex/pgf-go-remember.s
+ty
+File: pgf-go-remember.sty 2026/10/30 v0.2026.10.30 pgf-go: remember
+)
+(/usr/share/texmf-dist/tex/lualatex/pgf-go-0.2026.10.30/latex/pgf-go-images.sty
+File: pgf-go-images.sty 2026/10/30 v0.2026.10.30 pgf-go: images
+\l__pgfgo_image_box=\box139
+\l_pgfgo_image_width_dim=\dimen384
+\l_pgfgo_image_height_dim=\dimen385
+)
+(/usr/share/texmf-dist/tex/lualatex/pgf-go-0.2026.10.30/latex/pgf-go-profiles.s
+ty
+File: pgf-go-profiles.sty 2026/10/30 v0.2026.10.30 pgf-go: profiles
+)
+(/usr/share/texmf-dist/tex/lualatex/pgf-go-0.2026.10.30/latex/pgf-go-players.st
+y
+File: pgf-go-players.sty 2026/10/30 v0.2026.10.30 pgf-go: players
+\l_pgfgo_players_stone_radius_dim=\dimen386
+\l_pgfgo_players_stone_line_width_dim=\dimen387
+\l_pgfgo_players_stone_shadow_offset_dim=\dimen388
+\l_pgfgo_players_mark_line_width_dim=\dimen389
+\l_pgfgo_mark_sequence_from_int=\count545
+\l_pgfgo_players_neutral_stone_radius_dim=\dimen390
+\l_pgfgo_players_neutral_stone_line_width_dim=\dimen391
+\l_pgfgo_players_neutral_stone_shadow_offset_dim=\dimen392
+\l_pgfgo_players_neutral_mark_line_width_dim=\dimen393
+\l_pgfgo_neutral_mark_sequence_from_int=\count546
+\l_pgfgo_players_black_stone_radius_dim=\dimen394
+\l_pgfgo_players_black_stone_line_width_dim=\dimen395
+\l_pgfgo_players_black_stone_shadow_offset_dim=\dimen396
+\l_pgfgo_players_black_mark_line_width_dim=\dimen397
+\l_pgfgo_black_mark_sequence_from_int=\count547
+\l_pgfgo_players_white_stone_radius_dim=\dimen398
+\l_pgfgo_players_white_stone_line_width_dim=\dimen399
+\l_pgfgo_players_white_stone_shadow_offset_dim=\dimen400
+\l_pgfgo_players_white_mark_line_width_dim=\dimen401
+\l_pgfgo_white_mark_sequence_from_int=\count548
+)
+(/usr/share/texmf-dist/tex/lualatex/pgf-go-0.2026.10.30/latex/pgf-go-stones.sty
+File: pgf-go-stones.sty 2026/10/30 v0.2026.10.30 pgf-go: stones and moves
+\l_pgfgo_shift_x_int=\count549
+\l_pgfgo_shift_y_int=\count550
+\l__pgfgo_stone_shine_a_dim=\dimen402
+\l__pgfgo_stone_shine_b_dim=\dimen403
+\l__pgfgo_stone_form_box=\box140
+\l__pgfgo_stone_form_x_dim=\dimen404
+\l__pgfgo_stone_form_y_dim=\dimen405
+\l__pgfgo_stone_form_margin_dim=\dimen406
+\l__pgfgo_stone_form_minx_dim=\dimen407
+\l__pgfgo_stone_form_maxx_dim=\dimen408
+\l__pgfgo_stone_form_miny_dim=\dimen409
+\l__pgfgo_stone_form_maxy_dim=\dimen410
+\l__pgfgo_move_label_int=\count551
+)
+(/usr/share/texmf-dist/tex/lualatex/pgf-go-0.2026.10.30/latex/pgf-go-goban.sty
+File: pgf-go-goban.sty 2026/10/30 v0.2026.10.30 pgf-go: goban
+\l_pgfgo_goban_grid_line_width_dim=\dimen411
+\l_pgfgo_goban_grid_x_sep_dim=\dimen412
+\l_pgfgo_goban_grid_y_sep_dim=\dimen413
+\l_pgfgo_goban_border_sep_dim=\dimen414
+\l_pgfgo_goban_border_line_width_dim=\dimen415
+\l_pgfgo_goban_border_rounded_corners_dim=\dimen416
+\l_pgfgo_goban_border_inner_rounded_corners_dim=\dimen417
+\l_pgfgo_goban_labels_sep_dim=\dimen418
+\pgf@layerbox@pgfgo_layer_goban_border=\box141
+\pgf@layerboxsaved@pgfgo_layer_goban_border=\box142
+\pgf@layerbox@pgfgo_layer_goban_grid=\box143
+\pgf@layerboxsaved@pgfgo_layer_goban_grid=\box144
+\pgf@layerbox@pgfgo_layer_goban_labels=\box145
+\pgf@layerboxsaved@pgfgo_layer_goban_labels=\box146
+\pgf@layerbox@pgfgo_layer_territory=\box147
+\pgf@layerboxsaved@pgfgo_layer_territory=\box148
+\pgf@layerbox@pgfgo_layer_mark_shadow=\box149
+\pgf@layerboxsaved@pgfgo_layer_mark_shadow=\box150
+\pgf@layerbox@pgfgo_layer_stone=\box151
+\pgf@layerboxsaved@pgfgo_layer_stone=\box152
+\pgf@layerbox@pgfgo_layer_stone_mark=\box153
+\pgf@layerboxsaved@pgfgo_layer_stone_mark=\box154
+\pgf@layerbox@pgfgo_layer_mark=\box155
+\pgf@layerboxsaved@pgfgo_layer_mark=\box156
+\l_pgfgo_goban_partial_margin_int=\count552
+\l_pgfgo_goban_hoshi_radius_dim=\dimen419
+\l_pgfgo_goban_background_shadow_offset_dim=\dimen420
+\l__pgfgo_goban_image_x_dim=\dimen421
+\l__pgfgo_goban_image_y_dim=\dimen422
+\l__pgfgo_goban_image_w_dim=\dimen423
+\l__pgfgo_goban_image_h_dim=\dimen424
+\l__pgfgo_goban_quarter_int=\count553
+\l__pgfgo_goban_cell_w_dim=\dimen425
+\l__pgfgo_goban_cell_h_dim=\dimen426
+\l__pgfgo_goban_tile_x_dim=\dimen427
+\l__pgfgo_goban_tile_y_dim=\dimen428
+\l__pgfgo_goban_tiles_x_int=\count554
+\l__pgfgo_goban_tiles_y_int=\count555
+\l__pgfgo_goban_tile_x_first_int=\count556
+\l__pgfgo_goban_tile_x_last_int=\count557
+\l__pgfgo_goban_tile_y_first_int=\count558
+\l__pgfgo_goban_tile_y_last_int=\count559
+\l__pgfgo_goban_run_int=\count560
+\l__pgfgo_goban_label_x_dim=\dimen429
+\l__pgfgo_goban_label_y_dim=\dimen430
+\l_pgfgo_goban_sgf_view_from_int=\count561
+\l_pgfgo_goban_sgf_view_to_int=\count562
+\g__pgfgo_style_int=\count563
+\g__pgfgo_goban_resume_int=\count564
+\l__pgfgo_goban_view_raise_dim=\dimen431
+) (/usr/share/texmf-dist/tex/lualatex/pgf-go-0.2026.10.30/latex/pgf-go-marks.st
+y
+File: pgf-go-marks.sty 2026/10/30 v0.2026.10.30 pgf-go: marks
+\l__pgfgo_mark_text_length_int=\count565
+)
+(/usr/share/texmf-dist/tex/lualatex/pgf-go-0.2026.10.30/latex/pgf-go-lines.sty
+File: pgf-go-lines.sty 2026/10/30 v0.2026.10.30 pgf-go: arrows and lines
+\l__pgfgo_arrow_width_dim=\dimen432
+\l__pgfgo_arrow_shorten_dim=\dimen433
+\l__pgfgo_arrow_halo_width_dim=\dimen434
+\l__pgfgo_line_width_dim=\dimen435
+\l__pgfgo_line_shorten_dim=\dimen436
+\l__pgfgo_line_halo_width_dim=\dimen437
+\l__pgfgo_lines_halo_dim=\dimen438
+)
+(/usr/share/texmf-dist/tex/lualatex/pgf-go-0.2026.10.30/latex/pgf-go-territory.
+sty
+File: pgf-go-territory.sty 2026/10/30 v0.2026.10.30 pgf-go: territory
+\l_pgfgo_players_neutral_territory_line_width_dim=\dimen439
+\l_pgfgo_players_neutral_territory_vertices_radius_dim=\dimen440
+\l_pgfgo_players_black_territory_line_width_dim=\dimen441
+\l_pgfgo_players_black_territory_vertices_radius_dim=\dimen442
+\l_pgfgo_players_white_territory_line_width_dim=\dimen443
+\l_pgfgo_players_white_territory_vertices_radius_dim=\dimen444
+\l__pgfgo_territory_call_int=\count566
+\l__pgfgo_territory_region_outlines_int=\count567
+\l__pgfgo_territory_region_holes_int=\count568
+\l__pgfgo_territory_region_vertices_int=\count569
+\l__pgfgo_territory_region_area_int=\count570
+\l__pgfgo_territory_region_perimeter_int=\count571
+\l__pgfgo_score_int=\count572
+)
+(/usr/share/texmf-dist/tex/lualatex/pgf-go-0.2026.10.30/latex/pgf-go-layout.sty
+File: pgf-go-layout.sty 2026/10/30 v0.2026.10.30 pgf-go: layout of diagrams
+\l_pgfgo_layout_columns_int=\count573
+\l__pgfgo_layout_column_sep_dim=\dimen445
+\l__pgfgo_layout_per_page_int=\count574
+\l__pgfgo_layout_per_frame_int=\count575
+\g__pgfgo_layout_depth_int=\count576
+\g__pgfgo_layout_count_int=\count577
+\g__pgfgo_layout_row_box=\box157
+\l_pgfgo_layout_cell_dim=\dimen446
+\l__pgfgo_layout_box=\box158
+\l__pgfgo_layout_row_box=\box159
+\g__pgfgo_layout_group_count_int=\count578
+\l__pgfgo_layout_head_dim=\dimen447
+\l__pgfgo_layout_added_int=\count579
+\l__pgfgo_layout_wd_dim=\dimen448
+) (/usr/share/texmf-dist/tex/lualatex/pgf-go-0.2026.10.30/latex/pgf-go-sgf.sty
+File: pgf-go-sgf.sty 2026/10/30 v0.2026.10.30 pgf-go: SGF games
+\l__pgfgo_sgf_moves_seen_int=\count580
+\l__pgfgo_sgf_from_int=\count581
+\l__pgfgo_sgf_to_int=\count582
+\l__pgfgo_sgf_restart_int=\count583
+\l__pgfgo_sgf_count_int=\count584
+\l__pgfgo_sgf_number_int=\count585
+\l__pgfgo_sgf_shown_int=\count586
+\l__pgfgo_sgf_last_int=\count587
+\l__pgfgo_sgf_shift_int=\count588
+\l__pgfgo_sgf_restart_from_int=\count589
+\g__pgfgo_sgf_shown_max_int=\count590
+\l__pgfgo_sgf_block_int=\count591
+\l__pgfgo_sgf_block_size_int=\count592
+\l__pgfgo_sgf_block_index_int=\count593
+\l__pgfgo_sgf_index_int=\count594
+\l__pgfgo_sgf_resume_int=\count595
+\l__pgfgo_sgf_start_int=\count596
+\g__pgfgo_sgf_a_count_int=\count597
+\g__pgfgo_sgf_a_index_int=\count598
+\g__pgfgo_sgf_a_from_int=\count599
+\g__pgfgo_sgf_a_number_int=\count600
+\g__pgfgo_sgf_a_shift_int=\count601
+\g__pgfgo_sgf_b_count_int=\count602
+\g__pgfgo_sgf_b_index_int=\count603
+\g__pgfgo_sgf_b_from_int=\count604
+\g__pgfgo_sgf_b_number_int=\count605
+\g__pgfgo_sgf_b_shift_int=\count606
+\l__pgfgo_sgf_saved_game_int=\count607
+\l__pgfgo_sgfinfo_move_int=\count608
+\l__pgfgo_sgfanim_from_int=\count609
+\l__pgfgo_sgfanim_to_int=\count610
+\l__pgfgo_sgfanim_comment_height_dim=\dimen449
+\l__pgfgo_sgfanim_box=\box160
+\l__pgfgo_sgfanim_restart_from_int=\count611
+\g__pgfgo_sgfanim_layer_int=\count612
+\g__pgfgo_sgfanim_file_int=\count613
+\g__pgfgo_sgfanim_run_int=\count614
+\l__pgfgo_sgfdiag_from_int=\count615
+\l__pgfgo_sgfdiag_to_int=\count616
+\l__pgfgo_sgfdiag_comment_sep_dim=\dimen450
+\l__pgfgo_sgfdiag_var_depth_int=\count617
+\l__pgfgo_sgfdiag_var_from_int=\count618
+\l__pgfgo_sgfdiag_total_int=\count619
+\l__pgfgo_sgfdiag_last_int=\count620
+\l__pgfgo_sgfdiag_restart_from_int=\count621
+\l__pgfgo_sgfdiag_width_dim=\dimen451
+\l__pgfgo_sgfdiag_box=\box161
+\l__pgfgo_sgfdiag_caption_box=\box162
+\l__pgfgo_sgfdiag_cell_box=\box163
+\l__pgfgo_sgfdiag_below_box=\box164
+\g__pgfgo_sgfdiag_fit_box=\box165
+\l__pgfgo_sgfdiag_total_dim=\dimen452
+\g__pgfgo_sgfdiag_word_dim=\dimen453
+\l__pgfgo_sgfdiag_words_box=\box166
+\g__pgfgo_sgfdiag_caption_min_dim=\dimen454
+\g__pgfgo_sgfdiag_side_box=\box167
+\l__pgfgo_sgfdiag_side_dim=\dimen455
+\l__pgfgo_sgfdiag_comments_box=\box168
+\l__pgfgo_sgfdiag_top_box=\box169
+\g__pgfgo_sgfdiag_after_box=\box170
+\l__pgfgo_sgfdiag_after_dim=\dimen456
+\l__pgfgo_sgfdiag_first_number_int=\count622
+\l__pgfgo_sgfdiag_last_number_int=\count623
+\l__pgfgo_sgfdiag_var_count_int=\count624
+\l__pgfgo_sgfdiag_var_move_int=\count625
+\l__pgfgo_sgfdiag_count_int=\count626
+\l__pgfgo_sgfdiag_start_int=\count627
+\l__pgfgo_sgfdiag_length_int=\count628
+\l__pgfgo_sgfprob_last_int=\count629
+\l__pgfgo_sgfprob_comment_sep_dim=\dimen457
+\l__pgfgo_sgfprob_missing_int=\count630
+) (/usr/share/texmf-dist/tex/lualatex/pgf-go-0.2026.10.30/latex/pgf-go-store.st
+y
+File: pgf-go-store.sty 2026/10/30 v0.2026.10.30 pgf-go: named gobans as text
+)
+(/usr/share/texmf-dist/tex/lualatex/pgf-go-0.2026.10.30/latex/pgf-go-pages.sty
+File: pgf-go-pages.sty 2026/10/30 v0.2026.10.30 pgf-go: one goban per page
+)) (./preamble/pgfgoprofiles.tex)
+(/usr/share/texmf-dist/tex/latex/hyperref/hyperref.sty
+Package: hyperref 2026-01-29 v7.01p Hypertext links for LaTeX
+
+(/usr/share/texmf-dist/tex/generic/kvdefinekeys/kvdefinekeys.sty
+Package: kvdefinekeys 2019-12-19 v1.6 Define keys (HO)
+)
+(/usr/share/texmf-dist/tex/generic/pdfescape/pdfescape.sty
+Package: pdfescape 2019/12/09 v1.15 Implements pdfTeX's escape features (HO)
+)
+(/usr/share/texmf-dist/tex/latex/hycolor/hycolor.sty
+Package: hycolor 2020-01-27 v1.10 Color options for hyperref/bookmark (HO)
+)
+(/usr/share/texmf-dist/tex/latex/hyperref/nameref.sty
+Package: nameref 2026-01-29 v2.58 Cross-referencing by name of section
+
+(/usr/share/texmf-dist/tex/latex/refcount/refcount.sty
+Package: refcount 2019/12/15 v3.6 Data extraction from label references (HO)
+)
+(/usr/share/texmf-dist/tex/generic/gettitlestring/gettitlestring.sty
+Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
+)
+\c@section@level=\count631
+)
+(/usr/share/texmf-dist/tex/generic/stringenc/stringenc.sty
+Package: stringenc 2019/11/29 v1.12 Convert strings between diff. encodings (HO
+)
+)
+\@linkdim=\dimen458
+\Hy@linkcounter=\count632
+\Hy@pagecounter=\count633
+
+(/usr/share/texmf-dist/tex/latex/hyperref/pd1enc.def
+File: pd1enc.def 2026-01-29 v7.01p Hyperref: PDFDocEncoding definition (HO)
+)
+(/usr/share/texmf-dist/tex/generic/intcalc/intcalc.sty
+Package: intcalc 2019/12/15 v1.3 Expandable calculations with integers (HO)
+)
+\Hy@SavedSpaceFactor=\count634
+
+(/usr/share/texmf-dist/tex/latex/hyperref/puenc.def
+File: puenc.def 2026-01-29 v7.01p Hyperref: PDF Unicode definition (HO)
+)
+Package hyperref Info: Hyper figures OFF on input line 4201.
+Package hyperref Info: Link nesting OFF on input line 4206.
+Package hyperref Info: Hyper index ON on input line 4209.
+Package hyperref Info: Plain pages OFF on input line 4216.
+Package hyperref Info: Backreferencing OFF on input line 4221.
+Package hyperref Info: Implicit mode ON; LaTeX internals redefined.
+Package hyperref Info: Bookmarks ON on input line 4468.
+\c@Hy@tempcnt=\count635
+LaTeX Info: Redefining \url on input line 4807.
+\XeTeXLinkMargin=\dimen459
+
+(/usr/share/texmf-dist/tex/generic/bitset/bitset.sty
+Package: bitset 2019/12/09 v1.3 Handle bit-vector datatype (HO)
+
+(/usr/share/texmf-dist/tex/generic/bigintcalc/bigintcalc.sty
+Package: bigintcalc 2019/12/15 v1.5 Expandable calculations on big integers (HO
+)
+))
+\Fld@menulength=\count636
+\Field@Width=\dimen460
+\Fld@charsize=\dimen461
+Package hyperref Info: Hyper figures OFF on input line 6084.
+Package hyperref Info: Link nesting OFF on input line 6089.
+Package hyperref Info: Hyper index ON on input line 6092.
+Package hyperref Info: backreferencing OFF on input line 6099.
+Package hyperref Info: Link coloring OFF on input line 6104.
+Package hyperref Info: Link coloring with OCG OFF on input line 6109.
+Package hyperref Info: PDF/A mode OFF on input line 6114.
+\Hy@abspage=\count637
+\c@Item=\count638
+\c@Hfootnote=\count639
+)
+Package hyperref Info: Driver (autodetected): hluatex.
+
+(/usr/share/texmf-dist/tex/latex/hyperref/hluatex.def
+File: hluatex.def 2026-01-29 v7.01p Hyperref driver for luaTeX
+\Fld@listcount=\count640
+\c@bookmark@seq@number=\count641
+
+(/usr/share/texmf-dist/tex/latex/rerunfilecheck/rerunfilecheck.sty
+Package: rerunfilecheck 2025-06-21 v1.11 Rerun checks for auxiliary files (HO)
+
+(/usr/share/texmf-dist/tex/generic/uniquecounter/uniquecounter.sty
+Package: uniquecounter 2019/12/15 v1.4 Provide unlimited unique counter (HO)
+)
+Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
+84.
+)
+\Hy@SectionHShift=\skip140
+)
+Package hyperref Info: Option `colorlinks' set `true' on input line 224.
+Package hyperref Info: Option `bookmarksnumbered' set `true' on input line 224.
+
+)
+Package csquotes Info: Checking for multilingual support...
+Package csquotes Info: ... found 'babel' package.
+Package csquotes Info: Adjusting default style.
+Package csquotes Info: Redefining alias 'default' -> 'english'.
+
+(/usr/share/texmf-dist/tex/latex/newpx/TeXGyrePagellaX.fontspec)(load cache: ext
+ra_texgyrepagellax-regular.luc)
+LaTeX Font Info:    Font shape `JT3/LXGWWenKaiTC(0)/m/n' will be
+(Font)              scaled to size 11.39996pt on input line 3.
+LaTeX Font Info:    Font shape `JY3/LXGWWenKaiTC(0)/m/n' will be
+(Font)              scaled to size 11.39996pt on input line 3.
+(load cache: extra_texgyrepagellax-bold.luc)(load cache: extra_texgyrepagellax-i
+talic.luc)(load cache: extra_texgyrepagellax-slanted.luc)(load cache: extra_texg
+yrepagellax-bolditalic.luc)(load cache: extra_texgyrepagellax-boldslanted.luc)
+
+Package fontspec Info: 
+(fontspec)             Font family 'TeXGyrePagellaX(0)' created for font
+(fontspec)             'TeXGyrePagellaX' with options [Ligatures=TeX,Extension
+(fontspec)             = .otf,UprightFont = TeXGyrePagellaX-Regular,BoldFont =
+(fontspec)             TeXGyrePagellaX-Bold,ItalicFont =
+(fontspec)             TeXGyrePagellaX-Italic,BoldItalicFont =
+(fontspec)             TeXGyrePagellaX-BoldItalic,SlantedFont =
+(fontspec)             TeXGyrePagellaX-Slanted,BoldSlantedFont =
+(fontspec)             TeXGyrePagellaX-BoldSlanted,Numbers =
+(fontspec)             {Monospaced,Lining}].
+(fontspec)              
+(fontspec)              This font family consists of the following NFSS
+(fontspec)             series/shapes:
+(fontspec)              
+(fontspec)             - 'normal' (m/n) with NFSS spec.:
+(fontspec)             <->"[TeXGyrePagellaX-Regular.otf]:mode=node;script=latn;
+language=dflt;+tlig;+tnum;+lnum;"
+(fontspec)             - 'small caps'  (m/sc) with NFSS spec.:
+(fontspec)             <->"[TeXGyrePagellaX-Regular.otf]:mode=node;script=latn;
+language=dflt;+tlig;+tnum;+lnum;+smcp;"
+(fontspec)             - 'bold' (b/n) with NFSS spec.:
+(fontspec)             <->"[TeXGyrePagellaX-Bold.otf]:mode=node;script=latn;lan
+guage=dflt;+tlig;+tnum;+lnum;"
+(fontspec)             - 'bold small caps'  (b/sc) with NFSS spec.:
+(fontspec)             <->"[TeXGyrePagellaX-Bold.otf]:mode=node;script=latn;lan
+guage=dflt;+tlig;+tnum;+lnum;+smcp;"
+(fontspec)             - 'italic' (m/it) with NFSS spec.:
+(fontspec)             <->"[TeXGyrePagellaX-Italic.otf]:mode=node;script=latn;l
+anguage=dflt;+tlig;+tnum;+lnum;"
+(fontspec)             - 'italic small caps'  (m/scit) with NFSS spec.:
+(fontspec)             <->"[TeXGyrePagellaX-Italic.otf]:mode=node;script=latn;l
+anguage=dflt;+tlig;+tnum;+lnum;+smcp;"
+(fontspec)             - 'slanted' (m/sl) with NFSS spec.:
+(fontspec)             <->"[TeXGyrePagellaX-Slanted.otf]:mode=node;script=latn;
+language=dflt;+tlig;+tnum;+lnum;"
+(fontspec)             - 'slanted small caps'  (m/scsl) with NFSS spec.:
+(fontspec)             <->"[TeXGyrePagellaX-Slanted.otf]:mode=node;script=latn;
+language=dflt;+tlig;+tnum;+lnum;+smcp;"
+(fontspec)             - 'bold italic' (b/it) with NFSS spec.:
+(fontspec)             <->"[TeXGyrePagellaX-BoldItalic.otf]:mode=node;script=la
+tn;language=dflt;+tlig;+tnum;+lnum;"
+(fontspec)             - 'bold italic small caps'  (b/scit) with NFSS spec.:
+(fontspec)             <->"[TeXGyrePagellaX-BoldItalic.otf]:mode=node;script=la
+tn;language=dflt;+tlig;+tnum;+lnum;+smcp;"
+(fontspec)             - 'bold slanted' (b/sl) with NFSS spec.:
+(fontspec)             <->"[TeXGyrePagellaX-BoldSlanted.otf]:mode=node;script=l
+atn;language=dflt;+tlig;+tnum;+lnum;"
+(fontspec)             - 'bold slanted small caps'  (b/scsl) with NFSS spec.:
+(fontspec)             <->"[TeXGyrePagellaX-BoldSlanted.otf]:mode=node;script=l
+atn;language=dflt;+tlig;+tnum;+lnum;+smcp;"
+
+ (./main.aux)
+\openout1 = main.aux
+
+LaTeX Font Info:    Checking defaults for OML/npxmi/m/it on input line 3.
+LaTeX Font Info:    Trying loading font information for OML+npxmi on input line
+ 3.
+
+(/usr/share/texmf-dist/tex/latex/newpx/omlnpxmi.fd
+File: omlnpxmi.fd 2013/03/21 Fontinst v1.933 font definitions for OML/npxmi.
+)
+LaTeX Font Info:    ... okay on input line 3.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 3.
+LaTeX Font Info:    ... okay on input line 3.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 3.
+LaTeX Font Info:    ... okay on input line 3.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 3.
+LaTeX Font Info:    ... okay on input line 3.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 3.
+LaTeX Font Info:    ... okay on input line 3.
+LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 3.
+LaTeX Font Info:    ... okay on input line 3.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 3.
+LaTeX Font Info:    ... okay on input line 3.
+LaTeX Font Info:    Checking defaults for U/npxexa/m/n on input line 3.
+LaTeX Font Info:    Trying loading font information for U+npxexa on input line 
+3.
+
+(/usr/share/texmf-dist/tex/latex/newpx/unpxexa.fd
+File: unpxexa.fd 2013/03/24 Fontinst v1.933 font definitions for U/npxexa.
+)
+LaTeX Font Info:    ... okay on input line 3.
+LaTeX Font Info:    Checking defaults for LMS/npxsy/m/n on input line 3.
+LaTeX Font Info:    Trying loading font information for LMS+npxsy on input line
+ 3.
+
+(/usr/share/texmf-dist/tex/latex/newpx/lmsnpxsy.fd
+File: lmsnpxsy.fd 2016/07/04 Fontinst v1.933 font definitions for LMS/npxsy.
+)
+LaTeX Font Info:    ... okay on input line 3.
+LaTeX Font Info:    Checking defaults for LMX/npxexx/m/n on input line 3.
+LaTeX Font Info:    Trying loading font information for LMX+npxexx on input lin
+e 3.
+
+(/usr/share/texmf-dist/tex/latex/newpx/lmxnpxexx.fd
+File: lmxnpxexx.fd 2016/07/04 Fontinst v1.933 font definitions for LMX/npxexx.
+)
+LaTeX Font Info:    ... okay on input line 3.
+LaTeX Font Info:    Checking defaults for JY3/mc/m/n on input line 3.
+LaTeX Font Info:    ... okay on input line 3.
+LaTeX Font Info:    Checking defaults for JT3/mc/m/n on input line 3.
+LaTeX Font Info:    ... okay on input line 3.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 3.
+LaTeX Font Info:    ... okay on input line 3.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 3.
+LaTeX Font Info:    ... okay on input line 3.
+
+*geometry* driver: auto-detecting
+*geometry* detected driver: luatex
+*geometry* verbose mode - [ preamble ] result:
+* driver: luatex
+* paper: a4paper
+* layout: <same size as paper>
+* layoutoffset:(h,v)=(0.0pt,0.0pt)
+* modes: heightrounded 
+* h-part:(L,W,R)=(78.24507pt, 445.28548pt, 73.97733pt)
+* v-part:(T,H,B)=(71.13188pt, 702.78308pt, 71.13188pt)
+* \paperwidth=597.50787pt
+* \paperheight=845.04684pt
+* \textwidth=445.28548pt
+* \textheight=708.0pt
+* \oddsidemargin=5.97508pt
+* \evensidemargin=5.97508pt
+* \topmargin=-33.0119pt
+* \headheight=25.0pt
+* \headsep=19.8738pt
+* \topskip=12.0pt
+* \footskip=30.0pt
+* \marginparwidth=47.0pt
+* \marginparsep=7.0pt
+* \columnsep=10.0pt
+* \skip\footins=10.8pt plus 4.0pt minus 2.0pt
+* \hoffset=0.0pt
+* \voffset=0.0pt
+* \mag=1000
+* \@twocolumnfalse
+* \@twosidefalse
+* \@mparswitchfalse
+* \@reversemarginfalse
+* (1in=72.27pt=25.4mm, 1cm=28.453pt)
+
+(/usr/share/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
+[Loading MPS to PDF converter (version 2006.09.02).]
+\scratchcounter=\count642
+\scratchdimen=\dimen462
+\scratchbox=\box171
+\nofMPsegments=\count643
+\nofMParguments=\count644
+\everyMPshowfont=\toks70
+\MPscratchCnt=\count645
+\MPscratchDim=\dimen463
+\MPnumerator=\count646
+\makeMPintoPDFobject=\count647
+\everyMPtoPDFconversion=\toks71
+) (/usr/share/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
+Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
+Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
+85.
+
+(/usr/share/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
+File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
+e
+))
+(/usr/share/texmf-dist/tex/latex/pdflscape/pdflscape.sty
+Package: pdflscape 2025-06-23 v0.14 Display of landscape pages in PDF
+
+(/usr/share/texmf-dist/tex/latex/pdflscape/pdflscape-nometadata.sty
+Package: pdflscape-nometadata 2025-06-23 v0.14 Display of landscape pages in PD
+F (HO)
+
+(/usr/share/texmf-dist/tex/latex/graphics/lscape.sty
+Package: lscape 2020/05/28 v3.02 Landscape Pages (DPC)
+)
+Package pdflscape Info: Auto-detected driver: pdftex on input line 81.
+))
+LaTeX Info: Command `\dddot' is already robust on input line 3.
+LaTeX Info: Command `\ddddot' is already robust on input line 3.
+LaTeX Info: Redefining \microtypecontext on input line 3.
+Package microtype Info: Applying patch `item' on input line 3.
+Package microtype Info: Applying patch `toc' on input line 3.
+Package microtype Info: Applying patch `eqnum' on input line 3.
+Package microtype Info: Applying patch `footnote' on input line 3.
+Package microtype Info: Applying patch `verbatim' on input line 3.
+LaTeX Info: Redefining \microtypesetup on input line 3.
+Package microtype Info: Generating PDF output.
+Package microtype Info: Character protrusion enabled (level 2).
+Package microtype Info: Using default protrusion set `alltext'.
+Package microtype Info: Automatic font expansion enabled (level 2),
+(microtype)             stretch: 20, shrink: 20, step: 1, non-selected.
+Package microtype Info: Using default expansion set `alltext-nott'.
+Package microtype Info: Patching command `\showhyphens'.
+Package microtype Info: No adjustment of tracking.
+Package microtype Info: No adjustment of spacing.
+Package microtype Info: No adjustment of kerning.
+Package microtype Info: Loading generic protrusion settings for font family
+(microtype)             `TeXGyrePagellaX' (encoding: TU).
+(microtype)             For optimal results, create family-specific settings.
+(microtype)             See the microtype manual for details.
+
+Package pgfplots notification 'compat/show suggested version=true': document ha
+s been generated with the most recent feature set (\pgfplotsset{compat=1.18}).
+
+Package caption Info: Begin \AtBeginDocument code.
+Package caption Info: hyperref package is loaded.
+Package caption Info: End \AtBeginDocument code.
+Package biblatex Info: Trying to load language 'english'...
+Package biblatex Info: ... file 'english.lbx' found.
+(/usr/share/texmf-dist/tex/latex/biblatex/lbx/english.lbx
+File: english.lbx 2025/07/10 v3.21 biblatex localization (PK/MW)
+)
+Package biblatex Info: LuaTeX detected.
+(biblatex)             Assuming input encoding 'utf8'.
+Package biblatex Info: Automatic encoding selection.
+(biblatex)             Assuming data encoding 'utf8'.
+
+\openout4 = main.bcf
+Package biblatex Info: Trying to load bibliographic data...
+Package biblatex Info: ... file 'main.bbl' found.
+ (./main.bbl
+LaTeX Font Info:    Font shape `JT3/LXGWWenKaiTC(0)/m/n' will be
+(Font)              scaled to size 10.40245pt on input line 44.
+LaTeX Font Info:    Font shape `JY3/LXGWWenKaiTC(0)/m/n' will be
+(Font)              scaled to size 10.40245pt on input line 44.
+)
+Package biblatex Info: Reference section=0 on input line 3.
+Package biblatex Info: Reference segment=0 on input line 3.
+Package hyperref Info: Link coloring ON on input line 3.
+
+(./main.out) (./main.out)
+\@outlinefile=\write5
+
+\openout5 = main.out
+ (./chapters/cover.tex
+LaTeX Font Info:    Font shape `JT3/LXGWWenKaiTC(0)/m/n' will be
+(Font)              scaled to size 151.99951pt on input line 23.
+LaTeX Font Info:    Font shape `JY3/LXGWWenKaiTC(0)/m/n' will be
+(Font)              scaled to size 151.99951pt on input line 23.
+) (./chapters/00-intro.tex
+[1
+
+{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]
+LaTeX Font Info:    Font shape `JT3/LXGWWenKaiTC(0)/m/n' will be
+(Font)              scaled to size 85.49973pt on input line 6.
+LaTeX Font Info:    Font shape `JY3/LXGWWenKaiTC(0)/m/n' will be
+(Font)              scaled to size 85.49973pt on input line 6.
+LaTeX Font Info:    Font shape `JT3/LXGWWenKaiTC(0)/m/n' will be
+(Font)              scaled to size 16.41594pt on input line 11.
+LaTeX Font Info:    Font shape `JY3/LXGWWenKaiTC(0)/m/n' will be
+(Font)              scaled to size 16.41594pt on input line 11.
+LaTeX Font Info:    Kanji font shape `JY3/LXGWWenKaiTC(0)/m/sc' undefined
+(Font)              No change on input line 11.
+LaTeX Font Info:    Font shape `JT3/LXGWWenKaiTC(0)/m/n' will be
+(Font)              scaled to size 13.67995pt on input line 19.
+LaTeX Font Info:    Font shape `JY3/LXGWWenKaiTC(0)/m/n' will be
+(Font)              scaled to size 13.67995pt on input line 19.
+LaTeX Font Info:    Kanji font shape `JY3/LXGWWenKaiTC(0)/m/sc' undefined
+(Font)              No change on input line 20.
+(load cache: extra_lmmono10-regular.luc)
+Package microtype Info: Loading generic protrusion settings for font family
+(microtype)             `lmtt' (encoding: TU).
+(microtype)             For optimal results, create family-specific settings.
+(microtype)             See the microtype manual for details.
+LaTeX Font Info:    Trying loading font information for OT1+lmr on input line 2
+2.
+
+(/usr/share/texmf-dist/tex/latex/lm/ot1lmr.fd
+File: ot1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
+)
+(/usr/share/texmf-dist/tex/latex/microtype/mt-LatinModernRoman.cfg
+File: mt-LatinModernRoman.cfg 2026/02/26 v1.2 microtype config. file: Latin Mod
+ern Roman (RS)
+)
+Package microtype Info: Loading generic protrusion settings for font family
+(microtype)             `lmr' (encoding: OT1).
+(microtype)             For optimal results, create family-specific settings.
+(microtype)             See the microtype manual for details.
+LaTeX Font Info:    Font shape `OML/npxmi/m/it' will be
+(Font)              scaled to size 10.0pt on input line 22.
+LaTeX Font Info:    Font shape `OML/npxmi/m/it' will be
+(Font)              scaled to size 7.3pt on input line 22.
+LaTeX Font Info:    Font shape `OML/npxmi/m/it' will be
+(Font)              scaled to size 5.5pt on input line 22.
+LaTeX Font Info:    Font shape `LMS/npxsy/m/n' will be
+(Font)              scaled to size 10.0pt on input line 22.
+LaTeX Font Info:    Font shape `LMS/npxsy/m/n' will be
+(Font)              scaled to size 7.3pt on input line 22.
+LaTeX Font Info:    Font shape `LMS/npxsy/m/n' will be
+(Font)              scaled to size 5.5pt on input line 22.
+LaTeX Font Info:    Font shape `LMX/npxexx/m/n' will be
+(Font)              scaled to size 10.0pt on input line 22.
+LaTeX Font Info:    Font shape `LMX/npxexx/m/n' will be
+(Font)              scaled to size 7.3pt on input line 22.
+LaTeX Font Info:    Font shape `LMX/npxexx/m/n' will be
+(Font)              scaled to size 5.5pt on input line 22.
+LaTeX Font Info:    Trying loading font information for U+msa on input line 22.
+
+
+(/usr/share/texmf-dist/tex/latex/amsfonts/umsa.fd
+File: umsa.fd 2013/01/14 v3.01 AMS symbols A
+)
+(/usr/share/texmf-dist/tex/latex/microtype/mt-msa.cfg
+File: mt-msa.cfg 2006/02/04 v1.1 microtype config. file: AMS symbols (a) (RS)
+)
+LaTeX Font Info:    Trying loading font information for U+msb on input line 22.
+
+
+(/usr/share/texmf-dist/tex/latex/amsfonts/umsb.fd
+File: umsb.fd 2013/01/14 v3.01 AMS symbols B
+)
+(/usr/share/texmf-dist/tex/latex/microtype/mt-msb.cfg
+File: mt-msb.cfg 2005/06/01 v1.0 microtype config. file: AMS symbols (b) (RS)
+)
+LaTeX Font Info:    Trying loading font information for U+npxmia on input line 
+22.
+
+(/usr/share/texmf-dist/tex/latex/newpx/unpxmia.fd
+File: unpxmia.fd 2013/03/24 Fontinst v1.933 font definitions for U/npxmia.
+)
+LaTeX Font Info:    Font shape `U/npxmia/m/it' will be
+(Font)              scaled to size 10.0pt on input line 22.
+LaTeX Font Info:    Font shape `U/npxmia/m/it' will be
+(Font)              scaled to size 7.3pt on input line 22.
+LaTeX Font Info:    Font shape `U/npxmia/m/it' will be
+(Font)              scaled to size 5.5pt on input line 22.
+LaTeX Font Info:    Trying loading font information for U+npxsym on input line 
+22.
+
+(/usr/share/texmf-dist/tex/latex/newpx/unpxsym.fd
+File: unpxsym.fd 2023/08/16 Fontinst v1.933 font definitions for U/npxsym.
+)
+LaTeX Font Info:    Font shape `U/npxsym/m/n' will be
+(Font)              scaled to size 10.0pt on input line 22.
+LaTeX Font Info:    Font shape `U/npxsym/m/n' will be
+(Font)              scaled to size 7.3pt on input line 22.
+LaTeX Font Info:    Font shape `U/npxsym/m/n' will be
+(Font)              scaled to size 5.5pt on input line 22.
+LaTeX Font Info:    Trying loading font information for U+npxsyc on input line 
+22.
+
+(/usr/share/texmf-dist/tex/latex/newpx/unpxsyc.fd
+File: unpxsyc.fd 2013/03/24 Fontinst v1.933 font definitions for U/npxsyc.
+)
+LaTeX Font Info:    Font shape `U/npxsyc/m/n' will be
+(Font)              scaled to size 10.0pt on input line 22.
+LaTeX Font Info:    Font shape `U/npxsyc/m/n' will be
+(Font)              scaled to size 7.3pt on input line 22.
+LaTeX Font Info:    Font shape `U/npxsyc/m/n' will be
+(Font)              scaled to size 5.5pt on input line 22.
+LaTeX Font Info:    Font shape `U/npxexa/m/n' will be
+(Font)              scaled to size 10.0pt on input line 22.
+LaTeX Font Info:    Font shape `U/npxexa/m/n' will be
+(Font)              scaled to size 7.3pt on input line 22.
+LaTeX Font Info:    Font shape `U/npxexa/m/n' will be
+(Font)              scaled to size 5.5pt on input line 22.
+LaTeX Font Info:    Trying loading font information for U+zeur on input line 22
+.
+
+(/usr/share/texmf-dist/tex/latex/eulervm/uzeur.fd
+File: uzeur.fd 2005/01/11 v4.0 (WaS)
+)
+LaTeX Font Info:    Font shape `U/zeur/m/n' will be
+(Font)              scaled to size 10.0pt on input line 22.
+
+(/usr/share/texmf-dist/tex/latex/microtype/mt-eur.cfg
+File: mt-eur.cfg 2006/07/31 v1.1 microtype config. file: AMS Euler Roman (RS)
+)
+LaTeX Font Info:    Font shape `U/zeur/m/n' will be
+(Font)              scaled to size 7.3pt on input line 22.
+LaTeX Font Info:    Font shape `U/zeur/m/n' will be
+(Font)              scaled to size 5.5pt on input line 22.
+LaTeX Font Info:    Font shape `JY3/LXGWWenKaiTC(0)/m/n' will be
+(Font)              scaled to size 6.93497pt on input line 22.
+LaTeX Font Info:    Font shape `JY3/LXGWWenKaiTC(0)/m/n' will be
+(Font)              scaled to size 5.22498pt on input line 22.
+
+warning  (pdf backend): ignoring duplicate destination with the name 'page.1'
+[1
+
+]
+LaTeX Font Info:    Font shape `JT3/LXGWWenKaiTC(0)/b/n' will be
+(Font)              scaled to size 16.41594pt on input line 34.
+LaTeX Font Info:    Font shape `JY3/LXGWWenKaiTC(0)/b/n' will be
+(Font)              scaled to size 16.41594pt on input line 34.
+LaTeX Font Info:    Kanji font shape `JY3/LXGWWenKaiTC(0)/m/it' undefined
+(Font)              No change on input line 38.
+LaTeX Font Info:    Font shape `JT3/LXGWWenKaiTC(0)/b/n' will be
+(Font)              scaled to size 11.39996pt on input line 40.
+LaTeX Font Info:    Font shape `JY3/LXGWWenKaiTC(0)/b/n' will be
+(Font)              scaled to size 11.39996pt on input line 40.
+LaTeX Font Info:    Kanji font shape `JY3/LXGWWenKaiTC(0)/m/it' undefined
+(Font)              No change on input line 42.
+LaTeX Font Info:    Kanji font shape `JY3/LXGWWenKaiTC(0)/m/it' undefined
+(Font)              No change on input line 42.
+LaTeX Font Info:    Kanji font shape `JY3/LXGWWenKaiTC(0)/m/it' undefined
+(Font)              No change on input line 42.
+
+warning  (pdf backend): ignoring duplicate destination with the name 'page.1'
+[1]
+LaTeX Font Info:    Font shape `JT3/LXGWWenKaiTC(0)/m/n' will be
+(Font)              scaled to size 23.63593pt on input line 54.
+LaTeX Font Info:    Font shape `JY3/LXGWWenKaiTC(0)/m/n' will be
+(Font)              scaled to size 23.63593pt on input line 54.
+LaTeX Font Info:    Font shape `JT3/LXGWWenKaiTC(0)/b/n' will be
+(Font)              scaled to size 23.63593pt on input line 54.
+LaTeX Font Info:    Font shape `JY3/LXGWWenKaiTC(0)/b/n' will be
+(Font)              scaled to size 23.63593pt on input line 54.
+ (./main.toc
+LaTeX Font Info:    Font shape `OML/npxmi/m/it' will be
+(Font)              scaled to size 12.0pt on input line 3.
+LaTeX Font Info:    Font shape `OML/npxmi/m/it' will be
+(Font)              scaled to size 8.8pt on input line 3.
+LaTeX Font Info:    Font shape `OML/npxmi/m/it' will be
+(Font)              scaled to size 6.6pt on input line 3.
+LaTeX Font Info:    Font shape `LMS/npxsy/m/n' will be
+(Font)              scaled to size 12.0pt on input line 3.
+LaTeX Font Info:    Font shape `LMS/npxsy/m/n' will be
+(Font)              scaled to size 8.8pt on input line 3.
+LaTeX Font Info:    Font shape `LMS/npxsy/m/n' will be
+(Font)              scaled to size 6.6pt on input line 3.
+LaTeX Font Info:    Font shape `LMX/npxexx/m/n' will be
+(Font)              scaled to size 12.0pt on input line 3.
+LaTeX Font Info:    Font shape `LMX/npxexx/m/n' will be
+(Font)              scaled to size 8.8pt on input line 3.
+LaTeX Font Info:    Font shape `LMX/npxexx/m/n' will be
+(Font)              scaled to size 6.6pt on input line 3.
+LaTeX Font Info:    Font shape `U/npxmia/m/it' will be
+(Font)              scaled to size 12.0pt on input line 3.
+LaTeX Font Info:    Font shape `U/npxmia/m/it' will be
+(Font)              scaled to size 8.8pt on input line 3.
+LaTeX Font Info:    Font shape `U/npxmia/m/it' will be
+(Font)              scaled to size 6.6pt on input line 3.
+LaTeX Font Info:    Font shape `U/npxsym/m/n' will be
+(Font)              scaled to size 12.0pt on input line 3.
+LaTeX Font Info:    Font shape `U/npxsym/m/n' will be
+(Font)              scaled to size 8.8pt on input line 3.
+LaTeX Font Info:    Font shape `U/npxsym/m/n' will be
+(Font)              scaled to size 6.6pt on input line 3.
+LaTeX Font Info:    Font shape `U/npxsyc/m/n' will be
+(Font)              scaled to size 12.0pt on input line 3.
+LaTeX Font Info:    Font shape `U/npxsyc/m/n' will be
+(Font)              scaled to size 8.8pt on input line 3.
+LaTeX Font Info:    Font shape `U/npxsyc/m/n' will be
+(Font)              scaled to size 6.6pt on input line 3.
+LaTeX Font Info:    Font shape `U/npxexa/m/n' will be
+(Font)              scaled to size 12.0pt on input line 3.
+LaTeX Font Info:    Font shape `U/npxexa/m/n' will be
+(Font)              scaled to size 8.8pt on input line 3.
+LaTeX Font Info:    Font shape `U/npxexa/m/n' will be
+(Font)              scaled to size 6.6pt on input line 3.
+LaTeX Font Info:    Font shape `U/zeur/m/n' will be
+(Font)              scaled to size 12.0pt on input line 3.
+LaTeX Font Info:    Font shape `U/zeur/m/n' will be
+(Font)              scaled to size 8.8pt on input line 3.
+LaTeX Font Info:    Font shape `U/zeur/m/n' will be
+(Font)              scaled to size 6.6pt on input line 3.
+LaTeX Font Info:    Font shape `JY3/LXGWWenKaiTC(0)/m/n' will be
+(Font)              scaled to size 8.35997pt on input line 3.
+LaTeX Font Info:    Font shape `JY3/LXGWWenKaiTC(0)/m/n' will be
+(Font)              scaled to size 6.26997pt on input line 3.
+)
+\tf@toc=\write6
+
+\openout6 = main.toc
+ [2
+
+]) (./chapters/01-originandformat.tex
+LaTeX Font Info:    Font shape `JT3/gt/m/n' will be
+(Font)              scaled to size 11.54663pt on input line 30.
+LaTeX Font Info:    Font shape `JY3/gt/m/n' will be
+(Font)              scaled to size 11.54663pt on input line 30.
+(load cache: extra_haranoajigothic-medium.luc)
+LaTeX Font Info:    Kanji font shape `JY3/gt/m/it' undefined
+(Font)              No change on input line 30.
+LaTeX Font Info:    Kanji font shape `JY3/LXGWWenKaiTC(0)/m/sc' undefined
+(Font)              No change on input line 34.
+LaTeX Font Info:    Font shape `JT3/LXGWWenKaiTC(0)/m/n' will be
+(Font)              scaled to size 13.29996pt on input line 77.
+LaTeX Font Info:    Font shape `JY3/LXGWWenKaiTC(0)/m/n' will be
+(Font)              scaled to size 13.29996pt on input line 77.
+ [3
+
+]
+Chapter I.
+LaTeX Font Info:    Font shape `JT3/LXGWWenKaiTC(0)/b/n' will be
+(Font)              scaled to size 13.67995pt on input line 94.
+LaTeX Font Info:    Font shape `JY3/LXGWWenKaiTC(0)/b/n' will be
+(Font)              scaled to size 13.67995pt on input line 94.
+<figures/weiqi.jpg, id=241, 272.9397pt x 274.8669pt>
+File: figures/weiqi.jpg Graphic file (type jpg)
+<use figures/weiqi.jpg>
+Package luatex.def Info: figures/weiqi.jpg  used on input line 98.
+(luatex.def)             Requested size: 227.09314pt x 228.69727pt.
+LaTeX Font Info:    Font shape `JT3/LXGWWenKaiTC(0)/b/n' will be
+(Font)              scaled to size 10.40245pt on input line 99.
+LaTeX Font Info:    Font shape `JY3/LXGWWenKaiTC(0)/b/n' will be
+(Font)              scaled to size 10.40245pt on input line 99.
+
+warning  (pdf backend): ignoring duplicate destination with the name 'page.1'
+[1
+
+
+<./figures/weiqi.jpg>](load cache: extra_lmsans10-regular.luc)
+Package microtype Info: Loading generic protrusion settings for font family
+(microtype)             `lmss' (encoding: TU).
+(microtype)             For optimal results, create family-specific settings.
+(microtype)             See the microtype manual for details.
+(load cache: extra_lmsans12-regular.luc)(load cache: extra_lmsans10-bold.luc)
+LaTeX Font Info:    Font shape `JT3/LXGWWenKaiTC(0)/b/n' will be
+(Font)              scaled to size 9.49997pt on input line 112.
+LaTeX Font Info:    Font shape `JY3/LXGWWenKaiTC(0)/b/n' will be
+(Font)              scaled to size 9.49997pt on input line 112.
+LaTeX Font Info:    Font shape `JT3/LXGWWenKaiTC(0)/b/n' will be
+(Font)              scaled to size 6.17497pt on input line 112.
+LaTeX Font Info:    Font shape `JY3/LXGWWenKaiTC(0)/b/n' will be
+(Font)              scaled to size 6.17497pt on input line 112.
+LaTeX Font Info:    Kanji font shape `JY3/LXGWWenKaiTC(0)/m/it' undefined
+(Font)              No change on input line 114.
+LaTeX Font Info:    Kanji font shape `JY3/LXGWWenKaiTC(0)/m/it' undefined
+(Font)              No change on input line 114.
+LaTeX Font Info:    Kanji font shape `JY3/LXGWWenKaiTC(0)/m/it' undefined
+(Font)              No change on input line 114.
+LaTeX Font Info:    Kanji font shape `JY3/LXGWWenKaiTC(0)/m/it' undefined
+(Font)              No change on input line 114.
+LaTeX Font Info:    Kanji font shape `JY3/LXGWWenKaiTC(0)/m/it' undefined
+(Font)              No change on input line 120.
+LaTeX Font Info:    Kanji font shape `JY3/LXGWWenKaiTC(0)/m/it' undefined
+(Font)              No change on input line 120.
+LaTeX Font Info:    Font shape `JT3/LXGWWenKaiTC(0)/m/n' will be
+(Font)              scaled to size 8.35997pt on input line 122.
+LaTeX Font Info:    Font shape `JT3/LXGWWenKaiTC(0)/m/n' will be
+(Font)              scaled to size 6.93497pt on input line 122.
+LaTeX Font Info:    Kanji font shape `JY3/LXGWWenKaiTC(0)/m/it' undefined
+(Font)              No change on input line 125.
+LaTeX Font Info:    Kanji font shape `JY3/LXGWWenKaiTC(0)/m/sc' undefined
+(Font)              No change on input line 126.
+
+warning  (pdf backend): ignoring duplicate destination with the name 'page.2'
+[2]
+LaTeX Font Info:    Kanji font shape `JY3/LXGWWenKaiTC(0)/m/it' undefined
+(Font)              No change on input line 133.
+LaTeX Font Info:    Kanji font shape `JY3/LXGWWenKaiTC(0)/m/it' undefined
+(Font)              No change on input line 133.
+LaTeX Font Info:    Kanji font shape `JY3/LXGWWenKaiTC(0)/m/it' undefined
+(Font)              No change on input line 137.
+LaTeX Font Info:    Kanji font shape `JY3/LXGWWenKaiTC(0)/m/it' undefined
+(Font)              No change on input line 139.
+LaTeX Font Info:    Kanji font shape `JY3/LXGWWenKaiTC(0)/m/it' undefined
+(Font)              No change on input line 139.
+LaTeX Font Info:    Kanji font shape `JY3/LXGWWenKaiTC(0)/m/it' undefined
+(Font)              No change on input line 141.
+LaTeX Font Info:    Kanji font shape `JY3/LXGWWenKaiTC(0)/m/it' undefined
+(Font)              No change on input line 141.
+LaTeX Font Info:    Kanji font shape `JY3/LXGWWenKaiTC(0)/m/it' undefined
+(Font)              No change on input line 143.
+LaTeX Font Info:    Kanji font shape `JY3/LXGWWenKaiTC(0)/m/it' undefined
+(Font)              No change on input line 145.
+LaTeX Font Info:    Kanji font shape `JY3/LXGWWenKaiTC(0)/m/it' undefined
+(Font)              No change on input line 149.
+LaTeX Font Info:    Kanji font shape `JY3/LXGWWenKaiTC(0)/m/it' undefined
+(Font)              No change on input line 149.
+LaTeX Font Info:    Kanji font shape `JY3/LXGWWenKaiTC(0)/m/it' undefined
+(Font)              No change on input line 151.
+LaTeX Font Info:    Kanji font shape `JY3/LXGWWenKaiTC(0)/m/it' undefined
+(Font)              No change on input line 151.
+LaTeX Font Info:    Kanji font shape `JY3/LXGWWenKaiTC(0)/m/it' undefined
+(Font)              No change on input line 151.
+LaTeX Font Info:    Kanji font shape `JY3/LXGWWenKaiTC(0)/m/it' undefined
+(Font)              No change on input line 153.
+LaTeX Font Info:    Kanji font shape `JY3/LXGWWenKaiTC(0)/m/it' undefined
+(Font)              No change on input line 155.
+LaTeX Font Info:    Kanji font shape `JY3/LXGWWenKaiTC(0)/m/sc' undefined
+(Font)              No change on input line 158.
+
+warning  (pdf backend): ignoring duplicate destination with the name 'page.3'
+[3]
+LaTeX Font Info:    Font shape `JT3/LXGWWenKaiTC(0)/b/n' will be
+(Font)              scaled to size 4.27498pt on input line 184.
+LaTeX Font Info:    Font shape `JY3/LXGWWenKaiTC(0)/b/n' will be
+(Font)              scaled to size 4.27498pt on input line 184.
+LaTeX Font Info:    Kanji font shape `JY3/LXGWWenKaiTC(0)/m/it' undefined
+(Font)              No change on input line 187.
+LaTeX Font Info:    Kanji font shape `JY3/LXGWWenKaiTC(0)/m/it' undefined
+(Font)              No change on input line 187.
+LaTeX Font Info:    Kanji font shape `JY3/LXGWWenKaiTC(0)/m/it' undefined
+(Font)              No change on input line 190.
+LaTeX Font Info:    Kanji font shape `JY3/LXGWWenKaiTC(0)/m/it' undefined
+(Font)              No change on input line 192.
+LaTeX Font Info:    Kanji font shape `JY3/LXGWWenKaiTC(0)/m/it' undefined
+(Font)              No change on input line 194.
+LaTeX Font Info:    Kanji font shape `JY3/LXGWWenKaiTC(0)/m/it' undefined
+(Font)              No change on input line 194.
+LaTeX Font Info:    Kanji font shape `JY3/LXGWWenKaiTC(0)/m/sc' undefined
+(Font)              No change on input line 195.
+ [4]
+LaTeX Font Info:    Kanji font shape `JY3/LXGWWenKaiTC(0)/m/it' undefined
+(Font)              No change on input line 198.
+LaTeX Font Info:    Kanji font shape `JY3/LXGWWenKaiTC(0)/m/it' undefined
+(Font)              No change on input line 200.
+LaTeX Font Info:    Kanji font shape `JY3/LXGWWenKaiTC(0)/m/it' undefined
+(Font)              No change on input line 200.
+LaTeX Font Info:    Kanji font shape `JY3/LXGWWenKaiTC(0)/m/it' undefined
+(Font)              No change on input line 200.
+LaTeX Font Info:    Kanji font shape `JY3/LXGWWenKaiTC(0)/m/it' undefined
+(Font)              No change on input line 200.
+LaTeX Font Info:    Kanji font shape `JY3/LXGWWenKaiTC(0)/m/it' undefined
+(Font)              No change on input line 235.
+LaTeX Font Info:    Kanji font shape `JY3/LXGWWenKaiTC(0)/m/it' undefined
+(Font)              No change on input line 235.
+LaTeX Font Info:    Kanji font shape `JY3/LXGWWenKaiTC(0)/m/it' undefined
+(Font)              No change on input line 238.
+LaTeX Font Info:    Kanji font shape `JY3/LXGWWenKaiTC(0)/m/it' undefined
+(Font)              No change on input line 238.
+LaTeX Font Info:    Font shape `OML/npxmi/m/it' will be
+(Font)              scaled to size 10.95pt on input line 248.
+LaTeX Font Info:    Font shape `OML/npxmi/m/it' will be
+(Font)              scaled to size 8.0pt on input line 248.
+LaTeX Font Info:    Font shape `OML/npxmi/m/it' will be
+(Font)              scaled to size 6.1pt on input line 248.
+LaTeX Font Info:    Font shape `LMS/npxsy/m/n' will be
+(Font)              scaled to size 10.95pt on input line 248.
+LaTeX Font Info:    Font shape `LMS/npxsy/m/n' will be
+(Font)              scaled to size 8.0pt on input line 248.
+LaTeX Font Info:    Font shape `LMS/npxsy/m/n' will be
+(Font)              scaled to size 6.1pt on input line 248.
+LaTeX Font Info:    Font shape `LMX/npxexx/m/n' will be
+(Font)              scaled to size 10.95pt on input line 248.
+LaTeX Font Info:    Font shape `LMX/npxexx/m/n' will be
+(Font)              scaled to size 8.0pt on input line 248.
+LaTeX Font Info:    Font shape `LMX/npxexx/m/n' will be
+(Font)              scaled to size 6.1pt on input line 248.
+LaTeX Font Info:    Font shape `U/npxmia/m/it' will be
+(Font)              scaled to size 10.95pt on input line 248.
+LaTeX Font Info:    Font shape `U/npxmia/m/it' will be
+(Font)              scaled to size 8.0pt on input line 248.
+LaTeX Font Info:    Font shape `U/npxmia/m/it' will be
+(Font)              scaled to size 6.1pt on input line 248.
+LaTeX Font Info:    Font shape `U/npxsym/m/n' will be
+(Font)              scaled to size 10.95pt on input line 248.
+LaTeX Font Info:    Font shape `U/npxsym/m/n' will be
+(Font)              scaled to size 8.0pt on input line 248.
+LaTeX Font Info:    Font shape `U/npxsym/m/n' will be
+(Font)              scaled to size 6.1pt on input line 248.
+LaTeX Font Info:    Font shape `U/npxsyc/m/n' will be
+(Font)              scaled to size 10.95pt on input line 248.
+LaTeX Font Info:    Font shape `U/npxsyc/m/n' will be
+(Font)              scaled to size 8.0pt on input line 248.
+LaTeX Font Info:    Font shape `U/npxsyc/m/n' will be
+(Font)              scaled to size 6.1pt on input line 248.
+LaTeX Font Info:    Font shape `U/npxexa/m/n' will be
+(Font)              scaled to size 10.95pt on input line 248.
+LaTeX Font Info:    Font shape `U/npxexa/m/n' will be
+(Font)              scaled to size 8.0pt on input line 248.
+LaTeX Font Info:    Font shape `U/npxexa/m/n' will be
+(Font)              scaled to size 6.1pt on input line 248.
+LaTeX Font Info:    Font shape `U/zeur/m/n' will be
+(Font)              scaled to size 10.95pt on input line 248.
+LaTeX Font Info:    Font shape `U/zeur/m/n' will be
+(Font)              scaled to size 8.0pt on input line 248.
+LaTeX Font Info:    Font shape `U/zeur/m/n' will be
+(Font)              scaled to size 6.1pt on input line 248.
+LaTeX Font Info:    Font shape `JY3/LXGWWenKaiTC(0)/m/n' will be
+(Font)              scaled to size 7.59998pt on input line 248.
+LaTeX Font Info:    Font shape `JY3/LXGWWenKaiTC(0)/m/n' will be
+(Font)              scaled to size 5.79498pt on input line 248.
+LaTeX Font Info:    Kanji font shape `JY3/LXGWWenKaiTC(0)/m/sc' undefined
+(Font)              No change on input line 251.
+ [5]
+LaTeX Font Info:    Kanji font shape `JY3/LXGWWenKaiTC(0)/m/it' undefined
+(Font)              No change on input line 252.
+LaTeX Font Info:    Kanji font shape `JY3/LXGWWenKaiTC(0)/m/it' undefined
+(Font)              No change on input line 252.
+LaTeX Font Info:    Kanji font shape `JY3/LXGWWenKaiTC(0)/m/it' undefined
+(Font)              No change on input line 254.
+LaTeX Font Info:    Kanji font shape `JY3/LXGWWenKaiTC(0)/m/it' undefined
+(Font)              No change on input line 254.
+LaTeX Font Info:    Kanji font shape `JY3/LXGWWenKaiTC(0)/m/it' undefined
+(Font)              No change on input line 254.
+LaTeX Font Info:    Kanji font shape `JY3/LXGWWenKaiTC(0)/m/it' undefined
+(Font)              No change on input line 254.
+LaTeX Font Info:    Kanji font shape `JY3/LXGWWenKaiTC(0)/m/it' undefined
+(Font)              No change on input line 256.
+LaTeX Font Info:    Kanji font shape `JY3/LXGWWenKaiTC(0)/m/it' undefined
+(Font)              No change on input line 256.
+LaTeX Font Info:    Kanji font shape `JY3/LXGWWenKaiTC(0)/m/sc' undefined
+(Font)              No change on input line 260.
+ [6]
+LaTeX Font Info:    Kanji font shape `JY3/LXGWWenKaiTC(0)/m/it' undefined
+(Font)              No change on input line 262.
+LaTeX Font Info:    Kanji font shape `JY3/LXGWWenKaiTC(0)/m/it' undefined
+(Font)              No change on input line 262.
+LaTeX Font Info:    Kanji font shape `JY3/LXGWWenKaiTC(0)/m/it' undefined
+(Font)              No change on input line 295.
+LaTeX Font Info:    Kanji font shape `JY3/LXGWWenKaiTC(0)/m/it' undefined
+(Font)              No change on input line 297.
+LaTeX Font Info:    Kanji font shape `JY3/LXGWWenKaiTC(0)/m/it' undefined
+(Font)              No change on input line 297.
+LaTeX Font Info:    Kanji font shape `JY3/LXGWWenKaiTC(0)/m/it' undefined
+(Font)              No change on input line 297.
+LaTeX Font Info:    Kanji font shape `JY3/LXGWWenKaiTC(0)/m/it' undefined
+(Font)              No change on input line 297.
+LaTeX Font Info:    Kanji font shape `JY3/LXGWWenKaiTC(0)/m/it' undefined
+(Font)              No change on input line 297.
+LaTeX Font Info:    Kanji font shape `JY3/LXGWWenKaiTC(0)/m/it' undefined
+(Font)              No change on input line 297.
+LaTeX Font Info:    Kanji font shape `JY3/LXGWWenKaiTC(0)/m/sc' undefined
+(Font)              No change on input line 299.
+ [7]
+LaTeX Font Info:    Kanji font shape `JY3/LXGWWenKaiTC(0)/m/it' undefined
+(Font)              No change on input line 299.
+LaTeX Font Info:    Kanji font shape `JY3/LXGWWenKaiTC(0)/m/it' undefined
+(Font)              No change on input line 299.
+\g__pgfgo_layout_cell_1_box=\box172
+\g__pgfgo_layout_cell_below_1_box=\box173
+\g__pgfgo_layout_cell_2_box=\box174
+\g__pgfgo_layout_cell_below_2_box=\box175
+
+
+Package pgfgo Warning: Point (8,4) is outside the board and is ignored.
+
+\g__pgfgo_layout_cell_3_box=\box176
+\g__pgfgo_layout_cell_below_3_box=\box177
+
+Package pgfgo Warning: Point (8,4) is outside the board and is ignored.
+
+\g__pgfgo_layout_cell_4_box=\box178
+\g__pgfgo_layout_cell_below_4_box=\box179
+\g__pgfgo_layout_head_1_box=\box180
+\g__pgfgo_layout_below_1_box=\box181
+\g__pgfgo_layout_head_2_box=\box182
+\g__pgfgo_layout_below_2_box=\box183
+LaTeX Font Info:    Kanji font shape `JY3/LXGWWenKaiTC(0)/m/it' undefined
+(Font)              No change on input line 328.
+LaTeX Font Info:    Kanji font shape `JY3/LXGWWenKaiTC(0)/m/sc' undefined
+(Font)              No change on input line 347.
+[8]
+LaTeX Font Info:    Kanji font shape `JY3/LXGWWenKaiTC(0)/m/it' undefined
+(Font)              No change on input line 347.
+LaTeX Font Info:    Kanji font shape `JY3/LXGWWenKaiTC(0)/m/it' undefined
+(Font)              No change on input line 347.
+\g__pgfgo_layout_head_3_box=\box184
+\g__pgfgo_layout_below_3_box=\box185
+\g__pgfgo_layout_head_4_box=\box186
+\g__pgfgo_layout_below_4_box=\box187
+LaTeX Font Info:    Kanji font shape `JY3/LXGWWenKaiTC(0)/m/it' undefined
+(Font)              No change on input line 381.
+LaTeX Font Info:    Kanji font shape `JY3/LXGWWenKaiTC(0)/m/it' undefined
+(Font)              No change on input line 383.
+LaTeX Font Info:    Kanji font shape `JY3/LXGWWenKaiTC(0)/m/sc' undefined
+(Font)              No change on input line 384.
+ [9]
+LaTeX Font Info:    Kanji font shape `JY3/LXGWWenKaiTC(0)/m/it' undefined
+(Font)              No change on input line 385.
+LaTeX Font Info:    Kanji font shape `JY3/LXGWWenKaiTC(0)/m/it' undefined
+(Font)              No change on input line 403.
+LaTeX Font Info:    Kanji font shape `JY3/LXGWWenKaiTC(0)/m/it' undefined
+(Font)              No change on input line 405.
+LaTeX Font Info:    Kanji font shape `JY3/LXGWWenKaiTC(0)/m/it' undefined
+(Font)              No change on input line 409.
+LaTeX Font Info:    Kanji font shape `JY3/LXGWWenKaiTC(0)/m/it' undefined
+(Font)              No change on input line 411.
+LaTeX Font Info:    Kanji font shape `JY3/LXGWWenKaiTC(0)/m/it' undefined
+(Font)              No change on input line 411.
+LaTeX Font Info:    Kanji font shape `JY3/LXGWWenKaiTC(0)/m/it' undefined
+(Font)              No change on input line 413.
+LaTeX Font Info:    Kanji font shape `JY3/LXGWWenKaiTC(0)/m/sc' undefined
+(Font)              No change on input line 414.
+ [10]
+LaTeX Font Info:    Kanji font shape `JY3/LXGWWenKaiTC(0)/m/it' undefined
+(Font)              No change on input line 415.
+LaTeX Font Info:    Kanji font shape `JY3/LXGWWenKaiTC(0)/m/it' undefined
+(Font)              No change on input line 415.
+LaTeX Font Info:    Kanji font shape `JY3/LXGWWenKaiTC(0)/m/it' undefined
+(Font)              No change on input line 415.
+LaTeX Font Info:    Kanji font shape `JY3/LXGWWenKaiTC(0)/m/it' undefined
+(Font)              No change on input line 417.
+LaTeX Font Info:    Kanji font shape `JY3/LXGWWenKaiTC(0)/m/it' undefined
+(Font)              No change on input line 417.
+LaTeX Font Info:    Kanji font shape `JY3/LXGWWenKaiTC(0)/m/it' undefined
+(Font)              No change on input line 455.
+LaTeX Font Info:    Kanji font shape `JY3/LXGWWenKaiTC(0)/m/it' undefined
+(Font)              No change on input line 455.
+LaTeX Font Info:    Kanji font shape `JY3/LXGWWenKaiTC(0)/m/it' undefined
+(Font)              No change on input line 455.
+LaTeX Font Info:    Kanji font shape `JY3/LXGWWenKaiTC(0)/m/it' undefined
+(Font)              No change on input line 455.
+LaTeX Font Info:    Kanji font shape `JY3/LXGWWenKaiTC(0)/m/sc' undefined
+(Font)              No change on input line 456.
+ [11]) (./chapters/02-foundation.tex
+LaTeX Font Info:    Kanji font shape `JY3/gt/m/it' undefined
+(Font)              No change on input line 41.
+LaTeX Font Info:    Kanji font shape `JY3/LXGWWenKaiTC(0)/m/sc' undefined
+(Font)              No change on input line 45.
+ [12]
+Chapter II.
+LaTeX Font Info:    Kanji font shape `JY3/LXGWWenKaiTC(0)/m/it' undefined
+(Font)              No change on input line 111.
+LaTeX Font Info:    Kanji font shape `JY3/LXGWWenKaiTC(0)/m/it' undefined
+(Font)              No change on input line 114.
+LaTeX Font Info:    Kanji font shape `JY3/LXGWWenKaiTC(0)/m/it' undefined
+(Font)              No change on input line 114.
+LaTeX Font Info:    Kanji font shape `JY3/LXGWWenKaiTC(0)/m/it' undefined
+(Font)              No change on input line 120.
+LaTeX Font Info:    Kanji font shape `JY3/LXGWWenKaiTC(0)/m/it' undefined
+(Font)              No change on input line 120.
+LaTeX Font Info:    Kanji font shape `JY3/LXGWWenKaiTC(0)/m/it' undefined
+(Font)              No change on input line 128.
+LaTeX Font Info:    Kanji font shape `JY3/LXGWWenKaiTC(0)/m/it' undefined
+(Font)              No change on input line 128.
+LaTeX Font Info:    Kanji font shape `JY3/LXGWWenKaiTC(0)/m/it' undefined
+(Font)              No change on input line 133.
+LaTeX Font Info:    Font shape `JT3/LXGWWenKaiTC(0)/m/n' will be
+(Font)              scaled to size 6.26997pt on input line 134.
+LaTeX Font Info:    Kanji font shape `JY3/LXGWWenKaiTC(0)/m/it' undefined
+(Font)              No change on input line 138.
+LaTeX Font Info:    Kanji font shape `JY3/LXGWWenKaiTC(0)/m/it' undefined
+(Font)              No change on input line 138.
+LaTeX Font Info:    Kanji font shape `JY3/LXGWWenKaiTC(0)/m/it' undefined
+(Font)              No change on input line 138.
+[13
+
+]
+LaTeX Font Info:    Font shape `JT3/gt/m/n' will be
+(Font)              scaled to size 9.6222pt on input line 181.
+LaTeX Font Info:    Font shape `JY3/gt/m/n' will be
+(Font)              scaled to size 9.6222pt on input line 181.
+LaTeX Font Info:    Kanji font shape `JY3/gt/m/it' undefined
+(Font)              No change on input line 181.
+LaTeX Font Info:    Kanji font shape `JY3/gt/m/it' undefined
+(Font)              No change on input line 185.
+LaTeX Font Info:    Kanji font shape `JY3/gt/m/it' undefined
+(Font)              No change on input line 185.
+LaTeX Font Info:    Kanji font shape `JY3/gt/m/it' undefined
+(Font)              No change on input line 185.
+LaTeX Font Info:    Kanji font shape `JY3/LXGWWenKaiTC(0)/m/sc' undefined
+(Font)              No change on input line 189.
+ [14]
+LaTeX Font Info:    Kanji font shape `JY3/gt/m/it' undefined
+(Font)              No change on input line 227.
+LaTeX Font Info:    Kanji font shape `JY3/LXGWWenKaiTC(0)/m/sc' undefined
+(Font)              No change on input line 248.
+ [15]
+LaTeX Font Info:    Kanji font shape `JY3/gt/m/it' undefined
+(Font)              No change on input line 264.
+LaTeX Font Info:    Kanji font shape `JY3/LXGWWenKaiTC(0)/m/it' undefined
+(Font)              No change on input line 268.
+LaTeX Font Info:    Kanji font shape `JY3/LXGWWenKaiTC(0)/m/sc' undefined
+(Font)              No change on input line 295.
+ [16]
+LaTeX Font Info:    Kanji font shape `JY3/LXGWWenKaiTC(0)/m/it' undefined
+(Font)              No change on input line 314.
+LaTeX Font Info:    Kanji font shape `JY3/LXGWWenKaiTC(0)/m/sc' undefined
+(Font)              No change on input line 337.
+ [17]
+LaTeX Font Info:    Kanji font shape `JY3/LXGWWenKaiTC(0)/m/it' undefined
+(Font)              No change on input line 337.
+LaTeX Font Info:    Kanji font shape `JY3/LXGWWenKaiTC(0)/m/it' undefined
+(Font)              No change on input line 356.
+LaTeX Font Info:    Kanji font shape `JY3/LXGWWenKaiTC(0)/m/sc' undefined
+(Font)              No change on input line 371.
+ [18]
+LaTeX Font Info:    Kanji font shape `JY3/LXGWWenKaiTC(0)/m/it' undefined
+(Font)              No change on input line 386.
+LaTeX Font Info:    Kanji font shape `JY3/LXGWWenKaiTC(0)/m/it' undefined
+(Font)              No change on input line 386.
+LaTeX Font Info:    Kanji font shape `JY3/LXGWWenKaiTC(0)/m/sc' undefined
+(Font)              No change on input line 408.
+ [19]
+\g__pgfgo_layout_head_5_box=\box188
+\g__pgfgo_layout_below_5_box=\box189
+
+
+Package pgfgo Warning: Coordinate 'from =8' was not recognized and is ignored.
+(pgfgo)                Columns are upper-case letters (for example 'C3').
+
+
+Package pgfgo Warning: Move 8 is played on C2, which is not empty.
+
+LaTeX Font Info:    Kanji font shape `JY3/LXGWWenKaiTC(0)/m/it' undefined
+(Font)              No change on input line 446.
+LaTeX Font Info:    Kanji font shape `JY3/LXGWWenKaiTC(0)/m/sc' undefined
+(Font)              No change on input line 453.
+[20]
+LaTeX Font Info:    Kanji font shape `JY3/LXGWWenKaiTC(0)/m/it' undefined
+(Font)              No change on input line 459.
+LaTeX Font Info:    Kanji font shape `JY3/LXGWWenKaiTC(0)/m/it' undefined
+(Font)              No change on input line 459.
+LaTeX Font Info:    Kanji font shape `JY3/LXGWWenKaiTC(0)/m/it' undefined
+(Font)              No change on input line 459.
+LaTeX Font Info:    Kanji font shape `JY3/LXGWWenKaiTC(0)/m/it' undefined
+(Font)              No change on input line 459.
+LaTeX Font Info:    Kanji font shape `JY3/LXGWWenKaiTC(0)/m/it' undefined
+(Font)              No change on input line 498.
+LaTeX Font Info:    Kanji font shape `JY3/LXGWWenKaiTC(0)/m/it' undefined
+(Font)              No change on input line 504.
+LaTeX Font Info:    Kanji font shape `JY3/LXGWWenKaiTC(0)/m/it' undefined
+(Font)              No change on input line 506.
+LaTeX Font Info:    Kanji font shape `JY3/LXGWWenKaiTC(0)/m/it' undefined
+(Font)              No change on input line 507.
+LaTeX Font Info:    Kanji font shape `JY3/LXGWWenKaiTC(0)/m/sc' undefined
+(Font)              No change on input line 512.
+ [21]
+LaTeX Font Info:    Kanji font shape `JY3/LXGWWenKaiTC(0)/m/it' undefined
+(Font)              No change on input line 514.
+LaTeX Font Info:    Kanji font shape `JY3/LXGWWenKaiTC(0)/m/it' undefined
+(Font)              No change on input line 515.
+LaTeX Font Info:    Kanji font shape `JY3/LXGWWenKaiTC(0)/m/it' undefined
+(Font)              No change on input line 516.
+LaTeX Font Info:    Kanji font shape `JY3/LXGWWenKaiTC(0)/m/it' undefined
+(Font)              No change on input line 518.
+LaTeX Font Info:    Font shape `OML/npxmi/m/it' will be
+(Font)              scaled to size 24.88pt on input line 534.
+LaTeX Font Info:    Font shape `OML/npxmi/m/it' will be
+(Font)              scaled to size 18.2pt on input line 534.
+LaTeX Font Info:    Font shape `OML/npxmi/m/it' will be
+(Font)              scaled to size 13.7pt on input line 534.
+LaTeX Font Info:    Font shape `LMS/npxsy/m/n' will be
+(Font)              scaled to size 24.88pt on input line 534.
+LaTeX Font Info:    Font shape `LMS/npxsy/m/n' will be
+(Font)              scaled to size 18.2pt on input line 534.
+LaTeX Font Info:    Font shape `LMS/npxsy/m/n' will be
+(Font)              scaled to size 13.7pt on input line 534.
+LaTeX Font Info:    Font shape `LMX/npxexx/m/n' will be
+(Font)              scaled to size 24.88pt on input line 534.
+LaTeX Font Info:    Font shape `LMX/npxexx/m/n' will be
+(Font)              scaled to size 18.2pt on input line 534.
+LaTeX Font Info:    Font shape `LMX/npxexx/m/n' will be
+(Font)              scaled to size 13.7pt on input line 534.
+LaTeX Font Info:    Font shape `U/npxmia/m/it' will be
+(Font)              scaled to size 24.88pt on input line 534.
+LaTeX Font Info:    Font shape `U/npxmia/m/it' will be
+(Font)              scaled to size 18.2pt on input line 534.
+LaTeX Font Info:    Font shape `U/npxmia/m/it' will be
+(Font)              scaled to size 13.7pt on input line 534.
+LaTeX Font Info:    Font shape `U/npxsym/m/n' will be
+(Font)              scaled to size 24.88pt on input line 534.
+LaTeX Font Info:    Font shape `U/npxsym/m/n' will be
+(Font)              scaled to size 18.2pt on input line 534.
+LaTeX Font Info:    Font shape `U/npxsym/m/n' will be
+(Font)              scaled to size 13.7pt on input line 534.
+LaTeX Font Info:    Font shape `U/npxsyc/m/n' will be
+(Font)              scaled to size 24.88pt on input line 534.
+LaTeX Font Info:    Font shape `U/npxsyc/m/n' will be
+(Font)              scaled to size 18.2pt on input line 534.
+LaTeX Font Info:    Font shape `U/npxsyc/m/n' will be
+(Font)              scaled to size 13.7pt on input line 534.
+LaTeX Font Info:    Font shape `U/npxexa/m/n' will be
+(Font)              scaled to size 24.88pt on input line 534.
+LaTeX Font Info:    Font shape `U/npxexa/m/n' will be
+(Font)              scaled to size 18.2pt on input line 534.
+LaTeX Font Info:    Font shape `U/npxexa/m/n' will be
+(Font)              scaled to size 13.7pt on input line 534.
+LaTeX Font Info:    Font shape `U/zeur/m/n' will be
+(Font)              scaled to size 24.88pt on input line 534.
+LaTeX Font Info:    Font shape `U/zeur/m/n' will be
+(Font)              scaled to size 18.2pt on input line 534.
+LaTeX Font Info:    Font shape `U/zeur/m/n' will be
+(Font)              scaled to size 13.7pt on input line 534.
+LaTeX Font Info:    Font shape `JY3/LXGWWenKaiTC(0)/m/n' will be
+(Font)              scaled to size 17.28993pt on input line 534.
+LaTeX Font Info:    Font shape `JY3/LXGWWenKaiTC(0)/m/n' will be
+(Font)              scaled to size 13.01495pt on input line 534.
+LaTeX Font Info:    Kanji font shape `JY3/LXGWWenKaiTC(0)/m/it' undefined
+(Font)              No change on input line 544.
+LaTeX Font Info:    Trying loading font information for U+zeuex on input line 5
+49.
+ (/usr/share/texmf-dist/tex/latex/eulervm/uzeuex.fd
+File: uzeuex.fd 2005/01/11 v4.0 (WaS)
+)
+LaTeX Font Info:    Font shape `U/zeuex/m/n' will be
+(Font)              scaled to size 12.0pt on input line 549.
+LaTeX Font Info:    Font shape `JT3/LXGWWenKaiTC(0)/m/n' will be
+(Font)              scaled to size 7.59998pt on input line 549.
+LaTeX Font Info:    Font shape `U/zeuex/m/n' will be
+(Font)              scaled to size 8.0pt on input line 549.
+LaTeX Font Info:    Font shape `JT3/LXGWWenKaiTC(0)/m/n' will be
+(Font)              scaled to size 5.69998pt on input line 549.
+LaTeX Font Info:    Font shape `JY3/LXGWWenKaiTC(0)/m/n' will be
+(Font)              scaled to size 5.69998pt on input line 549.
+LaTeX Font Info:    Font shape `U/zeuex/m/n' will be
+(Font)              scaled to size 6.0pt on input line 549.
+LaTeX Font Info:    Kanji font shape `JY3/LXGWWenKaiTC(0)/m/it' undefined
+(Font)              No change on input line 549.
+LaTeX Font Info:    Kanji font shape `JY3/LXGWWenKaiTC(0)/m/sc' undefined
+(Font)              No change on input line 550.
+ [22]
+LaTeX Font Info:    Font shape `OML/npxmi/m/it' will be
+(Font)              scaled to size 17.28pt on input line 553.
+LaTeX Font Info:    Font shape `OML/npxmi/m/it' will be
+(Font)              scaled to size 12.5pt on input line 553.
+LaTeX Font Info:    Font shape `OML/npxmi/m/it' will be
+(Font)              scaled to size 9.4pt on input line 553.
+LaTeX Font Info:    Font shape `LMS/npxsy/m/n' will be
+(Font)              scaled to size 17.28pt on input line 553.
+LaTeX Font Info:    Font shape `LMS/npxsy/m/n' will be
+(Font)              scaled to size 12.5pt on input line 553.
+LaTeX Font Info:    Font shape `LMS/npxsy/m/n' will be
+(Font)              scaled to size 9.4pt on input line 553.
+LaTeX Font Info:    Font shape `LMX/npxexx/m/n' will be
+(Font)              scaled to size 17.28pt on input line 553.
+LaTeX Font Info:    Font shape `LMX/npxexx/m/n' will be
+(Font)              scaled to size 12.5pt on input line 553.
+LaTeX Font Info:    Font shape `LMX/npxexx/m/n' will be
+(Font)              scaled to size 9.4pt on input line 553.
+LaTeX Font Info:    Font shape `U/npxmia/m/it' will be
+(Font)              scaled to size 17.28pt on input line 553.
+LaTeX Font Info:    Font shape `U/npxmia/m/it' will be
+(Font)              scaled to size 12.5pt on input line 553.
+LaTeX Font Info:    Font shape `U/npxmia/m/it' will be
+(Font)              scaled to size 9.4pt on input line 553.
+LaTeX Font Info:    Font shape `U/npxsym/m/n' will be
+(Font)              scaled to size 17.28pt on input line 553.
+LaTeX Font Info:    Font shape `U/npxsym/m/n' will be
+(Font)              scaled to size 12.5pt on input line 553.
+LaTeX Font Info:    Font shape `U/npxsym/m/n' will be
+(Font)              scaled to size 9.4pt on input line 553.
+LaTeX Font Info:    Font shape `U/npxsyc/m/n' will be
+(Font)              scaled to size 17.28pt on input line 553.
+LaTeX Font Info:    Font shape `U/npxsyc/m/n' will be
+(Font)              scaled to size 12.5pt on input line 553.
+LaTeX Font Info:    Font shape `U/npxsyc/m/n' will be
+(Font)              scaled to size 9.4pt on input line 553.
+LaTeX Font Info:    Font shape `U/npxexa/m/n' will be
+(Font)              scaled to size 17.28pt on input line 553.
+LaTeX Font Info:    Font shape `U/npxexa/m/n' will be
+(Font)              scaled to size 12.5pt on input line 553.
+LaTeX Font Info:    Font shape `U/npxexa/m/n' will be
+(Font)              scaled to size 9.4pt on input line 553.
+LaTeX Font Info:    Font shape `U/zeur/m/n' will be
+(Font)              scaled to size 17.28pt on input line 553.
+LaTeX Font Info:    Font shape `U/zeur/m/n' will be
+(Font)              scaled to size 12.5pt on input line 553.
+LaTeX Font Info:    Font shape `U/zeur/m/n' will be
+(Font)              scaled to size 9.4pt on input line 553.
+LaTeX Font Info:    Font shape `JY3/LXGWWenKaiTC(0)/m/n' will be
+(Font)              scaled to size 11.87495pt on input line 553.
+LaTeX Font Info:    Font shape `JY3/LXGWWenKaiTC(0)/m/n' will be
+(Font)              scaled to size 8.92996pt on input line 553.
+LaTeX Font Info:    Kanji font shape `JY3/LXGWWenKaiTC(0)/m/it' undefined
+(Font)              No change on input line 572.
+LaTeX Font Info:    Kanji font shape `JY3/LXGWWenKaiTC(0)/m/it' undefined
+(Font)              No change on input line 579.
+LaTeX Font Info:    Kanji font shape `JY3/LXGWWenKaiTC(0)/m/it' undefined
+(Font)              No change on input line 585.
+LaTeX Font Info:    Kanji font shape `JY3/LXGWWenKaiTC(0)/m/sc' undefined
+(Font)              No change on input line 589.
+ [23]
+LaTeX Font Info:    Font shape `OML/npxmi/m/it' will be
+(Font)              scaled to size 14.4pt on input line 590.
+LaTeX Font Info:    Font shape `OML/npxmi/m/it' will be
+(Font)              scaled to size 10.5pt on input line 590.
+LaTeX Font Info:    Font shape `OML/npxmi/m/it' will be
+(Font)              scaled to size 7.9pt on input line 590.
+LaTeX Font Info:    Font shape `LMS/npxsy/m/n' will be
+(Font)              scaled to size 14.4pt on input line 590.
+LaTeX Font Info:    Font shape `LMS/npxsy/m/n' will be
+(Font)              scaled to size 10.5pt on input line 590.
+LaTeX Font Info:    Font shape `LMS/npxsy/m/n' will be
+(Font)              scaled to size 7.9pt on input line 590.
+LaTeX Font Info:    Font shape `LMX/npxexx/m/n' will be
+(Font)              scaled to size 14.4pt on input line 590.
+LaTeX Font Info:    Font shape `LMX/npxexx/m/n' will be
+(Font)              scaled to size 10.5pt on input line 590.
+LaTeX Font Info:    Font shape `LMX/npxexx/m/n' will be
+(Font)              scaled to size 7.9pt on input line 590.
+LaTeX Font Info:    Font shape `U/npxmia/m/it' will be
+(Font)              scaled to size 14.4pt on input line 590.
+LaTeX Font Info:    Font shape `U/npxmia/m/it' will be
+(Font)              scaled to size 10.5pt on input line 590.
+LaTeX Font Info:    Font shape `U/npxmia/m/it' will be
+(Font)              scaled to size 7.9pt on input line 590.
+LaTeX Font Info:    Font shape `U/npxsym/m/n' will be
+(Font)              scaled to size 14.4pt on input line 590.
+LaTeX Font Info:    Font shape `U/npxsym/m/n' will be
+(Font)              scaled to size 10.5pt on input line 590.
+LaTeX Font Info:    Font shape `U/npxsym/m/n' will be
+(Font)              scaled to size 7.9pt on input line 590.
+LaTeX Font Info:    Font shape `U/npxsyc/m/n' will be
+(Font)              scaled to size 14.4pt on input line 590.
+LaTeX Font Info:    Font shape `U/npxsyc/m/n' will be
+(Font)              scaled to size 10.5pt on input line 590.
+LaTeX Font Info:    Font shape `U/npxsyc/m/n' will be
+(Font)              scaled to size 7.9pt on input line 590.
+LaTeX Font Info:    Font shape `U/npxexa/m/n' will be
+(Font)              scaled to size 14.4pt on input line 590.
+LaTeX Font Info:    Font shape `U/npxexa/m/n' will be
+(Font)              scaled to size 10.5pt on input line 590.
+LaTeX Font Info:    Font shape `U/npxexa/m/n' will be
+(Font)              scaled to size 7.9pt on input line 590.
+LaTeX Font Info:    Font shape `U/zeur/m/n' will be
+(Font)              scaled to size 14.4pt on input line 590.
+LaTeX Font Info:    Font shape `U/zeur/m/n' will be
+(Font)              scaled to size 10.5pt on input line 590.
+LaTeX Font Info:    Font shape `U/zeur/m/n' will be
+(Font)              scaled to size 7.9pt on input line 590.
+LaTeX Font Info:    Font shape `JY3/LXGWWenKaiTC(0)/m/n' will be
+(Font)              scaled to size 9.97496pt on input line 590.
+LaTeX Font Info:    Font shape `JY3/LXGWWenKaiTC(0)/m/n' will be
+(Font)              scaled to size 7.50496pt on input line 590.
+LaTeX Font Info:    Kanji font shape `JY3/LXGWWenKaiTC(0)/m/sc' undefined
+(Font)              No change on input line 635.
+
+[24]
+LaTeX Font Info:    Kanji font shape `JY3/LXGWWenKaiTC(0)/m/it' undefined
+(Font)              No change on input line 639.
+LaTeX Font Info:    Kanji font shape `JY3/LXGWWenKaiTC(0)/m/it' undefined
+(Font)              No change on input line 642.
+LaTeX Font Info:    Kanji font shape `JY3/LXGWWenKaiTC(0)/m/it' undefined
+(Font)              No change on input line 642.
+LaTeX Font Info:    Kanji font shape `JY3/LXGWWenKaiTC(0)/m/it' undefined
+(Font)              No change on input line 646.
+LaTeX Font Info:    Kanji font shape `JY3/LXGWWenKaiTC(0)/m/it' undefined
+(Font)              No change on input line 646.
+LaTeX Font Info:    Kanji font shape `JY3/LXGWWenKaiTC(0)/m/it' undefined
+(Font)              No change on input line 648.
+LaTeX Font Info:    Kanji font shape `JY3/LXGWWenKaiTC(0)/m/it' undefined
+(Font)              No change on input line 651.
+LaTeX Font Info:    Kanji font shape `JY3/LXGWWenKaiTC(0)/m/sc' undefined
+(Font)              No change on input line 652.
+ [25]
+LaTeX Font Info:    Kanji font shape `JY3/LXGWWenKaiTC(0)/m/it' undefined
+(Font)              No change on input line 653.
+LaTeX Font Info:    Kanji font shape `JY3/LXGWWenKaiTC(0)/m/it' undefined
+(Font)              No change on input line 653.
+LaTeX Font Info:    Kanji font shape `JY3/LXGWWenKaiTC(0)/m/it' undefined
+(Font)              No change on input line 653.
+LaTeX Font Info:    Kanji font shape `JY3/LXGWWenKaiTC(0)/m/it' undefined
+(Font)              No change on input line 659.
+LaTeX Font Info:    Kanji font shape `JY3/LXGWWenKaiTC(0)/m/it' undefined
+(Font)              No change on input line 661.
+LaTeX Font Info:    Kanji font shape `JY3/LXGWWenKaiTC(0)/m/it' undefined
+(Font)              No change on input line 756.
+LaTeX Font Info:    Kanji font shape `JY3/LXGWWenKaiTC(0)/m/sc' undefined
+(Font)              No change on input line 778.
+ [26]
+LaTeX Font Info:    Kanji font shape `JY3/LXGWWenKaiTC(0)/m/it' undefined
+(Font)              No change on input line 789.
+LaTeX Font Info:    Kanji font shape `JY3/LXGWWenKaiTC(0)/m/it' undefined
+(Font)              No change on input line 799.
+LaTeX Font Info:    Kanji font shape `JY3/LXGWWenKaiTC(0)/m/it' undefined
+(Font)              No change on input line 799.
+LaTeX Font Info:    Kanji font shape `JY3/LXGWWenKaiTC(0)/m/it' undefined
+(Font)              No change on input line 799.
+LaTeX Font Info:    Kanji font shape `JY3/LXGWWenKaiTC(0)/m/sc' undefined
+(Font)              No change on input line 817.
+ [27]
+LaTeX Font Info:    Kanji font shape `JY3/LXGWWenKaiTC(0)/m/it' undefined
+(Font)              No change on input line 823.
+LaTeX Font Info:    Kanji font shape `JY3/LXGWWenKaiTC(0)/m/sc' undefined
+(Font)              No change on input line 851.
+ [28]
+LaTeX Font Info:    Kanji font shape `JY3/LXGWWenKaiTC(0)/m/sc' undefined
+(Font)              No change on input line 897.
+ [29]
+LaTeX Font Info:    Kanji font shape `JY3/LXGWWenKaiTC(0)/m/it' undefined
+(Font)              No change on input line 897.
+LaTeX Font Info:    Kanji font shape `JY3/LXGWWenKaiTC(0)/m/it' undefined
+(Font)              No change on input line 899.
+LaTeX Font Info:    Kanji font shape `JY3/LXGWWenKaiTC(0)/m/sc' undefined
+(Font)              No change on input line 922.
+ [30]
+LaTeX Font Info:    Kanji font shape `JY3/LXGWWenKaiTC(0)/m/sc' undefined
+(Font)              No change on input line 956.
+ [31]
+LaTeX Font Info:    Kanji font shape `JY3/LXGWWenKaiTC(0)/m/it' undefined
+(Font)              No change on input line 970.
+LaTeX Font Info:    Kanji font shape `JY3/LXGWWenKaiTC(0)/m/sc' undefined
+(Font)              No change on input line 996.
+ [32]
+LaTeX Font Info:    Kanji font shape `JY3/LXGWWenKaiTC(0)/m/sc' undefined
+(Font)              No change on input line 1004.
+ [33]
+LaTeX Font Info:    Kanji font shape `JY3/gt/m/it' undefined
+(Font)              No change on input line 1007.
+LaTeX Font Info:    Kanji font shape `JY3/LXGWWenKaiTC(0)/m/it' undefined
+(Font)              No change on input line 1035.
+LaTeX Font Info:    Kanji font shape `JY3/LXGWWenKaiTC(0)/m/it' undefined
+(Font)              No change on input line 1035.
+LaTeX Font Info:    Kanji font shape `JY3/gt/m/it' undefined
+(Font)              No change on input line 1042.
+LaTeX Font Info:    Kanji font shape `JY3/gt/m/it' undefined
+(Font)              No change on input line 1042.
+LaTeX Font Info:    Kanji font shape `JY3/gt/m/it' undefined
+(Font)              No change on input line 1048.
+LaTeX Font Info:    Kanji font shape `JY3/LXGWWenKaiTC(0)/m/sc' undefined
+(Font)              No change on input line 1051.
+ [34]
+LaTeX Font Info:    Kanji font shape `JY3/gt/m/it' undefined
+(Font)              No change on input line 1053.
+LaTeX Font Info:    Kanji font shape `JY3/gt/m/it' undefined
+(Font)              No change on input line 1063.
+LaTeX Font Info:    Kanji font shape `JY3/gt/m/it' undefined
+(Font)              No change on input line 1066.
+LaTeX Font Info:    Kanji font shape `JY3/LXGWWenKaiTC(0)/m/sc' undefined
+(Font)              No change on input line 1093.
+ [35]
+LaTeX Font Info:    Kanji font shape `JY3/gt/m/it' undefined
+(Font)              No change on input line 1095.
+LaTeX Font Info:    Kanji font shape `JY3/gt/m/it' undefined
+(Font)              No change on input line 1105.
+LaTeX Font Info:    Kanji font shape `JY3/gt/m/it' undefined
+(Font)              No change on input line 1111.
+LaTeX Font Info:    Kanji font shape `JY3/LXGWWenKaiTC(0)/m/sc' undefined
+(Font)              No change on input line 1138.
+ [36]
+LaTeX Font Info:    Kanji font shape `JY3/LXGWWenKaiTC(0)/m/it' undefined
+(Font)              No change on input line 1139.
+LaTeX Font Info:    Kanji font shape `JY3/LXGWWenKaiTC(0)/m/it' undefined
+(Font)              No change on input line 1144.
+LaTeX Font Info:    Kanji font shape `JY3/LXGWWenKaiTC(0)/m/it' undefined
+(Font)              No change on input line 1178.
+LaTeX Font Info:    Kanji font shape `JY3/LXGWWenKaiTC(0)/m/sc' undefined
+(Font)              No change on input line 1180.
+ [37]
+LaTeX Font Info:    Kanji font shape `JY3/LXGWWenKaiTC(0)/m/it' undefined
+(Font)              No change on input line 1183.
+LaTeX Font Info:    Kanji font shape `JY3/LXGWWenKaiTC(0)/m/it' undefined
+(Font)              No change on input line 1220.
+LaTeX Font Info:    Kanji font shape `JY3/LXGWWenKaiTC(0)/m/it' undefined
+(Font)              No change on input line 1225.
+
+Overfull \hbox (11.7621pt too wide) in paragraph at lines 1225--1226
+[]\TU/TeXGyrePagellaX(0)/m/n/12 By Def-i-ni-tion [][]2.6.8[][], the join-ers $\
+U/zeur/m/n/12 V[]\OT1/lmr/m/n/12 , [] , \U/zeur/m/n/12 V[]$ \TU/TeXGyrePagellaX
+(0)/m/n/12 are pair-wise dis-joint, sat-isfy $[][]\LMS/npxsy/m/n/12 ¹\U/zeur/m
+/n/12 V[]\LMS/npxsy/m/n/12 º[] 
+ []
+
+LaTeX Font Info:    Kanji font shape `JY3/LXGWWenKaiTC(0)/m/sc' undefined
+(Font)              No change on input line 1227.
+[38]
+LaTeX Font Info:    Kanji font shape `JY3/LXGWWenKaiTC(0)/m/it' undefined
+(Font)              No change on input line 1264.
+LaTeX Font Info:    Kanji font shape `JY3/LXGWWenKaiTC(0)/m/it' undefined
+(Font)              No change on input line 1269.
+LaTeX Font Info:    Kanji font shape `JY3/LXGWWenKaiTC(0)/m/sc' undefined
+(Font)              No change on input line 1270.
+ [39]
+LaTeX Font Info:    Kanji font shape `JY3/LXGWWenKaiTC(0)/m/it' undefined
+(Font)              No change on input line 1298.
+LaTeX Font Info:    Kanji font shape `JY3/LXGWWenKaiTC(0)/m/it' undefined
+(Font)              No change on input line 1305.
+LaTeX Font Info:    Kanji font shape `JY3/LXGWWenKaiTC(0)/m/sc' undefined
+(Font)              No change on input line 1306.
+ [40]
+LaTeX Font Info:    Kanji font shape `JY3/LXGWWenKaiTC(0)/m/sc' undefined
+(Font)              No change on input line 1330.
+ [41]
+LaTeX Font Info:    Kanji font shape `JY3/LXGWWenKaiTC(0)/m/it' undefined
+(Font)              No change on input line 1334.
+LaTeX Font Info:    Kanji font shape `JY3/LXGWWenKaiTC(0)/m/it' undefined
+(Font)              No change on input line 1334.
+LaTeX Font Info:    Kanji font shape `JY3/LXGWWenKaiTC(0)/m/it' undefined
+(Font)              No change on input line 1351.
+LaTeX Font Info:    Kanji font shape `JY3/LXGWWenKaiTC(0)/m/it' undefined
+(Font)              No change on input line 1360.
+LaTeX Font Info:    Kanji font shape `JY3/LXGWWenKaiTC(0)/m/it' undefined
+(Font)              No change on input line 1360.
+LaTeX Font Info:    Kanji font shape `JY3/LXGWWenKaiTC(0)/m/sc' undefined
+(Font)              No change on input line 1363.
+ [42]
+LaTeX Font Info:    Kanji font shape `JY3/gt/m/it' undefined
+(Font)              No change on input line 1368.
+LaTeX Font Info:    Kanji font shape `JY3/LXGWWenKaiTC(0)/m/it' undefined
+(Font)              No change on input line 1371.
+LaTeX Font Info:    Kanji font shape `JY3/LXGWWenKaiTC(0)/m/it' undefined
+(Font)              No change on input line 1373.
+LaTeX Font Info:    Kanji font shape `JY3/gt/m/it' undefined
+(Font)              No change on input line 1380.
+LaTeX Font Info:    Kanji font shape `JY3/LXGWWenKaiTC(0)/m/it' undefined
+(Font)              No change on input line 1391.
+LaTeX Font Info:    Kanji font shape `JY3/LXGWWenKaiTC(0)/m/it' undefined
+(Font)              No change on input line 1391.
+LaTeX Font Info:    Kanji font shape `JY3/LXGWWenKaiTC(0)/m/it' undefined
+(Font)              No change on input line 1397.
+LaTeX Font Info:    Kanji font shape `JY3/LXGWWenKaiTC(0)/m/sc' undefined
+(Font)              No change on input line 1399.
+ [43]
+LaTeX Font Info:    Kanji font shape `JY3/LXGWWenKaiTC(0)/m/it' undefined
+(Font)              No change on input line 1406.
+LaTeX Font Info:    Kanji font shape `JY3/LXGWWenKaiTC(0)/m/it' undefined
+(Font)              No change on input line 1414.
+LaTeX Font Info:    Kanji font shape `JY3/LXGWWenKaiTC(0)/m/it' undefined
+(Font)              No change on input line 1430.
+LaTeX Font Info:    Kanji font shape `JY3/LXGWWenKaiTC(0)/m/sc' undefined
+(Font)              No change on input line 1435.
+ [44]
+<figures/Kimcontraej.png, id=775, 565.11125pt x 636.3775pt>
+File: figures/Kimcontraej.png Graphic file (type png)
+<use figures/Kimcontraej.png>
+Package luatex.def Info: figures/Kimcontraej.png  used on input line 1461.
+(luatex.def)             Requested size: 96.1828pt x 108.30898pt.
+LaTeX Font Info:    Kanji font shape `JY3/LXGWWenKaiTC(0)/m/sc' undefined
+(Font)              No change on input line 1464.
+ [45]
+LaTeX Font Info:    Kanji font shape `JY3/LXGWWenKaiTC(0)/m/it' undefined
+(Font)              No change on input line 1468.
+LaTeX Font Info:    Kanji font shape `JY3/LXGWWenKaiTC(0)/m/it' undefined
+(Font)              No change on input line 1468.
+LaTeX Font Info:    Kanji font shape `JY3/LXGWWenKaiTC(0)/m/it' undefined
+(Font)              No change on input line 1468.
+LaTeX Font Info:    Kanji font shape `JY3/LXGWWenKaiTC(0)/m/it' undefined
+(Font)              No change on input line 1468.
+LaTeX Font Info:    Kanji font shape `JY3/LXGWWenKaiTC(0)/m/it' undefined
+(Font)              No change on input line 1468.
+LaTeX Font Info:    Kanji font shape `JY3/gt/m/it' undefined
+(Font)              No change on input line 1482.
+LaTeX Font Info:    Kanji font shape `JY3/LXGWWenKaiTC(0)/m/sc' undefined
+(Font)              No change on input line 1485.
+ [46<./figures/Kimcontraej.png>])
+(./chapters/03-abstraction.tex
+LaTeX Font Info:    Kanji font shape `JY3/gt/m/it' undefined
+(Font)              No change on input line 32.
+LaTeX Font Info:    Kanji font shape `JY3/LXGWWenKaiTC(0)/m/sc' undefined
+(Font)              No change on input line 36.
+
+
+Package pgf Warning: No path specified that can be filled on input line 153.
+
+
+Package pgf Warning: No path specified that can be filled on input line 153.
+
+
+Package pgf Warning: No path specified that can be filled on input line 153.
+
+
+Package pgf Warning: No path specified that can be filled on input line 153.
+
+
+Package pgf Warning: No path specified that can be filled on input line 153.
+
+[47]
+Chapter III.
+[48
+
+]
+LaTeX Font Info:    Kanji font shape `JY3/LXGWWenKaiTC(0)/m/sc' undefined
+(Font)              No change on input line 330.
+ [49]
+LaTeX Font Info:    Kanji font shape `JY3/LXGWWenKaiTC(0)/m/it' undefined
+(Font)              No change on input line 336.
+<figures/3dgofoto1.png, id=817, 856.19875pt x 731.73375pt>
+File: figures/3dgofoto1.png Graphic file (type png)
+<use figures/3dgofoto1.png>
+Package luatex.def Info: figures/3dgofoto1.png  used on input line 351.
+(luatex.def)             Requested size: 222.64273pt x 190.26862pt.
+LaTeX Font Info:    Kanji font shape `JY3/LXGWWenKaiTC(0)/m/it' undefined
+(Font)              No change on input line 355.
+LaTeX Font Info:    Kanji font shape `JY3/LXGWWenKaiTC(0)/m/sc' undefined
+(Font)              No change on input line 356.
+ [50<./figures/3dgofoto1.png>]
+LaTeX Font Info:    Kanji font shape `JY3/LXGWWenKaiTC(0)/m/sc' undefined
+(Font)              No change on input line 421.
+ [51]
+LaTeX Font Info:    Kanji font shape `JY3/LXGWWenKaiTC(0)/m/sc' undefined
+(Font)              No change on input line 562.
+ [52]
+LaTeX Font Info:    Kanji font shape `JY3/LXGWWenKaiTC(0)/m/sc' undefined
+(Font)              No change on input line 626.
+ [53]
+LaTeX Font Info:    Kanji font shape `JY3/LXGWWenKaiTC(0)/m/it' undefined
+(Font)              No change on input line 656.
+LaTeX Font Info:    Kanji font shape `JY3/LXGWWenKaiTC(0)/m/it' undefined
+(Font)              No change on input line 660.
+LaTeX Font Info:    Kanji font shape `JY3/LXGWWenKaiTC(0)/m/sc' undefined
+(Font)              No change on input line 685.
+ [54]
+LaTeX Font Info:    Kanji font shape `JY3/LXGWWenKaiTC(0)/m/it' undefined
+(Font)              No change on input line 731.
+LaTeX Font Info:    Kanji font shape `JY3/LXGWWenKaiTC(0)/m/it' undefined
+(Font)              No change on input line 731.
+LaTeX Font Info:    Kanji font shape `JY3/LXGWWenKaiTC(0)/m/sc' undefined
+(Font)              No change on input line 734.
+ [55]
+LaTeX Font Info:    Kanji font shape `JY3/LXGWWenKaiTC(0)/m/it' undefined
+(Font)              No change on input line 734.
+LaTeX Font Info:    Kanji font shape `JY3/gt/m/it' undefined
+(Font)              No change on input line 757.
+LaTeX Font Info:    Kanji font shape `JY3/LXGWWenKaiTC(0)/m/sc' undefined
+(Font)              No change on input line 761.
+LaTeX Font Info:    Kanji font shape `JY3/LXGWWenKaiTC(0)/m/sc' undefined
+(Font)              No change on input line 797.
+ [56]
+LaTeX Font Info:    Kanji font shape `JY3/LXGWWenKaiTC(0)/m/sc' undefined
+(Font)              No change on input line 1329.
+ [57]
+LaTeX Font Info:    Kanji font shape `JY3/LXGWWenKaiTC(0)/m/it' undefined
+(Font)              No change on input line 1353.
+LaTeX Font Info:    Kanji font shape `JY3/LXGWWenKaiTC(0)/m/sc' undefined
+(Font)              No change on input line 1496.
+
+[58]
+Overfull \hbox (4.62546pt too wide) in paragraph at lines 1552--1555
+\TU/TeXGyrePagellaX(0)/m/n/12 Thus, any Shan-non switch-ing game on $\LMS/npxsy
+/m/n/12 H$ \TU/TeXGyrePagellaX(0)/m/n/12 is rep-re-sented by the struc-ture $\U
+/zeur/m/n/12 ^^@[] \U/npxmia/m/it/12 = \LMS/npxsy/m/n/12 ¹\U/zeur/m/n/12 G[]\O
+T1/lmr/m/n/12 , \U/zeur/m/n/12 E[]\OT1/lmr/m/n/12 , \LMS/npxsy/m/n/12 []
+ []
+
+) (./chapters/conclusion.tex
+LaTeX Font Info:    Kanji font shape `JY3/LXGWWenKaiTC(0)/m/sc' undefined
+(Font)              No change on input line 1.
+ [59]
+LaTeX Font Info:    Kanji font shape `JY3/gt/m/it' undefined
+(Font)              No change on input line 3.
+)
+LaTeX Font Info:    Kanji font shape `JY3/LXGWWenKaiTC(0)/m/sc' undefined
+(Font)              No change on input line 14.
+ [60]
+LaTeX Font Info:    Font shape `JT3/gt/m/n' will be
+(Font)              scaled to size 10.53629pt on input line 14.
+LaTeX Font Info:    Font shape `JY3/gt/m/n' will be
+(Font)              scaled to size 10.53629pt on input line 14.
+LaTeX Font Info:    Kanji font shape `JY3/gt/m/it' undefined
+(Font)              No change on input line 14.
+LaTeX Font Info:    Kanji font shape `JY3/gt/m/it' undefined
+(Font)              No change on input line 14.
+LaTeX Font Info:    Kanji font shape `JY3/gt/m/it' undefined
+(Font)              No change on input line 14.
+LaTeX Font Info:    Kanji font shape `JY3/gt/m/it' undefined
+(Font)              No change on input line 14.
+LaTeX Font Info:    Kanji font shape `JY3/gt/m/it' undefined
+(Font)              No change on input line 14.
+LaTeX Font Info:    Kanji font shape `JY3/gt/m/it' undefined
+(Font)              No change on input line 14.
+LaTeX Font Info:    Kanji font shape `JY3/gt/m/it' undefined
+(Font)              No change on input line 14.
+LaTeX Font Info:    Kanji font shape `JY3/gt/m/it' undefined
+(Font)              No change on input line 14.
+LaTeX Font Info:    Kanji font shape `JY3/gt/m/it' undefined
+(Font)              No change on input line 14.
+LaTeX Font Info:    Kanji font shape `JY3/gt/m/it' undefined
+(Font)              No change on input line 14.
+LaTeX Font Info:    Kanji font shape `JY3/gt/m/it' undefined
+(Font)              No change on input line 14.
+LaTeX Font Info:    Kanji font shape `JY3/gt/m/it' undefined
+(Font)              No change on input line 14.
+LaTeX Font Info:    Kanji font shape `JY3/gt/m/it' undefined
+(Font)              No change on input line 14.
+LaTeX Font Info:    Kanji font shape `JY3/gt/m/it' undefined
+(Font)              No change on input line 14.
+LaTeX Font Info:    Kanji font shape `JY3/gt/m/it' undefined
+(Font)              No change on input line 14.
+LaTeX Font Info:    Kanji font shape `JY3/gt/m/it' undefined
+(Font)              No change on input line 14.
+LaTeX Font Info:    Kanji font shape `JY3/gt/m/it' undefined
+(Font)              No change on input line 14.
+LaTeX Font Info:    Kanji font shape `JY3/gt/m/it' undefined
+(Font)              No change on input line 14.
+ [61
+
+]
+LaTeX Font Info:    Kanji font shape `JY3/LXGWWenKaiTC(0)/m/sc' undefined
+(Font)              No change on input line 15.
+ [62] (./main.aux)
+ ***********
+LaTeX2e <2025-11-01>
+L3 programming layer <2020/03/25>
+ ***********
+Package rerunfilecheck Info: File `main.out' has not changed.
+(rerunfilecheck)             Checksum: 66E3367D16D734B483A874A0BFAA9E6E;7059.
+Package logreq Info: Writing requests to 'main.run.xml'.
+
+\openout1 = main.run.xml
+)
+
+Here is how much of LuaTeX's memory you used:
+ 62798 strings out of 476076
+ 933283,2848258 words of node,token memory allocated
+ 7022 words of node memory still in use:
+   28 hlist, 2 vlist, 15 rule, 1 local_par, 24 glue, 4 kern, 2 penalty, 3 glyph,
+ 2499 attribute, 114 glue_spec, 235 attribute_list, 2 write, 30 user_defined, 16
+ pdf_literal, 9 pdf_action, 16 pdf_colorstack nodes
+   avail lists: 1:32,2:219413,3:11366,4:5698,5:803,6:111,7:10113,8:124,9:6366,10
+:36,11:514,12:1
+ 82916 multiletter control sequences out of 65536+600000
+ 634 fonts using 199660215 bytes
+ 111i,17n,118p,2088b,2674s stack positions out of 10000i,1000n,20000p,200000b,200000s
+{/usr/share/texmf-dist/fonts/enc/dvips/lm/lm-rm.enc}{/usr/share/texmf-dist/fonts
+/enc/dvips/newpx/px-lms.enc}</usr/share/texmf-dist/fonts/opentype/public/lm/lmsa
+ns10-bold.otf></usr/share/texmf-dist/fonts/opentype/public/lm/lmsans10-regular.o
+tf></home/dmq/.local/share/fonts/LXGWWenKaiTC-Bold.ttf></usr/share/texmf-dist/fo
+nts/opentype/public/newpx/TeXGyrePagellaX-Italic.otf></usr/share/texmf-dist/font
+s/opentype/public/newpx/TeXGyrePagellaX-Bold.otf></usr/share/texmf-dist/fonts/op
+entype/public/lm/lmmono10-regular.otf></usr/share/texmf-dist/fonts/opentype/publ
+ic/newpx/TeXGyrePagellaX-Regular.otf></home/dmq/.local/share/fonts/LXGWWenKaiTC-
+Regular.ttf></usr/share/texmf-dist/fonts/type1/public/newpx/NewPXMI_gnu.pfb></us
+r/share/texmf-dist/fonts/type1/public/amsfonts/euler/euex10.pfb></usr/share/texm
+f-dist/fonts/type1/public/amsfonts/euler/eurm10.pfb></usr/share/texmf-dist/fonts
+/type1/public/amsfonts/euler/eurm7.pfb></usr/share/texmf-dist/fonts/type1/public
+/lm/lmr10.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmr12.pfb></usr/share
+/texmf-dist/fonts/type1/public/lm/lmr17.pfb></usr/share/texmf-dist/fonts/type1/p
+ublic/lm/lmr7.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmr8.pfb></usr/sh
+are/texmf-dist/fonts/type1/public/lm/lmr9.pfb></usr/share/texmf-dist/fonts/type1
+/public/newpx/pxmiaX.pfb></usr/share/texmf-dist/fonts/type1/public/newpx/pxsys.p
+fb></usr/share/texmf-dist/fonts/type1/public/newtx/txexs.pfb></usr/share/texmf-d
+ist/fonts/type1/public/txfonts/txsyc.pfb></usr/share/texmf-dist/fonts/type1/publ
+ic/newtx/txsym.pfb>
+Output written on main.pdf (67 pages, 1305781 bytes).
+
+PDF statistics: 1072 PDF objects out of 1200 (max. 8388607)
+ 912 compressed objects within 10 object streams
+ 257 named destinations out of 1000 (max. 1048576)
+ 624 words of extra memory for PDF output out of 10000 (max. 100000000)
+

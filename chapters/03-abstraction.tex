@@ -59,28 +59,28 @@
 			z buffer=sort,
 			]
 			
-			% 1. Sombra
-			\addplot3[
-			surf,
-			shader=interp,
-			draw=none,     
-			colormap name=shadow,
-			opacity=0.1
-			]
-			(
-			{(2 + cos(y)) * cos(x)},
-			{(2 + cos(y)) * sin(x)},
-			{-1} 
-			);
+%			% 1. Sombra
+%			\addplot3[
+%			surf,
+%			shader=interp,
+%			draw=none,     
+%			colormap name=shadow,
+%			opacity=0.1
+%			]
+%			(
+%			{(2 + cos(y)) * cos(x)},
+%			{(2 + cos(y)) * sin(x)},
+%			{-1} 
+%			);
 			
-			% 2. Toro de Weidao (Malla de Go de 19x19 doblada sobre sí misma)
+			% 2. Toro
 			\addplot3[
 			surf,
 			shader=flat,
-			fill=bpbg,          % Bloquea la malla trasera (usar el color del fondo del papel)
-			draw=textcolor,     % Color hueso de la portada para las líneas
+			fill=bpbg,  
+			draw=textcolor,   
 			line width=0.4pt,
-			opacity=0.95
+			opacity=1
 			]
 			(
 			{(2 + cos(y)) * cos(x)},
@@ -89,13 +89,14 @@
 			);
 			
 			
-			%%%%%%%%%%%%%%%%%%%%  puntos negros
+			%%%%%%%%%%%%%%%%%%%%  hoshi
 			\addplot3[
 			only marks,
 			xslant=-0.15,
 			yslant=-0.5,
 			mark options={shading=ball, ball color=white},
-			mark size=0.25pt,
+			opacity=1,
+			mark size=0.4pt,
 			shading=ball,
 			color=goban
 			] coordinates {(1.190, 3.94, 0)};
@@ -103,7 +104,8 @@
 			\addplot3[
 			only marks,
 			mark options={shading=ball, ball color=white},
-			mark size=0.5pt,
+			opacity=1,
+			mark size=0.65pt,
 			shading=ball,
 			color=goban
 			] coordinates {(-1.96, 0.675, 0)};
@@ -111,7 +113,8 @@
 			\addplot3[ %centro
 			only marks,
 			mark options={shading=ball, ball color=white},
-			mark size=0.5pt,
+			opacity=1,
+			mark size=0.65pt,
 			shading=ball,
 			color=goban
 			] coordinates {(0.975, -0.61, 0)};
@@ -120,7 +123,8 @@
 			only marks,
 			yslant=0.25,
 			mark options={shading=ball, ball color=white},
-			mark size=0.5pt,
+			opacity=1,
+			mark size=0.65pt,
 			shading=ball,
 			color=goban
 			] coordinates {(1.09, 1, 0)};
@@ -128,12 +132,13 @@
 			\addplot3[ %abajo derecha
 			only marks,
 			yslant=0.5,
+			opacity=1,
 			mark options={shading=ball, ball color=black},
-			mark size=0.5pt,
+			mark size=0.65pt,
 			shading=ball,
 			color=goban
 			] coordinates {(1.870,-6.179, 0)};
-			% 3. El Vacío Central / Sello (El cubo de la rueda del Cap 11 o el Retorno del Cap 16)
+			% 3. Sello 
 			\node[
 			fill=sealred,
 			scale=0.5,
@@ -143,7 +148,7 @@
 			rounded corners=1pt,
 			font=\fontsize{12}{12}\selectfont,
 			text=textcolor,
-			text opacity=0.95
+			text opacity=1
 			] at (axis cs: 0, 0, 0) {復};
 		\end{axis}
 	\end{tikzpicture}
@@ -153,7 +158,7 @@
 \pagecolor{white}
 
 {\centering\chapter{Abstraction}\label{parte3}}
-
+\thispagestyle{empty}
 \section{Comparing Adjacencies}\label{chap:6}
 
 Observing the two-dimensional board in Figure~\ref{fig: tableronm}, we can note that it will have \(xy\) intersections; however, the following question arises: how many adjacencies do all these intersections possess?
@@ -248,9 +253,9 @@ Let us consider the case for \(\mathrm{Go}^3\), consisting of \(xyz\) nodes ($x,
 			(0,\z,0) coordinate (H);
 			\draw (A)-- (B)-- (C)--(G)--(F)--(B) (A)--(E)--(F)--(G)--(H)--(E);
 			\draw [black] (A)--(D)--(C) (D)--(H);
-			\draw [Red, very thick, |-|](-4.85,0) -- node[above] {$x-2$}(-0.15,0);
-			\draw [Blue, very thick, |-|](-0.15,-0.15) -- node[below,sloped] {$y-2$}(-2.2,-2.2);
-			\draw [OliveGreen, very thick, |-|](0,1.35) -- node[right] {$z-2$}(0,0.15);
+			\draw [sealred, very thick, |-|](-4.85,0) -- node[above] {$x-2$}(-0.15,0);
+			\draw [bg, very thick, |-|](-0.15,-0.15) -- node[below,sloped] {$y-2$}(-2.2,-2.2);
+			\draw [Moss, very thick, |-|](0,1.35) -- node[right] {$z-2$}(0,0.15);
 			
 			%nodo y sus aristas
 			\draw[YellowOrange, ultra thick] (-2,1.5) -- (-2.35,1.15); %adentro
@@ -266,33 +271,6 @@ Let us consider the case for \(\mathrm{Go}^3\), consisting of \(xyz\) nodes ($x,
 
 Proceeding as before, we observe that it possesses $8$ vertices, each with $3$ adjacencies. We identify $4$ edges of \((x-2)\) nodes, $4$ of \((y-2)\), and $4$ of \((z-2)\), each with nodes possessing $4$ adjacencies, see Figure~\ref{fig:3dim_esquema} (right).
 
-%	\begin{figure}[H]
-	%		\centering
-	%		\begin{tikzpicture}[scale=1.4]
-		%			\pgfmathsetmacro{\x}{-5}
-		%			\pgfmathsetmacro{\y}{6}
-		%			\pgfmathsetmacro{\z}{1.5}
-		%			\path (0,0,\y) coordinate (A) (\x,0,\y) coordinate (B) (\x,0,0) coordinate (C) (0,0,0)
-		%			coordinate (D) (0,\z,\y) coordinate (E) (\x,\z,\y) coordinate (F) (\x,\z,0) coordinate (G)
-		%			(0,\z,0) coordinate (H);
-		%			\draw (A)-- (B)-- (C)--(G)--(F)--(B) (A)--(E)--(F)--(G)--(H)--(E);
-		%			\draw [dashed,black] (A)--(D)--(C) (D)--(H);
-		%			\draw [Red, very thick, |-|](-4.85,0) -- node[above] {$x-2$}(-0.15,0);
-		%			\draw [Blue, very thick, |-|](-0.15,-0.15) -- node[below,sloped] {$y-2$}(-2.2,-2.2);
-		%			\draw [OliveGreen, very thick, |-|](0,1.35) -- node[right] {$z-2$}(0,0.15);
-		%			
-		%			%nodo y sus aristas
-		%			\draw[YellowOrange, ultra thick] (-2,1.5) -- (-2.35,1.15); %adentro
-		%			\draw[YellowOrange, ultra thick]  (-2,1.5) -- (-1.6,1.5); %derecha
-		%			\draw[YellowOrange, ultra thick]  (-2,1.5) -- (-2.4,1.5); %izquierda
-		%			\draw[YellowOrange, ultra thick]  (-2,1.5) -- (-2,1.1);   %abajo
-		%			\fill[color=black] (-2,1.5) circle (0.05);
-		%			
-		%		\end{tikzpicture}
-	%		\caption{Aristas del tablero 3-dimensional y un nodo de 4 adyacencias.}
-	%		\label{fig:tablero3d}
-	%	\end{figure}
-
 Next, we have the faces. These are divided into three pairs: $2$ faces of \((x-2)(y-2)\), $2$ of \((x-2)(z-2)\), and $2$ of \((y-2)(z-2)\), with nodes possessing $5$ adjacencies each, Figure~\ref{fig:3gocaras}.
 
 \begin{figure}[H]
@@ -303,13 +281,13 @@ Next, we have the faces. These are divided into three pairs: $2$ faces of \((x-2
 		\pgfmathsetmacro{\z}{1.5}
 		
 		%Cara xy
-		\filldraw[fill=Blue!50!Red, draw=black] (-0.2,-0.1,0) -- (-5,-0.1,0) -- (-4.9,0,5.8) -- (-0.1,0,5.8) -- cycle;
+		\filldraw[fill=bg!50!sealred, draw=black,opacity=0.5] (-0.2,-0.1,0) -- (-5,-0.1,0) -- (-4.9,0,5.8) -- (-0.1,0,5.8) -- cycle;
 		
 		%Cara yz
-		\filldraw[fill=OliveGreen!50!Blue, draw=black](-5.3,-0.2,5) -- (-5.05,0.1,0.1) -- (-5.05,1.35,0.1) -- (-5.3,1.1,5) -- cycle;
+		\filldraw[fill=Moss!50!bg, draw=black,opacity=0.5](-5.3,-0.2,5) -- (-5.05,0.1,0.1) -- (-5.05,1.35,0.1) -- (-5.3,1.1,5) -- cycle;
 		
 		%Cara xz
-		\filldraw[fill=Red!50!OliveGreen, draw=black] (-0.1,0.1,0) -- (-0.1,1.4,0) -- (-4.9,1.4,0) -- (-4.9,0.1,0) -- cycle;
+		\filldraw[fill=sealred!50!Moss, draw=black,opacity=0.5] (-0.1,0.1,0) -- (-0.1,1.4,0) -- (-4.9,1.4,0) -- (-4.9,0.1,0) -- cycle;
 		
 		\draw [black, thin, |-|](-4.9,1.5) -- node[above,sloped] {$(x-2)(z-2)$}(-0.1,1.5);
 		\draw [black, thin, |-|](-0.15,-0.15) -- node[below,sloped] {$(x-2)(y-2)$}(-2.29,-2.29);
@@ -327,9 +305,8 @@ Next, we have the faces. These are divided into three pairs: $2$ faces of \((x-2
 		\draw[YellowOrange, ultra thick] (-2,0.8) -- (-1.6,0.8); %derecha
 		\draw[YellowOrange, ultra thick]  (-2,0.8) -- (-2,1.2); %arriba
 		\draw[YellowOrange, ultra thick] (-2,0.8) -- (-2,0.4); %abajo
-		\draw[YellowOrange, ultra thick]  (-2,0.8) -- (-2.35,0.45); %adentro
 		\fill[color=black] (-2,0.8) circle (0.07);
-		
+		\draw[YellowOrange, ultra thick]  (-2,0.8) -- (-2.35,0.45); %adentro
 		
 	\end{tikzpicture}
 	\caption{Faces of the three-dimensional board with a node of $5$ adjacencies.}
@@ -371,7 +348,7 @@ We immediately define the average by subtracting the nodes we are not considerin
 Prior to the development of this work, as a Go player, I wondered whether a three-dimensional version of the game existed. Upon finding only conceptual images on the Internet, I asked myself: why not develop it? Thus, \href{https://github.com/10500x/3dGo}{3dGo} was born.
 \begin{figure}[H]
 	\begin{center}
-		\includegraphics[width=0.6\linewidth]{figures/3dgofoto1}
+		\includegraphics[width=0.5\linewidth]{figures/3dgofoto1}
 	\end{center}
 	\caption{Go board of size $5\times 4\times 3$ in \href{https://github.com/10500x/3dGo}{3dGo}.}
 \end{figure}
@@ -410,10 +387,10 @@ If we join the opposite edges of the board, we obtain the following, as shown in
 			
 			% Step 1: Plane (square)
 			\draw[thick] (0,0) rectangle (2,2);
-			\fill[color=Red] (0,2) circle (0.05);
-			\fill[color=Red] (0,0) circle (0.05);
-			\fill[color=Blue] (2,0) circle (0.05);
-			\fill[color=Blue] (2,2) circle (0.05);
+			\fill[color=sealred] (0,2) circle (0.05);
+			\fill[color=sealred] (0,0) circle (0.05);
+			\fill[color=bg] (2,0) circle (0.05);
+			\fill[color=bg] (2,2) circle (0.05);
 			
 			% Step 2: Cylinder
 			\begin{scope}[xshift=3cm]
@@ -422,17 +399,17 @@ If we join the opposite edges of the board, we obtain the following, as shown in
 				
 				
 				\draw[black, dashed] (1,1) arc[start angle=0, end angle=-180, radius=0.5cm];
-				\fill[color=Red] (0,0) circle (0.05);
-				\fill[color=Blue] (1,0) circle (0.05);
-				\fill[color=Red] (0,2) circle (0.05);
-				\fill[color=Blue] (1,2) circle (0.05);
+				\fill[color=sealred] (0,0) circle (0.05);
+				\fill[color=bg] (1,0) circle (0.05);
+				\fill[color=sealred] (0,2) circle (0.05);
+				\fill[color=bg] (1,2) circle (0.05);
 			\end{scope}
 			
 			\begin{scope}[xshift=5cm]
 				\draw[thick] (0,0) arc[start angle=180, end angle=0, radius=0.25cm] -- (.5,2) arc[start angle=0, end angle=180, radius=0.25cm] -- cycle;
 				\draw[thick] (0,0) arc[start angle=-180, end angle=0, radius=0.25cm] -- (0.5,2) arc[start angle=0, end angle=-180, radius=0.25cm] -- cycle;
-				\fill[color=Red!50!Blue] (0,2) circle (0.05);
-				\fill[color=Red!50!Blue] (0,0) circle (0.05);
+				\fill[color=sealred!50!bg] (0,2) circle (0.05);
+				\fill[color=sealred!50!bg] (0,0) circle (0.05);
 				\draw[black, dashed] (0.5,1) arc[start angle=0, end angle=360, radius=0.25cm];
 				
 			\end{scope}
@@ -452,8 +429,8 @@ Let us repeat the process; let us join our $4$ vertices—which are now $2$—in
 			%% Cilindro base
 			\draw[thick] (0,0) arc[start angle=180, end angle=0, radius=0.25cm] -- (.5,2) arc[start angle=0, end angle=180, radius=0.25cm] -- cycle;
 			\draw[thick] (0,0) arc[start angle=-180, end angle=0, radius=0.25cm] -- (0.5,2) arc[start angle=0, end angle=-180, radius=0.25cm] -- cycle;
-			\fill[color=Red!50!Blue] (0,2) circle (0.05);
-			\fill[color=Red!50!Blue] (0,0) circle (0.05);  
+			\fill[color=sealred!50!bg] (0,2) circle (0.05);
+			\fill[color=sealred!50!bg] (0,0) circle (0.05);  
 			%\draw[black, dashed] (0.5,1) arc[start angle=0, end angle=360, radius=0.25cm];
 			
 			
@@ -474,8 +451,8 @@ Let us repeat the process; let us join our $4$ vertices—which are now $2$—in
 				\draw[thick] (0,0.5) arc[start angle=-180, end angle=0, radius=0.625cm] ;
 				\draw[thick] (0.5,0.5) arc[start angle=-180, end angle=0, radius=0.125cm] ;
 				
-				\fill[color=Red!50!Blue] (1.25,1.5) circle (0.05);
-				\fill[color=Red!50!Blue] (1.25,0.5) circle (0.05);
+				\fill[color=sealred!50!bg] (1.25,1.5) circle (0.05);
+				\fill[color=sealred!50!bg] (1.25,0.5) circle (0.05);
 				
 			\end{scope}
 			
@@ -489,7 +466,7 @@ Let us repeat the process; let us join our $4$ vertices—which are now $2$—in
 				%Aristas
 				\draw[black, dashed] (2,1) arc[start angle=0, end angle=360, radius=0.25cm];
 				%% vértices / vértice
-				\fill[color=Red!50!Blue] (2,1) circle (0.05);
+				\fill[color=sealred!50!bg] (2,1) circle (0.05);
 				
 			\end{scope}
 		\end{tikzpicture}
@@ -516,11 +493,11 @@ Let us observe how the adjacencies of the vertices have changed: in the plane, w
 			\draw[YellowOrange, ultra thick] (2,1) -- (1.75,1);
 			
 			%nodos
-			\fill[color=OliveGreen] (2,1) circle (0.05);
-			\fill[color=Red] (0,2) circle (0.05);
-			\fill[color=Red] (0,0) circle (0.05);
-			\fill[color=Blue] (2,0) circle (0.05);
-			\fill[color=Blue] (2,2) circle (0.05);
+			\fill[color=Moss] (2,1) circle (0.05);
+			\fill[color=sealred] (0,2) circle (0.05);
+			\fill[color=sealred] (0,0) circle (0.05);
+			\fill[color=bg] (2,0) circle (0.05);
+			\fill[color=bg] (2,2) circle (0.05);
 			
 			
 			
@@ -547,9 +524,9 @@ Let us observe how the adjacencies of the vertices have changed: in the plane, w
 				\draw[YellowOrange, ultra thick] (0.5,1) arc[start angle=0, end angle=-70, radius=0.25cm];
 				
 				%%%% vértices
-				\fill[color=Red!50!Blue] (0,2) circle (0.05);
-				\fill[color=Red!50!Blue] (0,0) circle (0.05);
-				\fill[color=OliveGreen] (0.5,1) circle (0.05);
+				\fill[color=sealred!50!bg] (0,2) circle (0.05);
+				\fill[color=sealred!50!bg] (0,0) circle (0.05);
+				\fill[color=Moss] (0.5,1) circle (0.05);
 			\end{scope}
 			
 			
@@ -570,8 +547,8 @@ Let us observe how the adjacencies of the vertices have changed: in the plane, w
 				\draw[YellowOrange, ultra thick] (2,1) arc[start angle=0, end angle=-70, radius=0.25cm];
 				
 				%% vértices
-				\fill[color=Red!50!Blue] (2,1) circle (0.05);
-				\fill[OliveGreen] (1.5,1) circle (0.05);
+				\fill[color=sealred!50!bg] (2,1) circle (0.05);
+				\fill[Moss] (1.5,1) circle (0.05);
 			\end{scope}
 			
 		\end{tikzpicture}
@@ -585,7 +562,7 @@ Under our scrutiny, $G$ contains only points, and the adjacency criterion determ
 \begin{equation*}
 	g_1=(x_1,\dots, 1, \dots, x_n) \ \sim \ (x_1, \dots, n_k, \dots, x_n)=g_2.
 \end{equation*}
-Thus, in this simple manner, we have defined the toroidal board, which is nothing more than the same board as before, except that we are now considering more adjacent points. Formally, if we call the canonical criterion \(A_{ort}\) (orthogonal adjacencies), we transition from the form \((G,A_{ort})\) to \((G,A_{ort} \cup A_{op})\).
+Thus, in this simple manner, we have defined the toroidal board, which is nothing more than the same board as before, except that we are now considering more adjacent points. Formally, if we call the canonical criterion \(A_{\text{ort}}\) (orthogonal adjacencies), we transition from the form \((G,A_{\text{ort}})\) to $(G, A_{\text{ort}} \cup A_{\text{op}})$.
 
 It is clear that the toroidal board will have $4$ adjacencies for each of its nodes. Let \(A(x,y)_{T}\) be the number of adjacencies on a toroidal board of size \(xy\); let us carry out once again the process we performed at the beginning. The toroidal board will have no vertices, no edges, and consequently, a single face composed of \(xy\) nodes which, as we have already seen, possess $4$ adjacencies per node; thus:
 $$A(x,y)_{T}=4xy.$$
@@ -603,7 +580,7 @@ Here, if we apply the new relation, we obtain that all points will have $6$ adja
 		
 		
 		%nodo que está atrás
-		\fill[color=Blue] (-5,0) circle (0.07);
+		\fill[color=bg] (-5,0) circle (0.07);
 		
 		\path (0,0,\y) coordinate (A) (\x,0,\y) coordinate (B) (\x,0,0) coordinate (C) (0,0,0)
 		coordinate (D) (0,\z,\y) coordinate (E) (\x,\z,\y) coordinate (F) (\x,\z,0) coordinate (G)
@@ -614,26 +591,26 @@ Here, if we apply the new relation, we obtain that all points will have $6$ adja
 		%nodo y sus aristas
 		
 		
-		\draw (-2.5,0.75) node [thick,scale=3]{$A$};
-		\draw (-4.85,-1.55) node [thick,scale=3]{$A'$};
+		\draw (-2.5,0.75) node [thick,scale=2]{$A$};
+		\draw (-4.85,-1.55) node [thick,scale=2]{$A'$};
 		
 		
 		
-		\draw (-1.15,-0.45) node [thick,scale=3,rotate=0,yslant=1,xslant=-0.25]{$B$};
-		\draw (-6,-0.25) node [thick,scale=3,rotate=0,yslant=1,xslant=-0.25]{$B'$};
+		\draw (-1.15,-0.45) node [thick,scale=2,rotate=0,yslant=1,xslant=-0.25]{$B$};
+		\draw (-6,-0.25) node [thick,scale=2,rotate=0,yslant=1,xslant=-0.25]{$B'$};
 		
-		\draw (-3.5,-1.15) node [thick,scale=3,yslant=0,xslant=0.75]{$C$};
-		\draw (-3.5,0.35) node [thick,scale=3,xslant=0.75]{$C'$};
+		\draw (-3.5,-1.15) node [thick,scale=2,yslant=0,xslant=0.75]{$C$};
+		\draw (-3.5,0.35) node [thick,scale=2,xslant=0.75]{$C'$};
 		
-		\fill[color=Blue] (-5,1.5) circle (0.07);
-		\fill[color=Blue] (0,0) circle (0.07);
-		\fill[color=Blue] (0,1.5) circle (0.07);
+		\fill[color=bg] (-5,1.5) circle (0.07);
+		\fill[color=bg] (0,0) circle (0.07);
+		\fill[color=bg] (0,1.5) circle (0.07);
 		
 		
-		\fill[color=Red] (-7.3,-2.3) circle (0.07);
-		\fill[color=Red] (-7.3,-0.8) circle (0.07);
-		\fill[color=Red] (-2.3,-0.8) circle (0.07);
-		\fill[color=Red] (-2.3,-2.3) circle (0.07);
+		\fill[color=sealred] (-7.3,-2.3) circle (0.07);
+		\fill[color=sealred] (-7.3,-0.8) circle (0.07);
+		\fill[color=sealred] (-2.3,-0.8) circle (0.07);
+		\fill[color=sealred] (-2.3,-2.3) circle (0.07);
 		
 	\end{tikzpicture}
 	\caption{Faces of the $\mathrm{Go}^{3}$.}
@@ -655,7 +632,6 @@ For this problem, for \(n=2\), \(A_{ort}\) provides a solution for the case with
 %\begin{figure}[H]
 \begin{wrapfigure}[5]{r}{0.4\textwidth}
 	\centering
-	% Bloque 20 (vacío arriba, jugadas 1 y 2 abajo)
 	\begin{goban}[7x1]
 			\pgfgoticks
 	\end{goban}
@@ -688,10 +664,10 @@ Then, it is clear that the limit of its average is $2$.
 		\pgfgoticks
 		\stones[b]{D1, F1}
 		\stone[w]{B1}
-		\mark[filled square, fill = {true, color = purple}, line = {color = black}]{A1}
-		\mark[filled square, fill = {true, color = cyan}, line = {color = black}]{E1}
+		\mark[filled square, fill = {true, color = amethyst}, line = {color = black}]{A1}
+		\mark[filled square, fill = {true, color = bg}, line = {color = black}]{E1}
 	\end{goban}
-		\caption{\textcolor{purple}{Eye} at the boundary, \textcolor{cyan}{joiner} in the interior.}
+		\caption{\textcolor{amethyst}{Eye} at the boundary, \textcolor{bg}{joiner} in the interior.}
 		\label{fig:ej_go1dim}
 	\end{figure}
 	\begin{itemize}
@@ -761,7 +737,7 @@ Recalling 老子 — \textit{Laozi}, we rediscover what has already been stated:
 	\begin{flushright}
 		{\large
 			\vspace{1pt}
-			道生一，\\
+			  道生一，\\
 			一生二，\\
 			二生三，\\
 			三生万物。
@@ -816,7 +792,7 @@ Combining both constructions allows us to build the diagram of Figure~\ref{fig: 
 		\arrow["{\tau, \partial}", maps to, from=1-3, to=3-3]
 		\arrow["{\Xi, \iota}"', hook, from=3-1, to=3-3]
 	\end{tikzcd}
-	\caption{Diagram of the complete structure. The horizontal arrows (\(\Xi\)) expand dimensions and players (\( \iota \)). The vertical ones (\(\tau\)) close the space, and (\(\partial\)) hollow out the interior.}
+	\caption{Diagram of the complete structure. The horizontal arrows ($\Xi$) expand dimensions and players ($\iota$). The vertical ones ($\tau$) close the space, and ($\partial$) hollow out the interior.}
 	\label{fig: torohueco}
 \end{figure}
 
@@ -1015,9 +991,9 @@ Combining both constructions allows us to build the diagram of Figure~\ref{fig: 
 		%		\foreach \x in {6,...,12} \draw (\x,-0.2) -- (\x,0.2);
 		%		
 		%		% PIEDRAS (Centro en 9)
-		%		\filldraw[OliveGreen] (8,0) circle (3pt);
+		%		\filldraw[Moss] (8,0) circle (3pt);
 		%		\filldraw[black] (9,0) circle (10pt); % Piedra Central
-		%		\filldraw[OliveGreen] (10,0) circle (3pt);
+		%		\filldraw[Moss] (10,0) circle (3pt);
 		%		
 		%		% Puntos suspensivos
 		%		\foreach \x in {12.5, 13, 13.5} \path (\x,0) node [black]{.};
@@ -1055,8 +1031,8 @@ Combining both constructions allows us to build the diagram of Figure~\ref{fig: 
 		%		\filldraw[black] (9,0) circle (10pt);
 		%		\path (9,0) node [white]{1};
 		%		% Influencia (Vecinos en 8 y 10)
-		%		\filldraw[OliveGreen] (8,0) circle (3pt);
-		%		\filldraw[OliveGreen] (10,0) circle (3pt);
+		%		\filldraw[Moss] (8,0) circle (3pt);
+		%		\filldraw[Moss] (10,0) circle (3pt);
 		%		
 		%		% Puntos suspensivos
 		%		\foreach \x in {12.5, 13, 13.5} \path (\x,0) node [black]{.};
@@ -1095,16 +1071,16 @@ Combining both constructions allows us to build the diagram of Figure~\ref{fig: 
 			%			
 			%			% Centro (Piedra 1 en 9)
 			%			\filldraw[black] (9,0) circle (10pt); \path (9,0) node [white]{1};
-			%			\filldraw[OliveGreen] (8,0) circle (3pt); \filldraw[OliveGreen] (10,0) circle (3pt);
+			%			\filldraw[Moss] (8,0) circle (3pt); \filldraw[Moss] (10,0) circle (3pt);
 			%			
 			%			% Izquierda (Piedra 2 en 2)
 			%			\filldraw[draw=black,fill=white] (2,0) circle (10pt); \path (2,0) node [black]{2};
-			%			\filldraw[Blue] (1,0) circle (3pt); \filldraw[Blue] (3,0) circle (3pt);
+			%			\filldraw[bg] (1,0) circle (3pt); \filldraw[bg] (3,0) circle (3pt);
 			%			
 			%			% Derecha (Piedra 3 en 16 -> Simétrica a 2 respecto a 9)
 			%			% 9 - 2 = 7 distancia. 9 + 7 = 16.
 			%			\filldraw[black] (16,0) circle (10pt); \path (16,0) node [white]{3};
-			%			\filldraw[OliveGreen] (15,0) circle (3pt); \filldraw[OliveGreen] (17,0) circle (3pt);
+			%			\filldraw[Moss] (15,0) circle (3pt); \filldraw[Moss] (17,0) circle (3pt);
 			%			
 			%		\end{scope}
 		%	\end{tikzpicture}
@@ -1135,9 +1111,9 @@ Combining both constructions allows us to build the diagram of Figure~\ref{fig: 
 		%		\foreach \x in {6,...,12} \draw (\x,-0.2) -- (\x,0.2);
 		%		
 		%		% PIEDRAS (La acción ocurre entre 8 y 10)
-		%		\filldraw[OliveGreen] (8,0) circle (3pt);
+		%		\filldraw[Moss] (8,0) circle (3pt);
 		%		\filldraw[black] (9,0) circle (10pt);
-		%		\filldraw[OliveGreen] (10,0) circle (3pt);
+		%		\filldraw[Moss] (10,0) circle (3pt);
 		%		
 		%		% Puntos suspensivos
 		%		\path (12.5,0) node [black]{.};
@@ -1350,6 +1326,8 @@ Combining both constructions allows us to build the diagram of Figure~\ref{fig: 
 	\[U:(G,E,A,\Delta)\to (G,A).\]
 	This mapping associates each game with its underlying graph. In this way, properties such as the number of adjacencies $A(x,y)$ can be studied solely from the adjacency structure. Note that different games may determine the same graph, so the mapping is not injective.
 	
+	\newpage
+	
 	\section{Toward Surrounding Games}\label{sec_JR}
 	
 	Let us see how our theory could take us further than we initially thought.
@@ -1357,12 +1335,15 @@ Combining both constructions allows us to build the diagram of Figure~\ref{fig: 
 	\subsection*{Othello}
 	
 	\begin{wrapfigure}[13]{i}{0.35\textwidth}
+		
 		\centering
 		\begin{goban}
 			[goban={
 				size=9,
 				scale=1.25,
-				background ={fill = {color = OliveGreen}},
+				background ={
+				fill = {color = othello},
+				line = {color = othelloborder}},
 				hoshi = {false}
 			}]
 		\end{goban}
@@ -1373,8 +1354,8 @@ Combining both constructions allows us to build the diagram of Figure~\ref{fig: 
 	
 	\subsection*{Havannah}
 	
-	\begin{wrapfigure}[10]{r}{0.35\textwidth}
-		\vspace{-45pt}
+	\begin{wrapfigure}[13]{r}{0.35\textwidth}
+		\vspace{-10pt}
 		\centering
 		\begin{tikzpicture}[scale=0.55] \tikzstyle{every node}=[font=\small]
 			
@@ -1408,7 +1389,7 @@ Combining both constructions allows us to build the diagram of Figure~\ref{fig: 
 				\pgfmathsetmacro{\x}{0.575*sqrt(3)*(\q+\s/2)}
 				\pgfmathsetmacro{\y}{0.575*1.5*\s}
 				
-				\filldraw[fill=Blue]
+				\filldraw[fill=bg]
 				(\x,\y)
 				++(30:\r)
 				\foreach \a in {90,150,210,270,330}
@@ -1425,7 +1406,7 @@ Combining both constructions allows us to build the diagram of Figure~\ref{fig: 
 				\pgfmathsetmacro{\x}{0.575*sqrt(3)*(\q+\s/2)}
 				\pgfmathsetmacro{\y}{0.575*1.5*\s}
 				
-				\filldraw[fill=Red]
+				\filldraw[fill=sealred]
 				(\x,\y)
 				++(30:\r)
 				\foreach \a in {90,150,210,270,330}
@@ -1444,24 +1425,24 @@ Combining both constructions allows us to build the diagram of Figure~\ref{fig: 
 				\pgfmathsetmacro{\x}{0.575*sqrt(3)*(\q+\s/2)}
 				\pgfmathsetmacro{\y}{0.575*1.5*\s}
 				
-				\filldraw[fill=OliveGreen]
+				\filldraw[fill=Moss]
 				(\x,\y)
 				++(30:\r)
 				\foreach \a in {90,150,210,270,330}
 				{ -- ++(\a:\r) } -- cycle;
 			}
 		\end{tikzpicture}
-		\caption{The three winning structures in Havannah: \textcolor{Blue}{ring}, \textcolor{Red}{bridge}, and \textcolor{OliveGreen}{fork}.}
+		\caption{The three winning structures in Havannah: \textcolor{bg}{ring}, \textcolor{sealred}{bridge}, and \textcolor{Moss}{fork}.}
 		\label{fig:havannah}
 	\end{wrapfigure}
-	Another interesting example is Havannah. Unlike Go, this game takes place on a hexagonal board, and stones are adjacent according to the intrinsic geometry of said board. Once again, it suffices to modify the adjacency criterion. The particularity of Havannah is that there are three distinct ways to win: constructing a \textcolor{Blue}{ring}, a \textcolor{Red}{bridge}, or a \textcolor{OliveGreen}{fork} (see Figure~\ref{fig:havannah}).
+	Another interesting example is Havannah. Unlike Go, this game takes place on a hexagonal board, and stones are adjacent according to the intrinsic geometry of said board. Once again, it suffices to modify the adjacency criterion. The particularity of Havannah is that there are three distinct ways to win: constructing a \textcolor{bg}{ring}, a \textcolor{sealred}{bridge}, or a \textcolor{Moss}{fork} (see Figure~\ref{fig:havannah}).
 	
-	Our theory already accounts for the case of the \textcolor{Blue}{ring}. Indeed, a ring is simply a group that encloses a region. If we distinguish the six corners of the board as special subsets of positions, a \textcolor{Red}{bridge} can be described as a group containing stones in at least two distinct corners. Likewise, if we distinguish the six edges of the board, a \textcolor{OliveGreen}{fork} can be described as a group containing stones in at least three distinct edges.
+	Our theory already accounts for the case of the \textcolor{bg}{ring}. Indeed, a ring is simply a group that encloses a region. If we distinguish the six corners of the board as special subsets of positions, a \textcolor{sealred}{bridge} can be described as a group containing stones in at least two distinct corners. Likewise, if we distinguish the six edges of the board, a \textcolor{Moss}{fork} can be described as a group containing stones in at least three distinct edges.
 	
 	Recalling the properties of $|K(i)|$ discussed in Part~\ref{parte1}, this suffices for us to identify which points belong to the corners or edges (Section~\ref{posicion_espacial}). In this manner, Havannah's winning condition can be expressed solely in terms of groups, regions, and board subsets. Consequently, the game appears to admit a natural formalization within the same theoretical framework.
 	
 	\subsection*{Hex}
-	\begin{wrapfigure}[11]{i}{0.47\textwidth}
+	\begin{wrapfigure}[12]{i}{0.47\textwidth}
 		\centering
 		\begin{tikzpicture}[scale=0.4]
 			\def\r{0.55}
@@ -1473,11 +1454,11 @@ Combining both constructions allows us to build the diagram of Figure~\ref{fig: 
 			\coordinate (BR) at (10,-0.35);
 			\coordinate (C) at (7,5);
 			
-			\fill[Blue] (TL) -- (C) -- (TR) -- cycle;
-			\fill[Blue] (BL) -- (C) -- (BR) -- cycle;
+			\fill[bg] (TL) -- (C) -- (TR) -- cycle;
+			\fill[bg] (BL) -- (C) -- (BR) -- cycle;
 			
-			\fill[Red] (TL) -- (C) -- (BL) -- cycle;
-			\fill[Red] (TR) -- (C) -- (BR) -- cycle;
+			\fill[sealred] (TL) -- (C) -- (BL) -- cycle;
+			\fill[sealred] (TR) -- (C) -- (BR) -- cycle;
 			\draw[thick] (TL)--(TR)--(BR)--(BL)--cycle;
 			
 			
@@ -1507,9 +1488,9 @@ Combining both constructions allows us to build the diagram of Figure~\ref{fig: 
 			{ 
 				\pgfmathsetmacro{\x}{0.55*sqrt(3)*(\i+\j/2)}
 				\pgfmathsetmacro{\y}{0.55*1.5*\j}
-				\filldraw[fill=Red] (\x,\y) ++(30:\r) \foreach \a in {90,150,210,270,330} { -- ++(\a:\r)} -- cycle; }
+				\filldraw[fill=sealred] (\x,\y) ++(30:\r) \foreach \a in {90,150,210,270,330} { -- ++(\a:\r)} -- cycle; }
 		\end{tikzpicture}
-		\caption{\textcolor{Red}{Winning chain} connecting two opposite edges.}
+		\caption{\textcolor{sealred}{Winning chain} connecting two opposite edges.}
 		\label{fig:hex}
 	\end{wrapfigure}
 	Let us now consider Hex, Figure~\ref{fig:hex}. The board is hexagonal; it suffices to adapt the adjacency criterion. Unlike Go, there are no captures in Hex. To win, one must construct a path from one corner to its opposite. By distinguishing the opposite edges of the board as position subsets, the winning condition can be expressed very simply: a player wins if there exists a group of their color that intersects both opposite edges of their color. Thus, victory in Hex reduces to a property of the groups.
@@ -1541,19 +1522,19 @@ Combining both constructions allows us to build the diagram of Figure~\ref{fig: 
 			\draw (v5)--(B);
 			\draw (v3)--(v6);
 			% Aristas de Short (azules)
-			\draw[very thick,Blue] (A)--(v1);
-			\draw[very thick,Blue] (v1)--(v4);
-			\draw[very thick,Blue] (v4)--(v6);
-			\draw[very thick,Blue] (v6)--(B);
+			\draw[very thick,bg] (A)--(v1);
+			\draw[very thick,bg] (v1)--(v4);
+			\draw[very thick,bg] (v4)--(v6);
+			\draw[very thick,bg] (v6)--(B);
 			
 			% Aristas de Cut (rojas)
-			\draw[very thick,Red] (A)--(v2);
-			\draw[very thick,Red] (v2)--(v5);
-			\draw[very thick,Red] (v5)--(v7);
-			\draw[very thick,Red] (v7)--(B);
+			\draw[very thick,sealred] (A)--(v2);
+			\draw[very thick,sealred] (v2)--(v5);
+			\draw[very thick,sealred] (v5)--(v7);
+			\draw[very thick,sealred] (v7)--(B);
 			
-			\draw[very thick,Red] (v1)--(v3);
-			\draw[very thick,Red] (v6)--(v3);
+			\draw[very thick,sealred] (v1)--(v3);
+			\draw[very thick,sealred] (v6)--(v3);
 			
 			
 			
