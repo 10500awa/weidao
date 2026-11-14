@@ -474,32 +474,35 @@ Lastly, $f(n) = i$ produces a capture if and only if
 \exists e' \in E \setminus \{0, e\}, \; \exists X \in I^{e'}(T') \text{ with } X \cap K_{T'}(i) \neq \emptyset : L_{T'}(X) = \emptyset.
 \]
 
-We define the Boolean functions \text{Vacant}, \text{Suicide}, \text{Capture}, and \text{SKo}. These functions take a candidate move $f(n) = i = (e, p)$ as their argument and return $1$ if the condition is satisfied, and $0$ otherwise:
-\begin{align*}
-	\text{Vacant}(f(n)) &= \begin{cases}
-		1 & \text{if } (0, p) \in T_{n-1}, \\
-		0 & \text{if } (0, p) \notin T_{n-1};
-	\end{cases} & \quad
-	\text{Suicide}(f(n)) &= \begin{cases}
-		1 & \text{if } L_{T'}(I(i)) = \varnothing, \\
-		0 & \text{if } L_{T'}(I(i)) \neq \varnothing;
-	\end{cases} \\[1em]
-	\text{Capture}(f(n)) &= \begin{cases}
-		1 & \text{if it captures on } T', \\
-		0 & \text{otherwise};
-	\end{cases} & \quad
-	\text{SKo}(f(n)) &= \begin{cases}
-		1 & \text{if repeats a board}, \\
-		0 & \text{otherwise}.
-	\end{cases}
-\end{align*}
+In the case of SuperKo, let $\mathrm{Cap} = \bigcup \{X \in I^{e'}(T') \mid e' \in E \setminus \{0, e\},\, L_{T'}(X) = \emptyset\}$ and $\mathrm{Cap}_0 = \{(0, P(j)) : j \in \mathrm{Cap}\}$, yielding the post-capture board $T'' = (T' \setminus \mathrm{Cap}) \cup \mathrm{Cap}_0$. We define the Boolean functions $\mathrm{Vacant}$, $\mathrm{Suicide}$, $\mathrm{Capture}$, and $\mathrm{SKo}$. These functions take a candidate move $f(n) = i = (e, p)$ as their argument and return $1$ if the condition is satisfied, and $0$ otherwise:
+\[
+\mathrm{Vacant}(f(n)) = \begin{cases}
+	1 & \text{if } (0, p) \in T_{n-1},\\
+	0 & \text{if } (0, p) \notin T_{n-1}.
+\end{cases}
+\qquad
+\mathrm{Capture}(f(n)) = \begin{cases}
+	1 & \text{if it captures on } T',\\
+	0 & \text{otherwise.}
+\end{cases}
+\]
+\[
+\mathrm{Suicide}(f(n)) = \begin{cases}
+	1 & \text{if } L_{T'}(I(i)) = \emptyset,\\
+	0 & \text{if } L_{T'}(I(i)) \neq \emptyset.
+\end{cases}
+\qquad
+\mathrm{SKo}(f(n)) = \begin{cases}
+	1 & \text{if } \exists k: T'' = T_k,\\
+	0 & \text{otherwise.}
+\end{cases}
+\]
 With these functions, we can formally characterize when a move is legal.
 
 \begin{theorem}[Legal Move Theorem]\label{teo_jugada_legal}
 	Let $f(n) = i \in (E \setminus \{0\}) \times G$ be a move at turn $n$ of a Go game. Said move is legal if and only if it satisfies the following logical proposition:
 	$$f(n) \text{ is legal} \iff \text{Vacant} \wedge \neg \text{SKo} \wedge (\neg \text{Suicide} \vee \text{Capture}).$$
 	\end{theorem}
-	\label{teoremalegal}
 \begin{proof}
 	
 	$(\Rightarrow)$ Suppose that $f(n)$ is a legal move.
@@ -543,10 +546,14 @@ Furthermore, we have characterized not only when a move is legal, but also which
 \subsection{Scoring}\label{contarpuntos}
 Eventually, by virtue of Superko and mutual agreement, the game concludes. The winner in Go is the player who amasses the greatest number of points. To compute this, it suffices to sum each player's living stones remaining on the board at the end of the game and add their secured territory. In addition, the \textit{komi} is added to White's total.
 
-
-If we denote Black's score by $S(1)$ and White's score by $S(2)$ on the final board $T$, we obtain:
+Let $T$ denote the cleared final board obtained from $T_{\text{end}}$ after removing all
+mutually agreed dead stones (replacing each removed stone $i$ with $(0, P(i))$, or
+equivalently assuming all dead stones have been captured prior to the terminal passes).
+Denoting Black's score by $S(1)$ and White's score by $S(2)$ on $T$, we obtain:
 \[
-S(1) = \sum_{I \in I^1(T)} |I| + \sum_{R \in J^{1}(T)} |R|, \qquad S(2) = \sum_{I \in I^2(T)} |I| + \sum_{R \in J^{2}(T)} |R| + \textit{komi}.
+S(1) = \sum_{I \in I^1(T)} |I| + \sum_{R \in J^1(T)} |R|,
+\qquad
+S(2) = \sum_{I \in I^2(T)} |I| + \sum_{R \in J^2(T)} |R| + \text{komi}.
 \]
 To determine the winner, it suffices to evaluate the difference: if $S(2) - S(1) > 0$, White wins; if $S(2) - S(1) < 0$, Black wins.
 
@@ -633,7 +640,6 @@ Indeed, the sum of the parts equals the total number of points:
 	\label{fig:capturasm}
 \end{figure}
 In this manner, a proportional distribution is achieved, rewarding the player who contributes most to the capture. Awarding the points solely to the player who executes the capture would disincentivize aggression; it would be unfeasible to surround an opponent if, during the $m-1$ intermediate turns, others could ``steal'' the capture.
-
 \subsection{Komi for Multiple Players}\label{komi_n_jug}
 
 The origin of \textit{komi} lies in preventing draws and counterbalancing the disadvantage of playing second; therefore, it is necessary to reinterpret this concept when multiple players are involved. What follows is a proposal on how we might generalize it.
@@ -654,7 +660,7 @@ These solutions may be employed simultaneously or further refined; what is prese
 
 \section{Positional Superko Detection}\label{detec_superko}
 
-By virtue of the Legal Move Theorem~\ref{teoremalegal}, which by construction holds for $n$ dimensions, we possess the theoretical tool to determine whether a move is legal; however, thus far we have not discussed the mechanism for its practical detection.
+By virtue of the Legal Move Theorem~\ref{teo_jugada_legal}, which by construction holds for $n$ dimensions, we possess the theoretical tool to determine whether a move is legal; however, thus far we have not discussed the mechanism for its practical detection.
 
 We have already formalized how to determine whether a capture or a suicide occurs, or whether the intended intersection is occupied. Now, when does a \textit{Superko} occur? That is to say, how do we effectively ascertain that we have violated this rule?
 
@@ -814,15 +820,19 @@ $$p(\text{no error}) = \left( 1 - \frac{1}{2^{n+m}} \right)^{2^n} \approx \left(
 	\caption{Probability of no error by using more bits.}
 	\label{Tabla_prob}
 \end{table}
-Therefore, it would suffice to utilize 21-bit or even 32-bit numbers to achieve a probability of avoiding a Type 1 error of 0.9995 or 0.9999999997, respectively. We could generate two, three, or however many verification sequences we deem necessary in order to minimize the error.
+Therefore, against $2^{10}$ states, utilizing 21-bit ($m=11$) or 32-bit ($m=22$) numbers achieves a probability of avoiding a Type 1 error of $0.9995$ or $0.99999976$, respectively.
 
 \begin{definition}[SuperKo detection]
 	Given a game trajectory $\{T_0, T_1, \dots, T_{t-1}\}$, a play $f(t)\neq \varnothing$ breaks the SuperKo rule exactly when:
 	$$\text{SuperKo}(f(t)) = 1 \iff \exists k \in \{1, \dots, t\} : T_t = T_{t-k}.$$
 \end{definition}
 In the context of Zobrist, to verify the \textit{Superko} rule, it suffices to perform at most $S \cdot t$ operations, where $S$ is the total number of independent hash sequences implemented. If $H_{s}(t)$ represents the hash value at turn $t$ for sequence $s$, then a stone placement $f(t) \neq \varnothing$ triggers a SuperKo detection when:
-$$ \text{SuperKo}(f(t)) = 1 \iff H_{s}(t) \oplus H_{s}(t-k) = \vec{0}$$
-for some $k \in \{1, 2, \dots, t\}$ and for every sequence $s \in \{1, \dots, S\}$. We shall denote the numbers assigned to the stones by $h_s(i)$. Furthermore, to process captures, we shall make use of the XOR operator properties assumed previously. When a stone is captured, it is removed from the board. Therefore, if stone $i_{j}$ is removed, it suffices to apply the operation $H_s(t) \oplus h_s(i_{j})$ to the current state.
+\[
+SuperKo(f(t)) = 1 \Rightarrow \exists k \in \{1, 2, \dots, t\}\ \forall s \in \{1, \dots, S\} :
+H_s(t) \oplus H_s(t-k) = \vec{0}.
+\]
+
+Furthermore, to process captures, we shall make use of the XOR operator properties assumed previously. When a stone is captured, it is removed from the board. Therefore, if stone $i_{j}$ is removed, it suffices to apply the operation $H_s(t) \oplus h_s(i_{j})$ to the current state.
 
 By virtue of Properties P1 and P2, we can rearrange the hash calculation:
 \begin{align*}
@@ -896,8 +906,8 @@ We shall compute the states turn by turn, partitioning the vectors into 4-bit bl
 \end{figure}
 At turns 8 and 9, passing the turn produces a state identical to the preceding one. This does not violate the \textit{Superko} rule, as the rule solely prohibits placing a stone to recreate a position.
 
-However, it could occur that $h((2,(3,2)))=0000\ 0010$. This would trigger a false positive for \textit{Superko} on the sixth turn, since $H(6)= H(5)\oplus h((2,(3,2))) \oplus h((1,(3,1))) = 1111\ 0111$ and, upon comparing it with the history,
-$$H(6)\oplus H(3)=0000\ 0000.$$
+However, even with all 18 elementary seeds pairwise distinct, it could occur that
+$h((2, (3, 2))) = 1011\ 0011 = h((1, (2, 3))) \oplus h((2, (2, 1)))$. This would trigger a false positive for Superko on the sixth turn, since $H(6) = H(5) \oplus h((2, (3, 2))) \oplus h((1, (3, 1))) = 0100\ 0110 = H(2)$ and, upon comparing it with the history, $$H(6) \oplus H(2) = 0000\ 0000.$$
 Thus, by employing additional bits and implementing multiple simultaneous sequences to rule out collisions, Zobrist's method is fully implemented in Go.
 
 \section{The Structure of Time}
@@ -906,7 +916,9 @@ We are now in a position to inject time into the structure. We define $\mathcal{
 $$ \mathcal{T} = \{ T \subseteq E \times G \mid T \text{ is a board}\}.$$
 
 \subsection{The Game as a Trajectory}
-A game constitutes a sequence of moves $f:\mathbb{N} \rightarrow \mathcal{J}$, where $f(t)$ represents the action chosen by the active player at turn $t$. This function $f$ naturally induces a sequence of boards in $\mathcal{T}$, which we shall term a trajectory:
+A game constitutes a sequence of moves $f : \mathbb{N} \to \mathcal{J}$, where $f(t)$ represents the action chosen by the active player at turn $t$.
+
+This function $f$ naturally induces a sequence of boards in $\mathcal{T}$, which we shall term a trajectory:
 $$\{T_0, T_1, \dots, T_{\mathrm{end}}\}$$
 The sequence is constructed recursively by means of $\Delta$:
 
@@ -940,7 +952,7 @@ Let us understand how $\Delta$ functions. Suppose we are playing Go and that, on
 If $f(t) = \varnothing$, the board remains identical and we pass the turn; that is,
 $$T_{t} = \Delta(T_{t-1}, \varnothing) = T_{t-1}.$$
 
-If $f(t) = i^{*} = (e, p)$, we must validate said move. The computation of the new board $T_t = \Delta(T_{t-1}, i^{*})$ by virtue of Theorem~\ref{teoremalegal} is performed as follows:
+If $f(t) = i^{*} = (e, p)$, we must validate said move. The computation of the new board $T_t = \Delta(T_{t-1}, i^{*})$ by virtue of Theorem~\ref{teo_jugada_legal} is performed as follows:
 \begin{enumerate}
 	\item \textbf{Placement:} If there exists $(e',p)\in T_{t-1}$ such that $e' \neq 0$, the move is illegal. If $e'=0$, we generate a temporary board $T'$ where intersection $p$, previously empty, acquires state $e$. We then proceed to the next step.
 	$$T' = \left(T_{t-1} \setminus \{(0, p)\}\right) \cup \{(e, p)\}.$$
@@ -960,10 +972,8 @@ If $f(t) = i^{*} = (e, p)$, we must validate said move. The computation of the n
 	We compute $H(T_t)$ and compare it against the history. If the comparison yields $\vec{0}$ for any prior state (in every hash sequence), we have violated the rule and the move is discarded; otherwise, the move is legal and the turn concludes.
 	\end{enumerate}
 	
-In this manner, any candidate move can be accepted or rejected. Denoting the adjacency relation on $G$ by $A \subseteq G \times G$, a Game of Go is formally defined as a 4-tuple,
-$$\Gamma = (G, E, A, \Delta),$$
-	
-where, to a Go structure $(G, E, A)$, we adjoin the transition function $\Delta: \mathcal{T} \times \mathcal{J} \to \mathcal{T}$.
+In this manner, any candidate move can be accepted or rejected. Denoting the adjacency relation on $G$ by $\sim \subseteq G \times G$, a Game of Go is formally defined as a 3-tuple,
+$$\Gamma = (G, E, \sim).$$
 
 \section{Life in the Game of Go}\label{sec-vida}
 
@@ -1000,8 +1010,6 @@ the opponents (which can only aid the survival of $S$); conversely, whenever a s
 opposing player $e' \neq e$ executes a sequence of stone placements starting from $T_0$ while all other players pass, no stone of color $e'$ is ever captured, so the cardinality $|E^{e'}(T_t)|$ strictly increases at every placement of $e'$ (Section~\ref{section_state_dynamic}) even if $e'$ captures stones of other colors, ensuring that no prior board position in the trajectory is ever repeated.
 
 To characterize unconditional life statically, we first need to count how many groups surround a region. Extending Definitions~2.1.6 and~2.1.7 naturally to any subset $R \subseteq T$, we write $R \sim i$ if $\exists i_k \in R$ with $P(i_k) \sim P(i)$, and define its adjacency set as $K(R) = \{i \in T \setminus R : R \sim i\}$. We are interested in determining, knowing only $R$, how many distinct groups comprise its neighborhood.
-
-\newpage
 
 \begin{definition}[Neighborhood of a region]\label{def:vecindad_region}
 	Let $T$ be a board and let $R \subseteq T$ be a region. We define the \emph{Neighborhood}
@@ -1222,7 +1230,9 @@ When a group possesses no eyes at all and relies entirely on joiners, an analogo
 \end{lemma}
 
 \begin{proof}
-	By Definition~\ref{def:joiner}, the joiners $V_1, \dots, V_n$ are pairwise disjoint, satisfy $\bigcup_{k=1}^n (V_k)_0 \subseteq L_{T_0}(I)$, and verify $\partial V_k \subseteq S$ with $|\partial V_k| \ge 2$ for each $1 \le k \le n$.
+	By Definition~\ref{def:joiner}, the joiners $V_1, \dots, V_n$ are pairwise disjoint, satisfy
+	$$\bigcup_{k=1}^n (V_k)_0 \subseteq L_{T_0}(I),$$
+	and verify $\partial V_k \subseteq S$ with $|\partial V_k| \ge 2$ for each $1 \le k \le n$.
 	
 	Suppose $I$ is captured at some turn $T$; then every vacant position in $\bigcup_{k=1}^n (V_k)_0$ must be occupied at or before turn $T$.
 	
@@ -1362,10 +1372,11 @@ Having examined unconditional life, it is time to address conditional life. Ther
 \end{figure}
 
 \begin{definition}[Basic Seki without eyes]\label{def:seki_no_eyes}
-	Let $I$ and $J$ be two groups of distinct colors possessing no eyes. If there exists
-	a set of shared vacant intersections $R \subseteq L(I) \cap L(J)$ with $|R| = 2$
-	(or $|R| \ge 2$ such that mutually reducing $R$ reaches $|R| = 2$) satisfying
-	$L(I) = L(J) = R$, then $I$ and $J$ are in \emph{seki}.
+	Let $I$ and $J$ be two groups of distinct colors possessing no eyes. If there
+	exists a set of shared vacant intersections $R \subseteq L(I) \cap L(J)$ with
+	$\mathcal{K}(R) \subseteq I \cup J$ and $|R| = 2$ (or $|R| \ge 2$ such that
+	mutually reducing $R$ reaches $|R| = 2$) satisfying $L(I) = L(J) = R$, then
+	$I$ and $J$ are in \emph{seki}.
 \end{definition}
 
 This definition encapsulates \textit{seki} without eyes: if either player plays in $R$ when $|R| = 2$, both groups are immediately left with a single shared liberty, and the opponent will capture on the subsequent turn. Notice that it is essential to require $|R| \ge 2$; if $|R| = 1$, both groups would already possess only a single liberty, and whichever player holds the initiative would immediately capture the other.
@@ -1373,11 +1384,12 @@ This definition encapsulates \textit{seki} without eyes: if either player plays 
 By Benson's Theorem (\ref{teo_benson}), any group with two eyes already possesses unconditional life. It remains, then, to analyze the case of opposing groups possessing a single eye each that find themselves in \textit{seki}.
 
 \begin{definition}[Basic Seki with one eye]\label{def:seki_one_eye}
-	Let $I$ and $J$ be two groups of distinct colors possessing single-point vacant eyes
-	$O_I$ and $O_J$ ($|O_I| = |O_J| = 1$), respectively. If there exists a set of shared
-	vacant intersections $R \subseteq L(I) \cap L(J)$ with $|R| = 1$ (or $|R| \ge 1$ such
-	that mutually reducing $R$ reaches $|R| = 1$) satisfying $L(I) = R \cup O_I$ and
-	$L(J) = R \cup O_J$, then $I$ and $J$ are in \emph{seki} (see Figure~\ref{fig:sekiojos}).
+	Let $I$ and $J$ be two groups of distinct colors possessing single-point vacant
+	eyes $O_I$ and $O_J$ ($|O_I| = |O_J| = 1$), respectively. If there exists a set
+	of shared vacant intersections $R \subseteq L(I) \cap L(J)$ with
+	$\mathcal{K}(R) \subseteq I \cup J$ and $|R| = 1$ (or $|R| \ge 1$ such that
+	mutually reducing $R$ reaches $|R| = 1$) satisfying $L(I) = R \cup O_I$ and
+	$L(J) = R \cup O_J$, then $I$ and $J$ are in \emph{seki}.
 \end{definition}
 
 \begin{figure}[H]
@@ -1415,11 +1427,13 @@ Lemma~\ref{lem:seki_deterrence} motivates a natural generalization of Definition
 
 \begin{definition}[Conditional Life]\label{def:conditional_life}
 	Let $T_0$ be a board and let $S$ be a non-empty set of groups of color $e \neq 0$
-	on $T_0$. We say that $S$ possesses \textbf{conditional life} on $T_0$ if player~$e$
-	can select legal moves $f(t) \in \mathcal{J}$ on their turns $t \equiv e \pmod{m}$
-	(where $m = |E \setminus \{0\}|$) such that, along every resulting finite legal
-	trajectory $\{T_0, T_1, \dots, T_n\}$ regardless of the legal moves chosen by the
-	opposing players on their respective turns, no group $I \in S$ is ever captured:
+	on $T_0$. We say that $S$ possesses \emph{conditional life} on $T_0$ if player $e$ possesses
+	a defensive strategy selecting a legal move $f(t) = \sigma_e(T_0, \dots, T_{t-1})
+	\in \mathcal{J}$ on each of their turns $t \equiv e \pmod m$ (where
+	$m = |E \setminus \{0\}|$) such that, along every resulting finite legal
+	trajectory $\{T_0, T_1, \dots, T_n\}$ regardless of the legal moves chosen by
+	the opposing players on their respective turns, no group $I \in S$ is ever
+	captured:
 	\[
 	\forall n \in \mathbb{N}, \; \forall t \in \{1, \dots, n\}, \; \forall I \in S, \quad I \subseteq T_t.
 	\]
@@ -1458,6 +1472,7 @@ Thus, every group $B_z \in S$ possesses two distinct vital regions in $S$, namel
 
 \begin{wrapfigure}[7]{r}{0.36\textwidth}
 	\centering
+	\vspace{-30pt}
 	\includegraphics[width=0.6\linewidth]{figures/Kimcontraej}
 	\caption{A black group with unconditional life.}
 	\label{fig:Kimcontraejemplo}
@@ -1465,21 +1480,19 @@ Thus, every group $B_z \in S$ possesses two distinct vital regions in $S$, namel
 
 \section{Behind the Curtain}\label{sec:behind_curtain}
 
-Stepping back from the specific mechanics of captures, \textit{ko}, and life, this chapter has distilled the minimum mathematical structure required to represent Go. At the close of Part~I, we noted that constructing the game requires four elementary ingredients: \textit{where}, \textit{who}, \textit{what}, and \textit{how}. We now see that these four notions correspond directly to the components of the 4-tuple
+Stepping back from the specific mechanics of captures, \textit{ko}, and life, this chapter has distilled the minimum mathematical structure required to represent Go. At the close of Part~I, we noted that constructing the game requires four elementary ingredients: \textit{where}, \textit{who}, \textit{what}, and \textit{how}. We now see that these four notions correspond directly to the components of the 3-tuple
 \[
-\Gamma = (G, E, A, \Delta),
+\Gamma = (G, E, \sim),
 \]
 where:
 \begin{itemize}
 	\item $G$ formalizes \textbf{where} the game takes place: the underlying set of playable positions.
 	\item $E$ formalizes \textbf{who} participates: the set of states a position may assume, comprising the players together with a distinguished vacant state ($0 \in E$).
-	\item $A \subseteq G \times G$ (equivalently, the adjacency relation $\sim$) formalizes \textbf{what} structures emerge on the board: the spatial relation between positions from which connections, groups, regions, territories, and liberties are derived.
-	\item $\Delta : \mathcal{T} \times \mathcal{J} \to \mathcal{T}$ formalizes \textbf{how}
-	the game evolves over time: the transition rule governing move legality, captures,
-	and state progression.
+	\item $\sim \subseteq G \times G$ (equivalently, the adjacency relation $\sim$) formalizes \textbf{what} structures emerge on the board: the spatial relation between positions from which connections, groups, regions, territories, and liberties are derived.
 \end{itemize}
 
-Taken together, the triple $(G, E, A)$ defines the \emph{static arena} of the game---sufficient to describe boards, groups, and regions at rest---whereas adjoining the transition operator $\Delta$ yields the complete dynamical system $\Gamma = (G, E, A, \Delta)$, the game itself.
+And lastly, as we are in a game, $\Delta : \mathcal{T} \times \mathcal{J} \to \mathcal{T}$ formalizes \textbf{how}
+the game evolves over time: the transition rule governing move legality, captures, and state progression.
 
-In Part~III, we shall decouple and vary each of these components independently: first by altering the geometry of $(G, A)$ across dimensions and topologies, and subsequently by modifying $\Delta$ and the winning criteria. In doing so, we will not only generalize Go, but also show that a broad family of surrounding and connection games can be naturally unified within this same axiomatic framework.
+In Part~III, we shall decouple and vary each of these components independently: first by altering the geometry of $(G, \sim)$ across dimensions and topologies, and subsequently by modifying $\Delta$ and the winning criteria. In doing so, we will not only generalize Go, but also show that a broad family of surrounding and connection games can be naturally unified within this same axiomatic framework.
 \newpage

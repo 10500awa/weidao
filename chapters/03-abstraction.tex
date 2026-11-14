@@ -37,18 +37,10 @@
 \vfill
 \begin{center}
 	\begin{tikzpicture}[scale=3]
-		% PALETA DE LA PORTADA
 		\definecolor{bpbg}{HTML}{0B2450}
 		\definecolor{textcolor}{HTML}{efce8f}
 		\definecolor{sealred}{HTML}{9E2A2B}
 		\definecolor{goban}{HTML}{efce8f}
-		\pgfplotsset{
-			% New colormap specifically for the shadow
-			colormap={shadow}{
-				gray=(0.1)
-				gray=(0.1)
-			}
-		}
 		\begin{axis}[
 			hide axis,
 			view={4}{45},
@@ -58,22 +50,8 @@
 			y domain=0:360,
 			z buffer=sort,
 			]
-			
-%			% 1. Sombra
-%			\addplot3[
-%			surf,
-%			shader=interp,
-%			draw=none,     
-%			colormap name=shadow,
-%			opacity=0.1
-%			]
-%			(
-%			{(2 + cos(y)) * cos(x)},
-%			{(2 + cos(y)) * sin(x)},
-%			{-1} 
-%			);
-			
-			% 2. Toro
+		
+			% toro
 			\addplot3[
 			surf,
 			shader=flat,
@@ -253,9 +231,9 @@ Let us consider the case for \(\mathrm{Go}^3\), consisting of \(xyz\) nodes ($x,
 			(0,\z,0) coordinate (H);
 			\draw (A)-- (B)-- (C)--(G)--(F)--(B) (A)--(E)--(F)--(G)--(H)--(E);
 			\draw [black] (A)--(D)--(C) (D)--(H);
-			\draw [sealred, very thick, |-|](-4.85,0) -- node[above] {$x-2$}(-0.15,0);
-			\draw [bg, very thick, |-|](-0.15,-0.15) -- node[below,sloped] {$y-2$}(-2.2,-2.2);
-			\draw [Moss, very thick, |-|](0,1.35) -- node[right] {$z-2$}(0,0.15);
+			\draw [sealred, ultra thick, |-|](-4.85,0) -- node[above] {$x-2$}(-0.15,0);
+			\draw [bg, ultra thick, |-|](-0.15,-0.15) -- node[below,sloped] {$y-2$}(-2.2,-2.2);
+			\draw [Moss, ultra thick, |-|](0,1.35) -- node[right] {$z-2$}(0,0.15);
 			
 			%nodo y sus aristas
 			\draw[YellowOrange, ultra thick] (-2,1.5) -- (-2.35,1.15); %adentro
@@ -315,34 +293,22 @@ Next, we have the faces. These are divided into three pairs: $2$ faces of \((x-2
 
 Remaining is the internal volume, which consists of \((x-2)(y-2)(z-2)\) nodes, each with $6$ adjacencies. We are thus in a position to define the total number of directed adjacencies on a three-dimensional board. 
 
-Let \(A(x,y,z)\) be the number of directed adjacencies of a three-dimensional board; if:
-\begin{itemize}
-	\item \(V = 8 \cdot 3\), adjacencies of the vertices.
-	\item \(R = 4(4(x-2)+4(y-2)+4(z-2))\), adjacencies of the edges.
-	\item \(C = 5(2(x-2)(y-2)+2(x-2)(z-2)+2(y-2)(z-2))\), adjacencies of the faces.
-	\item \(I = 6(x-2)(y-2)(z-2)\), adjacencies in the interior.
-\end{itemize}
-
-In this manner, we can calculate the adjacencies of any three-dimensional board as follows:
-\begin{align*}
-	A(x,y,z)&=V+R+C+I\\
-	A(x,y,z)&=6 x y z - 2 x y - 2 x z - 2 y z.
-\end{align*}    
+Let \(A(x,y,z)\) be the number of directed adjacencies of a three-dimensional board, then, we can calculate the adjacencies of any three-dimensional board as follows:
+$$
+A(x,y,z)=6 x y z - 2 x y - 2 x z - 2 y z.
+$$   
 And its average,
-\begin{align*}
-	\tilde{A}(x,y,z)&=\frac{6 x y z - 2 x y - 2 x z - 2 y z}{xyz}.
-\end{align*}
-
-In turn, for $x, y, z \ge 3$, we can define the \textit{exterior} of the three-dimensional board; let \(A(x,y,z)_{\partial}\) be the number of adjacencies of a board of dimensions \(x, y, z\) that only takes the exterior into account. As seen previously, it suffices to sum the vertices, the edges, and, in the case of the faces, we no longer count the adjacency pointing toward the interior, since it ceases to exist as there are no interior nodes, such that our faces have $4$ adjacencies. It suffices to take \(C'= 4(2(x-2)(y-2)+2(x-2)(z-2)+2(y-2)(z-2))\), hence:
-\begin{align*}
-	A(x,y,z)_{\partial}&=V+R+C'\\
-	A(x,y,z)_{\partial}&=8 (x y + x z - 2 x + y z - 2 y - 2 z + 3).
-\end{align*}
-
-We immediately define the average by subtracting the nodes we are not considering; let \(\tilde{A}(x,y,z)_{\partial}\) be the average number of liberties on the exterior of a board of dimensions \(x, y, z\):
-\begin{align*}
-	\tilde{A}(x,y,z)_{\partial}&=\frac{8 (x y + x z - 2 x + y z - 2 y - 2 z + 3)}{(xyz)-(x-2)(y-2)(z-2)}.
-\end{align*}
+$$
+\tilde{A}(x,y,z)=\frac{6 x y z - 2 x y - 2 x z - 2 y z}{xyz}.
+$$
+In turn, for $x, y, z \ge 3$, we can define the \textit{exterior} of the three-dimensional board; let \(A(x,y,z)_{\partial}\) be the number of adjacencies of a board of dimensions \(x, y, z\) that only takes the exterior into account. As seen previously, it suffices to sum the vertices, the edges, and, in the case of the faces, we no longer count the adjacency pointing toward the interior, since it ceases to exist as there are no interior nodes, such that our faces have $4$ adjacencies, hence:
+$$
+A(x,y,z)_{\partial}=8 (x y + x z - 2 x + y z - 2 y - 2 z + 3).
+$$
+We define the average by subtracting the nodes we are not considering; let \(\tilde{A}(x,y,z)_{\partial}\) be the average number of liberties on the exterior of a board of dimensions \(x, y, z\):
+$$
+\tilde{A}(x,y,z)_{\partial}=\frac{8 (x y + x z - 2 x + y z - 2 y - 2 z + 3)}{(xyz)-(x-2)(y-2)(z-2)}.
+$$
 \subsection{Comparing Average Adjacencies}\label{key:libprom}
 
 Prior to the development of this work, as a Go player, I wondered whether a three-dimensional version of the game existed. Upon finding only conceptual images on the Internet, I asked myself: why not develop it? Thus, \href{https://github.com/10500x/3dGo}{3dGo} was born.
@@ -352,7 +318,7 @@ Prior to the development of this work, as a Go player, I wondered whether a thre
 	\end{center}
 	\caption{Go board of size $5\times 4\times 3$ in \href{https://github.com/10500x/3dGo}{3dGo}.}
 \end{figure}
-Once the rules, arbitrary board-size selection, and other options were implemented, my opponent and I noticed that it was not the same game. \textit{3dGo} felt freer, more aggressive. The greater number of adjacencies altered the playing style, differentiating it from conventional Go. To understand this difference, even without prior experience, we shall analyze the behavior of the average number of adjacencies in the limit\footnote{This was the motivation for initiating this writing.}: Let us examine the limits of the average adjacencies for two- and three-dimensional boards.
+Once the rules, arbitrary board-size selection, and other options were implemented, my opponent and I noticed that it was not the same game. \textit{3dGo} felt freer, more aggressive. In our (informal) experience, the greater number of adjacencies altered the playing style, differentiating it from conventional Go. To understand this difference, even without prior experience, we shall analyze the behavior of the average number of adjacencies in the limit\footnote{This was the motivation for initiating this writing.}: Let us examine the limits of the average adjacencies for two- and three-dimensional boards.
 \begin{align*}
 	\lim_{x,y\to\infty} \tilde{A}(x,y) &= \lim_{x,y\to\infty} \frac{4xy-2x-2y}{xy} = \lim_{x,y\to\infty} \left( 4 - \frac{2x}{xy} - \frac{2y}{xy} \right) = 4,
 \end{align*}
@@ -360,18 +326,21 @@ Once the rules, arbitrary board-size selection, and other options were implement
 	\lim_{x,y,z\to\infty} 
 	\tilde{A}(x,y,z)&=\lim_{x,y,z\to\infty}\frac{6 x y z - 2 x y - 2 x z - 2 y z}{xyz}=6.\\
 \end{align*}
-It is evident that the average number of adjacencies in \(\mathrm{Go}^{3}\) is considerably higher. This difference is perceptible in the gameplay experience. The following problem then arises: How can we bring this average closer to $4$? Playing \(\mathrm{Go}^{3}\) must be equivalent to playing Go; to achieve this, it must faithfully imitate it in rules, size, and gameplay feel. This is why this reduction is necessary, because playing \(\mathrm{Go}^{3}\) is not playing \(\mathrm{Go}^{2}\).
+It is evident that the average number of adjacencies in \(\mathrm{Go}^{3}\) is considerably higher. This difference is perceptible in the gameplay experience. The following problem then arises: How can we bring this average closer to $4$? The natural target is a board whose local structure resembles that of \(\mathrm{Go}^{2}\): the aim is a game that imitates Go in rules, size, and gameplay feel, since playing \(\mathrm{Go}^{3}\) as it stands is not playing \(\mathrm{Go}^{2}\). Mean degree is, of course, only a first proxy for how a board plays: two boards with the same mean can have very different degree distributions. We use it as a necessary criterion, not a sufficient one.
 
 \subsection{Removing Nodes, Yes. But How?}
 \label{def_partial}
 
-As we have seen, the majority of the nodes on a \(\mathrm{Go}^{3}\) board lie in the interior—provided the size is sufficiently large—where each possesses $6$ adjacencies. Therefore, the elimination of nodes must begin in this region. Next in priority are the faces ($5$ adjacencies), whereas the edges and vertices, possessing $4$ or fewer, do not affect the average we seek. If we consider only the exterior of the board, the faces possess precisely $4$ adjacencies (we lose the one pointing inward); consequently, analyzing their limit, we find that:
+As we have seen, the majority of the nodes on a \(\mathrm{Go}^{3}\) board lie in the interior, provided the size is sufficiently large, where each possesses $6$ adjacencies. Therefore, the elimination of nodes must begin in this region. Next in priority are the faces ($5$ adjacencies), whereas the edges and vertices, possessing $4$ or fewer, do not affect the average we seek. If we consider only the exterior of the board, the faces possess precisely $4$ adjacencies (we lose the one pointing inward); consequently, analyzing their limit, we find that:
 \begin{align*}
 	\lim_{x,y,z\to\infty} \tilde{A}(x,y,z)_{\partial}&=
 	\lim_{x,y,z\to\infty}\frac{8 (x y + x z - 2 x + y z - 2 y - 2 z + 3)}{(xyz)-(x-2)(y-2)(z-2)}=4.
 \end{align*}
-Thus, our exterior board possesses the same average adjacencies in the limit as \(\mathrm{Go}^{2}\)—that is:
- $$\lim_{x,y\to\infty}  \tilde{A}(x,y)= \lim_{x,y,z\to\infty} \tilde{A}(x,y,z)_{\partial}.$$
+Thus, our exterior board possesses the same average adjacencies in the limit as \(\mathrm{Go}^{2}\),
+$$\lim_{x,y\to\infty}  \tilde{A}(x,y)= \lim_{x,y,z\to\infty} \tilde{A}(x,y,z)_{\partial}.$$
+\textit{Remark.} The limit is not really needed to see why. The graph \((G',\sim_{ort}|_{G'})\) is the surface of a box: a $2$-sphere tiled by unit squares. Every face point and every edge point has exactly $4$ adjacencies, exactly as in the interior of $\mathrm{Go}^{2}$, and the only exceptions are the eight corners, which have $3$. Hence
+$$A(x,y,z)_{\partial}=4|G'|-8,\qquad \tilde{A}(x,y,z)_{\partial}=4-\frac{8}{|G'|},\qquad |G'|=xyz-(x-2)(y-2)(z-2),$$
+which has the same shape as the planar formula \(\tilde{A}(x,y)=4-\tfrac{2(x+y)}{xy}\)
 
 
 \subsection{Toroidal Board}
@@ -558,11 +527,11 @@ Let us observe how the adjacencies of the vertices have changed: in the plane, w
 \end{figure}
 It is therefore worth asking: Is it possible to do this in any dimension? That is, taking them to their ``toroidal'' form. Indeed, it is possible, and furthermore, it is very simple and, unlike Figure~\ref{fig:Fig 27}, we do not lose points.
 
-Under our scrutiny, $G$ contains only points, and the adjacency criterion determines their relationships. To relate the edges, it suffices to add new relationships. What we seek is to join each face with its opposite; to achieve this, we formulate the following definition of the adjacency criterion by opposites, denoted as \(A_{op}\). Let \(G = N_1 \times \dots \times N_n\) be an $n$-dimensional board, where \(|N_k| = n_k \ge 3\). We shall say that two points $g_1, g_2 \in G$ are oppositely related if they are identical in all their coordinates except in one, the $k$-th, where they take values at the extremes:
+Under our scrutiny, $G$ contains only points, and the adjacency criterion determines their relationships. To relate the edges, it suffices to add new relationships. What we seek is to join each face with its opposite; to achieve this, we formulate the following definition of the adjacency criterion by opposites, denoted as \(\sim_{op}\). Let \(G = N_1 \times \dots \times N_n\) be an $n$-dimensional board, where \(|N_k| = n_k \ge 3\). We shall say that two points $g_1, g_2 \in G$ are oppositely related if they are identical in all their coordinates except in one, the $k$-th, where they take values at the extremes:
 \begin{equation*}
 	g_1=(x_1,\dots, 1, \dots, x_n) \ \sim \ (x_1, \dots, n_k, \dots, x_n)=g_2.
 \end{equation*}
-Thus, in this simple manner, we have defined the toroidal board, which is nothing more than the same board as before, except that we are now considering more adjacent points. Formally, if we call the canonical criterion \(A_{\text{ort}}\) (orthogonal adjacencies), we transition from the form \((G,A_{\text{ort}})\) to $(G, A_{\text{ort}} \cup A_{\text{op}})$.
+Thus, in this simple manner, we have defined the toroidal board, which is nothing more than the same board as before, except that we are now considering more adjacent points. Formally, if we call the canonical criterion \(\sim_{\text{ort}}\) (orthogonal adjacencies), we transition from the form \((G,\sim_{\text{ort}})\) to $(G, \sim_{\text{ort}} \cup \sim_{\text{op}})$.
 
 It is clear that the toroidal board will have $4$ adjacencies for each of its nodes. Let \(A(x,y)_{T}\) be the number of adjacencies on a toroidal board of size \(xy\); let us carry out once again the process we performed at the beginning. The toroidal board will have no vertices, no edges, and consequently, a single face composed of \(xy\) nodes which, as we have already seen, possess $4$ adjacencies per node; thus:
 $$A(x,y)_{T}=4xy.$$
@@ -580,7 +549,7 @@ Here, if we apply the new relation, we obtain that all points will have $6$ adja
 		
 		
 		%nodo que está atrás
-		\fill[color=bg] (-5,0) circle (0.07);
+		\fill[color=terracotta] (-5,0) circle (0.07);
 		
 		\path (0,0,\y) coordinate (A) (\x,0,\y) coordinate (B) (\x,0,0) coordinate (C) (0,0,0)
 		coordinate (D) (0,\z,\y) coordinate (E) (\x,\z,\y) coordinate (F) (\x,\z,0) coordinate (G)
@@ -602,9 +571,9 @@ Here, if we apply the new relation, we obtain that all points will have $6$ adja
 		\draw (-3.5,-1.15) node [thick,scale=2,yslant=0,xslant=0.75]{$C$};
 		\draw (-3.5,0.35) node [thick,scale=2,xslant=0.75]{$C'$};
 		
-		\fill[color=bg] (-5,1.5) circle (0.07);
-		\fill[color=bg] (0,0) circle (0.07);
-		\fill[color=bg] (0,1.5) circle (0.07);
+		\fill[color=terracotta] (-5,1.5) circle (0.07);
+		\fill[color=terracotta] (0,0) circle (0.07);
+		\fill[color=terracotta] (0,1.5) circle (0.07);
 		
 		
 		\fill[color=sealred] (-7.3,-2.3) circle (0.07);
@@ -622,20 +591,20 @@ Now then, what would happen if we consider only the points lying on the boundary
 If \(x\in G\), \(x=(x_1,\dots,x_n)\) with \(x_i \leq n_i = |N_i|\), the boundary will be that of the points given by
 $$G'=\{x\in G: \exists i, (x_i= 1 \lor x_i =n_i) \}.$$ Through the canonical adjacency criterion, we obtain a board such that it possesses, in the limit, $4$ adjacencies per point, since only the vertices possess $3$ adjacencies, as we saw in Section~\ref{def_partial}.
 
-If we attach to this board the adjacencies given by the opposite criterion, obtaining \((G',A_{ort}\cup A_{op})\), it will have $5$ adjacencies for every face point (and $6$ for edge and vertex points); since they lack the interior points, the faces lose one adjacency, but they gain it back through the opposite face. The edges, which possess $4$ adjacencies, gain $2$, and the vertices obtain $3$. Since the faces account for the largest number of points, it is clear that their limit will be $5$, naturally, when scaled to large sizes.
+If we attach to this board the adjacencies given by the opposite criterion, obtaining \((G',\sim_{\text{ort}} \cup \sim_{\text{op}})\), it will have $5$ adjacencies for every face point (and $6$ for edge and vertex points); since they lack the interior points, the faces lose one adjacency, but they gain it back through the opposite face. The edges, which possess $4$ adjacencies, gain $2$, and the vertices obtain $3$. Since the faces account for the largest number of points, it is clear that their limit will be $5$, naturally, when scaled to large sizes.
 
 If we recall Lemma~\ref{lem:2n}, upon applying these procedures to any given board, we can always achieve the equality of $2n$ adjacencies per point, for the opposite criterion guarantees the filling of all missing adjacencies. It is easy to see that, by taking arbitrarily large boards, any \(n\)-dimensional board possesses an average of $2n$ adjacencies in the limit.
 
-For this problem, for \(n=2\), \(A_{ort}\) provides a solution for the case with a degree as close to $4$ as possible, whereas the relation \(\mathcal{A} = A_{ort} \cup A_{{op}}\) satisfies the degree condition of exactly $4$. Furthermore, for the case \(n = 3\), we were able to find a partial solution on the boundary: if \(G' = \{ x \in G \mid \exists i \text{ such that } (x_i = 1 \lor x_i = n_i) \}\) denotes the boundary, then the graph \((G', A_{ort}|_{G'})\) is a solution for the case with a degree as close to $4$ as possible on the surface.
+For this problem, for \(n=2\), \(\sim_{ort}\) provides a solution for the case with a degree as close to $4$ as possible, whereas the relation \( \sim_{ort} \cup \sim_{{op}}\) satisfies the degree condition of exactly $4$. Furthermore, for the case \(n = 3\), we were able to find a partial solution on the boundary: if \(G' = \{ x \in G \mid \exists i \text{ such that } (x_i = 1 \lor x_i = n_i) \}\) denotes the boundary, then the graph \((G', \sim_{ort}|_{G'})\) is a solution for the case with a degree as close to $4$ as possible on the surface.
 
 \section{Go in One Dimension}\label{Go_1dim}
 %\begin{figure}[H]
 \begin{wrapfigure}[5]{r}{0.4\textwidth}
 	\centering
 	\begin{goban}[7x1]
-			\pgfgoticks
+		\pgfgoticks
 	\end{goban}
-
+	
 	\medskip
 	
 	\begin{goban}[7x1]
@@ -654,19 +623,22 @@ Then, it is clear that the limit of its average is $2$.
 
 \label{teoremas_go1}
 \begin{lemma}
-	In canonical $\mathrm{Go}^1$ on $G = \{1, \dots, n\}$ ($n \ge 3$), the only regions that can constitute an eye are the single-point extreme regions $\{(0, 1)\}$ and $\{(0, n)\}$. Any other interior vital region is necessarily a single-point joiner.
+	In canonical $\mathrm{Go}^1$ on $G = \{1, \dots, n\}$ ($n \ge 3$), the only
+	vacant regions $R \in I^0$ (i.e., $e$-regions with $R = R_0$) that can constitute
+	an eye are the single-point extreme regions $(0,1)$ and $(0,n)$. Any
+	other interior vacant vital region is necessarily a single-point joiner.
 \end{lemma}
 \begin{proof}
 	Every connected empty region $R$ corresponds to a discrete interval of vacant points $P(R) = \{a, a+1, \dots, b\}$ with $1 \le a \le b \le n$.
-\begin{figure}[H]
-	\centering
-	\begin{goban}[7x1]
-		\pgfgoticks
-		\stones[b]{D1, F1}
-		\stone[w]{B1}
-		\mark[filled square, fill = {true, color = amethyst}, line = {color = black}]{A1}
-		\mark[filled square, fill = {true, color = bg}, line = {color = black}]{E1}
-	\end{goban}
+	\begin{figure}[H]
+		\centering
+		\begin{goban}[7x1]
+			\pgfgoticks
+			\stones[b]{D1, F1}
+			\stone[w]{B1}
+			\mark[filled square, fill = {true, color = amethyst}, line = {color = black}]{A1}
+			\mark[filled square, fill = {true, color = bg}, line = {color = black}]{E1}
+		\end{goban}
 		\caption{\textcolor{amethyst}{Eye} at the boundary, \textcolor{bg}{joiner} in the interior.}
 		\label{fig:ej_go1dim}
 	\end{figure}
@@ -681,29 +653,46 @@ Then, it is clear that the limit of its average is $2$.
 		\item \textbf{$R$ at the boundary ($a = 1$ or $b = n$):} Suppose $a = 1$ (the case $b = n$ is
 		analogous). If $b = n$, the board is empty.
 		If $b < n$, the only stone adjacent to $R$ lies at $b+1$, belonging to a single group $I$ ($|\partial R| = 1$).
-		For $R$ to be healthy for $I$ ($R \subseteq L(I)$), every point in $P(R)$ must be adjacent to $b+1$, which forces $a = b = 1$. Hence $R = \{(0, 1)\}$ is an eye for $I$.
+		For $R$ to be healthy for $I$ ($R_0 \subseteq L(I)$), every point in $P(R)$ must be adjacent to $b+1$, which forces $a = b = 1$. Hence $R = \{(0, 1)\}$ is an eye for $I$.
 	\end{itemize}
 \end{proof}
 \section{Common Origin}
 
 Thus far, we have constructed two-dimensional Go and explored its generalizations to one and three dimensions. Although their dynamics differ, a natural question arises: are they truly distinct structures? We shall see that all of them can be derived from a single common origin.
 
-A Go game is determined by a structure \((G,E,A,\Delta)\). To relate different variants, we shall introduce certain natural mappings that allow us to construct some variants from others while preserving the adjacencies and the rules of the game.
+\paragraph{What is being varied.} The triple $\Gamma=(G,E,\sim)$ is the \emph{arena} of a game: where it is played, who takes part, and what is next to what. Go is this arena together with the rule schema $\Delta$ of Part~II (placement, capture, suicide, superko). In this section $\Delta$ is held fixed and only the arena varies; in Section~\ref{sec_JR} the rules vary as well.
 
-$$\phi:(G,E,A,\Delta)\to(G\times\{1\},E,A_{G\times\{1\}},\Delta_{G\times\{1\}}),$$given by $\phi(g)=(g,1)$. The preservation of adjacency is immediate; furthermore, $\phi$ is injective:
-$$\phi(g_1)\sim\phi(g_2)\iff(g_1,1)\sim(g_2,1).$$
+\paragraph{Axis boards.} The operations below act coordinate by coordinate, and that information is not recorded in the bare triple $(G,E,\sim)$. In particular, the relation $\sim_{op}$ of Section~\ref{key:sectoro} only makes sense once we know which points are ``opposite'', that is, which coordinates are the extremes of which axis. We therefore record it.
 
-To expand the board with a finite set $M = \{1, \dots, k\}$, we define the dimension-expansion operator
-$$
-\Xi_M : (G, E, A, \Delta) \mapsto (G \times M, E, A_{G \times M}, \Delta_{G \times M}).
-$$
-Fixing a slice coordinate $m \in M$, the canonical embedding $\xi_m: G \hookrightarrow G \times M$ given by $\xi_m(g) = (g,m)$ preserves adjacency and is injective, since $(g_1,m) = (g_2,m) \implies g_1 = g_2$:$$\xi_m(g_1) \sim \xi_m(g_2) \iff (g_1,m) \sim (g_2,m).$$To incorporate additional players, we define an inclusion
-$$\iota: (G,E,A,\Delta) \to (G,E \cup \{y\},A,\Delta_{E \cup \{y\}}),$$
-with $y \notin E$, such that $\iota(e) = e$ for all $e \in E$.
+\begin{definition}[Axis board]
+	An \emph{axis} is a pair $a=(n_a,\kappa_a)$ with $n_a\ge 1$ and $\kappa_a\in\{\mathrm{path},\mathrm{cycle}\}$, where $n_a\ge 3$ if $\kappa_a=\mathrm{cycle}$. An \emph{axis board} $B=(a_1,\dots,a_d;E)$ is a list of $d\ge 0$ axes together with a state set $E\ni 0$. Its structure is $\Gamma(B)=(G,E,\sim)$, where $G=\prod_{i=1}^{d}\{1,\dots,n_{a_i}\}$ and $g\sim h$ if and only if $g$ and $h$ differ in exactly one coordinate $i$, and there $h_i-g_i=\pm1$ if $a_i$ is a path, or $h_i-g_i\equiv\pm1 \pmod{n_{a_i}}$ if $a_i$ is a cycle.
+\end{definition}
 
-It is injective ($\iota(e_1) = \iota(e_2) \Rightarrow e_1 = e_2$) and preserves the identity of previous states. By design, it is non-surjective, so as to accommodate the new element.
+When every axis is a path, $\sim$ is the orthogonal adjacency $\sim_{ort}$; turning a path of length $n_a\ge3$ into a cycle adds exactly the relation $\sim_{op}$ along that axis. We write $\mathrm{Go}^n_m(n_1,\dots,n_n)$ for the board with $n$ path axes of lengths $n_1,\dots,n_n$ and $E=\{0,1,\dots,m\}$, and $\mathrm{Go}^n_m$ for the family obtained by letting the sizes vary. With no axes, $G$ is a single point; this is $\mathrm{Go}^0_0=(\{\ast\},\{0\},\sim)$, a single-node game with no players.
 
-Let us consider $\mathrm{Go}^0_0 = (\{1\}, \{0\}, A, \Delta)$, a single-node game with no players. Knowing that $\{1\} \times N \cong_A N$, we obtain the following diagram (Figure~\ref{fig:familia-go}).
+Four operations act on axis boards.
+\begin{itemize}
+	\item \textbf{Adding a player,} $\iota$. It replaces $E$ by $E\cup\{y\}$ with $y\notin E$, and leaves the board untouched. It is injective on states ($\iota(e_1)=\iota(e_2)\Rightarrow e_1=e_2$), preserves the identity of the previous states, and is non-surjective so as to accommodate the new element.
+	\item \textbf{Adding an axis,} $\Xi_k$. It appends the path axis $M=\{1,\dots,k\}$, so $G$ becomes $G\times M$ with the product adjacency
+	$$(g,m)\sim_{G\times M}(g',m')\iff\bigl(g\sim g'\ \text{and}\ m=m'\bigr)\ \text{or}\ \bigl(g=g'\ \text{and}\ |m-m'|=1\bigr).$$
+	For every slice $m\in M$ the embedding $\xi_m(g)=(g,m)$ is injective and satisfies $\xi_m(g_1)\sim\xi_m(g_2)\iff g_1\sim g_2$. For $k=1$ this is the plain embedding $g\mapsto(g,1)$, which raises the dimension without changing the board.
+	\item \textbf{Wrapping axes,} $\tau_S$ for $S\subseteq\{1,\dots,d\}$. It turns the axes in $S$ into cycles (each of length $\ge3$), and is the identity on $G$ and $E$. In terms of $\Gamma$, it replaces $\sim$ by $\sim\cup\sim^{S}_{op}$; hence $g_1\sim g_2\Rightarrow\tau_S(g_1)\sim\tau_S(g_2)$, and $\tau_S$ is an injective, adjacency-preserving map. We write $\tau=\tau_{\{1,\dots,d\}}$ for the operation that wraps \emph{every} axis.
+	\item \textbf{Adding a cyclic axis,} $\Xi^{cyc}_k:=\tau_{\{d+1\}}\circ\Xi_k$ for $k\ge3$.
+\end{itemize}
+
+\begin{lemma}[Commutation]\label{lem:conmutacion}
+	Let $B$ be an axis board with $d$ axes.
+	\begin{enumerate}
+		\item $\iota$ commutes with $\Xi_k$ and with every $\tau_S$.
+		\item $\tau_S\circ\Xi_k=\Xi_k\circ\tau_S$ for every $S\subseteq\{1,\dots,d\}$.
+		\item $\tau\circ\Xi_k=\Xi^{cyc}_k\circ\tau$ (for $k\ge3$), where $\tau$ wraps every axis of the board it is applied to.
+		\item In general $\tau\circ\Xi_k\neq\Xi_k\circ\tau$: on the left the new axis is a cycle, on the right it is a path.
+	\end{enumerate}
+\end{lemma}
+\begin{proof}
+	Each operation acts on a different part of the data (the list of axes, or $E$), or on different entries of that list: $\iota$ changes $E$, $\Xi_k$ appends an entry, and $\tau_S$ changes the type of the entries in $S$. Operations acting on different parts commute, which gives (1) and (2). For (3), both sides produce the board whose first $d$ axes are cycles and whose new axis is a cycle of length $k$. For (4), the left side wraps the new axis, while on the right $\tau$ has already acted before the axis was appended. \end{proof}
+
+Fixing the sizes at each step, the operations $\iota$ and $\Xi$ organize the games into the following family (Figure~\ref{fig:familia-go}).
 \begin{figure}[H]
 	\centering
 	\begin{tikzcd}
@@ -728,7 +717,7 @@ Let us consider $\mathrm{Go}^0_0 = (\{1\}, \{0\}, A, \Delta)$, a single-node gam
 		\arrow["\iota"', hook, from=5-1, to=5-3]
 		\arrow["\dots"', hook, from=5-3, to=5-5]
 	\end{tikzcd}
-	\caption{Structure of the family of \textit{Go Games}. Players are added to the right; the board is expanded downward.}
+	\caption{Structure of the family of \textit{Go Games}. Players are added to the right ($\iota$); axes are appended downward ($\Xi_k$, with the size $k$ chosen at each step). Starting from the single point $\mathrm{Go}^0_0$, appending one axis of length $k$ gives a line of $k$ points.}
 	\label{fig:familia-go}
 \end{figure}
 Recalling 老子 — \textit{Laozi}, we rediscover what has already been stated:\\
@@ -737,7 +726,7 @@ Recalling 老子 — \textit{Laozi}, we rediscover what has already been stated:
 	\begin{flushright}
 		{\large
 			\vspace{1pt}
-			  道生一，\\
+			道生一，\\
 			一生二，\\
 			二生三，\\
 			三生万物。
@@ -760,811 +749,302 @@ Recalling 老子 — \textit{Laozi}, we rediscover what has already been stated:
 \vspace{1pt}
 \hfill  道德經 — {\textsc{Dàodé jīng Chapter 42}}\\
 
-We can go a bit further; recalling what was seen in Section~\ref{key:sectoro}, we can define a natural transformation that associates each flat board with its toroidal version.
+\paragraph{The toroidal family.} By Section~\ref{key:sectoro}, wrapping every axis of a board with all sizes $\ge3$ gives a board in which every point has the same number of adjacencies, $2d$. We write $\mathrm{T}^n_m:=\tau(\mathrm{Go}^n_m)$. The mapping $\tau$ alters neither the number of nodes nor the players; it only adds relations between opposite positions. By Lemma~\ref{lem:conmutacion}, the square of Figure~\ref{fig:hollow_torus} commutes as soon as the expansion on the torus row is the cyclic one, $\Xi^{cyc}$.
 
-This mapping alters neither the number of nodes nor the players; it merely modifies the adjacency relations, identifying opposite positions on the board.
+\paragraph{The hollow torus.} On the other hand, recalling the adjacency analysis of Section~\ref{chap:6}, boundary positions behave differently from interior ones. To isolate this phenomenon we introduce the boundary restriction operator
+$$\partial:(G,E,\sim)\to(\partial G,E,\sim|_{\partial G}),$$
+where $\partial G=\{x\in G:\exists i,\ x_i=1\ \text{or}\ x_i=n_i\}$ and $\sim|_{\partial G}=\sim\cap(\partial G\times\partial G)$ is the induced relation, as in Section~\ref{key:sectoro}. Its output is a general structure and no longer an axis board, so $\partial$ can only be applied last. Moreover, on a cyclic axis the ``extremes'' $1$ and $n_i$ depend on where the cycle was cut, so $\partial$ of a torus is defined relative to the chosen coordinates.
 
-We thus define the toroidal mapping
-$$\tau:(G,E,A,\Delta)\to(G,E,A\cup A_{op},\Delta_{\tau}),$$
-where $A$ is the original adjacency relation and $A_{op}$ is the relation between opposite positions.
-
-The mapping acts as the identity on the nodes. Furthermore,$$g_1\sim_A g_2\implies\tau(g_1)\sim_{A\cup A_{op}}\tau(g_2).$$Since $A\subseteq A\cup A_{op}$, this property is immediate. In particular, $\tau$ is injective on the vertex set.
-
-On the other hand, recalling the adjacency analysis carried out in Section~\ref{chap:6}, we observe that boundary positions exhibit a different behavior from that of interior positions.
-
-To isolate this phenomenon, we introduce the boundary restriction operator
-$$\partial:(G,E,A,\Delta)\to(\partial G,E,A|_{\partial G},\Delta_{\partial G}),$$
-where $\partial G = \{ x \in G : \exists i, x_i = 1 \text{ or } x_i = n_i \}$ and $A|_{\partial G} = A \cap (\partial G \times \partial G)$, as we defined it in Section~\ref{key:sectoro}.
-
-\subsection*{The Hollow Torus}
-
-Combining both constructions allows us to build the diagram of Figure~\ref{fig: torohueco}.
-
-\begin{figure}[H]
+The operator $\partial$ does not commute with $\Xi_k$, since the boundary of a Cartesian product obeys the geometric Leibniz rule
+\[
+\partial(G \times M) = (\partial G \times M) \cup (G \times \partial M) \neq \partial G \times M.
+\]
+Consequently, hollowing out the interior must be performed after expanding the dimensions of the board (with $d\ge2$ axes of length $\ge3$). Combining the operators gives the diagram of Figure~\ref{fig:hollow_torus}: $\Xi$ and $\iota$ commute with $\tau$ (using $\Xi^{cyc}$ on the torus row) to generate the toroidal family $\mathrm{T}^n_m$, followed by the boundary restriction $\partial$ onto the hollow torus $\partial\mathrm{T}^n_m$.
+\begin{figure}[ht]
 	\centering
 	\begin{tikzcd}
-		{Go_0^0} && {Go^{n}_{m}} \\
+		{Go_{0}^{0}} &&& {Go_{m}^{n}} && \\
 		\\
-		{\partial T_0^0} && {\partial T_m^n}
-		\arrow["{\Xi, \iota}", hook, from=1-1, to=1-3]
-		\arrow["{\tau, \partial}"', maps to, from=1-1, to=3-1]
-		\arrow[dashed, from=1-1, to=3-3]
-		\arrow["{\tau, \partial}", maps to, from=1-3, to=3-3]
-		\arrow["{\Xi, \iota}"', hook, from=3-1, to=3-3]
+		\\
+		{T_{0}^{0}} &&& {T_{m}^{n}} && {\partial T_{m}^{n}}
+		\arrow["{\Xi , \iota}"{description}, hook, from=1-1, to=1-4]
+		\arrow["\tau"{description}, maps to, from=1-1, to=4-1]
+		\arrow[dashed, from=1-1, to=4-4]
+		\arrow["\tau"{description}, maps to, from=1-4, to=4-4]
+		\arrow["{\Xi^{cyc} , \iota}"{description}, hook, from=4-1, to=4-4]
+		\arrow["\partial"{description}, from=4-4, to=4-6]
 	\end{tikzcd}
-	\caption{Diagram of the complete structure. The horizontal arrows ($\Xi$) expand dimensions and players ($\iota$). The vertical ones ($\tau$) close the space, and ($\partial$) hollow out the interior.}
-	\label{fig: torohueco}
+	\caption{Diagram of the complete structure. The horizontal arrows expand dimensions and players ($\Xi$ on paths, $\Xi^{cyc}$ on cycles, $\iota$), $\tau$ closes the board into a torus, and $\partial$ hollows out the interior.}
+	\label{fig:hollow_torus}
 \end{figure}
 
-%\begin{theorem}
-%	En el $Go^{1}_{2}$ y en ausencia de komi. Existe una estrategia óptima donde el primer jugador siempre gana ó empata.
-%\end{theorem}
-%
-%
-%Sea $n$ el tamaño del tablero. Antes de ver el caso general, veamos los casos más importantes, los pequeños.
-%
-%\begin{figure}[H]
-%	\centering
-%	\begin{tikzpicture}[scale=0.7]
-	%		% Draw the background
-	%		\fill[goban] (-0.25,-0.5) rectangle (0.75,0.5);
-	%		% Draw the grid lines
-	%		\draw (0.25,-0.25) -- (0.25,0.25);
-	%		
-	%		\begin{scope}[xshift=2cm]
-		%			\fill[goban] (-0.25,-0.5) rectangle (1.25,0.5);
-		%			% Draw the grid lines
-		%			\draw (0,-0.25) -- (0,0.25);
-		%			\draw (0,0) -- (1,0);
-		%			\draw (1,-0.25) -- (1,0.25);
-		%		\end{scope}
-	%		
-	%		
-	%		\begin{scope}[xshift=4.5cm]
-		%			\fill[goban] (-0.25,-0.5) rectangle (2.25,0.5);
-		%			% Draw the grid lines
-		%			\draw (0,-0.25) -- (0,0.25);
-		%			\draw (0,0) -- (2,0);
-		%			\draw (1,-0.2) -- (1,0.2);
-		%			\draw (2,-0.25) -- (2,0.25);
-		%			\filldraw[black] (1,0) circle (10pt);
-		%		\end{scope}
-	%	\end{tikzpicture}
-%	\caption{Estrategia óptima en $Go^{1}_{2}$ de tamaño $1$,$2$ y $3$.}
-%\end{figure}
-%
-%\paragraph{$n=1:$}
-%Aquí, el negro no puede jugar, pues el punto no tiene libertades, por lo tanto, negro pasa. blanco se encuentra en la misma situación, pasa y la partida termina en empate.
-%\paragraph{$n=2:$}
-%Aquí, si negro juega en algún punto, blanco lo captura en el turno siguiente, luego negro no puede recapturar, por regla del ko. Por lo tanto, la mejor jugada es pasar, blanco pasa también, pues concluye lo mismo, empate.
-%\paragraph{$n=3:$}
-%La única jugada ganadora es jugar en el medio, blanco no puede jugar, pues ambas posibles jugadas son suicidio, blanco pasa, negro pasa. negro gana por $2$ puntos.
-%\paragraph{$n=4:$}
-%Aquí empezamos a notar que para $n$ par, la estrategia óptima es la misma si se juega de un lado del tablero que del otro, pues por la simetría del tablero, resulta un espejo del otro. Sin importar donde juegue blanco, siempre le queda una libertad, con lo cual es comido al turno siguiente. negro gana.
-%\paragraph{$n=5:$}
-%Igual que en $n=4$, donde sea que juegue el blanco, va a tener una libertad, negro toma al siguiente turno, así hasta que blanco no pueda jugar por ko. negro gana.
-%\begin{figure}[H]
-%	\centering
-%	\begin{tikzpicture}[scale=0.7]
-	%		\fill[goban] (-0.25,-0.5) rectangle (3.25,0.5);
-	%		% Draw the grid lines
-	%		\draw (0,-0.25) -- (0,0.25);
-	%		\draw (0,0) -- (3,0);
-	%		\draw (1,-0.2) -- (1,0.2);
-	%		\draw (2,-0.2) -- (2,0.2);
-	%		\draw (3,-0.25) -- (3,0.25);
-	%		\filldraw[black] (1,0) circle (10pt);
-	%		\begin{scope}[xshift=4cm]
-		%			\fill[goban] (-0.25,-0.5) rectangle (3.25,0.5);
-		%			% Draw the grid lines
-		%			\draw (0,-0.25) -- (0,0.25);
-		%			\draw (0,0) -- (3,0);
-		%			\draw (1,-0.2) -- (1,0.2);
-		%			\draw (2,-0.2) -- (2,0.2);
-		%			\draw (3,-0.25) -- (3,0.25);
-		%			\filldraw[black] (2,0) circle (10pt);
-		%		\end{scope}
-	%		\begin{scope}[xshift=8cm]
-		%			\fill[goban] (-0.25,-0.5) rectangle (4.25,0.5);
-		%			\draw (0,0) -- (4,0);
-		%			% Draw the grid lines
-		%			\draw (0,-0.25) -- (0,0.25);
-		%			\draw (1,-0.2) -- (1,0.2);
-		%			\draw (2,-0.2) -- (2,0.2);
-		%			\draw (3,-0.2) -- (3,0.2);
-		%			\draw (4,-0.25) -- (4,0.25);
-		%			\filldraw[black] (2,0) circle (10pt);
-		%		\end{scope}
-	%	\end{tikzpicture}
-%	\caption{Estrategia óptima en tamaño $4$ y $5$.}
-%\end{figure}
-%
-%La estrategia óptima consiste en jugar en el centro del tablero, para $n$ impar dicho centro siempre existe y para $n$ par, jugamos en alguno de los dos puntos que están lo más próximo al centro. Decimos que es óptimo, pues al jugar en el centro o lo más cerca posible, logramos partir el tablero en dos, dichos dos subtableros tienen influencia del negro, con lo cual, aunque el blanco sea capaz de asegurar la mayor cantidad de territorio posible en uno de los lados, jamás va a poder ser capaz de controlar todo el territorio, pues hay un punto que estará en conflicto con el blanco. Así, basta que el negro juegue en el otro lado de manera tal de asegurar la misma cantidad de puntos que el blanco, como el negro tiene la influencia en el centro, este tendrá un punto más dado por el borde del subtablero que está siendo controlado por el negro. Así estamos seguros de que el negro o bien tiene más puntos o bien empata con el blanco, para todo tamaño.
-%
-%En general, la estrategia óptima esta dada por la siguiente función:
-%
-%$$
-%f(t) = \begin{cases} 
-	%	(b, k'): P(k')\sim k   \wedge C(k')=0 & \text{si } (A) \text{ (Captura)} \\
-	%	(n, n - k + 1) & \text{si } (B) \text{ (Espejo)} \\
-	%	\varnothing & \text{si } (C) \text{ (Fin)}
-	%\end{cases}
-	%$$
-	%
-	%Donde los casos se evalúan en orden de prioridad:
-	%
-	%\paragraph{(A) Ataque:} Si la jugada del blanco es la piedra de posición $P(i_k)=k$ resulta un ataque es decir, $k$ es adyacente a un grupo negro $I_k(1)$, $2 \in C(R(I_k(1)))$. respondemos capturando inmediatamente en la única libertad restante ($k+1$ o $k-1$).
-	%
-	%\paragraph{(B) Espejo:} Si blanco realiza una jugada que no ataca, basta realizar la misma jugada pero espejada. Esto mantiene la paridad territorial.
-	%
-	%\paragraph{(C) Fin:} Si el blanco decide pasar su turno ($f(t-1) = \varnothing$), nosotros también pasamos para terminar la partida y asegurar la victoria por puntos.
-	%
-	%A modo de hacer más sencilla la lectura de la estrategia óptima, hemos realizado un diagrama de flujo:
-	%
-	%\begin{figure}[H]
-	%	\centering
-	%	\begin{tikzpicture}[
-		%		node distance=2cm, 
-		%		auto,
-		%		% Estilos
-		%		start/.style={rectangle, rounded corners, minimum width=3cm, minimum height=1cm, text centered, draw=black, fill=gray!10},
-		%		decision/.style={diamond, minimum width=3cm, minimum height=1cm, text centered, draw=black, aspect=2.5},
-		%		process/.style={rectangle, minimum width=3cm, minimum height=1cm, text centered, draw=black},
-		%		arrow/.style={thick, ->, >=stealth},
-		%		note/.style={text width=3cm, align=right, font=\footnotesize, color=black}
-		%		]
-		%		
-		%		% --- ESTRUCTURA CENTRAL ---
-		%		
-		%		% Nodo Inicio
-		%		\node (start) [start] {blanco realiza la jugada $f(t-1)$};
-		%		
-		%		% Decisión 1: ¿Es Ataque?
-		%		\node (dec1) [decision, below=1.5cm of start] {¿Es un ataque?};
-		%		\node (dec2) [decision, below=1.5cm of dec1] {¿blanco en el borde?};
-		%		% Decisión 2: ¿blanco Pasó? (Nueva lógica)
-		%		\node (dec3) [decision, below=1.5cm of dec2] {¿blanco Pasó?};
-		%		
-		%		% Acción Final: Espejo (Respuesta por defecto ante cualquier jugada no agresiva)
-		%		\node (proc3) [process, below=1.5cm of dec3] {\textbf{Espejo}};
-		%		\node (desc3) [below=0.1cm of proc3, font=\footnotesize] {Jugar simétrico en $n-k+1$};
-		%		
-		%		
-		%		% --- NOTAS EXPLICATIVAS (Izquierda) ---
-		%		
-		%		\node [note, left=0.5cm of dec1] (note1) {\textit{¿$2 \in C(R(I_j(1)))$?}\\(blanco juega adyacente a negro)};
-		%		\node [note, left=0.5cm of dec2] (note2) {\textit{
-				%				¿$P(f(t-1))=1$ ó\\ $P(f(t-1))=n$ ?}};
-		%		\node [note, left=0.5cm of dec3] (note2) {\textit{¿$f(t-1)= \varnothing$?\\ blanco pasa}};
-		%		
-		%
-		%		% --- RAMA Derecha ---
-		%		% Acción 1: Captura
-		%		\node (proc1) [process, right=2cm of dec1] {\textbf{Capturar}};
-		%		\node [note, below=0.1cm of proc1] (desc1) {Jugar en $(b,k'): P(k')\sim P(k)$ y $C(k')=0$.};
-		%		
-		%		% Acción 2: Pasar
-		%		\node (proc2) [process, right=1.5cm of dec2] {\textbf{Capturar}};
-		%		\node (desc2) [below=0.1cm of proc2, font=\footnotesize] {$P(f(t))=2$ ó $n-1$};
-		%		\node (proc4) [process, right=1.5cm of dec3] {\textbf{Pasar}};
-		%		\node (desc3) [below=0.1cm of proc4, font=\footnotesize] {$f(t)=\varnothing$ ó $n-1$};
-		%		
-		%		
-		%		% --- CONEXIONES ---
-		%		
-		%		\draw [arrow] (start) -- (dec1);
-		%		
-		%		% Flechas Decisión 1 (Ataque)
-		%		\draw [arrow] (dec1) -- node[anchor=south, near start] {Sí} (proc1);
-		%		\draw [arrow] (dec1) -- node[anchor=east] {No} (dec2);
-		%		
-		%		% Flechas Decisión 2 (Pase)
-		%		\draw [arrow] (dec2) -- node[anchor=south, near start] {Sí} (proc2);
-		%		\draw [arrow] (dec2) -- node[anchor=east] {No} (dec3);
-		%		\draw [arrow] (dec3) -- node[anchor=east] {No} (proc3);
-		%		\draw [arrow] (dec3) -- node[anchor=south] {Si} (proc4);
-		%		
-		%	\end{tikzpicture}
-	%	\caption{Diagrama de flujo de la estrategia para el $Go^{1}_{2}$.}
-	%	\label{fig:flowchart_go1_v2}
-	%\end{figure}
-	%
-	%Expliquemos qué queremos decir que la estrategia es jugar en el centro.
-	%
-	%\subsubsection{Caso Impar}
-	%\begin{figure}[H]
-	%	\centering
-	%	\begin{tikzpicture}[scale=0.7]
-		%		% Background (Ajustado a 18.5 para igualar la Figura~anterior)
-		%		\fill[goban] (-0.5,-0.5) rectangle (18.5,0.5);
-		%		
-		%		% --- Bloque Izquierdo (0-4) ---
-		%		\draw (0,0) -- (4,0);
-		%		\draw (0,-0.25) -- (0,0.25); % Borde Inicio
-		%		\foreach \x in {1,2,3,4} \draw (\x,-0.2) -- (\x,0.2);
-		%		
-		%		% Puntos suspensivos
-		%		\foreach \x in {4.5, 5.0, 5.5} \path (\x,0) node [black]{.};
-		%		
-		%		% --- Bloque Central (6-12) ---
-		%		\draw (6,0) -- (12,0);
-		%		\foreach \x in {6,...,12} \draw (\x,-0.2) -- (\x,0.2);
-		%		
-		%		% PIEDRAS (Centro en 9)
-		%		\filldraw[Moss] (8,0) circle (3pt);
-		%		\filldraw[black] (9,0) circle (10pt); % Piedra Central
-		%		\filldraw[Moss] (10,0) circle (3pt);
-		%		
-		%		% Puntos suspensivos
-		%		\foreach \x in {12.5, 13, 13.5} \path (\x,0) node [black]{.};
-		%		
-		%		% --- Bloque Derecho (14-18) ---
-		%		% (Extendido hasta 18 para igualar ancho total)
-		%		\draw (14,0) -- (18,0);
-		%		\foreach \x in {14,...,18} \draw (\x,-0.2) -- (\x,0.2);
-		%		\draw (18,-0.25) -- (18,0.25); % Borde Final
-		%		
-		%	\end{tikzpicture}
-	%	\caption{Tablero de $Go(n)$ e influencia de la piedra Negra inicial}
-	%\end{figure}
-	%Si jugamos exactamente en el centro, habremos dividido el tablero en dos tableros casi iguales, ambos de $\frac{n-1}{2}$ puntos. Decimos casi pues uno tendrá un punto negro a su derecha y el otro a su izquierda.
-	%\begin{figure}[H]
-	%	\centering
-	%	\begin{tikzpicture}[scale=0.7]
-		%		% --- PARTE SUPERIOR (Solo piedra 1) ---
-		%		% Background
-		%		\fill[goban] (-0.5,-0.5) rectangle (18.5,0.5);
-		%		
-		%		% Bloque Izquierdo (0-4)
-		%		\draw (0,0) -- (4,0);
-		%		\foreach \x in {0,...,4} \draw (\x,-0.2) -- (\x,0.2);
-		%		\draw (0,-0.25) -- (0,0.25); % Borde inicio
-		%		
-		%		% Puntos suspensivos
-		%		\foreach \x in {4.5, 5.0, 5.5} \path (\x,0) node [black]{.};
-		%		
-		%		% Bloque Central (6-12) -> Centro en 9
-		%		\draw (6,0) -- (12,0);
-		%		\foreach \x in {6,...,12} \draw (\x,-0.2) -- (\x,0.2);
-		%		
-		%		% Piedra 1 (CENTRADA en 9)
-		%		\filldraw[black] (9,0) circle (10pt);
-		%		\path (9,0) node [white]{1};
-		%		% Influencia (Vecinos en 8 y 10)
-		%		\filldraw[Moss] (8,0) circle (3pt);
-		%		\filldraw[Moss] (10,0) circle (3pt);
-		%		
-		%		% Puntos suspensivos
-		%		\foreach \x in {12.5, 13, 13.5} \path (\x,0) node [black]{.};
-		%		
-		%		% Bloque Derecho (14-18)
-		%		\draw (14,0) -- (18,0);
-		%		\foreach \x in {14,...,18} \draw (\x,-0.2) -- (\x,0.2);
-		%		\draw (18,-0.25) -- (18,0.25); % Borde final
-		%		
-		%		% --- PARTE INFERIOR (Respuesta Espejo) ---
-		%		\begin{scope}[yshift=-1.5cm]
-			%			% Background
-			%			\fill[goban] (-0.5,-0.5) rectangle (18.5,0.5);
-			%			
-			%			% Bloque Izquierdo
-			%			\draw (0,0) -- (4,0);
-			%			\foreach \x in {0,...,4} \draw (\x,-0.2) -- (\x,0.2);
-			%			\draw (0,-0.25) -- (0,0.25);
-			%			
-			%			% Puntos suspensivos
-			%			\foreach \x in {4.5, 5.0, 5.5} \path (\x,0) node [black]{.};
-			%			
-			%			% Bloque Central
-			%			\draw (6,0) -- (12,0);
-			%			\foreach \x in {6,...,12} \draw (\x,-0.2) -- (\x,0.2);
-			%			
-			%			% Puntos suspensivos
-			%			\foreach \x in {12.5, 13, 13.5} \path (\x,0) node [black]{.};
-			%			
-			%			% Bloque Derecho
-			%			\draw (14,0) -- (18,0);
-			%			\foreach \x in {14,...,18} \draw (\x,-0.2) -- (\x,0.2);
-			%			\draw (18,-0.25) -- (18,0.25);
-			%			
-			%			% --- PIEDRAS ---
-			%			
-			%			% Centro (Piedra 1 en 9)
-			%			\filldraw[black] (9,0) circle (10pt); \path (9,0) node [white]{1};
-			%			\filldraw[Moss] (8,0) circle (3pt); \filldraw[Moss] (10,0) circle (3pt);
-			%			
-			%			% Izquierda (Piedra 2 en 2)
-			%			\filldraw[draw=black,fill=white] (2,0) circle (10pt); \path (2,0) node [black]{2};
-			%			\filldraw[bg] (1,0) circle (3pt); \filldraw[bg] (3,0) circle (3pt);
-			%			
-			%			% Derecha (Piedra 3 en 16 -> Simétrica a 2 respecto a 9)
-			%			% 9 - 2 = 7 distancia. 9 + 7 = 16.
-			%			\filldraw[black] (16,0) circle (10pt); \path (16,0) node [white]{3};
-			%			\filldraw[Moss] (15,0) circle (3pt); \filldraw[Moss] (17,0) circle (3pt);
-			%			
-			%		\end{scope}
-		%	\end{tikzpicture}
-	%	\caption{Estrategia óptima para $n$ impar.}
-	%\end{figure}
-	%Como ya hemos mencionado, la mejor jugada para el blanco es jugar a distancia $2$ del borde. El negro hace lo mismo en el otro lado y, para cada jugada que el blanco haga, que no sea intentar atacar o jugar en el borde, negro la copia. Así, se obtendrán la misma cantidad de territorio, con la única diferencia de que el negro posee influencia en ambos lados. Si el blanco intenta atacar, pierde. Cómo atacar es perder, en algún momento no será opción para el blanco seguir poniendo piedras, pues tendrá que ponerla en una libertad del negro y luego será capturado o, tendrá que jugar en un punto vacío que es territorio del blanco, perdiendo un punto. Por lo tanto blanco decidirá pasar pues ya no puede mejorar, como negro siempre asegura más territorio que blanco, negro gana.
-	%
-	%\subsubsection{Caso par}
-	%Como no hay centro, basta elegir uno de los puntos más cercanos al centro, sin perdida de generalidad jugaremos en el de la izquierda. Es decir, jugamos en $\frac{n}{2}$. Así obtenemos dos tableros, uno de $\frac{n}{2}-1$ y otro de $\frac{n}{2}$. Pues $1+(\frac{n}{2}-1)+\frac{n}{2}=n$
-	%\begin{figure}[H]
-	%	\centering
-	%	\begin{tikzpicture}[scale=0.7]
-		%		% Draw the background (Ancho reducido a 17.5)
-		%		\fill[goban] (-0.5,-0.5) rectangle (17.5,0.5);
-		%		
-		%		% Bloque Izquierdo (0-4)
-		%		\draw (0,0) -- (4,0);
-		%		\draw (0,-0.25) -- (0,0.25); % Borde
-		%		\foreach \x in {1,2,3,4} \draw (\x,-0.2) -- (\x,0.2);
-		%		
-		%		% Puntos suspensivos
-		%		\path (4.5,0) node [black]{.};
-		%		\path (5.0,0) node [black]{.};
-		%		\path (5.5,0) node [black]{.};
-		%		
-		%		% Bloque Central (6-12)
-		%		\draw (6,0) -- (12,0);
-		%		\foreach \x in {6,...,12} \draw (\x,-0.2) -- (\x,0.2);
-		%		
-		%		% PIEDRAS (La acción ocurre entre 8 y 10)
-		%		\filldraw[Moss] (8,0) circle (3pt);
-		%		\filldraw[black] (9,0) circle (10pt);
-		%		\filldraw[Moss] (10,0) circle (3pt);
-		%		
-		%		% Puntos suspensivos
-		%		\path (12.5,0) node [black]{.};
-		%		\path (13,0) node [black]{.};
-		%		\path (13.5,0) node [black]{.};
-		%		
-		%		% Bloque Derecho (14-17)
-		%		\draw (14,0) -- (17,0);
-		%		\foreach \x in {14,15,16} \draw (\x,-0.2) -- (\x,0.2);
-		%		\draw (17,-0.25) -- (17,0.25); % Borde final con cierre
-		%		
-		%	\end{tikzpicture}
-	%	\caption{Tablero de $Go(n)$ e influencia de la piedra Negra inicial}
-	%\end{figure}
-	%
-	%Nótese que para el caso par ($n$ par), aunque no existe un punto central físico, la función de espejo $f(k) = n - k + 1$ sigue siendo válida. Al abrir el negro en $\frac{n}{2}$ (o su adyacente), se fuerza una asimetría territorial que, combinada con la estrategia de espejo, garantiza la victoria de igual forma que en el caso impar.
-	%
-	%De esta sencilla manera, hemos resuelto el \textbf{Go} en una dimensión.
+\paragraph{The projection onto the graph.} To study the geometric properties of the board, as in Section~\ref{chap:6}, it is useful to temporarily ignore the state of the positions and the game dynamics. We thus define the mapping
+\[U:(G,E,\sim)\to (G,\sim).\]
+This mapping associates each game with its underlying graph. In this way, properties such as the number of adjacencies $A(x,y)$ can be studied solely from the adjacency structure. Note that different games may determine the same graph, so the mapping is not injective.
+
+\newpage
+
+\section{Toward Surrounding Games}\label{sec_JR}
+
+Let us see how our theory could take us further than we initially thought. A caveat first: besides the arena $\Gamma=(G,E,\sim)$, each game below needs three more ingredients, which we make explicit: a family $\mathcal{D}$ of distinguished subsets of $G$ (corners, edges, the incidence sets of Shannon's game), a rule schema $\Delta$, and a winning condition $W$ phrased in terms of groups, regions and the sets in $\mathcal{D}$. A \emph{surrounding game} is thus a tuple $(\Gamma,\mathcal{D},\Delta,W)$; Go itself has $\mathcal{D}=\varnothing$ and the rules of Part~II. What the examples show is that the arena, together with the notions of group, region and liberty, is enough to state $W$ in each case.
+
+\subsection*{Othello}
+
+\begin{wrapfigure}[13]{i}{0.35\textwidth}
 	
-	
-	%\chapter{Segundas abstracciones}\label{parte4}
-	%\thispagestyle{empty}
-	%\noindent
-	%\begin{minipage}[t]{0.35\textwidth}
-	%	\begin{flushright}
-		%	\large{
-			%		臣之所好者道也，\\[0.4em]
-			%		進乎技矣。\\[0.4em]
-			%		依乎天理，批大郤，\\[0.4em]
-			%		導大窾，因其固然。\\[0.4em]
-			%		技經肯綮之未嘗，\\[0.4em]
-			%		而況大軱乎！
-			%	}\end{flushright}
-	%\end{minipage}%
-	%\hfill
-	%\vrule
-	%\hfill
-	%\begin{minipage}[t]{0.48\textwidth}
-	%	\raggedright
-	%	\emph{
-		%		$\!\!$Lo que yo aprecio es el Dao,\\
-		%		pues avanza más allá de la mera técnica.\\[0.4em]
-		%		Me ajusto a la estructura natural,\\
-		%		intervengo en los grandes intersticios,\\
-		%		conduzco por las grandes cavidades,\\
-		%		siguiendo su constitución inherente.\\[0.4em]
-		%		Así, ni siquiera rozo los más finos ligamentos o articulaciones,\\
-		%		¡y mucho menos los grandes huesos!
-		%	}
-	%\end{minipage}
-	%
-	%\vspace{0.8em}
-	%\hfill {\small \textsc{莊子—Zhuāngzǐ, Capítulo 3}}
-	%
-	%\section{Hacia los juegos de rodear}
-	%
-	%
-	%
-	%Nuestros objetos serán \textbf{Juegos}, dados por $(G,E,A,\Delta)$ con, como ya hemos visto, $G$ el tablero, $E$ los estados, $A$ la relación (o relaciones) de adyacencia y $\Delta$ las reglas que determinan cómo se dan las capturas.
-	%
-	%A modo de ser capaces de utilizar la terminología de \textbf{morfismos}, la estructura que preservamos siempre será la de la adyacencia.
-	%
-	%Para el primero de estos, haremos uso del isomorfismo natural $\phi$, que bajo este contexto es aquel dado por,
-	%$$\phi :  (G,E,A,\Delta) \rightarrow  (G\times \{1\},E,A,\Delta).$$
-	%Veamos que, en efecto, es un isomorfismo.
-	%
-	%Sean $g_1$ y $g_2$ $\in G$, supongamos que $g_1 \sim g_2$.
-	%
-	%Es morfismo pues la adyacencia se preserva: 
-	%$$\phi(g_1) \sim \phi(g_2) \iff (g_1, 1) \sim (g_2, 1),$$
-	%pues la segunda coordenada es constante. 
-	%Sí, $\phi(g_1)=\phi(g_2)$:
-	%$$\phi(g_1)=\phi(g_2) \implies (g_1,1)=(g_2,1) \implies g_1=g_2.$$
-	%Con lo cual, $\phi$ es inyectivo. Sea $(g,1) \in G\times \{1\}$, luego, existe $g\in G$, tal que $$\phi(g)=(g,1).$$
-	%Tal como queríamos, es un isomorfismo. 
-	%		
-	%Para extender el tablero definimos el morfismo de inmersión $\Xi$, dado por:
-	%$$\Xi : (G,E,A,\Delta) \to  (G\times M,E,A,\Delta).$$
-	%Podemos definir este morfismo fijando una coordenada en la nueva dimensión (digamos, el elemento $m \in M$); sean $g_1$ y $g_2$ elementos de $G$:
-	%	
-	%	Por $\phi$, para toda coordenada fija de $M$
-	%	\begin{align*}
-		%		\Xi(g_1) \sim \Xi(g_2) &\iff (g_1,m) \sim (g_2,m).
-		%	\end{align*}
-	%Lo cual es cierto por $\phi$, de modo que es morfismo.
-	%Claramente no será sobreyectivo pero sí inyectivo,
-	%	\begin{align*}
-		%		\Xi(g_1)=\Xi(g_2)  \implies (g_1,1)=(g_2,1) \implies g_1=g_2.
-		%	\end{align*}
-	%	De esta manera, $\Xi$ resulta en un morfismo inyectivo. 
-	%	
-	%	Para aumentar la cantidad de jugadores, haremos uso de una adjunción $$\iota: (G,E,A,\Delta) \to  (G,E \cup \{y\},A,\Delta).$$ Con $y \notin E$.
-	%	Tal que, $ \iota(e) = e, \forall e \in E $
-	%	Esta inclusión garantiza que la identidad se conserva al agregar nuevos participantes.
-	%	
-	%La inyectividad de este morfismo es inmediata, por la propia definición de identidad, pues, si:
-	%\begin{align*}\iota(e_1) = \iota(e_2) \implies e_1 = e_2.\end{align*}
-	%No es sobreyectiva, pues no existe elemento en $E$ que corresponda a $y$, tal como queremos.
-	%
-	%Podemos ir un poco más lejos, si recordamos lo visto en el Sección~\ref{key:sectoro}, podemos definir otro morfismo fundamental que nos construirá, para todo tablero plano, su versión toroidal.
-	%
-	%Definimos un morfismo que no altera la cantidad de nodos ni jugadores, sino la \textit{cualidad} de las conexiones, uniendo los bordes opuestos.
-	%
-	%El \textbf{morfismo toroidal} $\tau$:
-	%\[ \tau: (G,E,A,\Delta) \to (G,E,A\cup A_{o},\Delta) \]
-	%Donde $A$ es la relación canónica y $A_{o}$ la relación por opuestos.
-	%
-	%El morfismo actúa como la identidad en los vértices. Para ser válido, debe cumplir:
-	%\[ g_1 \sim_{A} g_2 \implies \tau(g_1) \sim_{A \cup A_{o}} \tau(g_2) \]
-	%Como $A \subset A \cup A_{o}$, la implicación es trivialmente cierta. e. c.on lo cual, $\tau$ es un morfismo inyectivo.
-	%
-	%Si recordamos el análisis del límite de adyacencias de la Sección~\ref{chap:6} observamos que el comportamiento del 'exterior' difiere del 'interior'. Para capturar esto, definimos un endofuntor que vacía el tablero por dentro:
-	%\[ \partial: (G,E,A,\Delta)  \to (\partial G,E,A,\Delta)  \]
-	%Donde $\partial G = \{ x \in G : \exists i, x_i = 1 \lor x_i = n_i \}$, tal como lo definimos en el Sección~ \ref{key:sectoro}.
-	
-	%\section{¿La Categoría \textsf{JR}?}
-	%
-	%Habiendo conocido nuestros objetos y, algunas funciones que nos permiten transitar entre ellos, estamos listos para definir nuestra primera categoría formal.
-	%
-	%Sea \textsf{JR} la \textbf{Categoría de los Juegos de rodear}, dada por:
-	%
-	%\begin{itemize}
-	%	\item \textbf{Objetos:} Juegos de rodear,  $J=(G, E, A,\Delta)$
-	%	\item \textbf{Flechas:} A modo de flechas usaremos los morfismos antes descriptos, pudiendo claramente definirse otros, por ejemplo:
-	%	\begin{itemize}
-		%		\item $\Xi: G_1 \hookrightarrow G_2$ preserva la adyacencia (estructura del espacio).
-		%		\item $\iota: E_1 \hookrightarrow E_2$ es una inclusión (preservación de estados).
-		%	\end{itemize}
-	%	
-	%	\item \textbf{Composición e Identidad:} La composición es componente a componente. El morfismo identidad es $(id_G, id_E,id_A,id_{\Delta})$.
-	%\end{itemize}
-	%
-	%Veamos que es una categoría. 
-	%Sean $J_1, J_2, J_3$ tres juegos de rodear. Si además, existen,
-	%\begin{align*}
-	%	f: J_1 \to J_2,\, g: J_2 \to J_3.
-	%\end{align*}
-	%Veamos que $g \circ f=h$ es válido.
-	%\begin{align*}
-	%	g \circ f &= g(f(J_1))= g(J_2)=J_3.
-	%\end{align*}
-	%Por lo tanto, existe $h: J_1 \to J_3$ tal que el siguiente diagrama siempre vale.
-	%\begin{figure}[H]
-	%	\centering
-	%	\begin{tikzcd}
-		%		{J_1} && {J_2} \\
-		%		\\
-		%		&& {J_3}
-		%		\arrow["f", from=1-1, to=1-3]
-		%		\arrow["{h=g \circ f}"', dashed, from=1-1, to=3-3]
-		%		\arrow["g", from=1-3, to=3-3]
-		%	\end{tikzcd}
-	%	\caption{Diagrama de la composición de Juegos de rodear.}
-	%\end{figure}
-	%
-	%Veamos que es asociativo, sean $f,g,h$ pero ahora, $h: J_3 \to J_4$. Luego,
-	%\begin{align*}
-	%	((h\circ g)  \circ f)(J) = (h\circ g)(f(J))=h(g(f(J)))=h((g\circ f)(J))=(h\circ (g\circ f))(J).
-	%\end{align*}
-	%
-	%Sean $J_{1}$ y $J_{2}$ dos juegos, llamaremos $id_{J}$ a su identidad, tal que si $id_{J}: J \to J$, si $f: J_1 \to J_2$ entonces, se cumple que,
-	%\begin{align*}
-	%	id_J(J)&=(id_G(G),id_E(E),id_A(A),id_{\Delta}(\Delta))=J.\\
-	%	f\circ id_{J_1}(J_1)&=f(id_{J_1}(J_1))=f(J_1)=J_2=id_{J_2}(J_2)=id_{J_2}(f(J_1)).=id_{J_{2}}\circ f(J_1)
-	%\end{align*}
-	%Es decir, valen los siguientes diagramas,
-	%\begin{figure}[H]
-	%	\centering
-	%	\begin{tikzcd}
-		%		J_1 & {} & J_2 && \\
-		%		\\
-		%		&& J_3 && J_4
-		%		\arrow["f", from=1-1, to=1-3]
-		%		\arrow["{g\circ f}"', from=1-1, to=3-3]
-		%		\arrow["g", from=1-3, to=3-3]
-		%		\arrow["{h\circ g}", from=1-3, to=3-5]
-		%		\arrow["h"{description}, from=3-3, to=3-5]
-		%	\end{tikzcd}
-	%		\begin{tikzcd}
-		%		{J_{1}} & {} & {J_{1}} && \\
-		%			\\
-		%			&& {J_{2}} && {J_{2}}
-		%			\arrow["{id_{J_{1}}}", from=1-1, to=1-3]
-		%			\arrow["f"', from=1-1, to=3-3]
-		%			\arrow["f", from=1-3, to=3-3]
-		%			\arrow["f", from=1-3, to=3-5]
-		%			\arrow["{id_{J_{2}}}"{description}, from=3-3, to=3-5]
-		%	\end{tikzcd}
-	%	\caption{Diagramas de la asociatividad e identidad, respectivamente.}
-	%\end{figure}
-	%Por lo tanto, hay identidad para todo juego y compone bien. De esta manera, \textsf{JR} es una categoría. Veamos qué podemos hacer con ella. Si nos restringimos a $\Delta = \Delta_{Go}$, es decir nos quedamos en los \textit{Juegos de Go}. 
-	
-	
-	%	Claramente, estos diagramas valen para todo Juego pero, no nos olvidemos que nuestro objetivo es hablar del \textbf{Go}. Para la categoría, nuestro objeto inicial sería el $$J_{\varnothing}(\varnothing,\{0\},\varnothing,\varnothing).$$
-	%	Veamos que lo es, debe existir una única flecha que vaya desde cualquier otro juego $J$ a $J_{\varnothing}$.
-	%	
-	%	$G=\varnothing$. Al no haber puntos en el tablero inicial, existe una única función posible hacia cualquier otro tablero $G$: $x \to \varnothing$.
-	%	
-	%	$E=\{0\}$. Como mencionamos al principio, el $0$ siempre está reservado para representar la intersección vacante. Para que un morfismo preserve la estructura al proyectarse hacia otro juego, debe mapear el vacío en el vacío. Por lo tanto, la única asignación válida es: $x \to 0$
-	%	
-	%	$A=\varnothing$. Las relaciones de adyacencias son, a fin de cuentas, conjuntos de pares. Como partimos de un conjunto vacío, la condición de que la función "preserve" las adyacencias en el juego de destino se cumple de manera trivial (por vacuidad). Al no haber adyacencias que romper, la función vacía es la única asignación: $x \to \varnothing$
-	%	
-	%	$\Delta=\varnothing$. El juego nulo no tiene reglas ni jugadas posibles. Al igual que con las adyacencias, la preservación de las reglas al pasar a otro juego se satisface por vacuidad de forma única:  $x \to \varnothing$
-	%
-	
-	\subsection*{The Projection onto the Graph}
-	
-	To study the geometric properties of the board, as in Section~\ref{chap:6}, it is useful to temporarily ignore the state of the positions and the game dynamics.
-	We thus define the mapping
-	\[U:(G,E,A,\Delta)\to (G,A).\]
-	This mapping associates each game with its underlying graph. In this way, properties such as the number of adjacencies $A(x,y)$ can be studied solely from the adjacency structure. Note that different games may determine the same graph, so the mapping is not injective.
-	
-	\newpage
-	
-	\section{Toward Surrounding Games}\label{sec_JR}
-	
-	Let us see how our theory could take us further than we initially thought.
-	
-	\subsection*{Othello}
-	
-	\begin{wrapfigure}[13]{i}{0.35\textwidth}
-		
-		\centering
-		\begin{goban}
-			[goban={
-				size=9,
-				scale=1.25,
-				background ={
+	\centering
+	\begin{goban}
+		[goban={
+			size=9,
+			scale=1.25,
+			background ={
 				fill = {color = othello},
 				line = {color = othelloborder}},
-				hoshi = {false}
-			}]
-		\end{goban}
-		\caption{Othello board.}
-		\label{fig:Tab_Othello}
-	\end{wrapfigure}In Figure~\ref{fig:Tab_Othello}, on the Othello board, play takes place inside the squares; this poses no difficulty, as it suffices to think of the intersections as the squares. Unlike Go, stones are adjacent in all directions (diagonals too); we simply need to modify \(A\). Furthermore, in Othello, ``capturing'' consists of flipping the stones to change their color. In turn, to ``surround,'' it is only necessary to do so in one dimension, that is, to enclose a group of another color along a straight line, either orthogonally or diagonally. We can already accomplish this: it suffices to consider that upon capturing, instead of removing the stones (i.e., assigning \(C(i)=0\)), we assign the color of the capturing player (by flipping them). If we had \(\Delta_{Oth}\), Othello can be constructed over the game:
-	$(N\times N, \{0,1,2\}, A_{ort} \cup A_{diag}, \Delta_{Oth}).$	With $|N|=8$, $A_{diag}$ being the criterion that takes diagonals $(\pm1,\pm1)$ into account, and $\Delta_{Oth}$ the rules of change in Othello. Thus, the developed construction suggests a possible formalization of \textit{Othello} within the same theoretical framework.
-	
-	\subsection*{Havannah}
-	
-	\begin{wrapfigure}[13]{r}{0.35\textwidth}
-		\vspace{-10pt}
-		\centering
-		\begin{tikzpicture}[scale=0.55] \tikzstyle{every node}=[font=\small]
-			
-			% Parámetros del hexágono
-			\def\r{0.58}
-			
-			% Función para dibujar una celda hexagonal
-			\foreach \q in {-4,...,4}{
-				\pgfmathtruncatemacro{\rmin}{max(-4,-\q-4)}
-				\pgfmathtruncatemacro{\rmax}{min(4,-\q+4)}
-				\foreach \s in {\rmin,...,\rmax}{
-					\pgfmathsetmacro{\x}{0.575*sqrt(3)*(\q+\s/2)}
-					\pgfmathsetmacro{\y}{0.575*1.5*\s}
-					
-					\draw[fill=goban]
-					(\x,\y)
-					++(30:\r)
-					\foreach \a in {90,150,210,270,330}{
-						-- ++(\a:\r)
-					} -- cycle;
-				}
-			}
-			
-			% ------------------------
-			% Anillo (azul)
-			% ------------------------
-			
-			\foreach \q/\s in {
-				0/1,1/0,1/-1,0/-1,-1/0,-1/1, -1/1
-			}{
+			hoshi = {false}
+		}]
+	\end{goban}
+	\caption{Othello board.}
+	\label{fig:Tab_Othello}
+\end{wrapfigure}In Figure~\ref{fig:Tab_Othello}, on the Othello board, play takes place inside the squares; this poses no difficulty, as it suffices to think of the intersections as the squares. Unlike Go, stones are adjacent in all directions (diagonals too); we simply need to modify \(\sim\). Furthermore, in Othello, ``capturing'' consists of flipping the stones to change their color. In turn, to ``surround,'' it is only necessary to do so in one dimension, that is, to enclose a group of another color along a straight line, either orthogonally or diagonally. We can already accomplish this: it suffices to consider that upon capturing, instead of removing the stones (i.e., assigning \(C(i)=0\)), we assign the color of the capturing player (by flipping them). If we had \(\Delta_{Oth}\), Othello can be constructed over the game:
+$(N\times N, \{0,1,2\}, \sim_{ort} \cup \sim_{diag}).$	With $|N|=8$, $\sim_{diag}$ being the criterion that takes diagonals $(\pm1,\pm1)$ into account, and $\Delta_{Oth}$ the rules of change in Othello. Note that here the framework supplies only the arena: ``surrounding'' is a condition along straight lines, not on groups, so the capture mechanism lives entirely in $\Delta_{Oth}$. The construction suggests a possible formalization of \textit{Othello} within the same framework, but a weaker one than for Go.
+
+\newpage
+
+
+\subsection*{Havannah}
+
+\begin{wrapfigure}[13]{r}{0.35\textwidth}
+	\vspace{-10pt}
+	\centering
+	\begin{tikzpicture}[scale=0.55] \tikzstyle{every node}=[font=\small]
+		
+		% Parámetros del hexágono
+		\def\r{0.58}
+		
+		% Función para dibujar una celda hexagonal
+		\foreach \q in {-4,...,4}{
+			\pgfmathtruncatemacro{\rmin}{max(-4,-\q-4)}
+			\pgfmathtruncatemacro{\rmax}{min(4,-\q+4)}
+			\foreach \s in {\rmin,...,\rmax}{
 				\pgfmathsetmacro{\x}{0.575*sqrt(3)*(\q+\s/2)}
 				\pgfmathsetmacro{\y}{0.575*1.5*\s}
 				
-				\filldraw[fill=bg]
+				\draw[fill=goban]
 				(\x,\y)
 				++(30:\r)
-				\foreach \a in {90,150,210,270,330}
-				{ -- ++(\a:\r) } -- cycle;
+				\foreach \a in {90,150,210,270,330}{
+					-- ++(\a:\r)
+				} -- cycle;
 			}
+		}
+		
+		% ------------------------
+		% Anillo (azul)
+		% ------------------------
+		
+		\foreach \q/\s in {
+			0/1,1/0,1/-1,0/-1,-1/0,-1/1, -1/1
+		}{
+			\pgfmathsetmacro{\x}{0.575*sqrt(3)*(\q+\s/2)}
+			\pgfmathsetmacro{\y}{0.575*1.5*\s}
 			
-			% ------------------------
-			% Puente (rojo)
-			% ------------------------
+			\filldraw[fill=bg]
+			(\x,\y)
+			++(30:\r)
+			\foreach \a in {90,150,210,270,330}
+			{ -- ++(\a:\r) } -- cycle;
+		}
+		
+		% ------------------------
+		% Puente (rojo)
+		% ------------------------
+		
+		\foreach \q/\s in {
+			-4/0, 	-3/0, -3/1,-3/2,-3/3,-4/4
+		}{
+			\pgfmathsetmacro{\x}{0.575*sqrt(3)*(\q+\s/2)}
+			\pgfmathsetmacro{\y}{0.575*1.5*\s}
 			
-			\foreach \q/\s in {
-				-4/0, 	-3/0, -3/1,-3/2,-3/3,-4/4
-			}{
-				\pgfmathsetmacro{\x}{0.575*sqrt(3)*(\q+\s/2)}
-				\pgfmathsetmacro{\y}{0.575*1.5*\s}
+			\filldraw[fill=sealred]
+			(\x,\y)
+			++(30:\r)
+			\foreach \a in {90,150,210,270,330}
+			{ -- ++(\a:\r) } -- cycle;
+		}
+		
+		% ------------------------
+		% Tenedor (verde)
+		% ------------------------
+		
+		\foreach \q/\s in {
+			1/-2, 2/-2,3/-2, 3/-2, 
+			1/-3, 1/-4,
+			3/-1, 4/-2, 3/0, 3/1
+		}{
+			\pgfmathsetmacro{\x}{0.575*sqrt(3)*(\q+\s/2)}
+			\pgfmathsetmacro{\y}{0.575*1.5*\s}
+			
+			\filldraw[fill=Moss]
+			(\x,\y)
+			++(30:\r)
+			\foreach \a in {90,150,210,270,330}
+			{ -- ++(\a:\r) } -- cycle;
+		}
+	\end{tikzpicture}
+	\caption{The three winning structures in Havannah: \textcolor{bg}{ring}, \textcolor{sealred}{bridge}, and \textcolor{Moss}{fork}.}
+	\label{fig:havannah}
+\end{wrapfigure}
+Another interesting example is Havannah. Unlike Go, this game takes place on a hexagonal board, and stones are adjacent according to the intrinsic geometry of said board. Once again, it suffices to modify the adjacency criterion. The particularity of Havannah is that there are three distinct ways to win: constructing a \textcolor{bg}{ring}, a \textcolor{sealred}{bridge}, or a \textcolor{Moss}{fork} (see Figure~\ref{fig:havannah}).
+
+Our theory already accounts for the case of the ring: a group $I \in I^e(T)$
+forms a ring if it encloses a non-empty component $X \subseteq \text{Interior}$
+($\mathcal{K}(X) \subseteq I$).\footnote{Unlike an eye in Go, a ring in Havannah
+	cannot use the board perimeter as part of its boundary, which is why the
+	enclosed cells must lie in $\text{Interior}$; those cells may be vacant or
+	occupied.} If we distinguish the six corners and the six sides of the board via
+the degree $|\mathcal{K}(i)|$ (Section 2.1):
+\begin{itemize}
+	\item $\text{Corners} = \{i \in T : |\mathcal{K}(i)| = 3\}$ (six isolated
+	corner positions),
+	\item $\text{Edges} = \{i \in T : |\mathcal{K}(i)| = 4\}$ (whose six
+	connected components $E_1, \dots, E_6$ are the six sides of the board),
+	\item $\text{Interior} = \{i \in T : |\mathcal{K}(i)| = 6\}$,
+\end{itemize}
+setting $\mathcal{D} = \{\text{Corners}, E_1, \dots, E_6, \text{Interior}\}$
+allows us to express all three winning conditions: a \emph{bridge} is a group
+$I$ with $|I \cap \text{Corners}| \ge 2$, and a \emph{fork} is a group $I$
+intersecting at least three distinct sides $E_m$.
+In this manner, Havannah's winning condition can be expressed solely in terms of groups, regions, and board subsets. Consequently, the game appears to admit a natural formalization within the same theoretical framework. 
+
+\subsection*{Hex}
+\begin{wrapfigure}[12]{i}{0.47\textwidth}
+	\centering
+	\begin{tikzpicture}[scale=0.4]
+		\def\r{0.55}
+		
+		%% Borde de colores de cada jugador
+		\coordinate (TL) at (4.2,9.7);
+		\coordinate (TR)at (16,9.7);
+		\coordinate (BL) at (-1.5,-0.35);
+		\coordinate (BR) at (10,-0.35);
+		\coordinate (C) at (7,5);
+		
+		\fill[bg] (TL) -- (C) -- (TR) -- cycle;
+		\fill[bg] (BL) -- (C) -- (BR) -- cycle;
+		
+		\fill[sealred] (TL) -- (C) -- (BL) -- cycle;
+		\fill[sealred] (TR) -- (C) -- (BR) -- cycle;
+		\draw[thick] (TL)--(TR)--(BR)--(BL)--cycle;
+		
+		
+		% Tablero 11x11 tipo Hex
+		\foreach \i in {0,...,10}{
+			\foreach \j in {0,...,10}{
 				
-				\filldraw[fill=sealred]
-				(\x,\y)
-				++(30:\r)
-				\foreach \a in {90,150,210,270,330}
-				{ -- ++(\a:\r) } -- cycle;
-			}
-			
-			% ------------------------
-			% Tenedor (verde)
-			% ------------------------
-			
-			\foreach \q/\s in {
-				1/-2, 2/-2,3/-2, 3/-2, 
-				1/-3, 1/-4,
-				3/-1, 4/-2, 3/0, 3/1
-			}{
-				\pgfmathsetmacro{\x}{0.575*sqrt(3)*(\q+\s/2)}
-				\pgfmathsetmacro{\y}{0.575*1.5*\s}
-				
-				\filldraw[fill=Moss]
-				(\x,\y)
-				++(30:\r)
-				\foreach \a in {90,150,210,270,330}
-				{ -- ++(\a:\r) } -- cycle;
-			}
-		\end{tikzpicture}
-		\caption{The three winning structures in Havannah: \textcolor{bg}{ring}, \textcolor{sealred}{bridge}, and \textcolor{Moss}{fork}.}
-		\label{fig:havannah}
-	\end{wrapfigure}
-	Another interesting example is Havannah. Unlike Go, this game takes place on a hexagonal board, and stones are adjacent according to the intrinsic geometry of said board. Once again, it suffices to modify the adjacency criterion. The particularity of Havannah is that there are three distinct ways to win: constructing a \textcolor{bg}{ring}, a \textcolor{sealred}{bridge}, or a \textcolor{Moss}{fork} (see Figure~\ref{fig:havannah}).
-	
-	Our theory already accounts for the case of the \textcolor{bg}{ring}. Indeed, a ring is simply a group that encloses a region. If we distinguish the six corners of the board as special subsets of positions, a \textcolor{sealred}{bridge} can be described as a group containing stones in at least two distinct corners. Likewise, if we distinguish the six edges of the board, a \textcolor{Moss}{fork} can be described as a group containing stones in at least three distinct edges.
-	
-	Recalling the properties of $|K(i)|$ discussed in Part~\ref{parte1}, this suffices for us to identify which points belong to the corners or edges (Section~\ref{posicion_espacial}). In this manner, Havannah's winning condition can be expressed solely in terms of groups, regions, and board subsets. Consequently, the game appears to admit a natural formalization within the same theoretical framework.
-	
-	\subsection*{Hex}
-	\begin{wrapfigure}[12]{i}{0.47\textwidth}
-		\centering
-		\begin{tikzpicture}[scale=0.4]
-			\def\r{0.55}
-			
-			%% Borde de colores de cada jugador
-			\coordinate (TL) at (4.2,9.7);
-			\coordinate (TR)at (16,9.7);
-			\coordinate (BL) at (-1.5,-0.35);
-			\coordinate (BR) at (10,-0.35);
-			\coordinate (C) at (7,5);
-			
-			\fill[bg] (TL) -- (C) -- (TR) -- cycle;
-			\fill[bg] (BL) -- (C) -- (BR) -- cycle;
-			
-			\fill[sealred] (TL) -- (C) -- (BL) -- cycle;
-			\fill[sealred] (TR) -- (C) -- (BR) -- cycle;
-			\draw[thick] (TL)--(TR)--(BR)--(BL)--cycle;
-			
-			
-			% Tablero 11x11 tipo Hex
-			\foreach \i in {0,...,10}{
-				\foreach \j in {0,...,10}{
-					
-					\pgfmathsetmacro{\x}{0.55*sqrt(3)*(\i+\j/2)}
-					\pgfmathsetmacro{\y}{0.55*1.5*\j}
-					
-					\draw[fill=goban]
-					(\x,\y)
-					++(30:\r)
-					\foreach \a in {90,150,210,270,330}
-					{ -- ++(\a:\r)}
-					-- cycle;
-				}
-			}
-			
-			
-			
-			\foreach \i/\j in {
-				0/5, 1/5, 2/5, 2/6,	3/6,
-				4/6, 5/6, 6/6, 6/7, 7/7,
-				8/7, 8/8, 9/8, 10/8
-			}
-			{ 
 				\pgfmathsetmacro{\x}{0.55*sqrt(3)*(\i+\j/2)}
 				\pgfmathsetmacro{\y}{0.55*1.5*\j}
-				\filldraw[fill=sealred] (\x,\y) ++(30:\r) \foreach \a in {90,150,210,270,330} { -- ++(\a:\r)} -- cycle; }
-		\end{tikzpicture}
-		\caption{\textcolor{sealred}{Winning chain} connecting two opposite edges.}
-		\label{fig:hex}
-	\end{wrapfigure}
-	Let us now consider Hex, Figure~\ref{fig:hex}. The board is hexagonal; it suffices to adapt the adjacency criterion. Unlike Go, there are no captures in Hex. To win, one must construct a path from one corner to its opposite. By distinguishing the opposite edges of the board as position subsets, the winning condition can be expressed very simply: a player wins if there exists a group of their color that intersects both opposite edges of their color. Thus, victory in Hex reduces to a property of the groups.
+				
+				\draw[fill=goban]
+				(\x,\y)
+				++(30:\r)
+				\foreach \a in {90,150,210,270,330}
+				{ -- ++(\a:\r)}
+				-- cycle;
+			}
+		}
+		
+		
+		
+		\foreach \i/\j in {
+			0/5, 1/5, 2/5, 2/6,	3/6,
+			4/6, 5/6, 6/6, 6/7, 7/7,
+			8/7, 8/8, 9/8, 10/8
+		}
+		{ 
+			\pgfmathsetmacro{\x}{0.55*sqrt(3)*(\i+\j/2)}
+			\pgfmathsetmacro{\y}{0.55*1.5*\j}
+			\filldraw[fill=sealred] (\x,\y) ++(30:\r) \foreach \a in {90,150,210,270,330} { -- ++(\a:\r)} -- cycle; }
+	\end{tikzpicture}
+	\caption{\textcolor{sealred}{Winning chain} connecting two opposite edges.}
+	\label{fig:hex}
+\end{wrapfigure}
+Let us now consider Hex, Figure~\ref{fig:hex}. The board is hexagonal; it suffices to adapt the adjacency criterion. Unlike Go, there are no captures in Hex. To win, one must construct a path from one board edge (side) to its opposite. By distinguishing the opposite edges of the board as position subsets, the winning condition can be expressed very simply: a player wins if there exists a group of their color that intersects both opposite edges of their color. Thus, victory in Hex reduces to a property of the groups.
 
-	\subsection*{Shannon's Game}
-	
-	Shannon's game constitutes a particularly interesting example; unlike Go, Hex, or Havannah, it does not take place on a board, but rather on an arbitrary finite graph. The two players alternate turns: player Short takes an edge of the graph and colors it, while Cut takes an edge of the graph and removes it. Short wins if their chosen edges contain a path connecting the distinguished vertices $A$ and $B$. Cut wins if they succeed in disconnecting vertices $A$ and $B$.
-	\begin{figure}[H]
-		\centering
-		\begin{tikzpicture}[
-			scale=1,
-			vertex/.style={circle,draw,fill=white,inner sep=1.7pt}
-			]
-			
-			% Vértices
-			\node[vertex,label=left:$A$] (A) at (0,0) {};
-			\node[vertex] (v1) at (2,1.5) {};
-			\node[vertex] (v2) at (2,-1.5) {};
-			\node[vertex] (v3) at (4,2) {};
-			\node[vertex] (v4) at (4,0) {};
-			\node[vertex] (v5) at (4,-2) {};
-			\node[vertex] (v6) at (6,1.5) {};
-			\node[vertex] (v7) at (6,-1.5) {};
-			\node[vertex,label=right:$B$] (B) at (8,0) {};
-			% Aristas libres (negras)
-			\draw (v2)--(v4);
-			\draw (v4)--(v5);
-			\draw (v4)--(v7);
-			\draw (v5)--(B);
-			\draw (v3)--(v6);
-			% Aristas de Short (azules)
-			\draw[very thick,bg] (A)--(v1);
-			\draw[very thick,bg] (v1)--(v4);
-			\draw[very thick,bg] (v4)--(v6);
-			\draw[very thick,bg] (v6)--(B);
-			
-			% Aristas de Cut (rojas)
-			\draw[very thick,sealred] (A)--(v2);
-			\draw[very thick,sealred] (v2)--(v5);
-			\draw[very thick,sealred] (v5)--(v7);
-			\draw[very thick,sealred] (v7)--(B);
-			
-			\draw[very thick,sealred] (v1)--(v3);
-			\draw[very thick,sealred] (v6)--(v3);
-			
-			
-			
-		\end{tikzpicture}
-		\caption{The blue edges belong to Short, the red ones to Cut, and the black ones remain free. The set of blue edges determines a path between the distinguished vertices $A$ and $B$, so Short wins.}
-	\end{figure}
-	
-	Let $\mathcal{H} = (V_{\mathcal{H}}, E_{\mathcal{H}})$ be a finite graph, and let $A, B \in V_{\mathcal{H}}$ be two distinguished vertices. We consider each edge of $\mathcal{H}$ as a playable
-	position, so the game space is $G_s = E_{\mathcal{H}}$. The state set is $E_s = \{0, 1, 2\}$,
-	where $0$ represents a free edge, $1$ an edge claimed by Short, and $2$ an edge removed by Cut.
-	Two positions $e_1, e_2 \in G_s$ are adjacent ($e_1 \sim_s e_2$) if and only if they share an
-	endpoint:
-	\[
-	e_1 \sim_s e_2 \iff e_1 \cap e_2 \neq \varnothing \;\text{ and }\; e_1 \neq e_2.
-	\]
-	Thus, any Shannon switching game on $\mathcal{H}$ is represented by the structure $\Gamma_s = (G_s,
-	E_s, \sim_s, \Delta_s)$.
-	
-	This example is especially revealing, as it shows that the developed structure does not depend on geometric notions such as regions or territories. Even though it is a game defined on an arbitrary graph, the notions of position, state, adjacency, and group remain sufficient to completely describe its dynamics.
-	%\section*{Glosario (Parte III)}
-	%\begin{center}
-	%	\begin{tabular}{p{2cm} p{4.7cm} p{2cm} p{4.7cm}}
-		%		\toprule
-		%		\textbf{Símbolo} & \textbf{Significado} & \textbf{Símbolo} & \textbf{Significado} \\
-		%		\midrule
-		%		$A(x,y,z)_\beta$ & Adyacencias del exterior 3D & $\tilde{A}(x,y,z)_\theta$ & Promedio de adyacencias del exterior 3D \\
-		%		$A(x,y)_\tau$ & Adyacencias del tablero toroidal 2D & $\tau$ & Transformación toroidal (unión de bordes opuestos) \\
-		%		$\partial G$ & Frontera del tablero (puntos en bordes) & $\varphi$ & Inmersión en una dimensión extra ($g\mapsto(g,1)$) \\
-		%		$\Xi$ & Expansión con un conjunto $M$ ($g\mapsto(g,m)$) & $\iota$ & Inclusión de un nuevo jugador ($E\mapsto E\cup\{y\}$) \\
-		%		$U$ & Proyección & & \\
-		%		\bottomrule
-		%	\end{tabular}
-	%\end{center}
+\subsection*{Shannon's Game}
+
+Shannon's game constitutes a particularly interesting example; unlike Go, Hex, or Havannah, it does not take place on a board, but rather on an arbitrary finite graph. The two players alternate turns: player Short takes an edge of the graph and colors it, while Cut takes an edge of the graph and removes it. Short wins if their chosen edges contain a path connecting the distinguished vertices $A$ and $B$. Cut wins if they succeed in disconnecting vertices $A$ and $B$.
+\begin{figure}[H]
+	\centering
+	\begin{tikzpicture}[
+		scale=1,
+		vertex/.style={circle,draw,fill=white,inner sep=1.7pt}
+		]
+		
+		% Vértices
+		\node[vertex,label=left:$A$] (A) at (0,0) {};
+		\node[vertex] (v1) at (2,1.5) {};
+		\node[vertex] (v2) at (2,-1.5) {};
+		\node[vertex] (v3) at (4,2) {};
+		\node[vertex] (v4) at (4,0) {};
+		\node[vertex] (v5) at (4,-2) {};
+		\node[vertex] (v6) at (6,1.5) {};
+		\node[vertex] (v7) at (6,-1.5) {};
+		\node[vertex,label=right:$B$] (B) at (8,0) {};
+		% Aristas libres (negras)
+		\draw (v2)--(v4);
+		\draw (v4)--(v5);
+		\draw (v4)--(v7);
+		\draw (v5)--(B);
+		\draw (v3)--(v6);
+		% Aristas de Short (azules)
+		\draw[ultra thick,bg] (A)--(v1);
+		\draw[ultra thick,bg] (v1)--(v4);
+		\draw[ultra thick,bg] (v4)--(v6);
+		\draw[ultra thick,bg] (v6)--(B);
+		
+		% Aristas de Cut (rojas)
+		\draw[ultra thick,sealred] (A)--(v2);
+		\draw[ultra thick,sealred] (v2)--(v5);
+		\draw[ultra thick,sealred] (v5)--(v7);
+		\draw[ultra thick,sealred] (v7)--(B);
+		
+		\draw[ultra thick,sealred] (v1)--(v3);
+		\draw[ultra thick,sealred] (v6)--(v3);
+		
+		
+		
+	\end{tikzpicture}
+	\caption{The blue edges belong to Short, the red ones to Cut, and the black ones remain free. The set of blue edges determines a path between the distinguished vertices $A$ and $B$, so Short wins.}
+\end{figure}
+
+Let $\mathcal{H} = (V_{\mathcal{H}}, F_{\mathcal{H}})$ be a finite graph, and let $A, B \in V_{\mathcal{H}}$ be two distinguished vertices. We consider each edge of $\mathcal{H}$ as a playable
+position, so the game space is $G_s = F_{\mathcal{H}}$. The state set is $E_s = \{0, 1, 2\}$,
+where $0$ represents a free edge, $1$ an edge claimed by Short, and $2$ an edge removed by Cut.
+Two positions $e_1, e_2 \in G_s$ are adjacent ($e_1 \sim_s e_2$) in the line graph of
+$\mathcal{H}$ if and only if they share an endpoint:
+\[
+e_1 \sim_s e_2 \iff e_1 \cap e_2 \neq \emptyset \quad\text{and}\quad e_1 \neq e_2.
+\]
+Distinguishing the incidence sets $S_A = \{e \in G_s : A \in e\}$ and
+$S_B = \{e \in G_s : B \in e\}$, player Short ($e=1$) wins if and only if there exists a
+group $I \in I^1(T)$ such that $I \cap S_A \neq \emptyset$ and $I \cap S_B \neq \emptyset$
+(which is equivalent to the existence of an $A$--$B$ path of Short's edges in $\mathcal{H}$).
+Thus, any Shannon switching game on $\mathcal{H}$ is represented by the structure
+$$\Gamma_s = (G_s, E_s, \sim_s),$$
+together with the distinguished subsets $\mathcal{D}=\{S_A,S_B\}$ and the winning condition above.
+
+This example is especially revealing, as it shows that the developed structure does not depend on geometric notions such as regions or territories. Even though it is a game defined on an arbitrary graph, the notions of position, state, adjacency, and group remain sufficient to state the arena and the winning condition; the dynamics (claiming versus removing an edge) is carried by the rule schema $\Delta_s$.
+%\section*{Glosario (Parte III)}
+%\begin{center}
+%	\begin{tabular}{p{2cm} p{4.7cm} p{2cm} p{4.7cm}}
+	%		\toprule
+	%		\textbf{Símbolo} & \textbf{Significado} & \textbf{Símbolo} & \textbf{Significado} \\
+	%		\midrule
+	%		$A(x,y,z)_\beta$ & Adyacencias del exterior 3D & $\tilde{A}(x,y,z)_\theta$ & Promedio de adyacencias del exterior 3D \\
+	%		$A(x,y)_\tau$ & Adyacencias del tablero toroidal 2D & $\tau$ & Transformación toroidal (unión de bordes opuestos) \\
+	%		$\partial G$ & Frontera del tablero (puntos en bordes) & $\varphi$ & Inmersión en una dimensión extra ($g\mapsto(g,1)$) \\
+	%		$\Xi$ & Expansión con un conjunto $M$ ($g\mapsto(g,m)$) & $\iota$ & Inclusión de un nuevo jugador ($E\mapsto E\cup\{y\}$) \\
+	%		$U$ & Proyección & & \\
+	%		\bottomrule
+	%	\end{tabular}
+%\end{center}

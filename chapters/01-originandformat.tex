@@ -92,7 +92,7 @@
 
 
 \subsection{History of Go in China}
-The term 圍棋 (Wéi Qí) originates from the characters 圍 (Wéi), meaning ‘to surround’, and 棋 (Qí), which refers to a ‘board game’. In the West, it is commonly known as Go, a name derived from the Japanese 囲碁 (Igo). Although its exact chronology remains uncertain, ancient literary, pictorial, and archaeological records demonstrate that the game was an integral part of Chinese culture since BCE times.
+The term 圍棋 (Wéi Qí) originates from the characters 圍 (Wéi), meaning ``to surround'', and 棋 (Qí), which refers to a ``board game''. In the West, it is commonly known as Go, a name derived from the Japanese 囲碁 (Igo). Although its exact chronology remains uncertain, ancient literary, pictorial, and archaeological records demonstrate that the game was an integral part of Chinese culture since BCE times.
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=0.51\linewidth]{figures/weiqi}
@@ -138,7 +138,7 @@ Having mastered the rules, it was time to compete.
 \end{quote}
 Following the match between \textit{Enrique Lindenbaum} and \textit{Iwamoto}, it was the amateurs' turn:
 \begin{quote}
-	Then came the simultaneous exhibition, where I had my first experience facing a professional player. I was at a beginner's level (or slightly above) and was supposed to take a nine-stone handicap, but \textit{Sachiko Kondo} asked to play with seven stones [\dots] When it became evident that White's victory was overwhelming, the professional asked to suspend the game.\footnote{Since Aguilar was the weaker player, he played first (taking Black), leaving \textit{Kondo} to play with White.}
+	Then came the simultaneous exhibition, where I had my first experience facing a professional player. I was at a beginner's level (or slightly above) and was supposed to take a nine-stone handicap, but \textit{Sachiko Kondo} asked to play with seven stones [\dots] When it became evident that White's victory was overwhelming, the professional asked to suspend the game.\footnote{Since Aguilar was the weaker player, he took Black and placed the	seven handicap stones, after which \textit{Kondo} moved with White.}
 \end{quote}
 Despite the defeat, \textit{Fernando's} ambition only continued to grow:
 \begin{quote}
@@ -150,7 +150,7 @@ Although he did not have a standout performance that year, he certainly did the 
 \end{quote}
 The most significant milestone of his career came in 2002. After securing third place in the \textit{Ibero-American Cup}, he qualified for the 1st \textit{Toyota \& Denso Cup -- World Go Oza}. In the first round, on March 19, he faced \textit{Hasegawa Sunao} ($9p$) (Figure~\ref{fig:aguilar_hasegawa_1}). The opening proceeded customarily:
 \begin{quote}
-	I grabbed a handful of stones, and my opponent guessed correctly that it was an odd number, so he was assigned to play with Black.\footnote{To determine who plays first in an even game, Japanese tradition employs a method called \textit{Nigiri} (握り). One player (customarily the senior or higher-ranked player, though in international tournaments either player may hold the stones) takes a handful of white stones and conceals them in hand. The opponent then places one black stone on the board to guess an odd count, or two black stones to guess an even count. The white stones are then counted in pairs, if the guess is correct, the guessing player takes Black and moves first. Otherwise, the players swap colors.}
+	I grabbed a handful of stones, and my opponent guessed correctly that it was an odd number, so he was assigned to play with Black.\footnote{To determine who plays first in an even game, Japanese tradition employs a method called \textit{Nigiri} (握り). One player (customarily the senior or higher-ranked player, though in international tournaments either player may hold the stones) takes a handful of white stones and conceals them in hand. The opponent then places one black stone on the board to guess an odd count, or two black stones to guess an even count. The white stones are then counted in pairs; if the guess is correct, the	guessing player takes Black and moves first. Otherwise, the players swap colors.}
 \end{quote}
 Against all odds, the game ended in \textit{Aguilar's} favor:
 \begin{quote}
@@ -255,7 +255,8 @@ The first paper exploring a potential mathematical model of Go was written by \t
 
 In 1970, \textit{Albert L. Zobrist} published a method to encode a board position into a single large integer for state-verification purposes \cite{zobrist1970hashing}. Although his work does not address Go per se, the method he describes will be employed in Section~\ref{ZobristHash} to detect when one of the game's core rules, the \textit{Superko} rule, is violated.
 
-In 1972, Thorp and Walden published a combinatorial study exploring the nature and rules of Go to generate a computational model. 
+In 1972, Thorp and Walden published a combinatorial study exploring the nature
+and rules of Go to generate a computational model \cite{TandW72}.
 
 In 1976, David B. Benson \cite{Benson} built upon Thorp and Walden's work to formally determine when a group is ``alive''. Although at first glance this contribution might seem separate from general game models, it stands as a pioneering attempt to model the internal dynamics of Go. His approach will be revisited under our own theory in Section~\ref{sec-vida}.
 
@@ -290,7 +291,9 @@ Finally, mention must be made of the work of \textit{Jin Bai Kim}, conceived in 
 	\label{fig:Fig 3}
 \end{figure}Go is played on a square board consisting of a grid of intersecting lines. It is contested by two players: one controls the black pieces and the other, the white ones. The most standard board sizes are \(9 \times 9\), \(13 \times 13\), and \(19 \times 19\) (read as ``nine-by-nine,'' ``thirteen-by-thirteen,'' etc.). To introduce the rules, we shall employ a \(7 \times 7\) board, a size more than adequate for this purpose.
 
-As illustrated in Figure~\ref{fig:Fig 1}, coordinates are read starting from the lower-left corner, point \((1, 1)\), with coordinates increasing to the right and upward. The game begins with an empty board (Figure~\ref{fig:Fig 3}), unless played with a handicap. The small black dots visible at certain intersections serve merely as visual reference points and provide standard placements for handicap stones.
+As illustrated in Figure~\ref{fig:Fig 1}, coordinates are read starting from the lower-left corner, point \((1, 1)\) (or A1 in alphanumeric notation, where columns are labeled with letters and rows with numbers), with coordinates increasing to the right and upward. The game begins with an empty board (Figure~\ref{fig:Fig 3}), unless played with a handicap. 
+
+The small black dots visible at certain intersections serve merely as visual reference points and provide standard placements for handicap stones.
 
 On their turn, a player may perform one of two actions: place a piece (termed a \textit{stone}) on an unoccupied intersection, or pass. The player controlling the black stones plays first and may place their stone on any vacant intersection of their choosing.
 
@@ -311,12 +314,12 @@ It can be observed that, on the second board, the black stone has four liberties
 		\moves{D4}
 	\end{goban}
 	\begin{goban}
-		\stones[w]{D4,D3,E3,F3,G4,H4,E5}
+		\stones[w]{D4,D3,E3,F3,G4,E5}
 		\stones[b]{E4,F4}
 		\filldraw[Moss] (6,5) circle (3pt);
 	\end{goban}
 	\begin{goban}
-		\stones[w]{D4,D3,E3,F3,G4,H4,E5}
+		\stones[w]{D4,D3,E3,F3,G4,E5}
 		\stones[b]{E4,F4}
 		\moves[w]{F5}
 	\end{goban}
@@ -367,7 +370,7 @@ There is, however, an exception to this rule: playing on an intersection with no
 	\caption{An illegal position, as it reverts to a previous state. Following Black's move at \((4, 6)\), Black could recapture at \((4, 4)\) on a subsequent turn. White prevents this possibility by playing at \((4, 4)\).}
 	\label{fig:Fig 6}
 \end{figure}
-\begin{wrapfigure}[14]{l}{0.35\textwidth}
+\begin{wrapfigure}[13]{l}{0.3\textwidth}
 	\centering
 	\begin{goban}[7, hoshi = false]
 		\stones[w]{A7, A6, B6, B5, C5, C4, C3, D3, D2, D1, E1}
@@ -378,9 +381,14 @@ There is, however, an exception to this rule: playing on an intersection with no
 	\end{goban}
 	\caption{Black \textcolor{Moss}{territory}, white \textcolor{bg}{territory} and \textcolor{terracotta}{neutral}.}
 	\label{fig:Fig 9}
-\end{wrapfigure}To recapture, Black must first play elsewhere on the board (a ko threat). This generates a different board configuration; if the opponent responds, Black may then play at \((4, 4)\) to recapture, as the board state will no longer be identical to the earlier one (see the final board in Figure~\ref{fig:Fig 6}). An empty intersection (or a group thereof) is considered the \textit{territory} of a given color if it is completely surrounded by stones of that color. Conversely, if an empty space is bounded by stones of both players, it is regarded as neutral, belonging to neither player (see Figure~\ref{fig:Fig 9}).
+\end{wrapfigure}
+To recapture, Black must first play elsewhere on the board (a \textit{ko threat}, such as move~9 at \((4, 6)\)). This alters the global board configuration: if
+White responds to that threat elsewhere, Black may then recapture at \((4, 4)\) on the next turn because the resulting board position will no longer repeat the
+previous one; conversely, if White ignores move~9, White can play move~10 at \((4, 4)\) to connect and resolve the ko (see the final board in Figure~\ref{fig:Fig 6}). An empty intersection (or a group thereof) is considered the \textit{territory} of a given color if it is completely surrounded by stones of that color. Conversely, if an empty space is bounded by stones of both players, it is regarded as neutral, belonging to neither player (see Figure~\ref{fig:Fig 9}).
 
-When two players of different skill levels face each other, a handicap is usually granted to the less experienced player. This advantage consists of playing with the black stones (moving first) and placing a predetermined number of \textit{handicap stones} on the board before the game begins; the greater the skill disparity, the more stones are placed (see Figure~\ref{fig:14}).
+When two players of different skill levels face each other, a handicap is usually granted to the less experienced player. This advantage consists of taking the
+black stones and placing a predetermined number of \textit{handicap stones} on the board as Black's initial setup (after which White makes the first regular
+move); the greater the skill disparity, the more stones are placed (see Figure~\ref{fig:14}).
 
 This is the traditional placement of handicap stones (on both \(13 \times 13\) and \(19 \times 19\) boards). There also exists \textit{free handicap placement}, in which the weaker player freely chooses where to position these initial stones.
 \begin{figure}[H]
@@ -402,36 +410,39 @@ This is the traditional placement of handicap stones (on both \(13 \times 13\) a
 
 The objective of Go is to secure more \textit{territory} than the opponent. On their turn, a player may choose to pass, conceding the initiative to the rival. The game ends when both players pass consecutively. At that point, a phase of mutual agreement begins, during which all ``dead'' stones (that is, those whose eventual capture cannot be prevented) are identified and removed from the board.
 
-After clearing these stones, the winner is determined by summing the secured \textit{territories} and the living stones remaining on the board at the end of the game. Figure~\ref{fig: Fig 10} illustrates a completed game.
-
-The score would be computed as follows: 11 stones for Black plus 16 intersections in Black's territory; White, for their part, has 11 stones and 11 intersections in territory. Consequently, Black scores 27 points and White 22, so Black wins by 5 points.\footnote{This method corresponds to Chinese scoring rules. There are several other counting systems, such as the Japanese or Korean rulesets.}
-
-One might oppose Black's victory, given the inherent advantage of making the first move. To offset this disparity, White is awarded a compensation for playing second, known as \textit{komi}.
-
-This value varies according to board size and the skill difference between the players; generally, 5.5 points are used on standard boards.\footnote{The exact value of \textit{komi} depends on the chosen ruleset. Furthermore, in handicap games, a minimal \textit{komi} of 0.5 points is typically applied.}
-
-Were this compensation applied to the preceding example, White would win by 0.5 points, the narrowest possible margin. The inclusion of this half-point in the \textit{komi} precludes the possibility of a draw.
-
-A group possesses an \textit{eye} if it completely surrounds an empty intersection. With at least two \textit{eyes}, it achieves the state of being \textit{alive} and can never be captured.
-
-Consequently, the black group is \textit{alive}. There exist, however, so-called false eyes: intersections that resemble \textit{eyes}, but where one of the surrounding groups is at risk of being reduced to a single liberty (the eye). As a result, if the opponent succeeds in capturing this vulnerable group, the structure collapses and the eye is lost (see Figure~\ref{fig:Fig 12}, right).
+After clearing these stones, the winner is determined by summing the secured
+\textit{territories} and the living stones remaining on the board at the end of
+the game. Figure~\ref{fig: Fig 10} illustrates a completed game.
 
 \begin{figure}[H]
 	\centering
-\begin{goban}[7, hoshi = false]
-	\stones[w]{A7, A6, B6, B5, C5, C4, C3, D3, D2, D1, E1}
-	\stones[b]{B7, C7, C6, D6, D5, E5, D4, E3, E2, F1, G2}
-	\stone[b, mark = {filled circle, fill = {true, color = terracotta}}]{B4}
-	\marks[filled circle, fill = {true, color = bg}]{A1:5, B1:3, C1:2}
-	\marks[filled circle, fill = {true, color = Moss}]{D7, E4, E6:7, F2:7, G1, G3:7}
-\end{goban}
+	\begin{goban}[7, hoshi = false]
+		\stones[w]{A7, A6, B6, B5, C5, C4, C3, D3, D2, D1, E1}
+		\stones[b]{B7, C7, C6, D6, D5, E5, D4, E3, E2, F1, G2}
+		\stone[b, mark = {filled circle, fill = {true, color = terracotta}}]{B4}
+		\marks[filled circle, fill = {true, color = bg}]{A1:5, B1:3, C1:2}
+		\marks[filled circle, fill = {true, color = Moss}]{D7, E4, E6:7, F2:7, G1, G3:7}
+	\end{goban}
 	\caption{
 		Final board position of a completed game, with its intersections scored; the black stone marked with the \textcolor{terracotta}{orange} dot must be removed as it is dead.}
 	\label{fig: Fig 10}
 \end{figure}
 
+The score is computed as follows: 11 living stones for Black plus 16 intersections in Black's territory; White, for their part, has 11 stones and 11 intersections in territory (the 10 intersections marked in blue plus B4 once the dead black stone is removed).
 
-In Figure~\ref{fig:Fig 12} (left), even if White attempts to attack the black group, they can only place one stone per turn. Because occupying either space would violate the suicide rule, White would need to play into both eyes simultaneously to capture, which is impossible. 
+Consequently, Black scores 27 points and White 22,
+so Black wins by 5 points.\footnote{This method corresponds to Chinese scoring rules. There are several other counting systems, such as the Japanese or Korean rulesets.}
+
+One might oppose Black's victory, given the inherent advantage of making the first move. To offset this disparity, White is awarded a compensation for playing second, known as \textit{komi}.
+
+This value varies according to board size and the skill difference between the players; generally, 5.5 points are
+used on standard boards.\footnote{The exact value of \textit{komi} depends on the chosen ruleset. Furthermore, in handicap games, a minimal \textit{komi} of 0.5 points is typically applied.} Were this compensation applied to the preceding example, White would win by 0.5 points, the narrowest possible margin. The inclusion of this half-point in the \textit{komi} precludes the possibility
+of a draw.
+
+Why is the isolated black stone at B4 considered dead, whereas the main groups survive? A group possesses an \textit{eye} if it completely surrounds an empty
+intersection. With at least two \textit{eyes}, it achieves the state of being \textit{alive} and can never be captured. In Figure~\ref{fig:Fig 12} (left), even if White attempts to attack the black group, they can only place one stone per turn: because occupying either internal space alone would violate the suicide rule, White would need to play into both eyes simultaneously to capture, which is impossible. Consequently, the black group is \textit{alive}.
+
+There exist, however, so-called \textit{false eyes}: intersections that resemble \textit{eyes}, but where one of the surrounding groups is at risk of being reduced to a single liberty (the eye). As a result, if the opponent succeeds in capturing this vulnerable group, the structure collapses and the eye is lost (see Figure~\ref{fig:Fig 12}, right).
 
 \begin{figure}[H]
 	\centering
